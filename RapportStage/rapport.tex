@@ -23,10 +23,22 @@
 \renewcommand{\contentsname}{Table des matières}\tableofcontents
 
 \newpage
+\section{Résumé}
+	Dans le cadre de la validation du Master 2 Data Managment in a Digital World - Datascale, proposé par l'Université de Versailles Saint-Quentin, j'ai effectué un stage de cinq mois et demi au sein du laboratoire de recherche CEDRIC du Conservatoire National des Arts et Métiers de Paris.
+	J'ai poursuivi ce stage en majorité en télétravail, dû à la crise sanitaire de la COVID-19.
+
+\section{Abstract}
+	In order to validate my Master 2 Data Management in a Digital World - Datasclae by Université de Versailles Saint-Quentin, I worked for the CEDRIC research laboratory based on Conservatoire Nationnal des Arts et Métiers at Paris during five mounths and half.
+	Due to COVID-19 pandemic, I mostly worked at home.
+
 \section{Introduction}
-	Dans le cadre de la validation du Master 2 Data Managment in a Digital Word - Datascale, proposé par l'Université de Versailles Saint-Quentin, j'ai effectué un stage de 5 mois et demi au sein du laboratoire de recherche CEDRIC du Conservatoire National des Arts et Métiers de Paris.
-	J'ai poursuivi ce stage en majorité en télétravail, dû à la crise sanitaire de la COVID-19.\par
+	Le jeu pervasif est un type de jeu très immersif. 
+	Il mêle le monde physique et le monde numérique et rend floue cette frontière. 
+	Le projet exploratoire initié par trois enseignants-chercheurs du laboratoire CEDRIC intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et de son environnement. Cependant cette conception doit rester assez générique pour pouvoir l'appliquer à d'autres domaines dans de prochains projets.\par
+	J'ai rejoins ce projet à son commencement. Le but de mon stage est double : d'une part je dois recueillir et synthétiser les éléments déjà existants dans la littérature scientifique et industrielle pour l'élaboration d'un tel jeu pervasif. 
+	Et d'autre part, je dois élaborer un modèle conceptuel afin de représenter les différents éléments qui permettront par la suite d'implémenter ce jeu particularisé.\par
 	Dans ce rapport, je vais tout d'abord présenter le laboratoire ainsi que l'équipe avec laquelle j'ai travaillé. Puis je vais présenter ma mission principale et les tâches que j'ai effectuée.
+	Pour terminer, je vais aborder la validation des différents tâches menées.
 
 \section{Contexte du stage}
 	\subsection{Le laboratoire CEDRIC}
@@ -72,17 +84,17 @@
 		Pedant plusieurs semaines, j'ai présenté les approches que je trouvais à mes tuteurs lors de réunions hébdomadaire via Skype.\par
 		Au fil de mes recherches, j'ai construit un tableau synthétique des approches (figures \ref{fig:tabsynt1} et \ref{fig:tabsynt2}) en utilisant plusieurs colonnes-critères afin que la lecture et l'explication de chacune d'entre elle soit plus simple.\par
 		\begin{figure}
-			\includegraphics[scale=0.47]{include/tri1.PNG}
-			\includegraphics[scale=0.47]{include/tri2.PNG}
-			\includegraphics[scale=0.47]{include/tri3.PNG}
+			\includegraphics[scale=0.47]{include/tri1.PNG}\\
+			\includegraphics[scale=0.47]{include/tri2.PNG}\\
+			\includegraphics[scale=0.47]{include/tri3.PNG}\\
 			\includegraphics[scale=0.47]{include/tri4.PNG}
 			\caption{Tableau synthétique des références (première partie)}
 			\label{fig:tabsynt1}
 		\end{figure}
 		\begin{figure}
-			\includegraphics[scale=0.47]{include/tri5.PNG}
-			\includegraphics[scale=0.47]{include/tri6.PNG}
-			\includegraphics[scale=0.47]{include/tri7.PNG}
+			\includegraphics[scale=0.47]{include/tri5.PNG}\\
+			\includegraphics[scale=0.47]{include/tri6.PNG}\\
+			\includegraphics[scale=0.47]{include/tri7.PNG}\\
 			\includegraphics[scale=0.47]{include/tri8.PNG}
 			\caption{Tableau synthétique des références (seconde partie)}
 			\label{fig:tabsynt2}
@@ -103,16 +115,19 @@
 		En réalité, ces critères de comparaison ressemblaient plus à des "super-critères". 
 		Pour corriger ce problème, j'ai repris les idées qui étaient dans le tableau synthétique que j'avais créer au début de mon stage (voir figure \ref{fig:tabsynt1} et \ref{fig:tabsynt2}). 
 		Je me suis inspirée des colones de ce tableau pour faire des critères plus ciblé. Il m'aura aussi aidé à rédiger le tableau comparatif de l'état de l'art.
-	\subsection{Modélisation d'une ontologie}
-		En parallèle de l'état de l'art, j'ai travaillé sur la conception d'un modèle représentant le jeu pervasif prenant en compte les émotions du joueur. 
-		Le but de ce modèle était de représenter chacun des composant permetant la prise en compte des émotions dans le jeu pervasif. 
+	\subsection{Conception du modèle}
+		En parallèle de l'état de l'art, j'ai travaillé sur la conception d'un modèle conceptuel. 
+		Le but de ce modèle était de représenter chaque composant permetant la prise en compte des émotions dans le jeu pervasif. 
 		Il fallait à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc.\par
 		Dès le début de cette conception, nous avons choisi de représenter ce modèle à l'aide d'un diagramme de classe UML. 
-		Etant donné que j'avais déjà appris à travailler avec ce type de diagramme durant mon cursus, j'ai pu directement commencer à concevoir le modèle, sans avoir à me documenter sur les bases du diagramme de classe.\par
-		Tout d'abord, j'ai fais un premier modèle très peu détaillé (voir figure \ref{fig:premmodele}, sans attribut ni opération.
+		Etant donné que j'avais déjà appris à travailler avec ce type de diagramme durant mon cursus, j'ai pu directement commencer à travailler sur le modèle, sans avoir à me documenter sur les bases du diagramme de classe.
+		D'un côté, j'ai travaillé au brouillon sur papier afin de mettre mes idées en place.
+		Et de l'autre côté, j'ai travaillé sur ordinateur afin de mettre au propre les brouillons qui me convenaient.
+		Pour cela, j'ai utilisé l'éditeur de diagrammes en ligne Visual-Paradigm\footnote{\href{https://online.visual-paradigm.com/fr/}{https://online.visual-paradigm.com/fr/}}.\par
+		Pour la conception de ce modèle, j'ai fais un premier modèle très peu détaillé (voir figure \ref{fig:premmodele}, sans attribut ni opération.
 		\begin{figure}
-			\subfigure[Première version]{\includegraphics[scale=0.5]{include/modele-v1-1.PNG}}
-			\subfigure[Deuxième version]{\includegraphics[scale=0.5]{include/modele-v1-2.PNG}}
+			\subfigure[Première version]{\includegraphics[scale=0.49]{include/modele-v1-1.PNG}}\label{fig:vers1}\\
+			\subfigure[Deuxième version]{\includegraphics[scale=0.46]{include/modele-v1-2.PNG}}\label{fig:vers2}
 			\caption{Les premières versions de la conception d'un modèle représentant un jeu pervasif prenant en compte l'état émotionel du joueur}
 			\label{fig:premmodele}
 		\end{figure}
@@ -122,19 +137,36 @@
 		Cela m'a permis de me rendre compte que ces classes pouvaient être intégrée dans d'autres classes.
 		Cela permettait une meilleure lisibilité du modèle.\par
 		La classe  "\texttt{Elements Externes}" est un peu à part. Je ne l'ai jamais "développée" mais il était important de la représenter.
-		En effet, cette classe permet de représenter l'ensemble du contexte autour du joueur et du jeu qui doit être pris en compte dans de futurs étapes, mais qui ne concernent pas notre modèle.\par
+		En effet, cette classe pere	met de représenter l'ensemble du contexte autour du joueur et du jeu qui doit être pris en compte dans de futurs étapes, mais qui ne concernent pas notre modèle.\par
 		Après plusieurs semaines, le modèle est représenter par la figure \ref{fig:modele}.
 		\begin{figure}
 			\includegraphics[scale=0.5]{include/modele-v2-5.png}
 			\caption{Le jeu pervasif prenant en compte l'état émotionnel du joueur}
 			\label{fig:modele}
 		\end{figure}
-		Pour mieux comprendre ce modèle et les classes qui le composent j'ai rédiger un fichier qui détaille chaque classe une à une (voir annexe \ref{ann:detailclasse}).
+		Pour mieux comprendre ce modèle et les classes qui le composent j'ai rédiger un fichier qui détaille chaque classe une à une (voir annexe \ref{ann:detailclasse}).\par
+		J'ai également fait une version "exemple" du diagramme où chaque attribut à une valeur (voir figure %\ref{fig:exmodele}
+		). 
+		Cette version du diagramme permet d'avoir une vision plus concrète.\par
+		Par la suite, j'ai conçu un diagramme par package (voir figure \ref{fig:diagpack}.
+		Cela permet de se représenter autreemnt les différents éléments mis en jeu dans ce projet.
+		Le diagramme par package permet aussi de visualiser, très globalement, l'implémentation qui pourrait être possible par la suite.
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.3]{include/diagrammePackage.png}
+			\caption{Diagramme par package d'un jeu pervasif prenant en compte l'état émotionnel du joueur}
+			\label{fig:diagpack}
+		\end{figure}
 	\subsection{Prototype avec l'environnement Kafka}
+		\textit{Choix entre RabbitMQ et Kafka.\newline
+		Mettre la synthèse.\newline
+		Apprendre à utiliser Kafka ?}
 
 \section{Validation}
+	\textit{que mettre ici ???}
 
 \section{Conclusion}
+	\textit{faire la conclusion.}
 
 
 \newpage
@@ -153,6 +185,9 @@
 
 \section{Annexe 3 - Les classes en détail}\label{ann:detailclasse}
 	%\includepdf[pages=-]{eda.pdf}
+
+\section{Annexe 4 - Synthèse comparative entre Kafka et RabbitMQ}%\label{ann:kafkarabbitmq}
+	\includepdf[pages=-]{include/comparatifKafkaVSRabbitMQ.pdf}	
 
 \bibliographystyle{abbrv}
 \bibliography{include/biblio}
