@@ -24,36 +24,40 @@
 
 \newpage
 \section{Résumé}
-	Dans le cadre de la validation du Master 2 Data Managment in a Digital World - Datascale, proposé par l'Université de Versailles Saint-Quentin, j'ai effectué un stage de cinq mois et demi au sein du laboratoire de recherche CEDRIC du Conservatoire National des Arts et Métiers de Paris.
+	Dans le cadre de la validation du Master 2 Data Managment in a Digital World - Datascale, proposé par l'Université de Versailles Saint-Quentin / Paris Saclay, j'ai effectué un stage de cinq mois et demi au sein du laboratoire de recherche CEDRIC du Conservatoire National des Arts et Métiers de Paris.
 	J'ai poursuivi ce stage en majorité en télétravail, dû à la crise sanitaire de la COVID-19.
 
 \section{Abstract}
-	In order to validate my Master 2 Data Management in a Digital World - Datasclae by Université de Versailles Saint-Quentin, I worked for the CEDRIC research laboratory based on Conservatoire Nationnal des Arts et Métiers at Paris during five mounths and half.
+	In order to validate my Master 2 Data Management in a Digital World - Datasclae by Université de Versailles Saint-Quentin / Paris Saclay, I worked for the CEDRIC research laboratory based on Conservatoire Nationnal des Arts et Métiers at Paris during five mounths and half.
 	Due to COVID-19 pandemic, I mostly worked at home.
 
 \section{Introduction}
 	Le jeu pervasif est un type de jeu très immersif. 
 	Il mêle le monde physique et le monde numérique et rend floue cette frontière. 
-	Le projet exploratoire initié par trois enseignants-chercheurs du laboratoire CEDRIC intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et de son environnement. Cependant cette conception doit rester assez générique pour pouvoir l'appliquer à d'autres domaines dans de prochains projets.\par
-	J'ai rejoins ce projet à son commencement. Le but de mon stage est double : d'une part je dois recueillir et synthétiser les éléments déjà existants dans la littérature scientifique et industrielle pour l'élaboration d'un tel jeu pervasif. 
-	Et d'autre part, je dois élaborer un modèle conceptuel afin de représenter les différents éléments qui permettront par la suite d'implémenter ce jeu particularisé.\par
-	Dans ce rapport, je vais tout d'abord présenter le laboratoire ainsi que l'équipe avec laquelle j'ai travaillé. Puis je vais présenter ma mission principale et les tâches que j'ai effectuée.
-	Pour terminer, je vais aborder la validation des différents tâches menées.
+	Le projet exploratoire initié par trois enseignants-chercheurs du laboratoire CEDRIC intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et son environnement. 
+	Cependant cette conception doit rester assez générique pour pouvoir l'appliquer à d'autres domaines dans de prochains projets.\par
+	J'ai rejoins ce projet à son commencement. 
+	Le but de mon stage est double : 
+	d'une part, je dois recueillir et synthétiser les éléments déjà existants dans la littérature scientifique et industrielle pour l'élaboration d'un tel jeu pervasif. 
+	Et d'autre part, je dois élaborer un modèle conceptuel afin de représenter les éléments qui permettront par la suite d'implémenter ce jeu particularisé.\par
+	Dans ce rapport, je vais tout d'abord présenter le laboratoire ainsi que l'équipe avec laquelle j'ai travaillé. Puis je présenterai ma mission principale et les tâches que j'ai effectué.
+	Pour terminer, j'aborderai la validation des tâches menées.
 
 \section{Contexte du stage}
 	\subsection{Le laboratoire CEDRIC}
-		Pour ce stage, j'ai été accueillie par le laboratoire de Centre d'Etudes et De Recherche en Informatique et Communication (CEDRIC)\footnote{\href{http://cedric.cnam.fr/lab/accueil/labo/}{http://cedric.cnam.fr/lab/accueil/labo/}} au sein du Conservatoire National des Arts et Métiers (CNAM) de Paris. 
+		\centering \includegraphics[scale=0.35]{include/logo-cedric.PNG}\\
+		Pour ce stage, j'ai été accueillie par le laboratoire de Centre d'Etudes et De Recherche en Informatique et Communication (CEDRIC)\footnote{\href{http://cedric.cnam.fr/lab/accueil/labo/}{http://cedric.cnam.fr/lab/accueil/labo/}} au sein du Conservatoire National des Arts et Métiers (CNAM) de Paris\footnote{\href{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}}. 
 		Le laboratoire se situe au 2 rue Conte 75003 PARIS.\par
 		Le laboratoire CEDRIC est composé de huit équipes ayant des actions dans le domaine de l'informatique fondamentale et appliquée, ainsi que dans d'autres disciplines proches (statistiques, électronique,...).
 		\begin{itemize}
 			\item L'équipe Données complexes, apprentissage et représentations (Vertigo) : Extraire de l'information et construire des méthodes de gestion de données basées sur le contenu pour des données massives audios, images et vidéos;
-			\item L'équipe Interactivité pour Lire et Jouer (ILJ) : Questions autour de l'interactions homme-machine concernant des activités telles que le jeu et la lecteure. Cette équipe mèle plusieurs disciplines (informatiques, psychologie, design, arts,...) afin de répondre aux études en cours qui concernent la modélisation de la difficulté dans les jeux, les méthodeologies de game design inclusif,...;
-			\item L'équipe Ingénieurie des Systèmes d'Information et de Communication (ISID) : Réunie autour de trois axes de recherche (les systèmes décisionnels, le web sémantique et la qualité des systèmes d'information) dans le but de concevoir des méthodes, des outils et des techniques	pour la conception et l'analyse de systèmes d'information et de décision dans tous les domaines;
-			\item L'équipe Traitement du signal et architectures électroniques (LAETITIA) : Concentrée sur trois axes de recherhe : traitement du signal pour les télécommunication (recherches en lien avec les réseaux cellulaires (5G/6G) et en lien avec les problématiques de couches physique pour les réseaux faible puissance longue portée pour l'IoT), sûreté de fonctionnement des sytèmes dynémiques (recherche en automatique) et implémentation temps-réel (mise en oeuvre des algorithmes proposés par l'équipe) ;
-			\item L'équipe Méthode Statistique de Data-Mining et Apprentissage (MSDMA) : Traitement de données et développement de modles d'apprentissage statistiques dans le but d'extraire des information pour prise de décision;
+			\item L'équipe Interactivité pour Lire et Jouer (ILJ) : Questions autour de l'interaction homme-machine concernant des activités telles que le jeu et la lecteure. Cette équipe mèle plusieurs disciplines (informatiques, psychologie, design, arts,...) afin de répondre aux études en cours qui concernent la modélisation de la difficulté dans les jeux, les méthodologies de game design inclusif,...;
+			\item L'équipe Ingénieries des Systèmes d'Information et de Décision (ISID) : Réunie autour de trois axes de recherche (les systèmes décisionnels, le web sémantique et la qualité des systèmes d'information) dans le but de concevoir des méthodes, des outils et des techniques	pour la conception et l'analyse de systèmes d'information et de décision dans tous les domaines;
+			\item L'équipe Traitement du signal et architectures électroniques (LAETITIA) : Concentrée sur trois axes de recherhe : traitement du signal pour les télécommunications (recherches en lien avec les réseaux cellulaires (5G/6G) et en lien avec les problématiques de couches physique pour les réseaux faible puissance longue portée pour l'IoT), sûreté de fonctionnement des sytèmes dynémiques (recherche en automatique) et implémentation temps-réel (mise en oeuvre des algorithmes proposés par l'équipe);
+			\item L'équipe Méthode Statistique de Data-Mining et Apprentissage (MSDMA) : Traitement de données et développement de modèles d'apprentissage statistiques dans le but d'extraire des information pour prise de décision;
 			\item L'équipe Optimisation Combinatoire (OC) : Rassemblée autour de deux axes : la programmation mathématique et applications ainsi que les graphes et optimisation;
 			\item L'équipe Réseaux et Objets Connectés (ROC) : Porte sur l'analyse et l'exploitation des nouvelles architectures réseaux et des systèmes liés à la virtualisation, à la mobilité et au développemnt des objets connectés;
-			\item L'équipe Systèmes Sûrs (SYS) : Spécialisation, conception, vérification et évaluation des systèmes. Pour cela, Les recherches se font autour de trois axes : l'axe typage, sémantique et preuve, l'axe architecture logiciel, architecture systèmes et ligne de produit et l'axe vérification  et évaluation de systèmes parallèle et asynchrone.
+			\item L'équipe Systèmes Sûrs (SYS) : Spécialisation, conception, vérification et évaluation des systèmes. Pour cela, Les recherches se font autour de trois axes : l'axe typage, sémantique et preuve, l'axe architecture logiciel, architecture systèmes et ligne de produit et l'axe vérification  et évaluation de systèmes parallèles et asynchrones.
 		\end{itemize}
 	\subsection{L'équipe et son projet}
 		J'ai été encadrée par 
@@ -63,19 +67,23 @@
 			\item M Eric GRESSIER-SOUDAN, professeur des universités travaillant au sein de l'équipe \textit{Réseaux et Objets Connectés}
 		\end{itemize}
 		Cette équipe porte un projet exploratoire du CEDRIC : le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs".\par
-		L'objectif gloabl de ce projet est de proposer une expérience très immersive aux joueurs. Pour cela, le jeu doit pouvoir s'adapter au joueur en fonction du contexte global.
-		Dans un premier temps, le but de ce projet est de pouvoir formuler un modèle conceptuel du jeu pervasif adaptatif basé sur les émotion et sur le contexte. Et dans un second temps, de pouvoir développer une approche d'ingénerie situationnelle du système d'information pour ce type de jeu.\newline
+		L'objectif gloabl de ce projet est de proposer une expérience très immersive aux joueurs. 
+		Pour cela, le jeu doit pouvoir s'adapter au joueur en fonction du contexte global.
+		Dans un premier temps, le but de ce projet est de pouvoir formuler un modèle conceptuel du jeu pervasif adaptatif basé sur les émotions et sur le contexte. 
+		Et dans un second temps, de pouvoir développer une approche d'ingénerie situationnelle du système d'information pour ce type de jeu.\newline
 		Mon stage s'inscrit au sein de cette équipe et pour ce projet 
 
 \section{Objectif du stage}
-	J'ai intégré le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" à son commencement. Ma mission principale a été d'élaborer un modèle conceptuel pour représentant un jeu pervasif adaptable aux émotions du joueur.
-	Ce modèle devait pouvoir mettre en évidence les briques principales pour élaborer un jeu pervasif utilisant un modèle utilisateur capable de prendre en charge les émotions du joueurs et d'autres traits liés à lui et à son environnement (voir l'Offre de stage Annexe \ref{app:annexe1}).
+	J'ai intégré le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" à son commencement. 
+	Ma mission principale a été d'élaborer un modèle conceptuel pour représentant un jeu pervasif adaptable aux émotions du joueur.
+	Ce modèle devait pouvoir mettre en évidence les briques principales pour élaborer un jeu pervasif utilisant un modèle utilisateur capable de prendre en charge les émotions du joueur et d'autres traits liés à lui et à son environnement (voir l'Offre de stage Annexe \ref{app:annexe1}).
 	% Pour ce faire, il a fallut tout d'abord faire l'état de l'art de ce qui existait dans la littérature scientifique. 
 
 \section{Approche suivie et solution proposée}
-	\subsection{Découverte du projet}
-		Le premier jour de mon stage, mes tuteurs m'ont remis 5 documents qui m'ont servi de base pour entrer dans le sujet du jeu pervasif (avec \cite{gal_2019}), la reconnaissance des émotions et des états émotionnels (avec \cite{gal_2019,gizycka_et_al._2018,nalepa_et_al._2019}), le modèle utilisateur (avec \cite{alhudar_2019}) et les Decision Making avec (avec \cite{kornyshova_et_al._2010}).\newline
-		Aprèss la lecture de ces documents et la présentation des approches de chacun de ces document à mes tuteurs. sur les deux premières semaines, j'ai recherché de nouveaux documents ressources autour de la reconnaissance des émotions dans les jeux comme me l'ont suggérés mes tuteurs. 
+	\subsection{Recherches bibliographiques}
+		Le premier jour de mon stage, mes tuteurs m'ont remis 5 documents qui m'ont servi de base pour entrer dans le sujet du jeu pervasif avec \cite{gal_2019}, la reconnaissance des émotions et des états émotionnels avec \cite{gal_2019,gizycka_et_al._2018,nalepa_et_al._2019}, le modèle utilisateur avec \cite{alhudar_2019} et les Decision Making avec \cite{kornyshova_et_al._2010}.\par
+		Les deux premières semaines, j'ai fait la lecture de ces documents et la présentation des approches de chacun de ces documents à mes tuteurs.
+		Après ces deux semaines, j'ai recherché de nouveaux documents ressources autour de la reconnaissance des émotions dans les jeux comme me l'ont suggérés mes tuteurs. 
 		Pour plus de facilité à centraliser mes recherches, j'ai utilisé l'outil de gestion de ressources Zotero\footnote{\href{https://www.zotero.org}{https://www.zotero.org}}. 
 		Pour mes recherches, j'ai utilisé en grande majorité Google Scholar. 
 		Etant à domicile pour mon stage, je n'avais pas accès à une bibliothèque particulière que j'aurais pu avoir au CNAM. 
@@ -99,28 +107,29 @@
 			\caption{Tableau synthétique des références (seconde partie)}
 			\label{fig:tabsynt2}
 		\end{figure}
-		Ce tableau, que j'ai rempli et étoffé pendant mes recherches bibliographiques, mas aussi par la suite, m'a aidé à mieux comprendre les approches en catégorisant les méthodes et les expérimentations qui étaient décritent dans les références. 
+		Ce tableau, que j'ai rempli et étoffé pendant mes recherches bibliographiques, m'a aidé à mieux comprendre les approches en catégorisant les méthodes et les expérimentations qui étaient décritent dans les références. 
 		Ce tableau m'a également beaucoup aidé à transmettre les idées globales lors des réunions.\par
-		A partir de fin avril, mes tuteur m'ont chargé de nouvelles missions. J'ai travaillé sur la rédaction d'un état de l'art et sur l'élaboration d'un modèle sous forme de diagramme de classe en parallèle.
+		A partir de fin avril, mes tuteurs m'ont chargé de nouvelles missions. J'ai travaillé sur la rédaction d'un état de l'art et sur l'élaboration d'un modèle sous forme de diagramme de classe en parallèle.
 	\subsection{Rédaction d'un état de l'art}
-		J'ai dans un premier temps réfléchi à la problématique et à l'objectif que je voulais pour cet état de l'art. Mes tuteurs m'ont suggérés d'écrire une première introduction pour m'aider. Ce que j'ai fait.
-		Ecrire cette introduction m'a permis de voir la direction que je souhaitais prendre.
-		Après quelques correction de leur part, j'ai pu recentrer mes propos et mieux définir les idées que je voulais ransmettre.\par
+		Pour la rédaction de l'état de l'art, j'ai dans un premier temps réfléchi à la problématique et à l'objectif que je voulais décrire. Mes tuteurs m'ont suggéré de commencer par écrire une première version de l'introduction. Cela m'a permi de réfléchir à la structure et aux idées que je voulais transmettre.
+		Après quelques corrections de leur part, j'ai pu recentrer mes propos et mieux définir la direction que je voulais pour mon état de l'art.\par
 		J'ai ensuite défini un plan que j'ai détaillé avec les points qui me semblait important à développer dans chaque partie. Je suis revenue plusieurs fois sur ce plan avec les correction et indications de mes tuteurs.\par
-		Une fois que le plan m'a semblé pertinent et que l'introduction me convenait, j'ai développé les parties. Mes tuteurs m'ont fait plusieurs retours, me donnant des indication sur la forme de l'étt de l'art. 
-		J'ai compris qu'il fallait que l'état de l'art que je rédigeais devait suivre des règles précises. 
-		Il devait dès la tablea des matières exprimer l'aspect descriptif et l'aspect comparatif.\par
+		Une fois que le plan m'a semblé pertinent et que l'introduction me convenait, j'ai développé les parties. Mes tuteurs m'ont fait plusieurs retours, me donnant des indications sur la forme de l'étt de l'art. 
+		J'ai compris que l'état de l'art que je rédigeais devait suivre des règles précises. 
+		Il devait dès la table des matières exprimer l'aspect descriptif et l'aspect comparatif.\par
 		J'ai aussi compris qu'il fallait que je sois très précise sur mes critères de comparaison. 
-		Lorsque j'ai commencé à rédigé j'avais choisi trois critères. 
+		Lorsque j'ai commencé à rédiger, j'ai choisi trois critères pour comparer les approches. 
 		En réalité, ces critères de comparaison ressemblaient plus à des "super-critères". 
-		Pour corriger ce problème, j'ai repris les idées qui étaient dans le tableau synthétique que j'avais créer au début de mon stage (voir figure \ref{fig:tabsynt1} et \ref{fig:tabsynt2}). 
-		Je me suis inspirée des colones de ce tableau pour faire des critères plus ciblé. Il m'aura aussi aidé à rédiger le tableau comparatif de l'état de l'art.
+		Pour corriger ce problème, j'ai repris les idées qui étaient dans le tableau synthétique que j'avais créé au début de mon stage (voir figure \ref{fig:tabsynt1} et \ref{fig:tabsynt2}). 
+		Je me suis inspirée des colones de ce tableau pour faire des critères plus ciblés. 
+		Ce tableau m'aura aussi aidé à rédiger le tableau comparatif de l'état de l'art.\par
+		L'état de l'art se trouve en annexe \ref{ann:eda}.
 	\subsection{Conception du modèle}
 		En parallèle de l'état de l'art, j'ai travaillé sur la conception d'un modèle conceptuel. 
-		Le but de ce modèle était de représenter chaque composant permetant la prise en compte des émotions dans le jeu pervasif. 
+		Le but de ce modèle était de représenter chaque composant permettant la prise en compte des états émotionnels dans le jeu pervasif. 
 		Il fallait à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc.\par
 		Dès le début de cette conception, nous avons choisi de représenter ce modèle à l'aide d'un diagramme de classe UML. 
-		Etant donné que j'avais déjà appris à travailler avec ce type de diagramme durant mon cursus, j'ai pu directement commencer à travailler sur le modèle, sans avoir à me documenter sur les bases du diagramme de classe.
+		Etant donné que j'avais déjà appris à travailler avec ce type de diagramme durant mon cursus, j'ai pu directement commencer à travailler sur le modèle, sans avoir à me documenter sur les bases du diagramme de classe.\par
 		D'un côté, j'ai travaillé au brouillon sur papier afin de mettre mes idées en place.
 		Et de l'autre côté, j'ai travaillé sur ordinateur afin de mettre au propre les brouillons qui me convenaient.
 		Pour cela, j'ai utilisé l'éditeur de diagrammes en ligne Visual-Paradigm\footnote{\href{https://online.visual-paradigm.com/fr/}{https://online.visual-paradigm.com/fr/}}.\par
@@ -131,25 +140,26 @@
 			\caption{Les premières versions de la conception d'un modèle représentant un jeu pervasif prenant en compte l'état émotionel du joueur}
 			\label{fig:premmodele}
 		\end{figure}
-		Le but était d'avoir une première idée de ce a quoi pourrait ressembler ce modèle et transmettre mes idées à mes tuteurs.\par
-		Après plusieures réunions pour réajuster les classes du modèle, j'ai commencer à "entrer" dans chaque classe pour y ajouter les attributs et les opérations. 
-		En faisant cela, j'ai pu me rendre compte que certaine classe ne prenaient pas d'attributs ou ne prenaient pas d'opération.
-		Cela m'a permis de me rendre compte que ces classes pouvaient être intégrée dans d'autres classes.
+		Le but était d'avoir une première idée de ce à quoi pourrait ressembler ce modèle et transmettre mes idées à mes tuteurs.\par
+		Après plusieurs réunions pour réajuster les classes du modèle, j'ai commencé à "entrer" dans chaque classe pour y ajouter les attributs et les opérations. 
+		En faisant cela, j'ai pu me rendre compte que certaines classes ne prenaient pas d'attributs ou ne prenaient pas d'opération.
+		Cela m'a permis de me rendre compte que ces classes pouvaient être intégrées dans d'autres classes.
 		Cela permettait une meilleure lisibilité du modèle.\par
-		La classe  "\texttt{Elements Externes}" est un peu à part. Je ne l'ai jamais "développée" mais il était important de la représenter.
-		En effet, cette classe pere	met de représenter l'ensemble du contexte autour du joueur et du jeu qui doit être pris en compte dans de futurs étapes, mais qui ne concernent pas notre modèle.\par
-		Après plusieurs semaines, le modèle est représenter par la figure \ref{fig:modele}.
+		La classe  "\texttt{Elements Externes}" est un peu à part. 
+		Je ne l'ai jamais "développée" mais il était important de la représenter.
+		Effectivement, cette classe permet de représenter l'ensemble du contexte autour du joueur et du jeu qui doit être pris en compte dans de futurs étapes, mais qui ne concernent pas notre modèle.\par
+		Après plusieurs semaines, le modèle est représenté par la figure \ref{fig:modele}.
 		\begin{figure}
 			\includegraphics[scale=0.5]{include/modele-v2-5.png}
 			\caption{Le jeu pervasif prenant en compte l'état émotionnel du joueur}
 			\label{fig:modele}
 		\end{figure}
-		Pour mieux comprendre ce modèle et les classes qui le composent j'ai rédiger un fichier qui détaille chaque classe une à une (voir annexe \ref{ann:detailclasse}).\par
+		Pour mieux comprendre ce modèle et les classes qui le composent j'ai rédigé un fichier qui détaille chaque classe une à une (voir annexe \ref{ann:detailclasse}).\par
 		J'ai également fait une version "exemple" du diagramme où chaque attribut à une valeur (voir figure %\ref{fig:exmodele}
-		). 
+		). \textit{ajouter l'exemple}.
 		Cette version du diagramme permet d'avoir une vision plus concrète.\par
 		Par la suite, j'ai conçu un diagramme par package (voir figure \ref{fig:diagpack}.
-		Cela permet de se représenter autreemnt les différents éléments mis en jeu dans ce projet.
+		Cela permet de se représenter autrement les différents éléments mis en jeu dans ce projet.
 		Le diagramme par package permet aussi de visualiser, très globalement, l'implémentation qui pourrait être possible par la suite.
 		\begin{figure}
 			\centering
