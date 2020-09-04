@@ -25,11 +25,11 @@ public class ProducerP {
 		 
 	      Producer<String, String> producer = new KafkaProducer
 	    	         <String, String>(configProperties);
-	      
-	      for(int i = 0; i < 10; i++)
+	      int i = 0;
+	      for(i = 0; i < 10; i++)
 	          producer.send(new ProducerRecord<String, String>(topic, 
 	        		  Integer.toString(i)));
-	      System.out.println( "Message sent successfully" );
+	      System.out.println( i + "message(s) envoyé(s)" );
 	      producer.close();
 	 }
 }
