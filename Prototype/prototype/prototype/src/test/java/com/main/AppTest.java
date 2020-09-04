@@ -1,4 +1,4 @@
-package kafka.test_prototype;
+package com.main;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
