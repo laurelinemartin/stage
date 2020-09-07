@@ -14,6 +14,6 @@ public class App
         System.out.println( "Message du producer \n ----------------\n" );
         ProducerP prod = new ProducerP("test");
         System.out.println( "Message du consumer \n ----------------\n" );
-        ConsumerC cons = new ConsumerC("test");
+        ConsumerC cons = new ConsumerC("RR");
     }
 }

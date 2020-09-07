@@ -16,8 +16,8 @@ import au.com.bytecode.opencsv.CSVReader;
 public class DataCSVDAO implements DataDAO {
     private final static String RESOURCES_PATH = "src/main/resources/";
     private final static String FILE_NAME = "data_file.csv";
-    @SuppressWarnings("unused")
-	private final static char SEPARATOR = ';';
+    // @SuppressWarnings("unused")
+	// private final static char SEPARATOR = ';';
     
     /*
      * Construteur vide
