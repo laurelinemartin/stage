@@ -1,8 +1,15 @@
 package com.producer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+
+import com.IO.Data;
+import com.IO.DataCSVDAO;
+import com.IO.DataDAO;
+
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.Producer;
+
+import java.util.List;
 import java.util.Properties;
 // import java.util.Scanner;
 
@@ -11,7 +18,7 @@ import java.util.Properties;
  *
  */
 public class ProducerP {
-	// Propriétés du producer ------------------------------------------
+	// Propriétés du producer
 	 Properties configProperties = new Properties();
 	 
 	 /**
@@ -25,11 +32,19 @@ public class ProducerP {
 		 
 	      Producer<String, String> producer = new KafkaProducer
 	    	         <String, String>(configProperties);
-	      int i = 0;
-	      for(i = 0; i < 10; i++)
-	          producer.send(new ProducerRecord<String, String>(topic, 
-	        		  Integer.toString(i)));
-	      System.out.println( i + "message(s) envoyé(s)" );
+	      final DataDAO dataDao = new DataCSVDAO();
+	      final List<Data> data = dataDao.lecture();
+	      // System.out.println("Liste des eleves");
+	      for (Data d : data) {
+		        producer.send(new ProducerRecord<String, String>(topic, 
+		        		  Data.toStringAll(d)));
+		        try {
+					wait(500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+	      }
+	      System.out.println("[INFO] : Message envoyé(s)" );
 	      producer.close();
 	 }
 }
