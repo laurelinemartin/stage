@@ -11,6 +11,7 @@ import org.apache.kafka.clients.producer.Producer;
 
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 // import java.util.Scanner;
 
 /**
@@ -39,12 +40,13 @@ public class ProducerP {
 		        producer.send(new ProducerRecord<String, String>(topic, 
 		        		  Data.toStringAll(d)));
 		        try {
-					wait(500);
+					TimeUnit.SECONDS.sleep(1);
 				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 	      }
-	      System.out.println("[INFO] : Message envoyé(s)" );
+	      System.out.println("[INFO] : Message envoyé\n" );
 	      producer.close();
 	 }
 }
