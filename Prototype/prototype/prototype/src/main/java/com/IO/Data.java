@@ -25,40 +25,26 @@ public class Data {
 	 */
 	public Data(double RR, double GSR, double HR, double BT) {
 		this.RR = RR;
-		this.setGSR(GSR);
-		this.setHR(HR);
-		this.setBT(BT);
-	}
-
-	public double getRR() {
-		return RR;
+		this.GSR = GSR;
+		this.HR = HR;
+		this.BT = BT;
 	}
 	
-	public void setRR(double RR) {
-		this.RR = RR;
-	}
-
-	public double getGSR() {
-		return GSR;
-	}
-
-	public void setGSR(double gSR) {
-		GSR = gSR;
-	}
-
-	public double getHR() {
-		return HR;
-	}
-
-	public void setHR(double hR) {
-		HR = hR;
-	}
-
-	public double getBT() {
-		return BT;
-	}
-
-	public void setBT(double bT) {
-		BT = bT;
+	public double getRR() { return RR; }
+	public void setRR(double RR) { this.RR = RR; }
+	public double getGSR() { return GSR; }
+	public void setGSR(double gSR) { GSR = gSR; }
+	public double getHR() { return HR; }
+	public void setHR(double hR) { HR = hR; }
+	public double getBT() { return BT;}
+	public void setBT(double bT) { BT = bT; }
+	
+	public static String toStringAll(Data d) {
+		String s = null;
+		s += "RR = " + Double.toString(d.RR);
+		s += " GSR = " + Double.toString(d.GSR);
+		s += " HR = " + Double.toString(d.HR);
+		s += " BT = " + Double.toString(d.BT)
+;		return s;
 	}
 }
