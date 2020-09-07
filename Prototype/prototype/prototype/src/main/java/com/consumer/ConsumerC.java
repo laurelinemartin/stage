@@ -19,7 +19,8 @@ public class ConsumerC {
          configProperties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
          // configProperties.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
          configProperties.put(ConsumerConfig.CLIENT_ID_CONFIG, "simple");
-	     KafkaConsumer<String, String> consumer = new KafkaConsumer
+	     @SuppressWarnings("resource")
+		KafkaConsumer<String, String> consumer = new KafkaConsumer
 	         <String, String>(configProperties);
 	     
 	     // Souscription au topic test
