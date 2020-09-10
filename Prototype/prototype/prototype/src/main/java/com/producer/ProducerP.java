@@ -1,21 +1,19 @@
 package com.producer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
-
 import com.IO.Data;
 import com.IO.DataCSVDAO;
 import com.IO.DataDAO;
-
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.Producer;
-
 import java.util.List;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
+// import java.util.concurrent.TimeUnit;
 // import java.util.Scanner;
 
 /**
  * @author Laureline Martin
+ * Classe ProducerP  Gère le producteur
  *
  */
 public class ProducerP {

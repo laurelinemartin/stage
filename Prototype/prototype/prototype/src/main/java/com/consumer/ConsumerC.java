@@ -7,6 +7,12 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 //import java.util.Scanner;
 
+/**
+ * 
+ * @author Laureline Martin
+ * Classe ConsumerC  Gère le consommateur
+ *
+ */
 public class ConsumerC {
     Properties configProperties = new Properties();
 	
