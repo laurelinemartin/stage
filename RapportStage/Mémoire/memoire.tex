@@ -86,18 +86,35 @@ Due to COVID-19 pandemic, I mostly worked at home.
 			\item M Eric GRESSIER-SOUDAN, professeur des universités travaillant au sein de l'équipe \textit{Réseaux et Objets Connectés - ROC}
 		\end{itemize}
 		Tous m'ont encadré tout au long de mon stage.
-	\subsection{Le projet}
-		Cette équipe porte un projet exploratoire du CEDRIC : le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs".\par
+
+\section{Cadre du projet}
+	Le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" est un projet exploratoire du laboratoire CEDRIC.
+	\subsection{Motivation et objectif}
 		L'objectif gloabl de ce projet est de proposer une expérience de jeu pervasif unique où le joueur et ses émotions seraient au coeur du jeu. 
 		Pour cela, le jeu doit pouvoir s'adapter au joueur en fonction du contexte global. 
 		C'est-à-dire que le jeu doit pouvoir détecter et reconnaître l'état émotionnel courant du joueur,
 		Il doit également pouvoir proposer l'événement le plus adapter en réponse à cet état émotionnel.\par
 		Dans un premier temps, le but de ce projet est de formuler un modèle conceptuel du jeu pervasif adaptatif et dynamique basé sur les états émotionnels et sur le contexte environnent. 
 		Et dans un second temps, de développer une approche d'ingénerie situationnelle du système d'information pour ce type de jeu tout en restant générique pour des applications à de multiples domaines.\newline
-		Mon stage s'inscrit au sein de cette équipe et pour ce projet.
+	\subsection{Problématique}
+		L'adaptation aux émotions est un problème complexe à différents niveaux.
+		Il faut tout d'abord pouvoir détecter la présence d'un état émotionnel.
+		Déjà plusieurs questions ce poses comme par exemble quel outil utilisé pour la détection ?\par
+		Une fois détecter, il faut pouvoir reconnaître l'état émotionnel. Quelle approche utilisée ? Quel algorithme ? Pour quel(s) état(s) ?\par
+		Une fois que nous connaissons l'état émotionnel du joueur, il faut pouvoir lui proposer un événement adapté à cet état. Plusieurs problèmes se posent, faut-il proposer un événement allant dans le sens de l'état émotionnel actuel du joueur ? Ou au contraire, lui proposer un événement susptible de changer son étaté émotionnel ? Quels événements sont attachés à quels états émotionnels ?\par
+		De plus, tout cela doit pouvoir se faire en temps réel pour éviter un effet de décalage entre le joueur et le jeu qui pourrait distraire le joueur et le désintéressé du jeu.\par
 
+\section{Etat de l'art}
+	\textit{Voir Annexe \ref{ann:eda}.}
 
+\section{Utilisation des données physiologiques}
+	\subsection{Capteurs}
+	\subsection{Middleware Oriented Messages (MOM)}
+		\subsection{Comparaison entre Apache Kafka et RabbitMQ}
+		\subsection{Choix de Apache Kafka}
+	\subsection{Prototype : utilisation de Kafka pour des données physiologiques}
 
+\section{Conclusion}
 
 
 
