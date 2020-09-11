@@ -35,15 +35,17 @@ public class ProducerP {
 	      final List<Data> data = dataDao.lecture();
 	      // System.out.println("Liste des eleves");
 	      for (Data d : data) {
-		        producer.send(new ProducerRecord<String, String>(topic, 
-		        		  Data.toStringAll(d)));
-		       /* producer.send(new ProducerRecord<String, String>("GSR", 
+		        // producer.send(new ProducerRecord<String, String>(topic, 
+		       // 		  Data.toStringAll(d)));
+		        producer.send(new ProducerRecord<String, String>("GSR", 
 		        		  Data.toStringGSR(d)));
 		        producer.send(new ProducerRecord<String, String>("HR", 
 		        		  Data.toStringHR(d)));
 		        producer.send(new ProducerRecord<String, String>("BT", 
 		        		  Data.toStringBT(d)));
-		        try {
+		        producer.send(new ProducerRecord<String, String>("RR", 
+		        		  Data.toStringRR(d)));
+		        /*try {
 					TimeUnit.SECONDS.sleep(1);
 				} catch (InterruptedException e) {
 					e.printStackTrace();

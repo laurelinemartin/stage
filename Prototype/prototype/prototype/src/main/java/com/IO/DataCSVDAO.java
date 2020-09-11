@@ -69,8 +69,8 @@ public class DataCSVDAO implements DataDAO {
         for(String[] donnee : donnees) {
         	double RR = Double.parseDouble(donnee[1]);
         	double GSR = Double.parseDouble(donnee[2]);
-        	double HR = Double.parseDouble(donnee[3]);
-        	double BT = Double.parseDouble(donnee[4]);
+        	double BT = Double.parseDouble(donnee[3]);
+        	double HR = Double.parseDouble(donnee[4]);
         	data.add(new Data(RR, GSR, HR, BT));
         }
 		return data;
