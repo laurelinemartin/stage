@@ -2,13 +2,13 @@ package com.producer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import com.IO.Data;
-import com.IO.DataCSVDAO;
 import com.IO.DataDAO;
+import com.IO.DataCSVDAO;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.Producer;
 import java.util.List;
-import java.util.Properties;
-// import java.util.concurrent.TimeUnit;
+import java.util.Properties; 
+import java.util.concurrent.TimeUnit;
 // import java.util.Scanner;
 
 /**
@@ -35,21 +35,21 @@ public class ProducerP {
 	      final List<Data> data = dataDao.lecture();
 	      // System.out.println("Liste des eleves");
 	      for (Data d : data) {
-		        // producer.send(new ProducerRecord<String, String>(topic, 
-		       // 		  Data.toStringAll(d)));
-		        producer.send(new ProducerRecord<String, String>("GSR", 
+		        producer.send(new ProducerRecord<String, String>("Vector", 
+		        		  Data.toStringAll(d)));
+		        /* producer.send(new ProducerRecord<String, String>("GSR", 
 		        		  Data.toStringGSR(d)));
 		        producer.send(new ProducerRecord<String, String>("HR", 
 		        		  Data.toStringHR(d)));
 		        producer.send(new ProducerRecord<String, String>("BT", 
 		        		  Data.toStringBT(d)));
 		        producer.send(new ProducerRecord<String, String>("RR", 
-		        		  Data.toStringRR(d)));
-		        /*try {
-					TimeUnit.SECONDS.sleep(1);
+		        		  Data.toStringRR++(d)));*/
+		        try {
+					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-				}*/
+				}
 	      }
 	      System.out.println("[INFO] : Message envoyé\n" );
 	      producer.close();
