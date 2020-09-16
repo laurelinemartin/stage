@@ -19,45 +19,111 @@
 
 \begin{document}
 \maketitle
-\vspace*{10cm}
+\vspace*{14cm}
+\begin{center}
+	\textbf{Encadrants :}
+\end{center}
+\begin{tabular}{p{4cm}p{4cm}p{8cm}}
+	\hspace*{-1cm}
+	Mme. Viviane GAL & Ingénieure & Equipe \textit{Interactivité pour lire et jouer - ILJ}\smallskip\\
+	\hspace*{-1cm}
+	M. Eric GRESSIER-SOUDAN & Professeur des universités & Equipe \textit{Réseaux et Objets Connectés - ROC}
+	\smallskip\\
+	\hspace*{-1cm}
+	Mme. Elena KORNYSHOVA & Maître de conférences & Equipe \textit{Igénieurie des systèmes d'information et de décision - ISID}
+\end{tabular}
+
+
+\newpage
 \begin{center}
 	\textbf{Résumé :}
 \end{center}
 \hspace*{0.4cm}
-Dans le cadre de la validation du Master 2 Data Managment in a Digital World - Datascale, proposé par l'Université de Versailles Saint-Quentin / Paris Saclay, j'ai effectué un stage de cinq mois et demi au sein du laboratoire de recherche CEDRIC du Conservatoire National des Arts et Métiers de Paris.
-J'ai poursuivi ce stage en majorité en télé-travail, dû à la crise sanitaire liée à la COVID-19.
+Durant cinq mois et demi, j'ai travaillé au laboratoire de recherche CEDRIC au Conservatoire National des Arts et Métiers de Paris.\par
+Ce stage s'est inscrit au sein du projet exploratoire "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" du laboratoire.
+L'objectif global de ce projet est de proposer un jeu pervasif où le joueur et ses émotions sont au coeur même du jeu. 
+Pour cela, des capteurs physilogiques sont utilisés pour détecter et reconnaître les états émotionnels du joueurs ainsi que des capteurs placés dans l'environnement pour connaître le contexte global. 
+Un état de l'art ainsi qu'une première version d'une ontologie afin de répondre à cet objectif ont été proposées et se trouvent dans ce rapport. 
+Une solution pouvant lire les données provenant de capteurs physilogiques a également été proposée.
+Cette solution envoie ces données à des algorithmes déjà existant qui permettent de traiter ces données pour en déduire des états émotionnels.
 \bigskip\newline
 \begin{center}
 	\textbf{Abstract :}
 \end{center}
 \hspace*{0.4cm}
-In order to validate my Master 2 Data Management in a Digital World - Datasclae by Université de Versailles Saint-Quentin / Paris Saclay, I worked for the CEDRIC research laboratory based on Conservatoire Nationnal des Arts et Métiers at Paris during five mounths and half.
-Due to COVID-19 pandemic, I mostly worked at home.
-
+I worked for the CEDRIC research laboratory based on Conservatoire Nationnal des Arts et Métiers at Paris during five mounths and half.\par
+This work was for the laboratory's exploratory project "Desing and development of adaptables pervasives games to players' emotional states".
+The main project goal is to propose a pervasive game where player and his emotions are the heart of the game.
+To reach this goal, physiological sensors are used in order to detect and recognize player's emotional states and others sensors are placed in environment to know the global context.
+This report contains a state of the art and a first version of an ontology that I made. 
+It contains a solution to read physiological sensors' data too.
+This solution sends data to existing detection and recognition of emotional states algorithms.
+\vspace*{4cm}
+\begin{center}
+	\textbf{Avant-propos}
+\end{center}
+\hspace*{0.4cm}
+Dans le cadre de la validation du Master 2 Data Managment in a Digital World - Datascale, proposé par l'Université de Versailles Saint-Quentin / Paris Saclay, j'ai effectué un stage de cinq mois et demi du 16 Mars 2020 au 30 Septembre 2020.
+Le contexte particulier lié à la crise sanitaire m'a amené à travailler pour la majorité de mon stage en télétravail (du 16 Mars au 10 Septembre).\par
+Pour communiquer pendant cette période de travail à distance, nous utilisions les mails et nous avons organisé des réunions via Teams tous les 7 à 15 jours.
+Ces réunions duraient entre une demie heure et une heure.
+Ces sessions vidéos étaient l'occasion de faire le point sur l'avancement de mon travail et sur les tâches des jours à venir.
+Cependant, la barrière de l'écran a créé un réel manque de spontanéité lors de nos échanges.
+Pour ma part, je pense que les visio-conférences n'ont pas suffit pour échanger tout au long de cette période de télétravail. 
+Peut-être qu'une autre forme de communication, comme une messagerie instantanée, ajoutée à celle des réunions sur Teams, aurait pu réduire se manque de spontanéité.\par
+A l'issue de ce stage, je pense que les réunions en présentiel restent la meilleure manière de communiquer et de partager autour d'un projet.
 
 \newpage
 \renewcommand{\contentsname}{Table des matières}\tableofcontents
 
 \newpage
 \section{Introduction}
-	Depuis quelques années, les jeux pervasifs se multiplient sur le marché, proposant aux joueurs des conetnus très immersifs.
+	Depuis plusieurs années, les jeux pervasifs se multiplient sur le marché, proposant aux joueurs des conetnus très immersifs.
 	Le jeu pervasif (aussi appelé jeu omniprésent) est un genre de jeu qui mêle le monde physique et le monde numérique et rend floue cette frontière.
-	Comme le décrit Astic dans \cite{astic_2013}, le contexte dans le jeu pervasif est essentiel. 
+	% Comme le décrit Astic dans \cite{astic_2013},
+	Dans le jeu pervasif, le contexte est essentiel. 
 	Quatre facteurs sont mis en jeu : l'espace, le temps, la technologie et les rapports sociaux. 
 	L'espace du jeu pervasif est à la fois ancré dans le réel et à la fois virtuel.
 	Il convient alors que des ponts existent entre ces deux espaces. 
 	Ces ponts peuvnet se faire via des objets, des points géographiques, des personnes, etc. 
-	Le temps dans le jeu pervasif est calqué sur le temps réel mais il peut être utilisé de différentes manières. 
+	Le temps est calqué sur le temps réel mais il peut être utilisé de différentes manières. 
 	L'heure et/ou le jour peuvent influencer le comportement que doit adopter le joueur.
-	La technologie est également importante. Elle doit rester accessible au joueur, tant sur le plan pratique que sur le plan financier. La géolocalisation, les réseaux sans fil, etc. sont des technologies utilisées pour ce type de jeu.
-	Dans les jeux pervasifs, les joueurs, les spectateurs et les non-joueurs sont mélangé sur le même espace. Les joueurs n'ont pas de caractéristiques particulières pour se reconnaître.\par
-	Le projet exploratoire initié par trois enseignants-chercheurs du laboratoire CEDRIC du CNAM intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et son environnement. Le but est de concevoir un jeu capable de détecter et de reconnaître l'état émotionnel courant de joueur. Il faut aussi que le jeu puisse s'adapter à cet état en temps réel en proposant un événement spécifique. Cet événement devra soit maintenir le joueur dans l'état émotionnel courant, soit changer l'état émotionnel du joueur. Le choix de maintenir ou de changer l'état émotionnel du joueur devra se faire par rapport au context environnemental.
-	Cependant, la conception d'un tel jeu doit rester assez générique pour pouvoir l'appliquer à d'autres domaines dans de prochains projets.\par
+	La technologie est également importante. 
+	Elle doit rester accessible au joueur, tant sur le plan pratique que sur le plan financier. 
+	La géolocalisation, les réseaux sans fil, etc. sont des technologies utilisées pour ce type de jeu.
+	Dans les jeux pervasifs, les joueurs, les spectateurs et les non-joueurs sont mélangés sur le même espace. 
+	Les joueurs n'ont pas de caractéristiques particulières pour se reconnaître.%\par
+	Le jeu pervasif à un un impact social et culturel important.
+	Il favorise les récontres dans l'espace physique.
+	Il permet de découvrir de nouveaux endroits, de nouvelles choses et de s'enrichir culturellement.
+	Cependant, le jeu omniprésent ne met pas réellement le joueur au centre de jeu.\par
+	Le projet "" vise à meettre le joueur et ces émotions au centre du jeu.
+	C'est les émotions du joueurs qui influenceront les événements du jeu.
+	Pour pouvoir détecter et reconnaître les ététs émotionnels du joueur afin que le jeu s'y adapter et propose l'événement le plus adéquant, de multiples capteurs physiologiques doivent être utilisés.
+	Ces capteurs généèrent beaucoup de données qui doivent stockées et traités.
+	Ces données permettront à des a des algorithmes de reconnaître les états émotionnels.\par
+	Le but de ce travail a été de dresser le contour et d'affiner le conceptualisation d'un jeu pervasif adaptable aux états émotionnels du joueur. 
+	Dans ce rapport, nous nous sommes intéressés, d'une part, à l'adaptation de jeu selon le contexte émotionnel et d'autre part, à la gestion de données générées par les capteurs physiologiques.\par
+	Nous allons tout d'abord présenter l'état de l'art présentant différentes approches pour l'adaptation dynamique d'un jeu pervasif aux états émotionnels du joueur.
+	Nous aborderons l'expérience que nous avons mené lors d'un escape game et la notion d'expérience .
+	Puis nous présenterons une ontologie non-aboutie d'un jeu pervasif prenant en compte l'état émotionnel du joueur.
+	Enfin nous présenterons une solution pour la gestion de données provenant de capteurs physiologiques
+
 	J'ai rejoins ce projet à son commencement. 
 	Le but de mon stage est double : 
 	d'une part, je dois recueillir et synthétiser les éléments déjà existants dans la littérature scientifique et industrielle pour l'élaboration d'un tel jeu pervasif. 
 	Et d'autre part, je dois élaborer un modèle conceptuel afin de représenter les éléments qui permettront par la suite d'implémenter ce jeu particularisé.\par
 	Dans ce rapport, je vais tout d'abord présenter le laboratoire ainsi que l'équipe avec laquelle j'ai travaillé et son projet. Puis, je présenterai ...
+
+\section{Le projet}
+	Le projet exploratoire initié par trois enseignants-chercheurs du laboratoire CEDRIC du CNAM de intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et son environnement.\par
+	Le but est de concevoir un jeu omniprésent capable de détecter et de reconnaître dynamiquement l'état émotionnel courant de joueur. 
+	Il faut aussi que le jeu puisse s'adapter à cet état en temps réel en proposant un événement spécifique. 
+	Cet événement devra soit maintenir le joueur dans l'état émotionnel courant, soit changer l'état émotionnel du joueur. 
+	Le choix de maintenir ou de changer l'état émotionnel du joueur devra se faire par rapport au context environnemental.
+	Cependant, la conception d'un tel jeu doit rester assez générique pour pouvoir l'appliquer à d'autres domaines dans de prochains projets.\par 
+
+
 
 \section{Cadre du stage}
 	\subsection{Le laboratoire CEDRIC}
@@ -95,7 +161,7 @@ Due to COVID-19 pandemic, I mostly worked at home.
 		C'est-à-dire que le jeu doit pouvoir détecter et reconnaître l'état émotionnel courant du joueur,
 		Il doit également pouvoir proposer l'événement le plus adapter en réponse à cet état émotionnel.\par
 		Dans un premier temps, le but de ce projet est de formuler un modèle conceptuel du jeu pervasif adaptatif et dynamique basé sur les états émotionnels et sur le contexte environnent. 
-		Et dans un second temps, de développer une approche d'ingénerie situationnelle du système d'information pour ce type de jeu tout en restant générique pour des applications à de multiples domaines.\newline
+		Et dans un second temps, de développer une approche d'ingénerie situationnelle du système d'information pour ce type de jeu tout en restant générique pour des applications à de multiples domaines.
 	\subsection{Problématique}
 		L'adaptation aux émotions est un problème complexe à différents niveaux.
 		Il faut tout d'abord pouvoir détecter la présence d'un état émotionnel.
