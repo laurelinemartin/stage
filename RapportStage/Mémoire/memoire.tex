@@ -60,7 +60,7 @@ Sensors generate a lot of data that must be processed in real-time to a dynamic 
 This report contains a solution to ingest real-time physiological sensors' data.
 This solution sends data to existing detection and recognition of emotional states algorithms.
 This report contains a state of the art and a first version of an ontology that I made too. 
-\vspace*{4cm}
+\vspace*{3cm}
 \begin{center}
 	\textbf{Avant-propos}
 \end{center}
@@ -131,6 +131,36 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Pour répondre à cette problématique, nous avons besoin d'avantage de contexte sur des sujets connexes tels que : les méthodes de détections et de reconnaîssance des états émotionnes, la notion d'expérience utilisateur et le jeu pervasif.
 
 \section{Etat de l'art}
+	Notre état de l'art s'intéresse aux différentes méthodes déjà existantes dans la littérature scientifique permettant à différents types de jeux de s'adapter aux états émotionnel de leurs joueurs.\par
+	Dans l'état de l'art, nous proposons un cadre que nous avons conçu pour comparer des approches pour l'adaptation de jeux aux états émotionnels des joueurs. Le cadre s'appuie sur les critères suivants :
+	\begin{itemize}
+		\item Les méthodes pour la détection et pour la reconnaissance des états émotionnels
+		\begin{itemize}
+			\item Les capteurs utilisés
+			\item Les algorithmes utlisés pour la détection et/ou la méthode de l'état émotionnel
+		\end{itemize}
+		\item Les autres caractéristiques de l'utilisateur prises en compte par le jeu
+		\item Les méthodes d'adaptation d'un jeu au contexte de son utilisaeur
+		\begin{itemize}
+			\item Méthodes pour l'adaptation du jeu selon l'état émotionnel du joueur
+			\item Méthodes pour l'adaptation du jeu selon d'autres caractéristiques du joueur
+		\end{itemize}
+	\end{itemize}
+	L'état de l'art se trouve en Annexe \ref{ann:eda}.\par
+	De cette comparaison, il en ressort plusieurs questions et limites.
+	Tout d'abord, on remarque que seulement quelques états émotionnels sont raités dans les approches. 
+	Même si on peut imaginer que certains états émotionnels ne seront jamais expérimenté au cours du jeu que nous souhaitons concevoir, il semble tout de même important de pouvoir prendre en compte le plus grand nombre d'états émotionnels possible.
+	Sans quoi, nous le jeu pourrais mal s'adapter au joueur et impacter négativement son niveau d'intérêt pour le jeu.
+	Dans notre cas, nous utilisons des capteurs physiologiques de contact, c'est-à-dire collé au joueur, pour aquérir des données sur son état physiologique pour déduire son état émotionnel courant via des algorithmes.\par
+	On observe que certaines aproches font aussi cela en utilisants différents types d'algorithmes mais que d'autres utilises des modèles pour "prédire" l'état émotionnel courant du joueur.
+	Ce genre de méthode peut être intéressante car elle retire l'équipement de capteurs du joueur.
+	Cependant, ce type de méthode semble être moins précise car elle se base sur le principe que tous les joueurs ressentirons exactement le même état émotionnel lorsqu'ils se retrouveront dans le même cas de figure.
+	De plus, cela implique d'envisage absolument tous les états du jeu possibles, toutes les actions possibles et d'associer un état émotionnel pou chacque intersection.
+	Ce qui nous fait croire que l'utilisation de capteurs physiologiques, même si c'est plus contraignant pour le joueur, est plus pertinent.\par
+	D'autres critères peuvent être considérés pour augmenter la connaissance sur le joueur.
+	Ces caractéristiques peuvent être intéressantes à étudiant à la fois pour la détection et la reconnaissance de l'état émotionnel mais aussi pour l'enrichissement de la connaissance du contexte de l'environnement globale. 
+	Ces caractéristiques peuvent aussi bien s'appuyer sur un questionnaire de préférence rempli par l'utilisateur que sur la présence de capteurs dans l'environnement.
+
 
 \section{Expérience d'un Escapte Game}
 
