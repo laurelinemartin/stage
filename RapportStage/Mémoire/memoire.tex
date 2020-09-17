@@ -109,79 +109,32 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Puis nous présenterons une ontologie non-aboutie d'un jeu pervasif prenant en compte l'état émotionnel du joueur.
 	Enfin nous présenterons une solution pour la gestion de données provenant de capteurs physiologiques
 
-	J'ai rejoins ce projet à son commencement. 
-	Le but de mon stage est double : 
-	d'une part, je dois recueillir et synthétiser les éléments déjà existants dans la littérature scientifique et industrielle pour l'élaboration d'un tel jeu pervasif. 
-	Et d'autre part, je dois élaborer un modèle conceptuel afin de représenter les éléments qui permettront par la suite d'implémenter ce jeu particularisé.\par
-	Dans ce rapport, je vais tout d'abord présenter le laboratoire ainsi que l'équipe avec laquelle j'ai travaillé et son projet. Puis, je présenterai ...
-
 \section{Le projet}
-	Le projet exploratoire initié par trois enseignants-chercheurs du laboratoire CEDRIC du CNAM de intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et son environnement.\par
-	Le but est de concevoir un jeu omniprésent capable de détecter et de reconnaître dynamiquement l'état émotionnel courant de joueur. 
-	Il faut aussi que le jeu puisse s'adapter à cet état en temps réel en proposant un événement spécifique. 
-	Cet événement devra soit maintenir le joueur dans l'état émotionnel courant, soit changer l'état émotionnel du joueur. 
-	Le choix de maintenir ou de changer l'état émotionnel du joueur devra se faire par rapport au context environnemental.
-	Cependant, la conception d'un tel jeu doit rester assez générique pour pouvoir l'appliquer à d'autres domaines dans de prochains projets.\par 
-
-
-
-\section{Cadre du stage}
-	\subsection{Le laboratoire CEDRIC}
-		\begin{center}
-			\includegraphics[scale=0.45]{../include/logo-cedric.PNG}\\
-		\end{center}
-		\hspace*{0.4cm}
-		Pour ce stage, j'ai été accueillie par le laboratoire de Centre d'Etudes et De Recherche en Informatique et Communication (CEDRIC)\footnote{\href{http://cedric.cnam.fr/lab/accueil/labo/}{http://cedric.cnam.fr/lab/accueil/labo/}} au sein du Conservatoire National des Arts et Métiers (CNAM) de Paris\footnote{\href{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}}. 
-		Le laboratoire se situe au 2 rue Conte 75003 PARIS.\par
-		Le laboratoire CEDRIC est composé de huit équipes ayant des actions dans le domaine de l'informatique fondamentale et appliquée, ainsi que dans d'autres disciplines proches (statistiques, électronique,...).
+	Le projet exploratoire initié par trois enseignants-chercheurs du laboratoire CEDRIC du CNAM de intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et son environnement.
+	\subsection{Motivations et objectifs du projet}
+		Le but est de concevoir un jeu omniprésent capable de détecter et de reconnaître dynamiquement l'état émotionnel courant de joueur. 
+		Il faut aussi que le jeu puisse s'adapter à cet état en temps-réel en proposant un événement spécifique. 
+		Cet événement devra soit 
 		\begin{itemize}
-			\item L'équipe Données complexes, apprentissage et représentations (Vertigo) : Extraire de l'information et construire des méthodes de gestion de données basées sur le contenu pour des données massives audios, images et vidéos;
-			\item L'équipe Interactivité pour Lire et Jouer (ILJ) : Questions autour de l'interaction homme-machine concernant des activités telles que le jeu et la lecteure. Cette équipe mèle plusieurs disciplines (informatiques, psychologie, design, arts,...) afin de répondre aux études en cours qui concernent la modélisation de la difficulté dans les jeux, les méthodologies de game design inclusif,...;
-			\item L'équipe Ingénieries des Systèmes d'Information et de Décision (ISID) : Réunie autour de trois axes de recherche (les systèmes décisionnels, le web sémantique et la qualité des systèmes d'information) dans le but de concevoir des méthodes, des outils et des techniques	pour la conception et l'analyse de systèmes d'information et de décision dans tous les domaines;
-			\item L'équipe Traitement du signal et architectures électroniques (LAETITIA) : Concentrée sur trois axes de recherhe : traitement du signal pour les télécommunications (recherches en lien avec les réseaux cellulaires (5G/6G) et en lien avec les problématiques de couches physique pour les réseaux faible puissance longue portée pour l'IoT), sûreté de fonctionnement des sytèmes dynémiques (recherche en automatique) et implémentation temps-réel (mise en oeuvre des algorithmes proposés par l'équipe);
-			\item L'équipe Méthode Statistique de Data-Mining et Apprentissage (MSDMA) : Traitement de données et développement de modèles d'apprentissage statistiques dans le but d'extraire des information pour prise de décision;
-			\item L'équipe Optimisation Combinatoire (OC) : Rassemblée autour de deux axes : la programmation mathématique et applications ainsi que les graphes et optimisation;
-			\item L'équipe Réseaux et Objets Connectés (ROC) : Porte sur l'analyse et l'exploitation des nouvelles architectures réseaux et des systèmes liés à la virtualisation, à la mobilité et au développemnt des objets connectés;
-			\item L'équipe Systèmes Sûrs (SYS) : Spécialisation, conception, vérification et évaluation des systèmes. Pour cela, Les recherches se font autour de trois axes : l'axe typage, sémantique et preuve, l'axe architecture logiciel, architecture systèmes et ligne de produit et l'axe vérification  et évaluation de systèmes parallèles et asynchrones.
+			\item avoir tendance à provoquer le même état émotionnel que celui expérimenté par le joueur à cet instant afin de le maintenir dans cet état émotionnel,
+			\item avoir tendance à provoquer un autre état émotionnel que celui expérimenté par le joueur à cet instant dans le but de provoquer un changementd'état émotionnel.
 		\end{itemize}
-	\subsection{L'équipe}
-		L'équipe de recherche est constituée de trois enseignants-chercheurs du CNAM travaillant dans trois équipes différentes :
-		\begin{itemize}
-			\item Mme Elena KORNYSHOVA, Maître de conférences travaillant au sein de l'équipe \textit{Igénieurie des systèmes d'information et de décision - ISID}, 
-			\item Mme Viviane GAL, ingénieure travaillant au sein de l'équipe \textit{Interactivité pour lire et jouer - ILJ},
-			\item M Eric GRESSIER-SOUDAN, professeur des universités travaillant au sein de l'équipe \textit{Réseaux et Objets Connectés - ROC}
-		\end{itemize}
-		Tous m'ont encadré tout au long de mon stage.
-
-\section{Cadre du projet}
-	Le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" est un projet exploratoire du laboratoire CEDRIC.
-	\subsection{Motivation et objectif}
-		L'objectif gloabl de ce projet est de proposer une expérience de jeu pervasif unique où le joueur et ses émotions seraient au coeur du jeu. 
-		Pour cela, le jeu doit pouvoir s'adapter au joueur en fonction du contexte global. 
-		C'est-à-dire que le jeu doit pouvoir détecter et reconnaître l'état émotionnel courant du joueur,
-		Il doit également pouvoir proposer l'événement le plus adapter en réponse à cet état émotionnel.\par
-		Dans un premier temps, le but de ce projet est de formuler un modèle conceptuel du jeu pervasif adaptatif et dynamique basé sur les états émotionnels et sur le contexte environnent. 
-		Et dans un second temps, de développer une approche d'ingénerie situationnelle du système d'information pour ce type de jeu tout en restant générique pour des applications à de multiples domaines.
-	\subsection{Problématique}
-		L'adaptation aux émotions est un problème complexe à différents niveaux.
-		Il faut tout d'abord pouvoir détecter la présence d'un état émotionnel.
-		Déjà plusieurs questions ce poses comme par exemble quel outil utilisé pour la détection ?\par
-		Une fois détecter, il faut pouvoir reconnaître l'état émotionnel. Quelle approche utilisée ? Quel algorithme ? Pour quel(s) état(s) ?\par
-		Une fois que nous connaissons l'état émotionnel du joueur, il faut pouvoir lui proposer un événement adapté à cet état. Plusieurs problèmes se posent, faut-il proposer un événement allant dans le sens de l'état émotionnel actuel du joueur ? Ou au contraire, lui proposer un événement susptible de changer son étaté émotionnel ? Quels événements sont attachés à quels états émotionnels ?\par
-		De plus, tout cela doit pouvoir se faire en temps réel pour éviter un effet de décalage entre le joueur et le jeu qui pourrait distraire le joueur et le désintéressé du jeu.\par
+		Le choix de maintenir ou de changer l'état émotionnel du joueur devra se faire selon différents critères tels que le type de l'état émotionnel (positif ou négatif), l'avancement dans le jeu ou bien le contexte environnemental courant.\par
+		Toutefois, la conception d'un tel jeu devra rester assez générique pour pouvoir l'appliquer à d'autres domaines dans de prochains projets.
+	\subsection{La problématique}
+		Dans ce rapport, nous allons traiter principalement la problématique de la gestion des données générées par les capteurs physiologiques.
+		Pour atteindre notre objectif final, il est important de pouvoir utiliser les données des capteurs pour déterminer les états émotionnels afin que le jeu puisse s'y adapter. Cela pose une contrainte importante sur la gestion des données en temps-réel.
+		En effet, la réponse à l'état émotionnel courant du joueur doit être la plus immédiate possible afin de ne pas créer un sentiment de décalage entre le ressenti du joueur et l'adaptation du jeu.
+	\subsection{Sujets connexes}
+		Pour répondre à cette problématique, nous avons besoin d'avantage de contexte sur des sujets connexes tels que : les méthodes de détections et de reconnaîssance des états émotionnes, la notion d'expérience utilisateur et le jeu pervasif.
 
 \section{Etat de l'art}
-	\textit{Voir Annexe \ref{ann:eda}.}
 
-\section{Utilisation des données physiologiques}
-	\subsection{Capteurs}
-	\subsection{Middleware Oriented Messages (MOM)}
-		\subsection{Comparaison entre Apache Kafka et RabbitMQ}
-		\subsection{Choix de Apache Kafka}
-	\subsection{Prototype : utilisation de Kafka pour des données physiologiques}
+\section{Expérience d'un Escapte Game}
+
+\section{Prototypage}
 
 \section{Conclusion}
-
 
 
 
