@@ -8,16 +8,13 @@ import java.util.List;
 import au.com.bytecode.opencsv.CSVReader;
 
 /**
- * 
  * @author Laureline Martin
  * Classe DataCSVDAO permettant la lecture de données dans un fichier .CSV pour un objet Data
- *
  */
 public class DataCSVDAO implements DataDAO {
     private final static String RESOURCES_PATH = "src/main/resources/";
     private final static String FILE_NAME = "data_file.csv";
-    // @SuppressWarnings("unused")
-	// private final static char SEPARATOR = ';';
+	// private final static char SEPARATOR = ',';
     
     /*
      * Construteur vide
@@ -61,8 +58,8 @@ public class DataCSVDAO implements DataDAO {
     
     /**
      * Convertir une liste de données (String) en une liste d'objet Data
-     * @param donnees Une liste de chaîne de caractères contenant les données du fichier.CSV
-     * @return List<Data> Une liste d'objets Data.
+     * @param List<String[]> donnees  Une liste de chaîne de caractères contenant les données du fichier.CSV
+     * @return List<Data>  Une liste d'objets Data.
      */
     public List<Data> donneesToData(List<String[]> donnees){
     	List<Data> data = new ArrayList<Data>();
@@ -71,7 +68,10 @@ public class DataCSVDAO implements DataDAO {
         	double GSR = Double.parseDouble(donnee[2]);
         	double BT = Double.parseDouble(donnee[3]);
         	double HR = Double.parseDouble(donnee[4]);
-        	data.add(new Data(RR, GSR, HR, BT));
+        	double lat = Double.parseDouble(donnee[5]);
+        	double lon = Double.parseDouble(donnee[6]);
+        	boolean pres = Boolean.parseBoolean(donnee[7]);
+        	data.add(new Data(RR, GSR, HR, BT, lat, lon, pres));
         }
 		return data;
     }

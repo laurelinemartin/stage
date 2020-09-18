@@ -7,9 +7,7 @@ import com.IO.DataCSVDAO;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.Producer;
 import java.util.List;
-import java.util.Properties; 
-import java.util.concurrent.TimeUnit;
-// import java.util.Scanner;
+import java.util.Properties;
 
 /**
  * @author Laureline Martin
@@ -26,7 +24,7 @@ public class ProducerP {
 	  */
 	 public ProducerP(String topic) {
 		 configProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"localhost:9092");
-		 configProperties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,"org.apache.kafka.common.serialization.ByteArraySerializer");
+		 configProperties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,"org.apache.kafka.common.serialization.StringSerializer");
 		 configProperties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,"org.apache.kafka.common.serialization.StringSerializer");
 		 
 	      Producer<String, String> producer = new KafkaProducer
@@ -36,17 +34,24 @@ public class ProducerP {
 	      // System.out.println("Liste des eleves");
 	      for (Data d : data) {
 		        producer.send(new ProducerRecord<String, String>("Vector", 
-		        		  Data.toStringAll(d)));
-		        /* producer.send(new ProducerRecord<String, String>("GSR", 
+		        		  Data.toStringPhysio(d)));
+		        producer.send(new ProducerRecord<String, String>("GSR", 
 		        		  Data.toStringGSR(d)));
 		        producer.send(new ProducerRecord<String, String>("HR", 
 		        		  Data.toStringHR(d)));
 		        producer.send(new ProducerRecord<String, String>("BT", 
 		        		  Data.toStringBT(d)));
 		        producer.send(new ProducerRecord<String, String>("RR", 
-		        		  Data.toStringRR++(d)));*/
+		        		  Data.toStringRR(d)));
+		        producer.send(new ProducerRecord<String, String>("Lat", 
+		        		  Data.toStringLat(d)));
+		        producer.send(new ProducerRecord<String, String>("Lon", 
+		        		  Data.toStringLon(d)));
+		        producer.send(new ProducerRecord<String, String>("Pres",
+		        		Data.toStringPres(d)));
+		        // Simulation temps-réel
 		        try {
-					Thread.sleep(1000);
+					Thread.sleep(30);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
