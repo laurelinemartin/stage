@@ -26,6 +26,9 @@ public class App
             	ConsumerC cons = new ConsumerC(topic);
             }
     	}
+    	if(args[0].equals("-topic")) {
+    		ConsumerC cons = new ConsumerC(args[1]);
+    	}
     	else {
     		System.out.println("Pas de souscription\n");
     	}
