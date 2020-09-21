@@ -33,7 +33,6 @@
 	Mme. Elena KORNYSHOVA & Maître de conférences & Equipe \textit{Igénieurie des systèmes d'information et de décision - ISID}
 \end{tabular}
 
-
 \newpage
 \begin{center}
 	\textbf{Résumé :}
@@ -60,7 +59,7 @@ Sensors generate a lot of data that must be processed in real-time to a dynamic 
 This report contains a solution to ingest real-time physiological sensors' data.
 This solution sends data to existing detection and recognition of emotional states algorithms.
 This report contains a state of the art and a first version of an ontology that I made too. 
-\vspace*{3cm}
+\vspace*{3.6cm}
 \begin{center}
 	\textbf{Avant-propos}
 \end{center}
@@ -80,16 +79,16 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 
 \newpage
 \section{Introduction}
-	Depuis plusieurs années, les jeux pervasifs se multiplient sur le marché, proposant aux joueurs des conetnus très immersifs.
+	Depuis plusieurs années, les jeux pervasifs se multiplient sur le marché, proposant aux joueurs des contenus très immersifs.
 	Le jeu pervasif (aussi appelé jeu omniprésent) est un genre de jeu qui mêle le monde physique et le monde numérique et rend floue cette frontière.
 	% Comme le décrit Astic dans \cite{astic_2013},
 	Dans le jeu pervasif, le contexte est essentiel. 
 	Quatre facteurs sont mis en jeu : l'espace, le temps, la technologie et les rapports sociaux. 
 	L'espace du jeu pervasif est à la fois ancré dans le réel et à la fois virtuel.
 	Il convient alors que des ponts existent entre ces deux espaces. 
-	Ces ponts peuvnet se faire via des objets, des points géographiques, des personnes, etc. 
-	Le temps est calqué sur le temps réel mais il peut être utilisé de différentes manières. 
-	L'heure et/ou le jour peuvent influencer le comportement que doit adopter le joueur.
+	Ces ponts peuvent se faire via des objets, des points géographiques, des personnes, etc. 
+	Le temps est calqué sur le temps réel mais il peut être utilisé de différentes manières dans le jeu. 
+	Par exemple, l'heure et/ou le jour peuvent influencer le comportement que doit adopter le joueur.
 	La technologie est également importante. 
 	Elle doit rester accessible au joueur, tant sur le plan pratique que sur le plan financier. 
 	La géolocalisation, les réseaux sans fil, etc. sont des technologies utilisées pour ce type de jeu.
@@ -99,21 +98,21 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Il favorise les récontres dans l'espace physique.
 	Il permet de découvrir de nouveaux endroits, de nouvelles choses et de s'enrichir culturellement.
 	Cependant, le jeu omniprésent ne met pas réellement le joueur au centre de jeu.\par
-	Le projet "" vise à meettre le joueur et ces émotions au centre du jeu.
-	C'est les émotions du joueurs qui influenceront les événements du jeu.
-	Pour pouvoir détecter et reconnaître les ététs émotionnels du joueur afin que le jeu s'y adapter et propose l'événement le plus adéquant, de multiples capteurs physiologiques doivent être utilisés.
-	Ces capteurs généèrent beaucoup de données qui doivent stockées et traités.
-	Ces données permettront à des a des algorithmes de reconnaître les états émotionnels.\par
-	Le but de ce travail a été de dresser le contour et d'affiner le conceptualisation d'un jeu pervasif adaptable aux états émotionnels du joueur. 
-	Dans ce rapport, nous nous sommes intéressés, d'une part, à l'adaptation de jeu selon le contexte émotionnel et d'autre part, à la gestion de données générées par les capteurs physiologiques.\par
-	Nous allons tout d'abord présenter l'état de l'art présentant différentes approches pour l'adaptation dynamique d'un jeu pervasif aux états émotionnels du joueur.
-	Nous aborderons l'expérience que nous avons mené lors d'un escape game et la notion d'expérience .
-	Puis nous présenterons une ontologie non-aboutie d'un jeu pervasif prenant en compte l'état émotionnel du joueur.
-	Enfin nous présenterons une solution pour la gestion de données provenant de capteurs physiologiques
+	Le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à mettre le joueur et ces émotions au centre du jeu.
+	Ce seront les émotions du joueurs qui influenceront le jeu et ses événements.\par
+	Pour pouvoir détecter et reconnaître les états émotionnels du joueur afin que le jeu s'y adapte et propose l'événement le plus adéquat, de multiples capteurs physiologiques doivent être utilisés.
+	Ces capteurs généèrent beaucoup de données qui doivent être stockées et traitées.
+	Ces données permettront a des algorithmes de reconnaître les états émotionnels.\par
+	Le but de ce travail a été de dresser le contour et d'affiner la conceptualisation d'un jeu pervasif adaptable aux états émotionnels du joueur. 
+	Dans ce rapport, nous nous sommes intéressés, d'une part, à l'adaptation de jeux selon le contexte émotionnel et d'autre part, à la gestion de données générées par des capteurs physiologiques.\par
+	Dans un premier temps, nous allons présenter l'état de l'art comparant différentes approches pour l'adaptation dynamique d'un jeu pervasif aux états émotionnels du joueur. 
+	Nous aborderons ensuite l'expérience que nous avons menée lors d'un escape game et la notion d'expérience utilisateur.
+	Puis, nous présenterons une ontologie non-aboutie d'un jeu pervasif prenant en compte l'état émotionnel du joueur.
+	Enfin, nous expliquerons une solution que nous avons conçue pour la gestion de données en temps-réel provenant de capteurs physiologiques.
 
 \section{Le projet}
 	Le projet exploratoire initié par trois enseignants-chercheurs du laboratoire CEDRIC du CNAM de intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et son environnement.
-	\subsection{Motivations et objectifs du projet}
+	\subsection{Motivations et objectif du projet}
 		Le but est de concevoir un jeu omniprésent capable de détecter et de reconnaître dynamiquement l'état émotionnel courant de joueur. 
 		Il faut aussi que le jeu puisse s'adapter à cet état en temps-réel en proposant un événement spécifique. 
 		Cet événement devra soit 
@@ -159,12 +158,58 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Ce qui nous fait croire que l'utilisation de capteurs physiologiques, même si c'est plus contraignant pour le joueur, est plus pertinent.\par
 	D'autres critères peuvent être considérés pour augmenter la connaissance sur le joueur.
 	Ces caractéristiques peuvent être intéressantes à étudiant à la fois pour la détection et la reconnaissance de l'état émotionnel mais aussi pour l'enrichissement de la connaissance du contexte de l'environnement globale. 
-	Ces caractéristiques peuvent aussi bien s'appuyer sur un questionnaire de préférence rempli par l'utilisateur que sur la présence de capteurs dans l'environnement.
-
+	Ces caractéristiques peuvent aussi bien s'appuyer sur un questionnaire de préférence rempli par l'utilisateur que sur la présence de capteurs dans l'environnement.\par
+	Cet état de l'art, nous a permis d'avoir une vision de ce qui existait déjà en matière d'adaptation de jeux aux états émotionnels des joueurs.
+	Il aura aussi été l'occasion de proposer un cadre de comparaison pour ce sujet.
+	Grâce à cet état de l'art, j'ai pu comprendre quels sont les enjeux pour la réalisation de notre objectif.
 
 \section{Expérience d'un Escapte Game}
+	Nous avons expérimenté sur nous-même un escape game au Victory Escape Game\footnote{\href{http://www.victoryescapegame.fr/}{http://www.victoryescapegame.fr/}} situé au 37 rue des Gravilliers à Paris.
+	Cela a été l'occasion d'expérimenter ce genre de jeu très immersif.\par
+	Dans cette section, nous allons tout d'abord aborder la notion d'expérience utilisateur.
+	Puis nous ferons un retour sur cette expérience d'escape game et ce qu'elle a pu apporté sur le travail mené.
+	\subsection{Expérience Utilisateur}
+		L'expérience utilisateur (UX pour User eXperience) concrne le ressenti de l'utilisateur à chaque interaction lors de l'utilisation d'un service, d'un objet, d'un espace public, etc. 
+		L'UX désigne donc un vaste domaine d'application, cependant, dans le cadre de nos recherches, nous nous intéresserons à l'expérience utilisateur d'un jeu uniquement.\par
+		Lors de la conception d'un jeu, une expérience utilisateur unique ne peut pas être conçue.
+		L'UX concerne le ressenti du joueur par rapport à l'utilisabilité du jeu.
+		Cela signifie que l'UX est propre à chacun.
+		Elle inclut les émotions des joueurs, leurs préférences, leur perception, leurs réponses physiques et psychologiques, leurs comportements, etc.
+		Plusieurs méthodes pour une conception de "bonne" expérience utilisateurs existents.
+		Ces méthodes varient en ne cessent de s'agrandir et de s'affiner, mais nous pouvons les répertorier comme suit :
+		\begin{itemize}
+			\item 
+		\end{itemize}
+	\subsection{Expérimentation d'un Escape Game}
+		L'escape game se présentait sous la forme d'une mission d'une heure et demie.
+		Le but de cette mission était d'entrer dans un vaisseau désafecté pour emprunter un portail de téléportation.
+		Celui-ci étant cassé, il fallait récupérer des indices dissimulés dans les pièces pour le redémarrer.\par
+
+\section{Modélisation conceptuelle}
+	Le but de ce modèle conceptuel était de réprésenté chaque composant permettant la prise en compte des états émotionnels dans le jeu pervasif et de s'y adapter.
+	Ce modèle conceptue devait prendre la forme d'une ontologie sous la forme d'un diagramme de classe UML. 
+	Il fallait à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc.\par
+	L'ontologie que je présente dans ce rapport (Figure \ref{fig:modele}) n'est pas le résultat définitif.
+	\begin{figure}
+		\includegraphics[scale=0.5]{../include/ontologie_stage_cnam-v2-5.png}
+		\caption{Ontologie d'un jeu pervasif prenant en compte l'état émotionnel du joueur}
+		\label{fig:modele}
+	\end{figure}
+	En effet, âprès plusieurs essais et plusieurs versions différentes de l'ontologie, nous avons décidé de changer de point de vue et de revenir plus tard à l'ontologie.\par
+	Concernant l'ontologie, je peux en conclure que malgré cet échec d'aboutir à une ontologie livrable, j'ai pu d'une part mieux comprendre la problématique liée au projet et à la conception de modèle.
+	J'ai également appris à
 
 \section{Prototypage}
+	% Insérer le schéma de l'utilisation du prototype par rapport à l'objectif
+	\subsection{Technologie utilisée}
+		\subsubsection{Comparaison entre Apache Kafka et RabbitMQ}
+		\subsubsection{Positionnement}
+	\subsection{Le prototype}
+		\subsubsection{Schéma du prototype}
+		\subsubsection{Description du prototype}
+	\subsection{Intégrer le prototype aux travaux déjà menés}
+		\subsubsection{Les capteurs utilisés}
+		\subsubsection{Schéma de l'intégration du prototypes aux travaux déjà menés}
 
 \section{Conclusion}
 
@@ -172,7 +217,16 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 
 \newpage
 \appendix
-\section{Annexe 1 : Offre de stage}\label{app:annexe1}
+\section{Annexe 1 - Adaptation d’un jeu pervasif particularisé basée sur l'état émotionnel et sur les caractéristiques du joueur – État de l’art}\label{ann:eda}
+	\includepdf[pages=-]{../include/eda.pdf}
+
+%\section{Annexe 3 - Les classes en détail}\label{ann:detailclasse}
+%	\includepdf[pages=-]{../include/classes.pdf}
+
+\section{Annexe 2 - Synthèse comparative entre Kafka et RabbitMQ}\label{ann:kafkarabbitmq}
+\includepdf[pages=-]{../include/comparatifKafkaVSRabbitMQ.pdf}	
+
+\section{Annexe 3 : Offre de stage}\label{app:annexe1}
 	\textbf{Elaboration du modèle conceptuel des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs}\par
 	\medskip
 	\textbf{Contexte :}\newline
@@ -180,15 +234,6 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Le profil du joueur, y compris ses émotions, impacte la conception des jeux. Afin de proposer une meilleure expérience aux joueurs et de proposer un jeu particularisé, le jeu doit être adaptable en fonction du contexte global du joueur. Nous sommes dans une approche holistique qui combine à la fois l’individu et ses émotions, et, les influences de l’entourage qui va du bâtiment lui-même à l’atmosphère que dégage le lieu. Très peu de travaux ont été faits pour la conception et le développement des jeux adaptables dynamiquement. [3] formalise le concept des jeux appliqués aux visites de musées. Ce travail modélise le jeu de visite et propose un processus d’équilibrage entre la dimension ludique et la dimension non ludique (la visite) de ce type de jeux. [3] propose des patrons de mission qui servent d’éléments réutilisables lors de la conception des jeux, mais qui ne couvrent qu’une partie du processus de conception.\par
 	\textbf{Sujet :}\newline
 	Il s’agit dans ce stage d’élaborer un modèle conceptuel du jeu pervasif adaptable basé sur les émotions. Ce modèle, éventuellement réalisé sous forme d’une ontologie, doit couvrir toute la variété des facteurs qui impactent le jeu tels que le profil de l’utilisateur et ses données physiologiques exprimant son état émotionnel. Cette ontologie doit être construite de façon à ce qu’elle soit adaptée à la démarche situationnelle nécessaire pour la composition dynamique du jeu.
-
-\section{Annexe 2 - Adaptation d’un jeu pervasif particularisé basée sur l'état émotionnel et sur les caractéristiques du joueur – État de l’art}\label{ann:eda}
-	\includepdf[pages=-]{../include/eda.pdf}
-
-%\section{Annexe 3 - Les classes en détail}\label{ann:detailclasse}
-%	\includepdf[pages=-]{../include/classes.pdf}
-
-%\section{Annexe 4 - Synthèse comparative entre Kafka et RabbitMQ}%\label{ann:kafkarabbitmq}
-%	\includepdf[pages=-]{../include/comparatifKafkaVSRabbitMQ.pdf}	
 
 \bibliographystyle{abbrv}
 \bibliography{../include/biblio}
