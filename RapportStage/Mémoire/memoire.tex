@@ -3,7 +3,8 @@
 \usepackage[T1]{fontenc} 
 \usepackage[french]{babel}
 \usepackage{graphicx}
-\usepackage{subfigure}
+%\usepackage{subfigure}
+\usepackage{subcaption}
 \usepackage[table]{xcolor}
 \usepackage{geometry}
 \usepackage{hyperref}
@@ -183,27 +184,149 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	\subsection{Expérimentation d'un Escape Game}
 		L'escape game se présentait sous la forme d'une mission d'une heure et demie.
 		Le but de cette mission était d'entrer dans un vaisseau désafecté pour emprunter un portail de téléportation.
-		Celui-ci étant cassé, il fallait récupérer des indices dissimulés dans les pièces pour le redémarrer.\par
+		Celui-ci étant cassé, il fallait récupérer des indices dissimulés dans les pièces pour le redémarrer.
 
 \section{Modélisation conceptuelle}
-	Le but de ce modèle conceptuel était de réprésenté chaque composant permettant la prise en compte des états émotionnels dans le jeu pervasif et de s'y adapter.
-	Ce modèle conceptue devait prendre la forme d'une ontologie sous la forme d'un diagramme de classe UML. 
-	Il fallait à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc.\par
-	L'ontologie que je présente dans ce rapport (Figure \ref{fig:modele}) n'est pas le résultat définitif.
-	\begin{figure}
-		\includegraphics[scale=0.5]{../include/ontologie_stage_cnam-v2-5.png}
-		\caption{Ontologie d'un jeu pervasif prenant en compte l'état émotionnel du joueur}
-		\label{fig:modele}
-	\end{figure}
-	En effet, âprès plusieurs essais et plusieurs versions différentes de l'ontologie, nous avons décidé de changer de point de vue et de revenir plus tard à l'ontologie.\par
-	Concernant l'ontologie, je peux en conclure que malgré cet échec d'aboutir à une ontologie livrable, j'ai pu d'une part mieux comprendre la problématique liée au projet et à la conception de modèle.
-	J'ai également appris à
+	Dans cette section, nous allons présenter un modèle conceptuel qui n'a pas pu être terminé. 
+	Le but de ce modèle conceptuel était de réprésenter chaque composant permettant la prise en compte des états émotionnels dans le jeu pervasif et de s'y adapter. 
+	Il fallait à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc. 
+	Ce modèle devait être représenté sous la forme d'une ontologie en utilisant le format standard du diagramme de classes UML.
+	\subsection{L'ontologie}
+		Le diagramme de la Figure \ref{fig:modele} représente notre modélisation pour les différents éléments qui composent un jeu pervasif adaptable aux états émotionnels du joueur. 
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.5]{../include/ontologie_stage_cnam-v2-5.png}
+			\caption{Ontologie d'un jeu pervasif prenant en compte l'état émotionnel du joueur}
+			\label{fig:modele}
+		\end{figure}
+		Pour chaque classe, il existe une description détaillée en Annexe \ref{ann:detailclasses}
+		.\par
+		Dans ce modèle, on voit qu'il existe une relaion entre \texttt{Utilisateur}, \texttt{Jeu} et \texttt{Etat Emotionnel} que j'aurais pu représenter par une liaison ternaire.
+		Cependadant, j'ai préféré décomposer cette association en trois relations binaires dans un soucis de clareté. 
+		Une autre amélioration possible à cette représentation est celle de la relation entre \texttt{Jeu} et \texttt{Modèle Utilisateur}. 
+		Avec du recul sur mon travail, je pense qu'il aurait été possible de soit fusionner les deux classes (puisqu'il s'agit d'une relation $1^* - 1$) soit de transformer la classe \texttt{Modèle Utilisateur} en une ou plusieurs autre(s) classe(s).\par
+		L'ontologie que je présente dans ce rapport à la Figure \ref{fig:modele} n'est donc pas le résultat définitif.
+		En effet, après plusieurs essais et plusieurs versions différentes de l'ontologie, nous avons décidé de changer de point de vue et de revenir, si possible, plus tard à l'ontologie.
+	\subsection{Bilan}
+		Le bilan que je tire de cet exercice de modélisation est que malgré cet échec d'aboutir à une ontologie livrable, j'ai pu d'une part mieux comprendre la problématique liée au projet et à la conception de modèle.
+		Et d'autre part, j'ai pu me rendre compte de l'étendue des difficultés qu'il était possible de rencontrer dans ce genre d'exercice.
+		Par exemple, lors de la conception de cette ontologie, je me suis retrouvée à mélanger plusieurs niveaux d'abstraction, ce qui la rendait peu compréhensible et invalide. 
+		Je me suis aussi rendu compte qu'il fallait beaucoup de patience et d'entraînement pour concevoir un tel modèle. 
+		Aujourd'hui, je comprends mieux les enjeux de tels modèles. 
+		A l'avenir je pourrais réaliser des modèles de meilleure qualité grpace à cette expérience.\par
+		La réalisation de cette ontologie nous a permis de réorienté notre objectif de recherche vers l'implémentation d'une solution pour la gestion des données générées par les capteurs physiologiques.
 
 \section{Prototypage}
+	Pour la détection et la reconnaissance de l'état émotionnel, nous utilisons des capteurs physiologiques de contacts.
+	Ces capteurs prennent en continue des mesures pour différentes métriques physiologiques telles que la température du corps, le rythme cardiaque, la réponse électrodermale ou encore le rythme respiratoire.
+	Ces capteurs génèrent beaucoup de données.
+	De plus, il s'agit de données en temps-réel qui doivent être traitées le plus rapidement possible pour reconnaître l'état émotionnel de la personne et ainsi le jeu pourra s'adapter avec un minimum de la latence.
+	Une trop grande latence pourrait engendrer un effet de décalage désagréable pour le joueur entre ce qu'il ressent et l'adaptation du jeu.\par
+	Dans cette section, nous allons présenter le prototype de notre solution pour gérer les données temps-réel des capteurs.
+	Les capteurs physiologiques et les algorithmes de reconnaîssance existent déjà, ils proviennent de précédents travaux effectués au laboratoire.
+	Ici nous cherchons à gérer au mieux les données en temps-réel en créant un minimun de latence entre la mesure par le capteur et la reconnaissance de l'état émotionnel.
 	% Insérer le schéma de l'utilisation du prototype par rapport à l'objectif
 	\subsection{Technologie utilisée}
+		Pour notre prototype nous avons besoin de gérer efficacement des données continues et en temps-réel.
+		Il nous faut donc trouver une technologie capable de traiter efficacement ce genre de données pour les transmettre aux algorithmes de détection et de reconnaissance de l'état émotionnel;
 		\subsubsection{Comparaison entre Apache Kafka et RabbitMQ}
+			Notre choix s'est porté sur les Middleware Orientés Messages (MOM).
+			Ces middleware ont pour objectif de transmettre un message d'un utilisateur à un autre.\par
+			Nous avons sélectionné deux middlewares libres, simple d'utilisation et avec une communauté active.
+			Il s'agit d'Apache Kafka et de RabbitMQ.
+			Avan de commencer la synthèse comparative entre ces deux middlewares,  introduisons les points communs entre Apache Kafka et RabbitMQ :
+			\begin{itemize}
+				\item Middleware orienté message (MOM);
+				\item Même ordre de grandeur de message consommable par seconde (un peu + côté Kafka);
+				\item Open source;
+				\item Modèle d’intégration : Publish / Subscribe (+ point-to-point côté RabbitMQ).
+			\end{itemize}
+			Apache Kafka et RabbitMQ sont utilisables dans les domaines d'application suivants :
+			\begin{itemize}
+				\item Collecte d’information pour l'Internet des Objets (IoT);
+				\item Transmission de métriques;
+				\item Envoi de notifications, de mails, de messages instantanées;
+				\item Transmission d’actions utilisateurs;
+				\item Actions compte à compte bancaire (transactions).
+			\end{itemize}\par
+			Maintenant que nous connaissons les points communs entre les deux MOM, nous pouvons en faire une comparaison synthétique.\par
+			Dans ce comparatif, nous traitons des principales différences des deux middlewares (Tableau \ref{tab:comparatifinfos}), de leurs architectures (Tableau \ref{tab:comparatifarchi} et Figure \ref{fig:comparatifarchi}), de leurs approches (Tableau \ref{tab:comparatifapp}, des caractéristiques des messages (Tableau \ref{tab:comparaitfmess}) et de la préférence d'utilisation de l'un ou de l'autre MOM selon le cas d'usage (Tableau \ref{tab:comparatifpref}).\newline
+			\begin{table}
+				\begin{tabular}{|p{8cm}|p{8cm}|}
+					\hline
+					\rowcolor{lightgray} RabbitMQ & Kafka\\\hline
+					Depuis 2007 & Depuis 2011\\\hline
+					Destiné au début : composante primaire dans les messageries SOA ; Maintenant : Flux & Pour le scenario de flux\\\hline
+					Structure de données : FIFO; Optimal quand les messages sont livrés rapidement & Structure de données : Log (le consommateur gère l’offset) Possibilité de relire des données, les messages sont conservés selon un temps paramétré\\\hline
+					Inclus les protocoles : MQTT, AMQP, STQMP; Facilité pour la communication avec d’autres solutions implémentant AMQP. & Routage simple (clé de routage). Les messages sont sur des « topics » (les consommateurs s’abonnent aux topics voulus)\\\hline
+					Mode de délivrance des messages : \textit{at least once} & Modes de délivrance des messages : \textit{at least once et exactly once}\\\hline
+				\end{tabular}
+				\caption{Principales différences / informations générales}
+				\label{tab:comparatifinfos}
+			\end{table}
+			\medskip
+			\begin{table}
+				\begin{tabular}{|p{4cm}|p{6cm}|p{6cm}|}
+					\rowcolor{lightgray} & RabbitMQ & Kafka\\
+					Stocakge & Dans une base Mnésia. Quand saturation sur la base Mnésia, stockage sur disque. & Sur disque, dans des fichiers (tailles équiv.), logs. Cluster de servers, dans des topics (Durable). \\\hline
+					Routage & Flexible. & Basique.\\\hline
+					Structure de données & File FIFO. & Log.\\\hline
+				\end{tabular}
+				\caption{Architectures}
+				\label{tab:comparatifarchi}
+			\end{table}
+			\begin{figure}[ht]
+				\begin{subfigure}{0.6\textwidth}
+					\hspace*{-2cm}
+					\includegraphics[scale=0.5]{../include/RabbitMQ.PNG}
+					\caption{Schéma de l'architecture de RabbitMQ}
+					\label{fig:archirabbitmq}
+				\end{subfigure}
+				\begin{subfigure}{0.5\textwidth}
+					\includegraphics[scale=0.55]{../include/Kafka.PNG}
+					\caption{Schéma de l'architecture de Kafka}
+				\end{subfigure}
+				\caption{Schémas des architectures}
+				\label{fig:comparatifarchi}
+			\end{figure}
+			\medskip
+			\begin{table}
+				\begin{tabular}{|p{8cm}|p{8cm}|}
+				\hline
+				\rowcolor{lightgray} RabbitMQ & Kafka\\\hline
+				\begin{center} \textbf{Approche Push-based :}\end{center} & \begin{center} \textbf{Approche Pull-based :}\end{center}\\\hline
+				Distribuer les messages individuellement et rapidement. & Consommateur récupère les lots souhaités, à partir d’un offset spécifique ; Mise en commun longue.\\\hline
+				\end{tabular}
+				\caption{Approches}
+				\label{tab:comparatifapp}
+			\end{table}
+			\medskip
+			\begin{table}
+				\begin{tabular}{|p{4cm}|p{6cm}|p{6cm}|}
+					\hline
+					\rowcolor{lightgray} & RabbitMQ & Kafka\\\hline
+					Maintien de l'ordre & Dans une même chaîne (TCP multiplexée) & Dans une même partition\\\hline
+					Temps de vie & Jusqu’à que le message soit onsommé (et retour du onsommateur reçu & Délai paramétré (ou si saturation atteinte)\\\hline
+					Priorités & Possibilité de définir un degré de priorité des messages & - \\\hline
+				\end{tabular}
+				\caption{Structure des messages}
+				\label{tab:comparatifmess}
+			\end{table}
+			\medskip
+			\begin{table}
+				\begin{tabular}{|p{8cm}|p{8cm}|}
+				\hline
+				RabbitMQ & Kafka\\\hline
+				Besoin de routages élaborés; Utiliser des protocoles STOMP, MQTT ou AMQP...; Suivi de métriques opérationnelles & Besoin de routages simples ; Conserver (sur temps donné) et relire des messages; Mise à l’échelle; Capture d’évènement induisant un changement d’état (dans une base de données ou autre); Besoins transactionnels ; Traiter les données en parallèle.\\\hline
+				\end{tabular}
+				\caption{A utiliser de préférence selon le cas d'utilisation}
+				\label{tab:comparatifpref}
+			\end{table}
+			La sitographie pour la construction de cette synthèse comparative se trouve en Annexe \ref{ann:kafkarabbitmq}.
 		\subsubsection{Positionnement}
+			Après mes recherches et la rédaction de la synthèse comparative, j'ai décidé d'utiliser Apache Kafka comme Middleware Orienté Message pour le prototypage de notre solution.
+			En effet, Apache Kafka semble être plus indiqué dans le traitement des données venant capteurs.
+
 	\subsection{Le prototype}
 		\subsubsection{Schéma du prototype}
 		\subsubsection{Description du prototype}
@@ -217,16 +340,22 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 
 \newpage
 \appendix
-\section{Annexe 1 - Adaptation d’un jeu pervasif particularisé basée sur l'état émotionnel et sur les caractéristiques du joueur – État de l’art}\label{ann:eda}
+\section{Adaptation d’un jeu pervasif particularisé basée sur l'état émotionnel et sur les caractéristiques du joueur – État de l’art}\label{ann:eda}
 	\includepdf[pages=-]{../include/eda.pdf}
 
-%\section{Annexe 3 - Les classes en détail}\label{ann:detailclasse}
-%	\includepdf[pages=-]{../include/classes.pdf}
+\section{Description détaillée des classes de l'ontologie}\label{ann:detailclasses}
+	\includepdf[pages=-]{../include/descriptionClassesOntologie.pdf}
 
-\section{Annexe 2 - Synthèse comparative entre Kafka et RabbitMQ}\label{ann:kafkarabbitmq}
-\includepdf[pages=-]{../include/comparatifKafkaVSRabbitMQ.pdf}	
+\section{Sitographie pour la construction de la synthèse comparative entre Kafka et RabbitMQ}\label{ann:kafkarabbitmq}
+	\hspace*{-0.5cm}\href{https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-
+	case}{https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-
+	case} \textit{[en]} \medskip\newline
+	\href{https://blog.ippon.fr/2018/03/27/comparatif-rabbitmq-kafka/}{https://blog.ippon.fr/2018/03/27/comparatif-rabbitmq-kafka/} \textit{[fr]}\medskip\newline
+	\href{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm}{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm} \textit{[en]}\medskip\newline
+	\href{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka}{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka} \textit{[en]}
+	%\includepdf[pages=-]{../include/comparatifKafkaVSRabbitMQ.pdf}	
 
-\section{Annexe 3 : Offre de stage}\label{app:annexe1}
+\section{Offre de stage}\label{app:annexe1}
 	\textbf{Elaboration du modèle conceptuel des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs}\par
 	\medskip
 	\textbf{Contexte :}\newline
