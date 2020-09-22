@@ -316,7 +316,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			\begin{table}
 				\begin{tabular}{|p{8cm}|p{8cm}|}
 				\hline
-				RabbitMQ & Kafka\\\hline
+				\rowcolor{lightgray} RabbitMQ & Kafka\\\hline
 				Besoin de routages élaborés; Utiliser des protocoles STOMP, MQTT ou AMQP...; Suivi de métriques opérationnelles & Besoin de routages simples ; Conserver (sur temps donné) et relire des messages; Mise à l’échelle; Capture d’évènement induisant un changement d’état (dans une base de données ou autre); Besoins transactionnels ; Traiter les données en parallèle.\\\hline
 				\end{tabular}
 				\caption{A utiliser de préférence selon le cas d'utilisation}
@@ -325,14 +325,34 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			La sitographie pour la construction de cette synthèse comparative se trouve en Annexe \ref{ann:kafkarabbitmq}.
 		\subsubsection{Positionnement}
 			Après mes recherches et la rédaction de la synthèse comparative, j'ai décidé d'utiliser Apache Kafka comme Middleware Orienté Message pour le prototypage de notre solution.
-			En effet, Apache Kafka semble être plus indiqué dans le traitement des données venant capteurs.
-
+			Apache Kafka m'a semblé être plus indiqué dans le traitement des données venant capteurs.
+			Ce middleware présente une structue pour les messages en log.
+			Ce qui est plus intéressant pour notre cas qu'une structure FIFO (First In, First Out).
+			En effet, la structure FIFO nous "oblige" à récupérer les messages rapidement dans la queue des messages, alors que le log nous laisse plus de temps.
+			Ce qui correspond plus à ce que l'on cherche puisque nous n'allons pas consommer toutes les données pour détecter un état émotionnels, mais seulement à certains moments (lorsqu'un changement significatifs sera détecté).
+			De plus, les données sont organisées dans des "topics".
+			Il est donc possible de récupérer que certaines données en s'abonnant aux topics désirés.
+			Cela nous sera très utilie pour de futurs travaux qui impliquerons d'autres capteurs que les capteurs physiologiques pour la reconnaissance des états émotionnels.
 	\subsection{Le prototype}
+		Nous allons présenter le prototype de la solution que nous avons implémenté pour répondre aux besoins de gérer des données en temps-réel.
 		\subsubsection{Schéma du prototype}
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.6]{../include/schema-synt-prototype.png}
+				\caption{Schéma synthétique de l'architecture du prototype}
+				\label{fig:archiproto}
+			\end{figure}
 		\subsubsection{Description du prototype}
 	\subsection{Intégrer le prototype aux travaux déjà menés}
 		\subsubsection{Les capteurs utilisés}
+			Capteurs de chez TEA ergo. Capteurs Captiv.
 		\subsubsection{Schéma de l'intégration du prototypes aux travaux déjà menés}
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.5]{../include/schema-global.png}
+				\caption{Schéma de l'architecture du prototype intégré au projet}
+				\label{fig:archiglobale}
+			\end{figure}
 
 \section{Conclusion}
 
