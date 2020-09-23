@@ -3,7 +3,6 @@
 \usepackage[T1]{fontenc} 
 \usepackage[french]{babel}
 \usepackage{graphicx}
-%\usepackage{subfigure}
 \usepackage{subcaption}
 \usepackage[table]{xcolor}
 \usepackage{geometry}
@@ -333,28 +332,26 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			De plus, les données sont organisées dans des "topics".
 			Il est donc possible de récupérer que certaines données en s'abonnant aux topics désirés.
 			Cela nous sera très utilie pour de futurs travaux qui impliquerons d'autres capteurs que les capteurs physiologiques pour la reconnaissance des états émotionnels.
-	\subsection{Le prototype}
+	\subsection{Description du prototype}
 		Dans cette partie, nous allons présenter le prototype de la solution que nous avons implémenté pour répondre aux besoins de gérer des données en temps-réel.\par
 		Dans un premier temps nous allons présenter le prototype et son architecture.
 		Et dans un second temps, nous montrerons comment nous intégrons le prototype aux travaux déjà menés pour ce projet.\par
-%		\subsubsection{Schéma du prototype}
-			\begin{figure}
-				\centering
-				\includegraphics[scale=0.6]{../include/schema-synt-prototype.png}
-				\caption{Schéma synthétique de l'architecture du prototype}
-				\label{fig:archiproto}
-			\end{figure}
-			La Figure \ref{fig:archiproto} montre l'architecture de notre prototype.
-			Pour le moement, nous simulons les données des capteurs.
-			Ces données ont été acquisent lors d'une session de jeu vidéo à partir de capteurs physiologiques (capteurs décrits dans la Section \ref{sec:capteurs}.
-			Elles ont été enregistrés dans un fichier au format CSV.\par
-			Les données sont lus puis envoyées au Producteur.
-			Le Producteur ajoute à chaque topic la ou les données qui correspondent.
-			Par exemple, les données qui corresponde au Rythme Cardiaque sont envoyés sur le topic "HR" (pour Heart Rate).\par
-			Les données peuvent ensuite être consommées par un consommateur qui choisit le topic auquel il s'abonne.
-			Les données sont affichés dans un terminal au fur et à mesure qu'elles sont produitent.
-			Le consommateur attend toujours de nouvelles données à consommer.
-%		\subsubsection{Description du prototype}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.6]{../include/schema-synt-prototype.png}
+			\caption{Schéma synthétique de l'architecture du prototype}
+			\label{fig:archiproto}
+		\end{figure}
+		La Figure \ref{fig:archiproto} montre l'architecture de notre prototype.
+		Pour le moement, nous simulons les données des capteurs.
+		Ces données ont été acquisent lors d'une session de jeu vidéo à partir de capteurs physiologiques (capteurs décrits dans la Section \ref{sec:capteurs}.
+		Elles ont été enregistrés dans un fichier au format CSV.\par
+		Les données sont lus puis envoyées au Producteur.
+		Le Producteur ajoute à chaque topic la ou les données qui correspondent.
+		Par exemple, les données qui corresponde au Rythme Cardiaque sont envoyés sur le topic "HR" (pour Heart Rate).\par
+		Les données peuvent ensuite être consommées par un consommateur qui choisit le topic auquel il s'abonne.
+		Les données sont affichés dans un terminal au fur et à mesure qu'elles sont produitent.
+		Le consommateur attend toujours de nouvelles données à consommer.
 	\subsection{Intégrer le prototype aux travaux déjà menés}
 		Des travaux antérieurs ont été menés pour le projet globale.
 		Ces tavaux concernent en particulier la détection et la reoconnaissance d'états émotionnels à partir de capteurs physiologiques.
@@ -384,9 +381,43 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Comme il existe déjà un algorithme qui permet de lire les données des capteurs et de les afficher sur un terminal, nous l'utilisions.
 			Le Connecteur que nous utilisons permet de récupérer des données sur un terminal et de les transmettre au Producteur sous la bonne forme pour être envoyées dans les topics.
 			Les topics sont ensuite consommés par les algorithmes de reconnaissance de l'état émotionnel.
+	\subsection{Validation}
+		L'objectif que nous avions pour ce prototype était de pouvoir récupérer des données provenant de capteurs et de les envoyés vers les algorithmes de détection et de reconnaissance d'états émotionnels\par
+		Dans ce rapport, nous prposons une solutiion que nous avons implémenté.
+		Elle est actuellement testée avec un fichier au format .CSV contenant les données de quatre capteurs physiologiques : la fréquence respiratoire, la réponse électrodermale, la température corporelle et la fréquence cardiaque.
+		Chaque ligne de ce fichier est envoyée dans les topics avec 30 milisecondes (ms) d'écart.
+		Ces 30ms correspondent au temps moyen d'acquisition entre deux données.
+		Cela nous donne une impression de temps-réel.
+		Les données sont ensuite lues par un consommateur qui les affiche au fur et à mesure dans un terminal.\par
+		Du point de vue de l'objectif que nous avions fixé pour ce prototype, nous pouvons dire que cette implémentation correspond à ce que nous voulions réaliser.
+		Les données sont bien lues et renvoyées pour être analyses.
 			
 \section{Conclusion}
-
+	L'objectif principal de ce projet est réaliser un jeu pervasif adaptable dynamiquement aux états émotionnels du joueur.
+	Pour ce faire, il nous utilisons des capteurs physiologiques qui génèrent des données analysées par des algorithmes pour la détection et la reconnaissance e l'état émotionnel.
+	Une fois l'état émotionnel reconnu, le jeu peut alors proposer au joueur l'événement le plus adéquat pour garantir le meilleur divertissement possible aux joueurs.
+	Avec cet objectif en tête, nous avons chercher un moyen efficace de gérer les données fournies en continu par les capteurs.\par
+	Dans ce rapport, nous avons présenté plusieurs travaux qui ont été mené tout au long de ce travail.
+	Tout d'abord nous avons fait l'état de l'art des méthodes permettant la détection et la reconnaissance d'états émotionnels dans le domaines des jeux.
+	Puis, nous avons aborder la notion d'expérience utilisateur et l'expérimentation que nous avons mené lors d'un escape game.
+	Ensuite, nous avons présenté notre première tentative de solution sous la forme d'un modèle conceptuel pour représenter l'adaptation d'un jeu pervasif aux états émotionnel d'un joueur.
+	Enfin nous avons présenté le prototype de notre solution pour la gestion des données provenant de capteurs physiologiques pour que ces données soient utilisées avec des algorithmes déjà existants.\par
+	Cette dernière solution que nous avons détaillée dans ce rapport a été implémenté permet de lire et d'envoyer en temps-réel (avec le minimum de latence possible) les données sur des topics.
+	Durant ce travail de près de six mois, j'ai beaucoup appris.
+	J'ai appris une certaine rigueur.
+	Une rigueur tout d'abord dans mes lectures.
+	Au fil des lectures que j'ai faites, j'ai noté de plus en plus de détails dans mes résumés pour éviter d'avoir à y revenir trop souvent,
+	Une rigueur au niveau de la rédaction.
+	J'ai appris a être très rigoureuse sur la forme de mes rédactions.\par
+	Ce travail a été l'occasion d'affiner les contour du projet.
+	Plusieurs perspectives sont a envisager.
+	Tout d'abord il faudrait mettre à l'épreuve notre prototype directement avec nos capteurs.
+	Si les tests avec les capteurs sont satisfaisants, alors il sera possible de passer à l'étape de la conception d'algorithmes pour l'adaptation selon l'état émotionnel courant du joueur.
+	Il faudra par la suite développer d'autres aspects lié au jeu lui-même.
+	Comme par exemple la jouabilité ou le game design.
+	Un objectif de ce projet est d'utiliser ce jeu à d'autres domaines d'applications que celui du divertissement.
+	On peut imaginer utiliser ce jeu pour enseigner des émotions par exemple.
+	Il faudra donc garder un aspect très générique de ce jeu.
 
 
 \newpage
