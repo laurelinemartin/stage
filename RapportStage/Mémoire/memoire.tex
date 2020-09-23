@@ -250,7 +250,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\item Actions compte à compte bancaire (transactions).
 			\end{itemize}\par
 			Maintenant que nous connaissons les points communs entre les deux MOM, nous pouvons en faire une comparaison synthétique.\par
-			Dans ce comparatif, nous traitons des principales différences des deux middlewares (Tableau \ref{tab:comparatifinfos}), de leurs architectures (Tableau \ref{tab:comparatifarchi} et Figure \ref{fig:comparatifarchi}), de leurs approches (Tableau \ref{tab:comparatifapp}, des caractéristiques des messages (Tableau \ref{tab:comparaitfmess}) et de la préférence d'utilisation de l'un ou de l'autre MOM selon le cas d'usage (Tableau \ref{tab:comparatifpref}).\newline
+			Dans ce comparatif, nous traitons des principales différences des deux middlewares (Tableau \ref{tab:comparatifinfos}), de leurs architectures (Tableau \ref{tab:comparatifarchi} et Figure \ref{fig:comparatifarchi}), de leurs approches (Tableau \ref{tab:comparatifapp}, des caractéristiques des messages (Tableau \ref{tab:comparatifmess}) et de la préférence d'utilisation de l'un ou de l'autre MOM selon le cas d'usage (Tableau \ref{tab:comparatifpref}).\newline
 			\begin{table}
 				\begin{tabular}{|p{8cm}|p{8cm}|}
 					\hline
@@ -328,24 +328,51 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Apache Kafka m'a semblé être plus indiqué dans le traitement des données venant capteurs.
 			Ce middleware présente une structue pour les messages en log.
 			Ce qui est plus intéressant pour notre cas qu'une structure FIFO (First In, First Out).
-			En effet, la structure FIFO nous "oblige" à récupérer les messages rapidement dans la queue des messages, alors que le log nous laisse plus de temps.
-			Ce qui correspond plus à ce que l'on cherche puisque nous n'allons pas consommer toutes les données pour détecter un état émotionnels, mais seulement à certains moments (lorsqu'un changement significatifs sera détecté).
+			En effet, la structure FIFO nous "oblige" à récupérer et à consommer les messages rapidement dans la queue des messages, alors que le log nous laisse plus de temps.
+			Ce qui correspond plus à ce que l'on cherche puisque nous n'allons pas consommer toutes les données pour détecter un état émotionnel, mais seulement à certains moments (lorsqu'un changement significatif sera détecté).
 			De plus, les données sont organisées dans des "topics".
 			Il est donc possible de récupérer que certaines données en s'abonnant aux topics désirés.
 			Cela nous sera très utilie pour de futurs travaux qui impliquerons d'autres capteurs que les capteurs physiologiques pour la reconnaissance des états émotionnels.
 	\subsection{Le prototype}
-		Nous allons présenter le prototype de la solution que nous avons implémenté pour répondre aux besoins de gérer des données en temps-réel.
-		\subsubsection{Schéma du prototype}
+		Dans cette partie, nous allons présenter le prototype de la solution que nous avons implémenté pour répondre aux besoins de gérer des données en temps-réel.\par
+		Dans un premier temps nous allons présenter le prototype et son architecture.
+		Et dans un second temps, nous montrerons comment nous intégrons le prototype aux travaux déjà menés pour ce projet.\par
+%		\subsubsection{Schéma du prototype}
 			\begin{figure}
 				\centering
 				\includegraphics[scale=0.6]{../include/schema-synt-prototype.png}
 				\caption{Schéma synthétique de l'architecture du prototype}
 				\label{fig:archiproto}
 			\end{figure}
-		\subsubsection{Description du prototype}
+			La Figure \ref{fig:archiproto} montre l'architecture de notre prototype.
+			Pour le moement, nous simulons les données des capteurs.
+			Ces données ont été acquisent lors d'une session de jeu vidéo à partir de capteurs physiologiques (capteurs décrits dans la Section \ref{sec:capteurs}.
+			Elles ont été enregistrés dans un fichier au format CSV.\par
+			Les données sont lus puis envoyées au Producteur.
+			Le Producteur ajoute à chaque topic la ou les données qui correspondent.
+			Par exemple, les données qui corresponde au Rythme Cardiaque sont envoyés sur le topic "HR" (pour Heart Rate).\par
+			Les données peuvent ensuite être consommées par un consommateur qui choisit le topic auquel il s'abonne.
+			Les données sont affichés dans un terminal au fur et à mesure qu'elles sont produitent.
+			Le consommateur attend toujours de nouvelles données à consommer.
+%		\subsubsection{Description du prototype}
 	\subsection{Intégrer le prototype aux travaux déjà menés}
-		\subsubsection{Les capteurs utilisés}
-			Capteurs de chez TEA ergo. Capteurs Captiv.
+		Des travaux antérieurs ont été menés pour le projet globale.
+		Ces tavaux concernent en particulier la détection et la reoconnaissance d'états émotionnels à partir de capteurs physiologiques.
+		Cependant, les algorithmes utilisent des données préalablement acquisent.
+		Autrement dit, les mesures physiologiques sont faites et enregistrées dans un fichier excel dans un premier temps.
+		Et dans un second temps, les données sont traitées par les algorithmes qui ont été élaborés par des chercheurs du CEDRIC.
+%		En particulier Viviane GAL dans sa thèse \cite{gal_2019}.
+		Il n'y a donc pas de notion de temps-réel dans ces travaux.\par
+		C'est pour quoi nous avons mis au point cette solution.
+		Nous présentons dans cette partie l'intégration de notre solutions aux travaux qui ont déjà été menés.
+		Pour cela, nous allons tout d'abord introduire les capteurs physiologiques qui sont utilisés par les travaux précédents.
+		Puis nous allons présenter comment notre solution améliore ces travaux.
+		\subsubsection{Capteurs physiologiques utilisés}\label{sec:capteurs}
+			Afin que notre prototype transmette les données provenant de capteurs aux algorithmes de reconnaissance des états émotionnels, nous devons nous adapter aux capteurs déjà utilisés par le laboratoire pour les expérimentations passées et futures.
+			Nous n'avons pas la possibilité de changer les capteurs, alors c'est à notre solution de s'y adpater.\par
+			Les capteurs physiologiques qui sont utilisés dans le projet sont des capteurs de chez TEA Ergo\footnote{\href{https://www.teaergo.com}{https://www.teaergo.com}}.
+			Ce sont les capteurs Captiv.
+			Ceux que nous possédons permettent la mesure de la fréquence respiratoire, du rythme cardiaque, de la température (à la surface de la peau) et de la réponse électrodermale.
 		\subsubsection{Schéma de l'intégration du prototypes aux travaux déjà menés}
 			\begin{figure}
 				\centering
@@ -353,7 +380,11 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\caption{Schéma de l'architecture du prototype intégré au projet}
 				\label{fig:archiglobale}
 			\end{figure}
-
+			L'architecture présentée à la Figure \ref{fig:archiglobale} nous permet de voir l'intégration de notre solution aux travaux menés précédemment.
+			Comme il existe déjà un algorithme qui permet de lire les données des capteurs et de les afficher sur un terminal, nous l'utilisions.
+			Le Connecteur que nous utilisons permet de récupérer des données sur un terminal et de les transmettre au Producteur sous la bonne forme pour être envoyées dans les topics.
+			Les topics sont ensuite consommés par les algorithmes de reconnaissance de l'état émotionnel.
+			
 \section{Conclusion}
 
 
