@@ -81,7 +81,6 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 \section{Introduction}
 	Depuis plusieurs années, les jeux pervasifs se multiplient sur le marché, proposant aux joueurs des contenus très immersifs.
 	Le jeu pervasif (aussi appelé jeu omniprésent) est un genre de jeu qui mêle le monde physique et le monde numérique et rend floue cette frontière.
-	% Comme le décrit Astic dans \cite{astic_2013},
 	Dans le jeu pervasif, le contexte est essentiel. 
 	Quatre facteurs sont mis en jeu : l'espace, le temps, la technologie et les rapports sociaux. 
 	L'espace du jeu pervasif est à la fois ancré dans le réel et à la fois virtuel.
@@ -111,23 +110,48 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Enfin, nous expliquerons une solution que nous avons conçue pour la gestion de données en temps-réel provenant de capteurs physiologiques.
 
 \section{Le projet}
-	Le projet exploratoire initié par trois enseignants-chercheurs du laboratoire CEDRIC du CNAM de intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et son environnement.
+	Le projet exploratoire intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" a éé initié par trois enseignants-chercheurs du laboratoire CEDRIC du CNAM de Paris.
+	Il s'agit de Mme. Viviane GAL, M. Eric GRESSIER-SOUDAN et Mme. Elena KORNISHOVA.
+	Ce projet vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et son environnement.\par
+	Dans cette section, nous allons présenter l'objectif global de ce projet.
+	Puis, nous parlerons de la problématique à laquelle nous apporterons une solution.
+	Nous aborderons aussi les sujets connexes que nous verrons tout au long de rapport.
 	\subsection{Motivations et objectif du projet}
 		Le but est de concevoir un jeu omniprésent capable de détecter et de reconnaître dynamiquement l'état émotionnel courant de joueur. 
-		Il faut aussi que le jeu puisse s'adapter à cet état en temps-réel en proposant un événement spécifique. 
+		Le jeu doit aussi être capable de s'adapter à cet état en temps-réel en proposant un événement spécifique. 
 		Cet événement devra soit 
 		\begin{itemize}
-			\item avoir tendance à provoquer le même état émotionnel que celui expérimenté par le joueur à cet instant afin de le maintenir dans cet état émotionnel,
-			\item avoir tendance à provoquer un autre état émotionnel que celui expérimenté par le joueur à cet instant dans le but de provoquer un changementd'état émotionnel.
+			\item Avoir tendance à provoquer le même état émotionnel que celui expérimenté par le joueur à cet instant afin de le maintenir dans cet état émotionnel;
+			\item Avoir tendance à provoquer un autre état émotionnel que celui expérimenté par le joueur à cet instant dans le but de provoquer un changement d'état émotionnel.
 		\end{itemize}
-		Le choix de maintenir ou de changer l'état émotionnel du joueur devra se faire selon différents critères tels que le type de l'état émotionnel (positif ou négatif), l'avancement dans le jeu ou bien le contexte environnemental courant.\par
-		Toutefois, la conception d'un tel jeu devra rester assez générique pour pouvoir l'appliquer à d'autres domaines dans de prochains projets.
-	\subsection{La problématique}
+		Le choix de maintenir ou de changer l'état émotionnel du joueur devra se faire selon différents critères.
+		Ces critères pourraient être : le type de l'état émotionnel (positif ou négatif), l'avancement dans le jeu ou bien le contexte environnemental courant.
+		Le but d'une telle adaptation est de pouvoir garantir l'expérience la plus immersive possible et un meilleur divertissement.\par
+		Toutefois, la conception d'un tel jeu devra rester assez générique.
+		L'une de nos motivations finale est de pouvoir appliquer notre jeu à d'autres domaines dans de prochains projets.
+		D'autres domaines d'applications pourraient être le domaine du médicale ou celui de l'apprentissage.
+	\subsection{Problématique}
+		Pour ce projet aussi vaste qu'est le nôtre, plusieurs problématiques se posent.
+		Par exemple, nous pouvons nous intéresser aux moyens de détecter de reconnaitre les états émotionnels d'une peronne.
+		Nous pourrions aussi nous intéresser aux problématiques liées à l'adaptaion du jeu pervasif.
+		Les méthodes et les règles qu'il faudrait utiliser pour une bonne adaptation du jeu pervasif à son joueur sont à définir.\par
+		La problématique à laquelle nous avions tout d'abord tenté d'apporter une contribution était celle de la réalisation d'un modèle conceptuel pour représenter l'adaptation d'un jeu pervasifs aux émotions d'un joueur.
+		Mais, au cours de notre travail, nous avons décidé d'aborder une autre problématique également importante pour l'aboutissement de notre projet.\par
 		Dans ce rapport, nous allons traiter principalement la problématique de la gestion des données générées par les capteurs physiologiques.
-		Pour atteindre notre objectif final, il est important de pouvoir utiliser les données des capteurs pour déterminer les états émotionnels afin que le jeu puisse s'y adapter. Cela pose une contrainte importante sur la gestion des données en temps-réel.
+		Pour atteindre notre objectif final, il est important de pouvoir utiliser les données des capteurs pour déterminer les états émotionnels afin que le jeu puisse s'y adapter. 
+		Cela pose une contrainte importante sur la gestion des données en temps-réel.
 		En effet, la réponse à l'état émotionnel courant du joueur doit être la plus immédiate possible afin de ne pas créer un sentiment de décalage entre le ressenti du joueur et l'adaptation du jeu.
-	\subsection{Sujets connexes}
-		Pour répondre à cette problématique, nous avons besoin d'avantage de contexte sur des sujets connexes tels que : les méthodes de détections et de reconnaîssance des états émotionnes, la notion d'expérience utilisateur et le jeu pervasif.
+	\subsection{Définitions et sujets connexes}
+		Il est important de faire une mise au point sur les termes que nous allons employés tout au long du rapport.\par
+		Ici, nous parlons d'état émotionnel et non d'émotion.
+		L'émotion est une réaction physiologique forte qui ne dure que quelques minutes.
+		Elle est la réponse à un événement, un stimuli,...
+		L'ensemble des émotions est très restreint.
+		Il se composent, selon les définitions de quatre à huits émotions.
+		L'état émotionnel est plus vaste, il regroupe plusieurs notions en plus de l'émotion telles que le sentiment ou l'affect.
+		L'état émotionnel est donc une définition "étendue" de l'émotion, ce qui nous permet de ne pas exclure des notions que nous pourrions considérer.\par
+		Pour répondre à la problématique de la gestion de données provenant de capteurs en temps-réel, nous avons besoin d'avantage de contexte sur des sujets tels que : les méthodes de détections et de reconnaîssance des états émotionnels et la notion d'expérience utilisateur.
+		Tout au long du rapport, nous allons aborder ces sujets qui n'entre pas directemnt dans le cadre de la solution que nous apportons mais qui sont essentiels pour la compréhension du sujet de notre projet et de l'apport de notre solution.
 
 \section{Etat de l'art}
 	Notre état de l'art s'intéresse aux différentes méthodes déjà existantes dans la littérature scientifique permettant à différents types de jeux de s'adapter aux états émotionnel de leurs joueurs.\par
@@ -190,7 +214,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Le but de ce modèle conceptuel était de réprésenter chaque composant permettant la prise en compte des états émotionnels dans le jeu pervasif et de s'y adapter. 
 	Il fallait à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc. 
 	Ce modèle devait être représenté sous la forme d'une ontologie en utilisant le format standard du diagramme de classes UML.
-	\subsection{L'ontologie}
+	\subsection{Ontologie}
 		Le diagramme de la Figure \ref{fig:modele} représente notre modélisation pour les différents éléments qui composent un jeu pervasif adaptable aux états émotionnels du joueur. 
 		\begin{figure}
 			\centering
