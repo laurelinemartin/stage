@@ -114,8 +114,8 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 
 \section{Présentation du laboratoire CEDRIC}\label{sec:cedric}
 	\begin{center}
-		\includegraphics[scale=0.4]{../include/logo-cedric.PNG}\\
-	\end{center}
+		\includegraphics[scale=0.55]{../include/logo-cedric.PNG}\\
+	\end{center}\par
 	Avant de présenter le travail réalisé, nous allons faire une présentation du laboratoire CEDRIC.
 	Le laboratoire de Centre d'Etudes et De Recherche en Informatique et Communication (CEDRIC)\footnote{\href{http://cedric.cnam.fr/lab/accueil/labo/}{http://cedric.cnam.fr/lab/accueil/labo/}} au sein du Conservatoire National des Arts et Métiers (CNAM) de Paris\footnote{\href{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}}. 
 	Le laboratoire se situe au 2 rue Conte 75003 PARIS.\par
@@ -140,10 +140,18 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Puis, nous parlerons de la problématique à laquelle nous apporterons une solution.
 	Nous donnerons aussi des définitions essentielles pour les notions clés et nous aborderons les sujets connexes que nous verrons tout au long de ce rapport.
 	\subsection{Motivations et objectif du projet}\label{sec:objectif}
-		Avec le jeu pervasif, il est possible de créer une grande immersion et une plus grande implication du joueur pour le jeu contrairement à d'autres types de jeux (jeux vidéos, jeux de sociétés, etc.).
+		Avec le jeu pervasif, il est possible de créer une grande immersion et une plus grande implication (i.e. engagement) du joueur pour le jeu contrairement à d'autres types de jeux (jeux vidéos, jeux de sociétés, etc.).
 		L'idée principale notre projet est de concevoir un jeu omniprésent capable de détecter et de reconnaître dynamiquement l'état émotionnel courant de joueur. 
 		Le jeu devra aussi être capable de s'adapter à cet état en temps-réel en proposant un événement spécifique. 
-		Cet événement devront soit :
+		La Figure \ref{fig:motivation} schématise l'objectif de notre projet.
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.75]{../include/motivation.jpg}
+			\caption{Objectif global du projet}
+			\label{fig:motivation}
+		\end{figure}\par
+		La réponse adaptative du jeu à l'état émotionnel de son joueur devra se faire sous la forme d'événments dans le jeu.
+		Les événemnts particularisés à l'état émotionnel du joueur devront soit :
 		\begin{itemize}
 			\item Avoir tendance à provoquer le même état émotionnel que celui expérimenté par le joueur à cet instant afin de le maintenir dans cet état émotionnel;
 			\item Avoir tendance à provoquer un autre état émotionnel que celui expérimenté par le joueur à cet instant dans le but de provoquer un changement d'état émotionnel.
@@ -225,17 +233,34 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Dans cette section, nous allons tout d'abord aborder la notion d'expérience utilisateur.
 	Puis nous ferons un retour sur cette expérience d'escape game et ce qu'elle a pu apporté sur le travail mené.
 	\subsection{Expérience Utilisateur}\label{sec:UX}
-		L'expérience utilisateur (UX pour User eXperience) concrne le ressenti de l'utilisateur à chaque interaction lors de l'utilisation d'un service, d'un objet, d'un espace public, etc. 
-		L'UX désigne donc un vaste domaine d'application, cependant, dans le cadre de nos recherches, nous nous intéresserons à l'expérience utilisateur d'un jeu uniquement.\par
-		Lors de la conception d'un jeu, une expérience utilisateur unique ne peut pas être conçue.
-		L'UX concerne le ressenti du joueur par rapport à l'utilisabilité du jeu.
-		Cela signifie que l'UX est propre à chacun.
-		Elle inclut les émotions des joueurs, leurs préférences, leur perception, leurs réponses physiques et psychologiques, leurs comportements, etc.
-		Plusieurs méthodes pour une conception de "bonne" expérience utilisateurs existents.
-		Ces méthodes varient en ne cessent de s'agrandir et de s'affiner, mais nous pouvons les répertorier comme suit :
-		\begin{itemize}
-			\item 
-		\end{itemize}
+		L’expérience utilisateur (UX pour User eXperience) concerne toutes les réactions qu’un utilisateur peut avoir lors d’une interaction avec un service, un objet, un espace public, etc.
+		C’est aussi tout ce que l’utilisateur peut ressentir lors de cette interaction.
+		L’expérience utilisateur va donc plus loin que la simple notion d’ergonomie qui elle ne concerne que la « facilité d’utilisation » d’un produit.\par
+		L’UX commence par la perception sensorielle de l’utilisateur de ce qu’il lui est présenté. 
+		Cette perception est « analysée » par le cerveau et mémorisée.
+		Une réaction est ensuite faite.
+		Les concepteurs peuvent alors analyser ces réactions et améliorer leur conception.
+		Cette dernière étape est appelée UX Design.
+		L’UX Design c’est éprouver un prototype par des utilisateurs de manière itérative.
+		Après chaque test utilisateur, le prototype est amélioré et testé à nouveau par des utilisateurs.\par
+		L’UX désigne un vaste champ d’application.
+		Dès lors qu’une interaction se fait entre un utilisateur et quelque chose, on peut parler d’expérience utilisateur.
+		De ce fait, de nombreuses définitions de l’UX existent.
+		Chacune d’entre elles tend à s’appliquer d’avantage à un domaine qu’à un autre.
+		Dans le cadre de nos recherches, nous traiterons ici uniquement de l’expérience utilisateur dans les jeux.\par
+		Une « bonne » UX vise à maximiser d’une part l’utilisabilité d’un jeu et d’autre part l’engagement du joueur.\par
+		L’utilisabilité rassemble toutes les questions qui concernent la facilité du jeu.
+		Cela va de la visibilité et de la compréhension des affichages dans le jeu par le joueur à la facilité de faire des actions.
+		Par exemple, la souris d’un ordinateur étant généralement à droite, on évitera de demander au joueur à la fois de cliquer sur la souris et d’appuyer sur des touches situées sur la droite du clavier.
+		En UX design il existe des cadres et des règles à appliquer pour une bonne utilisabilité d’un jeu.\par
+		L’engagement (i.e. le flow ou l’immersion) concerne la partie « émotionnelle » de l’interaction entre le joueur et le jeu.
+		Il s’agit de réussir à motiver le joueur à commencer ou à continuer à jouer.
+		Cela peut se faire par l’accomplissement d’objectifs pour obtenir des récompenses.
+		La progression, la coopération, la compétition, etc. sont également des éléments motivants pour le joueur.
+		Créer des émotions au joueur tout au long de sa partie permet également un meilleur engagement.
+		De plus, il faut que la difficulté du jeu soit bien « réglée » pour que le joueur n’ai ni une sensation d’ennui ni envie de rejeter le jeu.
+		Cela peut passer par exemple par l’apprentissage du jeu via des tutoriels.
+
 	\subsection{Expérimentation d'un Escape Game}\label{sec:expescape}
 		L'escape game se présentait sous la forme d'une mission d'une heure et demie.
 		Le but de cette mission était d'entrer dans un vaisseau désafecté pour emprunter un portail de téléportation.
@@ -306,33 +331,33 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			\end{itemize}\par
 			Maintenant que nous connaissons les points communs entre les deux MOM, nous pouvons en faire une comparaison synthétique.\par
 			Dans ce comparatif, nous traitons des principales différences des deux middlewares (Tableau \ref{tab:comparatifinfos}), de leurs architectures (Tableau \ref{tab:comparatifarchi} et Figure \ref{fig:comparatifarchi}), de leurs approches (Tableau \ref{tab:comparatifapp}, des caractéristiques des messages (Tableau \ref{tab:comparatifmess}) et de la préférence d'utilisation de l'un ou de l'autre MOM selon le cas d'usage (Tableau \ref{tab:comparatifpref}).
-			\begin{table}[hp]
-				\begin{tabular}{|p{8cm}|p{8cm}|}
+			\begin{table}[p]
+				\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
 					\hline
 					\rowcolor{lightgray} RabbitMQ & Kafka\\\hline
 					Depuis 2007 & Depuis 2011\\\hline
 					Destiné au début : composante primaire dans les messageries SOA ; Maintenant : Flux & Pour le scenario de flux\\\hline
 					Structure de données : FIFO; Optimal quand les messages sont livrés rapidement & Structure de données : Log (le consommateur gère l’offset) Possibilité de relire des données, les messages sont conservés selon un temps paramétré\\\hline
 					Inclus les protocoles : MQTT, AMQP, STQMP; Facilité pour la communication avec d’autres solutions implémentant AMQP. & Routage simple (clé de routage). Les messages sont sur des « topics » (les consommateurs s’abonnent aux topics voulus)\\\hline
-					Mode de délivrance des messages : \textit{at least once} & Modes de délivrance des messages : \textit{at least once et exactly once}\\\hline
+					Mode de délivrance des messages : \textit{at least once} & Modes de délivrance des messages : \textit{at least once} et \textit{exactly once}\\\hline
 				\end{tabular}
 				\caption{Principales différences / informations générales}
 				\label{tab:comparatifinfos}
 			\end{table}
 			\medskip
-			\begin{table}[hp]
-				\begin{tabular}{|p{4cm}|p{6cm}|p{6cm}|}
+			\begin{table}[p]
+				\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
 					\hline
 					\rowcolor{lightgray} & RabbitMQ & Kafka\\\hline
 					Stocakge & Dans une base Mnésia. Quand saturation sur la base Mnésia, stockage sur disque. & Sur disque, dans des fichiers (tailles équiv.), logs. Cluster de servers, dans des topics (Durable). \\\hline
 					Routage & Flexible. & Basique.\\\hline
-					Structure de données & File FIFO. & Log.\\\hline
+					Structure de\newline données & File FIFO. & Log.\\\hline
 				\end{tabular}
 				\caption{Architectures}
 				\label{tab:comparatifarchi}
 			\end{table}
 			\medskip
-			\begin{figure}[hp]
+			\begin{figure}[p]
 				\begin{subfigure}{0.6\textwidth}
 					\hspace*{-2cm}
 					\includegraphics[scale=0.5]{../include/RabbitMQ.PNG}
@@ -347,19 +372,19 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{fig:comparatifarchi}
 			\end{figure}
 			\medskip
-			\begin{table}[hp]
-				\begin{tabular}{|p{8cm}|p{8cm}|}
+			\begin{table}[p]
+				\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
 				\hline
 				\rowcolor{lightgray} RabbitMQ & Kafka\\\hline
 				\begin{center} \textbf{Approche Push-based :}\end{center} & \begin{center} \textbf{Approche Pull-based :}\end{center}\\\hline
-				Distribuer les messages individuellement et rapidement. & Consommateur récupère les lots souhaités, à partir d’un offset spécifique ; Mise en commun longue.\\\hline
+				Distribuer les messages individuellement et rapidement. & Consommateur récupère les lots souhaités à partir d’un offset spécifique ; Mise en commun longue.\\\hline
 				\end{tabular}
 				\caption{Approches}
 				\label{tab:comparatifapp}
 			\end{table}
 			\medskip
-			\begin{table}[hp]
-				\begin{tabular}{|p{4cm}|p{6cm}|p{6cm}|}
+			\begin{table}[p]
+				\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
 					\hline
 					\rowcolor{lightgray} & RabbitMQ & Kafka\\\hline
 					Maintien de l'ordre & Dans une même chaîne (TCP multiplexée) & Dans une même partition\\\hline
@@ -370,8 +395,8 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{tab:comparatifmess}
 			\end{table}
 			\medskip
-			\begin{table}[hp]
-				\begin{tabular}{|p{8cm}|p{8cm}|}
+			\begin{table}[p]
+				\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
 				\hline
 				\rowcolor{lightgray} RabbitMQ & Kafka\\\hline
 				Besoin de routages élaborés; Utiliser des protocoles STOMP, MQTT ou AMQP...; Suivi de métriques opérationnelles & Besoin de routages simples ; Conserver (sur temps donné) et relire des messages; Mise à l’échelle; Capture d’évènement induisant un changement d’état (dans une base de données ou autre); Besoins transactionnels ; Traiter les données en parallèle.\\\hline
@@ -394,9 +419,10 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Dans cette partie, nous allons présenter le prototype de la solution que nous avons implémenté pour répondre aux besoins de gérer des données en temps-réel.\par
 		Dans un premier temps nous allons présenter le prototype et son architecture.
 		Et dans un second temps, nous montrerons comment nous intégrons le prototype aux travaux déjà menés pour ce projet.\par
-		\begin{figure}
+		\begin{figure}{t}
 			\centering
-			\includegraphics[scale=0.6]{../include/schema-synt-prototype.png}
+			\hspace*{-1.7cm}
+			\includegraphics[scale=0.75]{../include/schema-synt-prototype.jpg}
 			\caption{Schéma synthétique de l'architecture du prototype}
 			\label{fig:archiproto}
 		\end{figure}
@@ -431,7 +457,8 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		\subsubsection{Schéma de l'intégration du prototypes aux travaux déjà menés}\label{sec:schematravaux}
 			\begin{figure}
 				\centering
-				\includegraphics[scale=0.5]{../include/schema-global.png}
+				\vspace*{-1cm}
+				\rotatebox{90}{\includegraphics[scale=0.75]{../include/schema-global.jpg}}
 				\caption{Schéma de l'architecture du prototype intégré au projet}
 				\label{fig:archiglobale}
 			\end{figure}
