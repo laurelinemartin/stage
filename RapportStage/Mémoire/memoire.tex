@@ -509,7 +509,42 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Nous n'avons pas la possibilité de changer les capteurs, alors c'est à notre solution de s'y adpater.\par
 			Les capteurs physiologiques qui sont utilisés dans le projet sont des capteurs de chez TEA Ergo\footnote{\href{https://www.teaergo.com}{https://www.teaergo.com}}.
 			Ce sont les capteurs Captiv.
-			Ceux que nous possédons permettent la mesure de la fréquence respiratoire, du rythme cardiaque, de la température (à la surface de la peau) et de la réponse électrodermale.
+			\begin{figure}
+				\begin{subfigure}{0.5\textwidth}
+					\centering
+					\includegraphics[scale=0.5]{../include/TEAgsr.PNG}
+					\caption{Capteur pour la mesure de la réponse électrodermale}
+					\label{fig:gsr}
+				\end{subfigure}
+				\begin{subfigure}{0.5\textwidth}
+					\centering
+					\includegraphics[scale=0.5]{../include/TEAhr.PNG}
+					\caption{Capteur pour la mesure de la fréquence cardiaque}
+					\label{fig:hr}
+				\end{subfigure}\newline
+				\begin{subfigure}{0.5\textwidth}
+					\centering
+					\includegraphics[scale=0.5]{../include/TEAbt.PNG}
+					\caption{Capteur pour la mesure de la température du corps}
+					\label{fig:bt}
+				\end{subfigure}
+				\begin{subfigure}{0.5\textwidth}
+					\centering
+					\includegraphics[scale=0.5]{../include/TEArr.PNG}
+					\caption{Capteur pour la mesure de la fréquence respiratoire}
+					\label{fig:rr}
+				\end{subfigure}
+				\caption{Les capteurs CAPTIV (TEA)}
+				\label{fig:capteurstea}
+			\end{figure}
+			Ceux que nous possédons permettent la mesure de la réponse électrodermale (Figure \ref{fig:gsr}), du rythme cardiaque (Figure \ref{fig:hr}), de la température à la surface de la peau (Figure \ref{fig:bt}) et la fréquence respiratoir (Figure \ref{fig:rr}).\par
+			Nous possédons également un casque de chez NeuroSky qui permet la mesure de l'électroencéphalogramme (Figure \ref{fig:neurosky}).
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.5]{../include/neurosky.PNG}
+				\caption{Casque Neurosky}
+				\label{fig:neurosky}
+			\end{figure}
 		\subsubsection{Connecteur}
 			Pour utiliser notre prototype avec les travaux qui ont déjà été menés pour la recherche des états émotionnels, nous avons besoin d'utiliser un connecteur.
 			Ce connecteur va nous permettre de récupérer les données provenant des capteurs pour les formaliser.
