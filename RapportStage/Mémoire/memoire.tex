@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage[table]{xcolor}
+\usepackage{longtable}
 \usepackage{geometry}
 \usepackage{hyperref}
 \usepackage{appendix}
@@ -474,7 +475,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Dans cette partie, nous allons présenter le prototype de la solution que nous avons implémenté pour répondre aux besoins de gérer des données en temps-réel.\par
 		Dans un premier temps nous allons présenter le prototype et son architecture.
 		Et dans un second temps, nous montrerons comment nous intégrons le prototype aux travaux déjà menés pour ce projet.\par
-		\begin{figure}{t}
+		\begin{figure}[t]
 			\centering
 			\hspace*{-1.7cm}
 			\includegraphics[scale=0.75]{../include/schema-synt-prototype.jpg}
@@ -509,6 +510,95 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Les capteurs physiologiques qui sont utilisés dans le projet sont des capteurs de chez TEA Ergo\footnote{\href{https://www.teaergo.com}{https://www.teaergo.com}}.
 			Ce sont les capteurs Captiv.
 			Ceux que nous possédons permettent la mesure de la fréquence respiratoire, du rythme cardiaque, de la température (à la surface de la peau) et de la réponse électrodermale.
+		\subsubsection{Connecteur}
+			Pour utiliser notre prototype avec les travaux qui ont déjà été menés pour la recherche des états émotionnels, nous avons besoin d'utiliser un connecteur.
+			Ce connecteur va nous permettre de récupérer les données provenant des capteurs pour les formaliser.
+			Ainsi elles pourront être utilisées dans Kafka.\par
+			Une multitude de connecteurs existent déjà.
+			Il s'agit de connecteurs implémentés par Confluent (la plate-forme de Kafka) ou par la communauté.
+			Sur le Confluent Hub\footnote{\href{https://www.confluent.io/hub/kafka-connectors-33}{https://www.confluent.io/hub/kafka-connectors-33}}, nous avons pu rechercher le connecteur qui convenait le mieux pour notre cas.
+			Sur ce hub, 165 connecteurs sont proposés.
+			Certains connecteurs permette de récupérer des données sources, d'autres permettent d'évacuer les données vers des structures externes et d'autres permettent de transformer les données.
+			Certains connecteurs permettent même de faire deux ou trois de ces types d'actions.
+			Nous nous sommes intéressés ici aux connecteurs sources.
+			Nous allons vous présenter les différents connecteurs sources que nous avons pu répertoriés.\par
+			Pour notre recherche, nous avons appliqués les filtres suivants : \newline
+			Plugin type $=$ "Source" et License $=$ "Free".\newline
+			Comme indiqué plus haut, nous recherchons un connecteur source.
+			De plus, nous avons préféré nous restreindre aux licences libres pour avoir au moins une vue sur le code qui est utilisé.\par
+			La recherche nous a donné 38 connecteurs.
+			Nous avons trié ces connecteurs en deux sous-parties :
+			\begin{itemize}
+				\item Les connecteurs potentiels : Les connecteurs qui peuvent servir pour notre cas, c'est-à-dire qu'ils peuvnet faire de l’ingestion de données en temps-réel;
+				\item Les connecteurs non-retenus : Les connecteurs jugés trop éloignés de notre cas d’usage pour des raisons diverses.
+				% Ils sont soit orienté sbases de données relationnelles, soit orientés fichiers systèmes, soit générateurs de données factices, etc.
+			\end{itemize}
+			Voici tableaux reprenant chaque connecteur et une petite description.\par
+			\textbf{1. Les connecteurs potentiels}\par
+			Ces connecteurs vont permettre de récupérer des données en temps-réel. 
+			Comme nos capteurs diffusent en permanence, nous avons besoin d’un Connecteur capable de transférer des données en temps-réel depuis les capteurs vers Kafka.
+			Le tableau \ref{tab:connecteurspotentiels} répertorie ces connecteurs.
+			\begin{table}[h]
+				\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
+					\hline
+					\rowcolor{lightgray} Connecteur & Description\\\hline
+					Diffusion® Kafka Connector & Permettre aux clients web, mobile et IoT de consommer et envoyer des données temps-réel et orientées-événement\\\hline
+					Kafka Connect Shell & Ingère la sortie d’une commande passé dans le shell vers Kafka (peut être utilisé avec un algorithme déjà implémentés de travaux antérieurs) \\\hline
+				\end{tabular}
+				\caption{Les connecteurs potentiels}
+				\label{tab:connecteurspotentiels}
+			\end{table}\par
+			\textbf{2. Les connecteurs non-retenus}\par
+			Ces connecteurs peuvnet être écartés de nos recherches. 
+			Ces plug-in sont soit trop spécifiques, soit orientés bases de données relationnelles, soit pour des fichiers systèmes, soit pour créer des données factices, etc.
+			Le tableau suivant repertorie ces connecteurs.
+			\begin{longtable}{|p{7.5cm}|p{7.5cm}|}
+				\hline
+				\rowcolor{lightgray} Connecteur & Description\\\hline
+				\endhead
+				Kafka Connect JDBC & Pour les bases de données relationnelles JDBC\\\hline
+				Kafka Connect JDBC with Flatten Feature & Extension de Kafka Connect JDBC\\\hline
+				Debezium MySQL CDC Connector & Surveillance et enregistrement des changements pour MySQL server\\\hline
+				Debezium PosgreSQL CDC Connector & Surveillance et enregistrement des changments pour les bases de données PostgreSQL\\\hline
+				Debezium SQL server CDC Connector & Surveillance et enregistrement des changements pour des serveurs SQL\\\hline
+				MongoDB Connector for Apache Kafka & Récupérer des données depuis une base de données MongoDB.\\\hline
+				Debezium MongoDB CDC Connector & Surveillance des ensemble de réplicas MongoBD\\\hline
+				Kafka Connect Spooldir & Pour des fichiers délimités de fichiers systèmes\\\hline
+				Couchbase DB Connector & Transférer des données depuis et vers Couchbase server\\\hline
+				Kafka Connect Crux & Transférer des données depuis et vers les nœuds Crux\\\hline
+				Kafka Connect Venafi & Se connecter à Venafi Platform via HTTP et récupérer des événements logs depuis Kafka. Filtrage, transformation, traitement possible.\\\hline
+				Kinetica DB Connector & Pour Kinetica, base de données distribuée en mémoire accélérée par GPU. Ingèrer, analyser et visualiser en même temps\\\hline
+				SAP Hana Connector & Pour les systèmes SAP\\\hline
+				Databricks Connector for Apache Kafka & Se connecter à une base de données Databricks et d'envoyer les données vers Kafka.\\\hline
+				Levy Xenon Connector & Pour fort I/O et bigData\\\hline
+				CockroachDB Change Data Capture & Fonctionnalité de capture de changement de ligne dans la BD\\\hline
+				Hazelcast Jet Kafka Connector & Offre un producer et un consumer pour transférer des données entre Kafka et Hazelcast\\\hline
+				StreamSets Data Collector & Simplifier la construction, l’éxecution et les opérations pour les flots de données\\\hline
+				Kafka Connect IRC & Connecteur source pour IRC\\\hline
+				Kafka Connect HTTP & Pour les APIs JSON/http\\\hline
+				Kafka Connect Sound & Lire des données de microphone et envoyer des données pour sortie audio\\\hline
+				Kafka Connect Reddit & Récupérer des posts et des commentaires en temps-réel via Reddit\\\hline
+				Kafka Connect FileSystem & Lire différents formats de fichiers de différents types de fichiers système\\\hline
+				Kafka Connect Common Transfomations & Transformation de données de fichiers.\\\hline
+				Kafka connect-pulsar & Permet de répliquer des données de Apache Pulsar vers Apache Kafka\\\hline
+				Kafka Connect Maxmind Transformation & Pour ajouter des données GeoIP aux données Kafka\\\hline
+				Kafka Connect Twitter & Flux de données Twiitter vers Kafka\\\hline
+				Kafka Connect Email & POM parent pour les projets Kafka Connect\\\hline
+				Kafka Connect Simulator & Générer des données de test\\\hline
+				Kafka Connect RSS Source & Récupérer des données de flux RSS et Atom\\\hline
+				Kafka Connect Flume Avro & Envoyer des données depuis Apache Flume\\\hline
+				Voluble & Générateur de données factices\\\hline
+				Apache Connect IoT Hub & Pour Azur IoT Hub\\\hline
+				Kafka Connect Zeebe	& Enregistrements de workflow BPMN vers kafka\\\hline
+				Kafka Connect File Pulse & Parse, transfomer et charger les données  depuis un fichier système local vers Kafka\\\hline
+				\caption{Les connecteurs non-retenus}
+				\label{tab:connecteursnon}
+			\end{longtable}\par
+			\textbf{3. Positionnement}\par
+			Parmis les deux connecteurs que nous avons retenus, nous avons décidé d'utiliser le connecteur \texttt{Kafka Connect Shell}\footnote{\href{https://www.confluent.io/hub/thomaskwscott/kafka-connect-shell-source}{https://www.confluent.io/hub/thomaskwscott/kafka-connect-shell-source}}.
+			Dans l'optique d'être plus rapide dans nos tests, ce connecteur nous semble être le meilleur choix.
+			Nous allons l'utiliser avec un algorithme déjà existant provenant de travaux antérieurs qui affiche les données des capteurs dans un terminal.
+			Avec le connecteur Kafka Connect Shell, nous seront capable de lire les données affichées sur le terminal et de les transmettre au Producteur Kafka.
 		\subsubsection{Schéma de l'intégration du prototypes aux travaux déjà menés}\label{sec:schematravaux}
 			\begin{figure}
 				\centering
