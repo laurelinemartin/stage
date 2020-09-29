@@ -324,23 +324,23 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Autrement dit, d'étendre les âges, les cultures, les capacités physiques, etc. le plus possible afin de permettre une plus grande inclusivité.
 
 \section{Modélisation conceptuelle}\label{sec:modelisation}
-	Dans cette partie, nous allons présenter un modèle conceptuel qui n'a pas pu être terminé. 
-	Le but de ce modèle conceptuel était de réprésenter chaque composant permettant la prise en compte des états émotionnels dans le jeu pervasif et de s'y adapter. 
-	Il fallait à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc. 
-	Ce modèle devait être représenté sous la forme d'une ontologie en utilisant le format standard du diagramme de classes UML.
+	Dans cette partie, nous présentons un modèle conceptuel qui est en cours d'aboutissement. 
+	Le but de ce modèle conceptuel est de réprésenter chaque composant permettant la prise en compte des états émotionnels dans le jeu pervasif et de s'y adapter. 
+	Le modèle doit à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc. 
+	Cette représentation est modélisée sous la forme d'une ontologie.
+	Pour cela, nous utilisons le format standard du diagramme de classes UML.
 	\subsection{Ontologie}\label{sec:ontologie}
-		Le diagramme de la Figure \ref{fig:modele} représente notre modélisation pour les différents éléments qui composent un jeu pervasif adaptable aux états émotionnels du joueur. 
-		\begin{figure}
+		Le diagramme de la Figure \ref{fig:modele} représente notre modélisation pour les différents éléments qui composent un jeu pervasif adaptable aux états émotionnels du joueur.
+		\begin{figure}[ht]
 			\centering
 			\includegraphics[scale=0.5]{../include/ontologie_stage_cnam-v2-5.png}
 			\caption{Ontologie d'un jeu pervasif prenant en compte l'état émotionnel du joueur}
 			\label{fig:modele}
 		\end{figure}
-		Pour chaque classe, il existe une description détaillée en Annexe \ref{ann:detailclasses}
-		.\par
-		Dans ce modèle, on voit qu'il existe une relaion entre \texttt{Utilisateur}, \texttt{Jeu} et \texttt{Etat Emotionnel} que j'aurais pu représenter par une liaison ternaire.
-		Cependadant, j'ai préféré décomposer cette association en trois relations binaires dans un soucis de clareté. 
-		Une autre amélioration possible à cette représentation est celle de la relation entre \texttt{Jeu} et \texttt{Modèle Utilisateur}. 
+		Pour chaque classe, il existe une description détaillée en Annexe \ref{ann:detailclasses}.\par
+		Dans ce modèle, on voit qu'il existe une relaion entre les classes \texttt{Utilisateur}, \texttt{Jeu} et \texttt{Etat Emotionnel} que j'aurais pu représenter par une relation ternaire. 
+		Cependadant, j'ai préféré décomposer cette relation en trois relations binaires dans un soucis de clareté. 
+		Une autre amélioration possible pour cette représentation est celle de la relation entre \texttt{Jeu} et \texttt{Modèle Utilisateur}. 
 		Avec du recul sur mon travail, je pense qu'il aurait été possible de soit fusionner les deux classes (puisqu'il s'agit d'une relation $1^* - 1$) soit de transformer la classe \texttt{Modèle Utilisateur} en une ou plusieurs autre(s) classe(s).\par
 		L'ontologie que je présente dans ce rapport à la Figure \ref{fig:modele} n'est donc pas le résultat définitif.
 		En effet, après plusieurs essais et plusieurs versions différentes de l'ontologie, nous avons décidé de changer de point de vue et de revenir, si possible, plus tard à l'ontologie.
@@ -355,13 +355,14 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 
 \section{Prototypage}\label{sec:prototypage}
 	Pour la détection et la reconnaissance de l'état émotionnel, nous utilisons des capteurs physiologiques de contacts.
-	Ces capteurs prennent en continue des mesures pour différentes métriques physiologiques telles que la température du corps, le rythme cardiaque, la réponse électrodermale ou encore le rythme respiratoire.
+	Ces capteurs prennent des mesures en continue pour différentes métriques physiologiques telles que la température du corps, le rythme cardiaque, la réponse électrodermale ou encore la fréquence respiratoire.
 	Ces capteurs génèrent beaucoup de données.
-	De plus, il s'agit de données en temps-réel qui doivent être traitées le plus rapidement possible pour reconnaître l'état émotionnel de la personne et ainsi le jeu pourra s'adapter avec un minimum de la latence.
+	De plus, il s'agit de données en temps-réel qui doivent être traitées le plus rapidement possible pour reconnaître l'état émotionnel de la personne.
+	Ainsi le jeu pourra s'adapter avec un minimum de latence.
 	Une trop grande latence pourrait engendrer un effet de décalage désagréable pour le joueur entre ce qu'il ressent et l'adaptation du jeu.\par
-	Dans cette section, nous allons présenter le prototype de notre solution pour gérer les données temps-réel des capteurs.
-	Les capteurs physiologiques et les algorithmes de reconnaîssance existent déjà, ils proviennent de précédents travaux effectués au laboratoire.
-	Ici nous cherchons à gérer au mieux les données en temps-réel en créant un minimun de latence entre la mesure par le capteur et la reconnaissance de l'état émotionnel.
+	Dans cette section, nous comparons deux technologies pour la construction de notre solution et nous nous positionnons sur l'une d'entre elles.
+	Puis nous présentons le prototype de notre solution pour gérer les données temps-réel des capteurs.
+	Enfin, nous expliquons comment notre solution peut être intégrée aux travaux déjà menés pour notre projet.
 	\subsection{Technologie utilisée}\label{sec:prototech}
 		Pour notre prototype nous avons besoin de gérer efficacement des données continues et en temps-réel.
 		Il nous faut donc trouver une technologie capable de traiter efficacement ce genre de données pour les transmettre aux algorithmes de détection et de reconnaissance de l'état émotionnel;
@@ -472,38 +473,66 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Il est donc possible de récupérer que certaines données en s'abonnant aux topics désirés.
 			Cela nous sera très utilie pour de futurs travaux qui impliquerons d'autres capteurs que les capteurs physiologiques pour la reconnaissance des états émotionnels.
 	\subsection{Description du prototype}\label{sec:protodesc}
-		Dans cette partie, nous allons présenter le prototype de la solution que nous avons implémenté pour répondre aux besoins de gérer des données en temps-réel.\par
-		Dans un premier temps nous allons présenter le prototype et son architecture.
-		Et dans un second temps, nous montrerons comment nous intégrons le prototype aux travaux déjà menés pour ce projet.\par
-		\begin{figure}[t]
-			\centering
-			\hspace*{-1.7cm}
-			\includegraphics[scale=0.75]{../include/schema-synt-prototype.jpg}
-			\caption{Schéma synthétique de l'architecture du prototype}
-			\label{fig:archiproto}
-		\end{figure}
-		La Figure \ref{fig:archiproto} montre l'architecture de notre prototype.
-		Pour le moement, nous simulons les données des capteurs.
-		Ces données ont été acquisent lors d'une session de jeu vidéo à partir de capteurs physiologiques (capteurs décrits dans la Section \ref{sec:capteurs}.
-		Elles ont été enregistrés dans un fichier au format CSV.\par
-		Les données sont lus puis envoyées au Producteur.
-		Le Producteur ajoute à chaque topic la ou les données qui correspondent.
-		Par exemple, les données qui corresponde au Rythme Cardiaque sont envoyés sur le topic "HR" (pour Heart Rate).\par
-		Les données peuvent ensuite être consommées par un consommateur qui choisit le topic auquel il s'abonne.
-		Les données sont affichés dans un terminal au fur et à mesure qu'elles sont produitent.
-		Le consommateur attend toujours de nouvelles données à consommer.
+		Dans cette partie, nous présentons le prototype de la solution que nous avons implémenté pour répondre aux besoins de gestion des données en temps-réel.
+		%ous possédons déjà des capteurs physiologiques et les algorithmes pour la reconnaîssance d'états émotionnels existent déjà, ils proviennent de précédents travaux effectués au laboratoire.
+		Ici, nous cherchons à gérer au mieux les données en temps-réel en créant un minimun de latence entre la mesure faite par le capteur et la reconnaissance de l'état émotionnel.\par
+		%ans un premier temps, nous allons présenter le prototype et son architecture.
+		%t dans un second temps, nous montrerons comment nous intégrons le prototype aux travaux déjà menés pour ce projet.\par
+		\subsubsection{Architecture du prototype}\label{sec:protoarchi}
+			\begin{figure}[t]
+				\centering
+				\hspace*{-1.7cm}
+				\includegraphics[scale=0.75]{../include/schema-synt-prototype.jpg}
+				\caption{Schéma synthétique de l'architecture du prototype}
+				\label{fig:archiproto}
+			\end{figure}
+			La Figure \ref{fig:archiproto} montre l'architecture de notre prototype.
+			Pour le moement, nous simulons les données des capteurs.
+			Ces données ont été acquisent lors d'une session de jeu vidéo à partir de capteurs physiologiques (capteurs décrits dans la Section \ref{sec:capteurs}.
+			Elles ont été enregistrés dans un fichier au format CSV.\par
+			Les données sont lus puis envoyées au Producteur.
+			Le Producteur ajoute à chaque topic la ou les données qui correspondent.
+			Par exemple, les données qui corresponde au Rythme Cardiaque sont envoyés sur le topic "HR" (pour Heart Rate).\par
+			Les données peuvent ensuite être consommées par un consommateur qui choisit le topic auquel il s'abonne.
+			Les données sont affichés dans un terminal au fur et à mesure qu'elles sont produitent.
+			Le consommateur attend toujours de nouvelles données à consommer.
+		\subsubsection{Implémentation du prototype}
+			La figure \ref{fig:archiimp} décrit les différents composants qui sont utilisés pour l'implémentation de notre prototype.\par
+			\begin{figure}
+				\includegraphics[scale=0.5]{../include/Diagramme_prototype.png}
+				\caption{Architecture du prototype}
+				\label{fig:archiimp}
+			\end{figure}
+			Le prototype est divisé en deux :
+			la partie Producteur (à gauche sur la figure \ref{fig:archiimp}) et la partie Consommateur (à droite).
+			Il s'agit de deux projets Maven distincts qui génèrent chacun un JAR exectuable.\par
+			La partie Producteur lis les données des capteurs contenues dans le fichier data\_file.csv.
+			Ces données sont normalisées pour être utilisées par le producteur.
+			Le producteur lis chaque donnée et l'envoie sur un topic.
+			Il s'arrête lorsque toutes les données ont été lues.\par
+			La parite Consommateur écoute le topic qui lui est passé en argument et affiche chaque donnée de ce topic dans un terminal.\par
+			Par exemple, la figure \ref{fig:exemple} montre une exécution du producteur (à gauche) et du consommateur (à droite) pour le topic "Vecteur".
+			\begin{figure}
+				\includegraphics[scale=0.5]{../include/producteurConsommateur.PNG}
+				\caption{Exemple d'exécution}
+				\label{fig:exemple}
+			\end{figure}\par
+			Tout le code pour ce prototype se trouve sur le github \href{https://github.com/laurelinemartin/stage/Prototype}{https://github.com/laurelinemartin/stage/Prototype}.
 	\subsection{Intégrer le prototype aux travaux déjà menés}\label{sec:travaux}
 		Des travaux antérieurs ont été menés pour le projet globale.
 		Ces tavaux concernent en particulier la détection et la reoconnaissance d'états émotionnels à partir de capteurs physiologiques.
 		Cependant, les algorithmes utilisent des données préalablement acquisent.
-		Autrement dit, les mesures physiologiques sont faites et enregistrées dans un fichier excel dans un premier temps.
+		Autrement dit, les mesures physiologiques sont faites expérimentalement et elles sont enregistrées dans un fichier Excel (au format .csv) dans un premier temps.
 		Et dans un second temps, les données sont traitées par les algorithmes qui ont été élaborés par des chercheurs du CEDRIC.
 		En particulier Viviane GAL dans sa thèse \cite{gal_2019}.
-		Il n'y a donc pas de notion de temps-réel dans ces travaux.\par
-		C'est pour quoi nous avons mis au point cette solution.
+		Il n'y a donc pas de notion de temps-réel dans ces travaux.
+		C'est pour quoi nous avons mis au point cette solution.\par
 		Nous présentons dans cette partie l'intégration de notre solutions aux travaux qui ont déjà été menés.
 		Pour cela, nous allons tout d'abord introduire les capteurs physiologiques qui sont utilisés par les travaux précédents.
-		Puis nous allons présenter comment notre solution améliore ces travaux.
+		Cette introduction va nous permettre de trouver le connecteur adéquat pour ingérer les données des capteurs dans notre solution Kafka.
+		Nous ferons la comparaison de différents connecteurs et nous positionnerons sur l'un d'entre.
+		Puis, nous présenterons l'architecture de l'intégration de notre solution au projet.
+		Enfin, nous ferons le bilan de ce qu'apporte notre prototype au projet.
 		\subsubsection{Capteurs physiologiques utilisés}\label{sec:capteurs}
 			Afin que notre prototype transmette les données provenant de capteurs aux algorithmes de reconnaissance des états émotionnels, nous devons nous adapter aux capteurs déjà utilisés par le laboratoire pour les expérimentations passées et futures.
 			Nous n'avons pas la possibilité de changer les capteurs, alors c'est à notre solution de s'y adpater.\par
@@ -545,7 +574,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\caption{Casque Neurosky}
 				\label{fig:neurosky}
 			\end{figure}
-		\subsubsection{Connecteur}
+		\subsubsection{Connecteurs}
 			Pour utiliser notre prototype avec les travaux qui ont déjà été menés pour la recherche des états émotionnels, nous avons besoin d'utiliser un connecteur.
 			Ce connecteur va nous permettre de récupérer les données provenant des capteurs pour les formaliser.
 			Ainsi elles pourront être utilisées dans Kafka.\par
@@ -572,7 +601,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			\textbf{1. Les connecteurs potentiels}\par
 			Ces connecteurs vont permettre de récupérer des données en temps-réel. 
 			Comme nos capteurs diffusent en permanence, nous avons besoin d’un Connecteur capable de transférer des données en temps-réel depuis les capteurs vers Kafka.
-			Le tableau \ref{tab:connecteurspotentiels} répertorie ces connecteurs.
+			Le tableau \ref{tab:potentiels} répertorie ces connecteurs.\par
 			\begin{table}[h]
 				\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
 					\hline
@@ -581,7 +610,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 					Kafka Connect Shell & Ingère la sortie d’une commande passé dans le shell vers Kafka (peut être utilisé avec un algorithme déjà implémentés de travaux antérieurs) \\\hline
 				\end{tabular}
 				\caption{Les connecteurs potentiels}
-				\label{tab:connecteurspotentiels}
+				\label{tab:potentiels}
 			\end{table}\par
 			\textbf{2. Les connecteurs non-retenus}\par
 			Ces connecteurs peuvnet être écartés de nos recherches. 
