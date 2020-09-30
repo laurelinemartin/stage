@@ -31,11 +31,10 @@ public class ProducerP {
 	    	         <String, String>(configProperties);
 	      final DataDAO dataDao = new DataCSVDAO();
 	      final List<Data> data = dataDao.lecture();
-	      // System.out.println("Liste des eleves");
 	      for (Data d : data) {
 		        producer.send(new ProducerRecord<String, String>("Vector", 
-		        		  Data.toStringPhysio(d)));
-		        producer.send(new ProducerRecord<String, String>("GSR", 
+		        		   Data.getDate(d), Data.toStringPhysio(d)));
+		        /* producer.send(new ProducerRecord<String, String>("GSR", 
 		        		  Data.toStringGSR(d)));
 		        producer.send(new ProducerRecord<String, String>("HR", 
 		        		  Data.toStringHR(d)));
@@ -48,7 +47,7 @@ public class ProducerP {
 		        producer.send(new ProducerRecord<String, String>("Lon", 
 		        		  Data.toStringLon(d)));
 		        producer.send(new ProducerRecord<String, String>("Pres",
-		        		Data.toStringPres(d)));
+		        		Data.toStringPres(d)));*/
 		        // Simulation temps-réel
 		        try {
 					Thread.sleep(30);

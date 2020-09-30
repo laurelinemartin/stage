@@ -64,6 +64,7 @@ public class DataCSVDAO implements DataDAO {
     public List<Data> donneesToData(List<String[]> donnees){
     	List<Data> data = new ArrayList<Data>();
         for(String[] donnee : donnees) {
+        	String date = donnee[0];
         	double RR = Double.parseDouble(donnee[1]);
         	double GSR = Double.parseDouble(donnee[2]);
         	double BT = Double.parseDouble(donnee[3]);
@@ -71,7 +72,7 @@ public class DataCSVDAO implements DataDAO {
         	double lat = Double.parseDouble(donnee[5]);
         	double lon = Double.parseDouble(donnee[6]);
         	boolean pres = Boolean.parseBoolean(donnee[7]);
-        	data.add(new Data(RR, GSR, HR, BT, lat, lon, pres));
+        	data.add(new Data(date, RR, GSR, HR, BT, lat, lon, pres));
         }
 		return data;
     }

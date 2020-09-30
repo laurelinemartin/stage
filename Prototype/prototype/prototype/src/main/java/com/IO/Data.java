@@ -5,6 +5,7 @@ package com.IO;
  * Classe des données
  */
 public class Data {
+	private String date;
 	private double RR;	//Respiration
 	private double GSR;	//Réponse galvanique de la peau
 	private double HR;	//Rythme cardiaque
@@ -16,6 +17,7 @@ public class Data {
 	 * Constructeur sans argument
 	 */
 	public Data() {
+		this.date = null;
 		this.RR = 0.0;
 		this.setGSR(0.0);
 		this.setHR(0.0);
@@ -35,7 +37,8 @@ public class Data {
 	 * @param double lon  Longitude
 	 * @param int presence Presence dans piece
 	 */
-	public Data(double RR, double GSR, double HR, double BT, double lat, double lon, boolean presence) {
+	public Data(String date, double RR, double GSR, double HR, double BT, double lat, double lon, boolean presence) {
+		this.date = date;
 		this.RR = RR;
 		this.GSR = GSR;
 		this.HR = HR;
@@ -59,13 +62,15 @@ public class Data {
 	public void setLon(double lon) 	{ this.lon = lon; }
 	public boolean getPres() 			{ return pres; }
 	public void setPres(boolean pres) 	{ this.pres = pres; }
+	public void setDate(String date)	{this.date = date; }
+	public static String getDate(Data d) { return d.date; }
 	
 	public static String toStringPhysio(Data d) {
 		String s = null;
-		s += "RR = " + Double.toString(d.RR);
-		s += " GSR = " + Double.toString(d.GSR);
-		s += " HR = " + Double.toString(d.HR);
-		s += " BT = " + Double.toString(d.BT);
+		s = Double.toString(d.RR) + ", ";
+		s += Double.toString(d.GSR) + ", ";
+		s += Double.toString(d.HR) + ", ";
+		s += Double.toString(d.BT);
 		return s;
 	}
 	public static String toStringRR(Data d) 	{ return Double.toString(d.RR); }
