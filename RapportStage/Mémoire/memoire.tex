@@ -14,13 +14,25 @@
 \geometry{hmargin=2.5cm,vmargin=3cm}
 \setlength{\parskip}{0.15cm}
 
-\title{Rapport de Stage}
+\title{Rapport de Stage\\ Master 2 Data Managment in a digital world - DataScale}
 \author{Laureline MARTIN}
 \date{Mercredi 7 Octobre 2020}
 
 \begin{document}
 \maketitle
-\vspace*{14cm}
+\begin{center}
+	\includegraphics[scale=0.55]{../include/logo-cedric.PNG}\\
+\end{center}
+\vfill
+\begin{center}
+	\textbf{Responsables du Master :}
+\end{center}
+\begin{tabular}{p{4cm}p{4cm}p{8cm}}
+	\hspace*{-1cm}
+	Mme. Zoubida KEDAD & Enseignante-chercheure & Laboratoire DAVID\smallskip\\
+	\hspace*{-1cm}
+	M. Philippe PUCHERAL & Enseignant-chercheur & INRIA
+\end{tabular}
 \begin{center}
 	\textbf{Encadrants :}
 \end{center}
@@ -39,35 +51,37 @@
 	\textbf{Résumé :}
 \end{center}
 \hspace*{0.4cm}
-Durant cinq mois et demi, j'ai travaillé au laboratoire de recherche CEDRIC au Conservatoire National des Arts et Métiers de Paris.\par
-Ce stage s'est inscrit au sein du projet exploratoire "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" du laboratoire.
-L'objectif global de ce projet est de proposer un jeu pervasif où le joueur et ses émotions sont au coeur même du jeu. 
-Pour cela, des capteurs physiologiques sont utilisés pour détecter et reconnaître les états émotionnels du joueurs ainsi que des capteurs placés dans l'environnement pour connaître le contexte global. 
+Durant cinq mois et demi, j'ai travaillé au sein du  laboratoire de recherche CEDRIC au Conservatoire National des Arts et Métiers de Paris.\par
+Ce stage s'est inscrit dans le projet exploratoire "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" du laboratoire. 
+L'objectif global de ce projet est de proposer un jeu pervasif où le joueur et ses émotions sont au cœur même du jeu. 
+Pour cela, des capteurs physiologiques sont utilisés pour détecter et reconnaître les états émotionnels du joueur. Ainsi que, des capteurs placés dans l'environnement pour connaître le contexte global. 
 Ces capteurs génèrent beaucoup de données qu'il faut traiter en temps-réel pour une adaptation dynamique du jeu.
-Dans ce rapport, nous prposons une solution pouvant ingérer les données provenant de capteurs physiologiques en temps-réel.
+Dans ce rapport, nous proposons une solution pouvant ingérer les données provenant de capteurs physiologiques en temps-réel.
 Ensuite, cette solution envoie ces données à des algorithmes déjà existant qui permettent de déduire des états émotionnels.
-Un état de l'art ainsi qu'une première version d'une ontologie afin de répondre à cet objectif ont été proposées et se trouvent dans ce rapport. 
-\bigskip\newline
+Un état de l'art ainsi qu'une première version d'une ontologie afin de répondre à cet objectif ont été proposées et se trouvent dans ce rapport.
+\vfill
 \begin{center}
 	\textbf{Abstract :}
 \end{center}
 \hspace*{0.4cm}
-I worked for the CEDRIC research laboratory based on Conservatoire Nationnal des Arts et Métiers at Paris during five mounths and half.\par
-This work was for the laboratory's exploratory project "Desing and development of adaptables pervasives games to players' emotional states".
-The main project goal is to develop a pervasive game where player and his emotions are the heart of the game.
-To reach this goal, physiological sensors are used in order to detect and recognize player's emotional states and others sensors are placed in environment to know the global context.
-Sensors generate a lot of data that must be processed in real-time to a dynamic game's adaptation.
-This report contains a solution to ingest real-time physiological sensors' data.
-This solution sends data to existing detection and recognition of emotional states algorithms.
-This report contains a state of the art and a first version of an ontology that I made too. 
-%\vspace*{3.1cm}
-\vfill
+I worked for the CEDRIC research laboratory based in the Conservatoire National des Arts et Métiers in Paris for five and a half months.\par
+This internship was registered in the laboratory's exploratory project «Design and development of adaptable pervasive games, while considering the players' emotional states".
+The project’s purpose is to develop a pervasive game, where the player and his emotions are the heart of the game.
+To reach this goal, physiological sensors are used to detect and recognize the player's emotional states.  Also, other sensors are placed in the environment to understand the global context.
+These sensors generate a lot of data that must be processed in real-time for the game to be adapted dynamically. 
+This report suggests a solution able to ingest in real-time data coming from physiological sensors.
+Then, this solution sends data to existing algorithms capable of detecting and recognizing emotional states.
+
+A state of the art as well as the first version of an ontology to answer this objective are laid out in this document. 
+
+
+\newpage
 \begin{center}
 	\textbf{Avant-propos}
 \end{center}
 \hspace*{0.4cm}
 Dans le cadre de la validation du Master 2 Data Managment in a Digital World - Datascale, proposé par l'Université de Versailles Saint-Quentin / Paris Saclay, j'ai effectué un stage de cinq mois et demi du 16 Mars 2020 au 30 Septembre 2020.
-Le contexte particulier lié à la crise sanitaire m'a amené à travailler pour la majorité de mon stage en télétravail (du 16 Mars au 10 Septembre).\par
+Le contexte particulier lié à la crise sanitaire m'a amené à travailler, pour la majorité de mon stage, en télétravail (du 16 Mars au 10 Septembre).\par
 Pour communiquer pendant cette période de travail à distance, nous utilisions les mails et nous avons organisé des réunions via Teams tous les 7 à 15 jours.
 Ces réunions duraient entre une demie heure et une heure.
 Ces sessions vidéos étaient l'occasion de faire le point sur l'avancement de mon travail et sur les tâches des jours à venir.
@@ -92,31 +106,28 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Par exemple, l'heure et/ou le jour peuvent influencer le comportement que doit adopter le joueur.
 	La technologie est également importante. 
 	Elle doit rester accessible au joueur, tant sur le plan pratique que sur le plan financier. 
-	La géolocalisation, les réseaux sans fil, etc. sont des technologies utilisées pour ce type de jeu.
-	Dans les jeux pervasifs, les joueurs, les spectateurs et les non-joueurs sont mélangés sur le même espace. 
-	Les joueurs n'ont pas de caractéristiques particulières pour se reconnaître.%\par
-	Le jeu pervasif à un un impact social et culturel important.
-	Il favorise les récontres dans l'espace physique.
+	La géolocalisation, les réseaux sans fil (réseaux mobiles, WIFI, bluetooth,...), etc. sont des technologies utilisées pour ce type de jeu.
+	Dans les jeux pervasifs, les joueurs, les spectateurs et les non-joueurs sont mélangés dans le même espace. 
+	Les joueurs n'ont pas de caractéristiques particulières pour se reconnaître. 
+	Le jeu pervasif a un impact social et culturel important.
+	Il favorise les rencontres dans l'espace physique.
 	Il permet de découvrir de nouveaux endroits, de nouvelles choses et de s'enrichir culturellement.
 	Cependant, le jeu omniprésent ne met pas réellement le joueur au centre de jeu.\par
 	Le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à mettre le joueur et ces émotions au centre du jeu.
-	Ce seront les émotions du joueurs qui influenceront le jeu et ses événements.\par
+	Ce seront les émotions du joueurs qui influenceront le jeu et ses événements. 
 	Pour pouvoir détecter et reconnaître les états émotionnels du joueur afin que le jeu s'y adapte et propose l'événement le plus adéquat, de multiples capteurs physiologiques peuvent être utilisés.
 	Ces capteurs génèrent beaucoup de données qui doivent être stockées et traitées.
-	Ces données permettront à des algorithmes de reconnaître les états émotionnels.\par
+	Ces données permettront à des algorithmes de reconnaître les états émotionnels des joueurs tout au long du jeu.\par
 	Le but de ce travail a été de dresser le contour d'un jeu pervasif adaptable aux états émotionnels du joueur et d'en affiner la conceptualisation.
 	Dans ce rapport, nous nous sommes intéressés, d'une part, à l'adaptation de jeux selon le contexte émotionnel et d'autre part, à la gestion de données générées par des capteurs physiologiques.\par
 	Dans un premier temps, nous présenterons dans la Section \ref{sec:cedric} le laboratoire CEDRIC.
-	Puis, dans la Section \ref{sec:projet}, nous parlerons du projet, des ses objectifs et de la problématique nous traiterons dans ce rapport.
+	Puis, dans la Section \ref{sec:projet}, nous décrirons le projet, ses objectifs et la problématique scientifique que nous traiterons notre travail et à travers ce rapport.
 	Nous décrirons, dans la Section \ref{sec:etatart}, le cadre de comparaison que nous avons mis au point pour l'adaptation dynamiques de jeu à leurs joueurs pour notre état de l'art. 
 	Nous aborderons dans la Section \ref{sec:escape} la notion d'expérience utilisateur et l'expérience que nous avons menée lors d'un escape game.
 	Dans la Section \ref{sec:modelisation}, nous présenterons une ontologie en cours de construction d'un jeu pervasif prenant en compte l'état émotionnel du joueur et le bilan que nous tirons de cet exercice.
 	Enfin, nous expliquerons dans la Section \ref{sec:prototypage} une solution que nous avons conçue pour la gestion de données en temps-réel provenant de capteurs physiologiques.
 
 \section{Présentation du laboratoire CEDRIC}\label{sec:cedric}
-	\begin{center}
-		\includegraphics[scale=0.55]{../include/logo-cedric.PNG}\\
-	\end{center}\par
 	Avant de présenter le travail réalisé, nous allons faire une présentation du laboratoire CEDRIC.
 	Le laboratoire de Centre d'Etudes et De Recherche en Informatique et Communication (CEDRIC)\footnote{\href{http://cedric.cnam.fr/lab/accueil/labo/}{http://cedric.cnam.fr/lab/accueil/labo/}} au sein du Conservatoire National des Arts et Métiers (CNAM) de Paris\footnote{\href{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}}. 
 	Le laboratoire se situe au 2 rue Conte 75003 PARIS.\par
