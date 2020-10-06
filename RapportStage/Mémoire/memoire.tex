@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc} 
 \usepackage[french]{babel}
@@ -38,9 +38,9 @@
 \end{center}
 \begin{tabular}{p{4cm}p{4cm}p{8cm}}
 	\hspace*{-1cm}
-	Mme. Viviane GAL & Ingénieure & Equipe \textit{Interactivité pour lire et jouer - ILJ}\smallskip\\
+	Mme. Viviane GAL & Docteur - Ingénieur & Equipe \textit{Interactivité pour lire et jouer - ILJ}\smallskip\\
 	\hspace*{-1cm}
-	M. Eric GRESSIER-SOUDAN & Professeur des universités & Equipe \textit{Réseaux et Objets Connectés - ROC}
+	M. Eric GRESSIER-SOUDAN & Professeur des Universités & Equipe \textit{Réseaux et Objets Connectés - ROC}
 	\smallskip\\
 	\hspace*{-1cm}
 	Mme. Elena KORNYSHOVA & Maître de conférences & Equipe \textit{Igénieurie des systèmes d'information et de décision - ISID}
@@ -71,7 +71,6 @@ To reach this goal, physiological sensors are used to detect and recognize the p
 These sensors generate a lot of data that must be processed in real-time for the game to be adapted dynamically. 
 This report suggests a solution able to ingest in real-time data coming from physiological sensors.
 Then, this solution sends data to existing algorithms capable of detecting and recognizing emotional states.
-
 A state of the art as well as the first version of an ontology to answer this objective are laid out in this document. 
 
 
@@ -140,37 +139,37 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		\item L'équipe Traitement du signal et architectures électroniques (LAETITIA) : Concentrée sur trois axes de recherhe : le traitement du signal pour les télécommunications (recherches en lien avec les réseaux cellulaires (5G/6G) et en lien avec les problématiques de couches physique pour les réseaux faible puissance longue portée pour l'IoT), la sûreté de fonctionnement des sytèmes dynémiques (recherche en automatique) et l'implémentation temps-réel (mise en oeuvre des algorithmes proposés par l'équipe);
 		\item L'équipe Méthode Statistique de Data-Mining et Apprentissage (MSDMA) : Traitement de données et développement de modèles d'apprentissage statistiques dans le but d'extraire des informations pour prise de décision;
 		\item L'équipe Optimisation Combinatoire (OC) : Rassemblée autour de deux axes : la programmation mathématique et applications ainsi que les graphes et optimisation;
-		\item L'équipe Réseaux et Objets Connectés (ROC) : Porte sur l'analyse et l'exploitation des nouvelles architectures réseaux et des systèmes liés à la virtualisation, à la mobilité et au développemnt des objets connectés;
+		\item L'équipe Réseaux et Objets Connectés (ROC) : Porte sur l'analyse et l'exploitation des nouvelles architectures réseaux et des systèmes liés à la virtualisation, à la mobilité et au développement des objets connectés;
 		\item L'équipe Systèmes Sûrs (SYS) : Spécialisation, conception, vérification et évaluation des systèmes. Pour cela, Les recherches se font autour de trois axes : l'axe typage, sémantique et preuve, l'axe architecture logiciel, architecture systèmes et ligne de produit et l'axe vérification et évaluation de systèmes parallèles et asynchrones.
 	\end{itemize}
 
 \section{Cadre du projet}\label{sec:projet}
 	Le projet exploratoire intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" a éé initié par trois enseignants-chercheurs du laboratoire CEDRIC du CNAM de Paris.
 	Il s'agit de Mme. Viviane GAL (équipe ILJ), M. Eric GRESSIER-SOUDAN (équipe ROC) et Mme. Elena KORNYSHOVA (équipe ISID).
-	Ce projet vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et au contexte de son environnement.\par
-	Dans cette section, nous allons présenter l'objectif global de ce projet.
-	Puis, nous parlerons de la problématique à laquelle nous apporterons une solution.
-	Nous donnerons aussi des définitions essentielles pour les notions clés et nous aborderons les sujets connexes que nous verrons tout au long de ce rapport.
+	Ce projet vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et de son environnement au cours du jeu.\par
+	Dans cette section, nous présentons l'objectif global de ce projet.
+	Puis, nous présentons la problématique scientifique à laquelle nous apporterons notre contribution.
+	Nous donnons aussi des définitions essentielles pour les notions clés et nous abordons les sujets connexes que nous verrons tout au long de ce rapport.
 	\subsection{Motivations et objectif du projet}\label{sec:objectif}
-		Avec le jeu pervasif, il est possible de créer une grande immersion et une plus grande implication (i.e. engagement) du joueur pour le jeu en comparaison à d'autres types de jeux tels que les jeux vidéos ou les jeux de sociétés.
+		Avec le jeu pervasif, il est possible de créer une grande immersion et une plus grande implication (i.e. engagement) du joueur pour le jeu en comparaison d'autres types de jeux tels que les jeux vidéo ou les jeux de société.
 		L'idée principale de notre projet est de concevoir un jeu omniprésent capable de détecter et de reconnaître dynamiquement l'état émotionnel courant de joueur. 
 		Le jeu devra aussi être capable de s'adapter à cet état en temps-réel en proposant un événement spécifique. 
 		La Figure \ref{fig:motivation} schématise l'objectif de notre projet.
-		\begin{figure}
+		\begin{figure}{h}
 			\centering
 			\includegraphics[scale=0.75]{../include/motivation.jpg}
 			\caption{Objectif global du projet}
 			\label{fig:motivation}
 		\end{figure}
-		Un joueur qui jouera à notre jeu aura une ou des réaction(s) physiologique(s) qui traduiront un état émotionnel détecté et reconnu par nos algorithmes.
+		Un joueur qui jouera à notre jeu aura une ou des réaction(s) physiologique(s) qui traduiront un état émotionnel détecté et reconnu par nos algorithmes \cite{gal_2019,gal_et_al._2020}.
 		Cet état émotionnel courant sera indiqué à nos algorithmes d'adaptations qui receveront aussi des indications sur l'état courant de l'environnement et sur les actions que fait le joueur dans le jeu.
-		Les algorithmes d'adaptation indiqueront au moteur de jeu l'événement le plus indiqué.
+		Les algorithmes d'adaptation indiqueront au moteur de jeu l'événement le plus approprié à proposer au joueur.
 		Et le jeu affichera cet événement sur l'interface utilisateur, ce qui enclenchera de nouvelles réactions physiologique, etc.\par
-		La réponse adaptatée du jeu à l'état émotionnel de son joueur devra se faire sous la forme d'événments dans le jeu.
-		Les événemnts particularisés à l'état émotionnel du joueur devront soit :
+		La réponse adaptée du jeu à l'état émotionnel de son joueur devra se faire sous la forme d'événments dans le jeu.
+		Les événemnts particularisés par rapport à l'état émotionnel du joueur devront soit :
 		\begin{itemize}
-			\item Avoir tendance à provoquer le même état émotionnel que celui expérimenté par le joueur à cet instant afin de le maintenir dans cet état émotionnel;
-			\item Avoir tendance à provoquer un autre état émotionnel que celui expérimenté par le joueur à cet instant dans le but de provoquer un changement d'état émotionnel.
+			\item Avoir tendance à provoquer le même état émotionnel que celui expérimenté par le joueur à cet instant afin de le maintenir dans cet état;
+			\item Avoir tendance à provoquer un autre état émotionnel que celui expérimenté par le joueur à cet instant dans le but de produire un changement d'état émotionnel.
 		\end{itemize}
 		Le choix d'utiliser un événement plutôt qu'un autre afin d'essayer d'influencer l'état émotionnel du joueur devra se faire selon différents critères.
 		Ces critères pourraient être : la valeur positive/négative de l'état émotionnel (même si la réalité est bien plus complexe), l'avancement dans le jeu, ou bien le contexte environnemental courant.
@@ -185,24 +184,24 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Nous pourrions aussi nous intéresser aux problématiques liées à l'adaptaion du jeu pervasif.
 		Les méthodes et les règles qu'il faudrait utiliser pour une "bonne" adaptation du jeu pervasif à son joueur sont à définir.\par
 		La problématique à laquelle nous avions tout d'abord tenté d'apporter une contribution était celle de la réalisation d'un modèle conceptuel pour représenter l'adaptation d'un jeu pervasif aux émotions d'un joueur.
-		Mais, au cours de notre travail, nous avons décidé de changer de point de vue et  d'aborder une autre problématique également importante pour l'aboutissement de notre projet.\par
-		Dans ce rapport, nous allons traiter principalement la problématique de la gestion des données générées par les capteurs physiologiques.
-		Pour atteindre notre objectif final, il est important de pouvoir utiliser les données des capteurs pour déterminer les états émotionnels afin que le jeu puisse s'y adapter. 
-		Cela pose une contrainte importante sur la gestion des données en temps-réel.
+		Mais, au cours de notre travail, nous avons décidé de changer de point de vue et  d'aborder une autre problématique également importante pour l'aboutissement de notre projet. 
+		Dans ce rapport, nous allons traiter principalement la problématique de la gestion des données générées par les capteurs physiologiques. 
+		Pour atteindre notre objectif final, il est important de pouvoir utiliser les données des capteurs pour déterminer les états émotionnels afin que le jeu puisse s'adapter dynamiquement en fonction des caractéristiques déterminées en temps réel. 
+		% Cela pose une contrainte importante sur la gestion des données en temps-réel.
 		En effet, la réponse adaptée à l'état émotionnel courant du joueur doit être la plus immédiate possible afin de ne pas créer un sentiment de décalage entre le ressenti du joueur et l'adaptation du jeu.
 	\subsection{Définitions et sujets connexes}\label{sec:connexe}
 		Avant de développer les travaux que nous avons menés, il est important de faire une mise au point sur les termes que nous allons employer tout au long du rapport.\par
 		Ici, nous parlons d'état émotionnel et non d'émotion.
 		L'émotion est une réaction physiologique forte qui ne dure que quelques minutes.
-		Elle est la réponse à un événement, à un stimuli,...
+		Elle est la réponse à un événement, à un stimulus.
 		L'ensemble des émotions est très restreint.
-		Il se composent, selon les définitions de quatre à huits émotions.
+		Il se composent, selon les définitions de quatre à huit émotions.
 		L'état émotionnel, quant à lui, est plus vaste. 
 		Il regroupe plusieurs notions en plus de l'émotion telles que le sentiment ou l'affect. 
 		L'état émotionnel est donc une définition "étendue" de l'émotion, ce qui nous permet de ne pas exclure des notions que nous pourrions considérer dans de futurs travaux.
-		Cela nous permet aussi de rester assez vaste sur les possibilité de reconnaissance de notre jeu.\par
-		Pour répondre à la problématique de la gestion de données en temps-réel provenant de capteurs physiologiques, nous avons besoin d'avantage de contexte sur des sujets tels que : les méthodes de détections et de reconnaîssance des états émotionnels, la notion d'expérience utilisateur et d'autres types de jeux.
-		Tout au long du rapport, nous allons aborder ces sujets qui n'entre pas directemnt dans le cadre de la solution que nous apportons mais qui sont essentiels pour la compréhension du sujet de notre projet et de l'apport de notre solution.
+		Cela nous permet aussi de rester assez vastes sur les possibilité de reconnaissance de notre jeu.\par
+		Pour répondre à la problématique de la gestion de données en temps-réel provenant de capteurs physiologiques, nous avons besoin d'avantage de contexte sur des sujets tels que : les méthodes de détections et de reconnaissance des états émotionnels, la notion d'expérience utilisateur et d'autres types de jeux.
+		Tout au long du rapport, nous allons aborder ces sujets qui n'entre pas directemnt dans le cadre de la solution que nous apportons mais qui sont essentiels pour la compréhension du sujet de notre projet et de la contribution de notre solution.
 
 \section{Etat de l'art}\label{sec:etatart}
 	Notre état de l'art s'intéresse aux différentes méthodes déjà existantes dans la littérature scientifique et technique permettant à différents types de jeux de s'adapter aux états émotionnel ainsi qu'à d'autres caractéristiques liées aux joueurs. 
@@ -218,7 +217,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			\item Les méthodes pour la détection et pour la reconnaissance des états émotionnels
 			\begin{itemize}
 				\item Les capteurs utilisés
-				\item Les algorithmes utlisés pour la détection et/ou la méthode de l'état émotionnel
+				\item Les algorithmes utlisés pour la détection et/ou la reconnaissance  de l'état émotionnel
 			\end{itemize}
 			\item Les autres caractéristiques de l'utilisateur prises en compte par le jeu
 			\item Les méthodes d'adaptation d'un jeu au contexte de son utilisateur
@@ -231,7 +230,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Et d'autre part, les algorithmes utilisés pour la détection et la reconnaissance d'états émotionnels.
 		Comme nous visons à utiliser des capteurs pour notre projet, il est important pour nous de savoir si certains capteurs reviennent souvent dans la littérature et s'ils sont performants pour ce type d'application.
 		Nous visons aussi à utiliser des algorithmes d'apprentissage profond non-supervisés pour la reconnaissance d'états émotionnels (comme celui décrit dans \cite{gal_et_al._2020}), alors nous avons cherché à savoir s'il existait déjà des algorithmes similaires.\par
-		Le critère "autres caractéristiques de l'utilisateur prises en compte par le jeu" nous permet d'identifier s'il existe d'autres données que celui de l'état émotionnel pour une "bonne" adaptation d'un jeu. 
+		Le critère "autres caractéristiques de l'utilisateur prises en compte par le jeu" nous permet d'identifier s'il existe d'autres données que celles concernant l'état émotionnel pour une "bonne" adaptation d'un jeu. 
 		Ce critère permet d'élargir notre champ de recherche.\par
 		Le dernier critère "méthodes d'adaptation d'un jeu au contexte de son utilisateur" permet d'identifier les algorithmes pour l'adaptation dynamique et particularisée d'un jeu.
 		D'un côté nous explorons les algorithmes utilisant l'état émotionnel du joueur.
@@ -243,23 +242,25 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Ces approches concernent différents types de jeux (jeux sérieux, jeux-vidéo, jeux pervasifs,...).
 	\subsection{Application du cadre}
 		De cette comparaison, il en ressort plusieurs questions et limites.\par
-		Tout d'abord, nous remarquons que seulement quelques états émotionnels sont traités dans les approches. 
+		Tout d'abord, nous remarquons que seulement quelques états émotionnels sont traités dans les approches que nous avons étudiées. 
 		Même si nous pouvons imaginer que certains états émotionnels ne seront jamais expérimentés au cours du jeu que nous souhaitons concevoir, il semble tout de même important de pouvoir prendre en compte le plus grand nombre d'états émotionnels possible.
 		Sans quoi, le jeu ne pourrait s'adapter correctement au joueur et impacter négativement son expérience de jeu et son niveau d'intérêt pour le jeu.
-		C'est pour quoi nous pensons qu'il est préférable d'utiliser un algorithme d'apprentissage pronfond non-supervisé pour la reconnaissance des états émotionnels.
+		C'est pour cette raison que nous pensons qu'il est préférable d'utiliser un algorithme d'apprentissage profond non-supervisé pour la reconnaissance des états émotionnels. 
 		Ce genre d'algorithmes nous semble pouvoir reconnaître beaucoup plus d'états émotionnels que si nous avions nous-mêmes à les définir.\par
 		Dans notre cas, nous utilisons des capteurs physiologiques de contact, c'est-à-dire des capteurs "collés" au joueur, dans le but d'acquérir des données sur son état physiologique pour en déduire son état émotionnel courant via des algorithmes.
 		Dans les approches que nous avons relevées, certaines d'entre elles reconnaissent des états émotionnels en utilisants différents types d'algorithmes et des capteurs physiologiques. 
 		Mais contrairement à cela, d'autres utilisent des modèles pour "prédire" l'état émotionnel courant du joueur.
-		Ce genre de méthodes "prédictives" peuvent être intéressantes car elle retire l'équipement de capteurs du joueur.
+		Ces méthodes "prédictives" peuvent être intéressantes car elles ne nécessitent pas de capteurs.
+		Le joueur n'a pas à acheter des capteurs, ni à les "coller" sur lui pour que le jeu puisse détecter son état émotionnel courant.
+		Il est donc "plus libre" dans ses mouvements.
 		Cependant, ce type de méthodes semble être moins précis car il se base sur le principe que tous les joueurs ressentiront exactement le même état émotionnel lorsqu'ils se retrouveront dans le même cas de figure. 
-		De plus, cela implique d'envisager absolument tous les états du jeu possibles, toutes les actions possibles du joueur et d'associer un état émotionnel pou chacque intersection.
-		Ce qui nous fait croire que l'utilisation de capteurs physiologiques, même si leur utilisation est plus contraignante pour le joueur, est plus pertinente car plus proche de chacun puisque les capteurs génèrent des données propres à chaque joueur.
+		De plus, cela implique d'envisager absolument tous les états du jeu possibles, toutes les actions possibles du joueur et d'associer un état émotionnel por chacque intersection.
+		Ceci nous laisse croire que l'utilisation de capteurs physiologiques, même si leur utilisation est plus contraignante pour le joueur, est plus pertinente car plus proche de chacun puisque les capteurs génèrent des données propres à chaque joueur.
 		Nous pensons que deux états émotionnels distincts pourront être expérimentés par deux joueurs différents, même s'il s'agit de la même situation dans le jeu pour les deux joueurs.
 		De ce fait, il est nécessaire que le jeu s'adapte à chacun dynamiquement.\par
 		Notre cadre de comparaison révèle que d'autres caractéristiques que celle de l'état émotionnel peuvent être considérées pour augmenter la "connaissance" du jeu sur son joueur.
-		Ces caractéristiques peuvent être intéressantes à étudier à la fois pour mieux connaître les goûts et les préférences du joueur (qui sont souvent plus pérènes) mais aussi pour l'enrichissement de la connaissance du contexte de l'environnement globale. 
-		Ces caractéristiques peuvent aussi bien s'appuyer sur l'utilisation d'un questionnaire de préférence rempli par l'utilisateur lui-même que sur la présence de capteurs dans l'environnement. 
+		Ces caractéristiques peuvent être intéressantes à étudier à la fois pour mieux connaître les goûts et les préférences du joueur (qui sont souvent plus pérennes) mais aussi pour l'enrichissement de la connaissance du contexte de l'environnement globale. 
+		Ces caractéristiques peuvent aussi bien s'appuyer sur l'utilisation d'un questionnaire de préférences rempli par l'utilisateur lui-même que sur la présence de capteurs dans l'environnement. 
 		Cela constitue une piste qui pourrait être approfondie dans de prochains travaux.\par
 		Cet état de l'art nous a permis d'avoir une vision globale de ce qui existait déjà en matière d'adaptation de jeux aux états émotionnels des joueurs.
 		Il aura aussi été l'occasion de proposer un cadre de comparaison pour ce sujet. 
@@ -277,7 +278,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		De plus, la connaissance et la compréhension du fonctionnement du cerveau humain est aussi un domaine où l'on fait sans cesse de nouvelles découvertes.
 		De ce fait, il n'existe pas de "définition universelle" de l'UX.
 		Je présente ici ma propre définition de l'expérience utilisateur.
-		Pour construire cette définition, j'ai étudié différentes ressources qui se trouvent en Annexe \cite{ann:ux}.\par
+		Pour construire cette définition, j'ai étudié différentes ressources qui se trouvent en Annexe \ref{ann:ux}.\par
 		L’expérience utilisateur concerne toutes les réactions qu’un utilisateur peut avoir lors d’une interaction avec un service, un objet, un espace public, etc.
 		C’est aussi tout ce que l’utilisateur peut ressentir lors de cette interaction.
 		L’expérience utilisateur va donc plus loin que la simple notion d’ergonomie qui elle ne concerne que la « facilité d’utilisation » d’un produit.\par
