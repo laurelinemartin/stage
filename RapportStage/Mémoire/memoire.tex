@@ -14,36 +14,38 @@
 \geometry{hmargin=2.5cm,vmargin=3cm}
 \setlength{\parskip}{0.15cm}
 
-\title{Rapport de Stage\\ Master 2 Data Managment in a digital world - DataScale}
+\title{Rapport de Stage\\ Master 2 Data Managment in a Digital World - DataScale\\ 
+Université Versailles Saint-Quentin - Paris Saclay}
 \author{Laureline MARTIN}
 \date{Mercredi 7 Octobre 2020}
 
 \begin{document}
 \maketitle
+\vfill
 \begin{center}
-	\includegraphics[scale=0.55]{../include/logo-cedric.PNG}\\
+	\includegraphics[scale=0.25]{../include/uvsq.png}
+	\includegraphics[scale=0.56]{../include/logo-cedric.PNG}\\
 \end{center}
 \vfill
 \begin{center}
 	\textbf{Responsables du Master :}
 \end{center}
-\begin{tabular}{p{4cm}p{4cm}p{8cm}}
+\begin{tabular}{p{4cm}p{4.5cm}p{7.5cm}}
 	\hspace*{-1cm}
-	Mme. Zoubida KEDAD & Enseignante-chercheure & Laboratoire DAVID\smallskip\\
+	Mme Zoubida KEDAD & Maître de conférences & Laboratoire DAVID (équipe \textit{ADAM})\\
 	\hspace*{-1cm}
-	M. Philippe PUCHERAL & Enseignant-chercheur & INRIA
-\end{tabular}
+	M. Philippe PUCHERAL & Professeur & Laboratoire DAVID et INRIA (équipe \textit{PETRUS})
+\end{tabular}\par
 \begin{center}
 	\textbf{Encadrants :}
 \end{center}
-\begin{tabular}{p{4cm}p{4cm}p{8cm}}
+\begin{tabular}{lp{4.5cm}p{7.5cm}}
 	\hspace*{-1cm}
-	Mme. Viviane GAL & Docteur - Ingénieur & Equipe \textit{Interactivité pour lire et jouer - ILJ}\smallskip\\
+	Mme Viviane GAL & Docteur - Ingénieur & Equipe \textit{Interactivité pour lire et jouer - ILJ}\\
 	\hspace*{-1cm}
-	M. Eric GRESSIER-SOUDAN & Professeur des Universités & Equipe \textit{Réseaux et Objets Connectés - ROC}
-	\smallskip\\
+	M. Eric GRESSIER-SOUDAN & Professeur des Universités & Equipe \textit{Réseaux et Objets Connectés - ROC}\\
 	\hspace*{-1cm}
-	Mme. Elena KORNYSHOVA & Maître de conférences & Equipe \textit{Igénieurie des systèmes d'information et de décision - ISID}
+	Mme Elena KORNYSHOVA & Maître de conférences & Equipe \textit{Igénieurie des systèmes d'information et de décision - ISID}
 \end{tabular}
 
 \newpage
@@ -96,64 +98,45 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 \section{Introduction}
 	Depuis plusieurs années, les jeux pervasifs se multiplient sur le marché, proposant aux joueurs des contenus très immersifs.
 	Le jeu pervasif (aussi appelé jeu omniprésent) est un genre de jeu qui mêle le monde physique et le monde numérique et rend floue cette frontière.
-	Dans le jeu pervasif, le contexte est essentiel. 
-	Comme le montre \cite{astic_2013}, quatre facteurs sont mis en jeu : l'espace, le temps, la technologie et les rapports sociaux. 
+	Dans le jeu pervasif, le contexte est essentiel.
+	Comme le montre \cite{astic_2013}, quatre facteurs sont mis en jeu : l'espace, le temps, la technologie et les rapports sociaux.
 	L'espace du jeu pervasif est à la fois ancré dans le réel et dans le virtuel.
-	Il convient alors que des ponts existent entre ces deux espaces. 
-	Ces ponts peuvent se faire via des objets, des points géographiques, des personnes, etc. 
-	Le temps est calqué sur le temps réel mais il peut être utilisé de différentes manières dans le jeu. 
+	Il convient alors que des ponts existent entre ces deux espaces.
+	Ces ponts peuvent se faire via des objets, des points géographiques, des personnes, etc.
+	Le temps est calqué sur le temps réel mais il peut être utilisé de différentes manières dans le jeu.
 	Par exemple, l'heure et/ou le jour peuvent influencer le comportement que doit adopter le joueur.
-	La technologie est également importante. 
-	Elle doit rester accessible au joueur, tant sur le plan pratique que sur le plan financier. 
+	La technologie est également importante.
+	Elle doit rester accessible au joueur, tant sur le plan pratique que sur le plan financier.
 	La géolocalisation, les réseaux sans fil (réseaux mobiles, WIFI, bluetooth,...), etc. sont des technologies utilisées pour ce type de jeu.
-	Dans les jeux pervasifs, les joueurs, les spectateurs et les non-joueurs sont mélangés dans le même espace. 
-	Les joueurs n'ont pas de caractéristiques particulières pour se reconnaître. 
+	Dans les jeux pervasifs, les joueurs, les spectateurs et les non-joueurs sont mélangés dans le même espace.
+	Les joueurs n'ont pas de caractéristiques particulières pour se reconnaître.
 	Le jeu pervasif a un impact social et culturel important.
 	Il favorise les rencontres dans l'espace physique.
 	Il permet de découvrir de nouveaux endroits, de nouvelles choses et de s'enrichir culturellement.
 	Cependant, le jeu omniprésent ne met pas réellement le joueur au centre de jeu.\par
 	Le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à mettre le joueur et ces émotions au centre du jeu.
-	Ce seront les émotions du joueurs qui influenceront le jeu et ses événements. 
+	Ce seront les émotions du joueur qui influenceront le jeu et ses événements.
 	Pour pouvoir détecter et reconnaître les états émotionnels du joueur afin que le jeu s'y adapte et propose l'événement le plus adéquat, de multiples capteurs physiologiques peuvent être utilisés.
 	Ces capteurs génèrent beaucoup de données qui doivent être stockées et traitées.
 	Ces données permettront à des algorithmes de reconnaître les états émotionnels des joueurs tout au long du jeu.\par
 	Le but de ce travail a été de dresser le contour d'un jeu pervasif adaptable aux états émotionnels du joueur et d'en affiner la conceptualisation.
 	Dans ce rapport, nous nous sommes intéressés, d'une part, à l'adaptation de jeux selon le contexte émotionnel et d'autre part, à la gestion de données générées par des capteurs physiologiques.\par
-	Dans un premier temps, nous présenterons dans la Section \ref{sec:cedric} le laboratoire CEDRIC.
-	Puis, dans la Section \ref{sec:projet}, nous décrirons le projet, ses objectifs et la problématique scientifique que nous traiterons notre travail et à travers ce rapport.
-	Nous décrirons, dans la Section \ref{sec:etatart}, le cadre de comparaison que nous avons mis au point pour l'adaptation dynamiques de jeu à leurs joueurs pour notre état de l'art. 
+	Dans un premier temps, nous décrirons dans la Section \ref{sec:projet}, notre projet, ses objectifs et la problématique scientifique que nous traiterons, notre travail et à travers ce rapport.
+	Nous décrirons, dans la Section \ref{sec:etatart}, le cadre de comparaison que nous avons mis au point pour l'adaptation dynamiques de jeux à leurs joueurs pour notre état de l'art. 
 	Nous aborderons dans la Section \ref{sec:escape} la notion d'expérience utilisateur et l'expérience que nous avons menée lors d'un escape game.
-	Dans la Section \ref{sec:modelisation}, nous présenterons une ontologie en cours de construction d'un jeu pervasif prenant en compte l'état émotionnel du joueur et le bilan que nous tirons de cet exercice.
+	Dans la Section \ref{sec:modelisation}, nous présenterons une ontologie, en cours de construction, d'un jeu pervasif prenant en compte l'état émotionnel du joueur et le bilan que nous tirons de cet exercice.
 	Enfin, nous expliquerons dans la Section \ref{sec:prototypage} une solution que nous avons conçue pour la gestion de données en temps-réel provenant de capteurs physiologiques.
 
-\section{Présentation du laboratoire CEDRIC}\label{sec:cedric}
-	Avant de présenter le travail réalisé, nous allons faire une présentation du laboratoire CEDRIC.
-	Le laboratoire de Centre d'Etudes et De Recherche en Informatique et Communication (CEDRIC)\footnote{\href{http://cedric.cnam.fr/lab/accueil/labo/}{http://cedric.cnam.fr/lab/accueil/labo/}} au sein du Conservatoire National des Arts et Métiers (CNAM) de Paris\footnote{\href{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}}. 
-	Le laboratoire se situe au 2 rue Conte 75003 PARIS.\par
-	Le laboratoire CEDRIC est composé de huit équipes menant des recherches et des actions dans le domaine de l'informatique fondamentale et appliquée, ainsi que dans d'autres disciplines proches telles que les statistiques, électronique,....\par
-	Les équipes du laboratoire sont les suivantes :
-	\begin{itemize}
-		\item L'équipe Données complexes, apprentissage et représentations (Vertigo) : Extraire de l'information et construire des méthodes de gestion de données basées sur le contenu pour des données massives audios, images et vidéos;
-		\item L'équipe Interactivité pour Lire et Jouer (ILJ) : Questions autour de l'interaction Homme-Machine concernant des activités telles que le jeu et la lecteure. Cette équipe mèle plusieurs disciplines (l'informatiques, la psychologie, le design, les arts,...) afin de répondre aux études en cours qui concernent la modélisation de la difficulté dans les jeux, les méthodologies de game design inclusif, etc.;
-		\item L'équipe Ingénieries des Systèmes d'Information et de Décision (ISID) : Cette équipe s'est réunie autour de trois axes de recherche : les systèmes décisionnels, le web sémantique et la qualité des systèmes d'information. Son but est de concevoir des méthodes, des outils et des techniques	pour la conception et l'analyse de systèmes d'information et de décision dans tous les domaines;
-		\item L'équipe Traitement du signal et architectures électroniques (LAETITIA) : Concentrée sur trois axes de recherhe : le traitement du signal pour les télécommunications (recherches en lien avec les réseaux cellulaires (5G/6G) et en lien avec les problématiques de couches physique pour les réseaux faible puissance longue portée pour l'IoT), la sûreté de fonctionnement des sytèmes dynémiques (recherche en automatique) et l'implémentation temps-réel (mise en oeuvre des algorithmes proposés par l'équipe);
-		\item L'équipe Méthode Statistique de Data-Mining et Apprentissage (MSDMA) : Traitement de données et développement de modèles d'apprentissage statistiques dans le but d'extraire des informations pour prise de décision;
-		\item L'équipe Optimisation Combinatoire (OC) : Rassemblée autour de deux axes : la programmation mathématique et applications ainsi que les graphes et optimisation;
-		\item L'équipe Réseaux et Objets Connectés (ROC) : Porte sur l'analyse et l'exploitation des nouvelles architectures réseaux et des systèmes liés à la virtualisation, à la mobilité et au développement des objets connectés;
-		\item L'équipe Systèmes Sûrs (SYS) : Spécialisation, conception, vérification et évaluation des systèmes. Pour cela, Les recherches se font autour de trois axes : l'axe typage, sémantique et preuve, l'axe architecture logiciel, architecture systèmes et ligne de produit et l'axe vérification et évaluation de systèmes parallèles et asynchrones.
-	\end{itemize}
-
 \section{Cadre du projet}\label{sec:projet}
-	Le projet exploratoire intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" a éé initié par trois enseignants-chercheurs du laboratoire CEDRIC du CNAM de Paris.
-	Il s'agit de Mme. Viviane GAL (équipe ILJ), M. Eric GRESSIER-SOUDAN (équipe ROC) et Mme. Elena KORNYSHOVA (équipe ISID).
+	Le projet exploratoire intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" a éé initié par Mme Viviane GAL (équipe ILJ, voir Annexe \ref{ann:cedric}), M. Eric GRESSIER-SOUDAN (équipe ROC) et Mme Elena KORNYSHOVA (équipe ISID).
 	Ce projet vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et de son environnement au cours du jeu.\par
 	Dans cette section, nous présentons l'objectif global de ce projet.
 	Puis, nous présentons la problématique scientifique à laquelle nous apporterons notre contribution.
 	Nous donnons aussi des définitions essentielles pour les notions clés et nous abordons les sujets connexes que nous verrons tout au long de ce rapport.
 	\subsection{Motivations et objectif du projet}\label{sec:objectif}
 		Avec le jeu pervasif, il est possible de créer une grande immersion et une plus grande implication (i.e. engagement) du joueur pour le jeu en comparaison d'autres types de jeux tels que les jeux vidéo ou les jeux de société.
-		L'idée principale de notre projet est de concevoir un jeu omniprésent capable de détecter et de reconnaître dynamiquement l'état émotionnel courant de joueur. 
-		Le jeu devra aussi être capable de s'adapter à cet état en temps-réel en proposant un événement spécifique. 
+		L'idée principale de notre projet est de concevoir un jeu omniprésent capable de détecter et de reconnaître dynamiquement l'état émotionnel courant de joueur.
+		Le jeu devra aussi être capable de s'adapter à cet état en temps-réel en proposant un événement spécifique.
 		La Figure \ref{fig:motivation} schématise l'objectif de notre projet.
 		\begin{figure}{h}
 			\centering
@@ -162,11 +145,11 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			\label{fig:motivation}
 		\end{figure}
 		Un joueur qui jouera à notre jeu aura une ou des réaction(s) physiologique(s) qui traduiront un état émotionnel détecté et reconnu par nos algorithmes \cite{gal_2019,gal_et_al._2020}.
-		Cet état émotionnel courant sera indiqué à nos algorithmes d'adaptations qui receveront aussi des indications sur l'état courant de l'environnement et sur les actions que fait le joueur dans le jeu.
+		Cet état émotionnel courant sera indiqué à nos algorithmes d'adaptations qui recevront aussi des indications sur l'état courant de l'environnement et sur les actions que fait le joueur dans le jeu.
 		Les algorithmes d'adaptation indiqueront au moteur de jeu l'événement le plus approprié à proposer au joueur.
 		Et le jeu affichera cet événement sur l'interface utilisateur, ce qui enclenchera de nouvelles réactions physiologique, etc.\par
-		La réponse adaptée du jeu à l'état émotionnel de son joueur devra se faire sous la forme d'événments dans le jeu.
-		Les événemnts particularisés par rapport à l'état émotionnel du joueur devront soit :
+		La réponse adaptée du jeu à l'état émotionnel de son joueur devra se faire sous la forme d'événements dans le jeu.
+		Les événements particularisés par rapport à l'état émotionnel du joueur devront soit :
 		\begin{itemize}
 			\item Avoir tendance à provoquer le même état émotionnel que celui expérimenté par le joueur à cet instant afin de le maintenir dans cet état;
 			\item Avoir tendance à provoquer un autre état émotionnel que celui expérimenté par le joueur à cet instant dans le but de produire un changement d'état émotionnel.
@@ -177,104 +160,111 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Le but d'une telle adaptation est de pouvoir garantir l'expérience de jeu la plus immersive possible et un meilleur divertissement pour le joueur.\par
 		Toutefois, la conception d'un tel jeu devra rester assez générique.
 		L'une de nos motivations finales est de pouvoir appliquer notre jeu à d'autres domaines dans de prochains projets.
-		D'autres domaines d'applications pourraient être le domaine du médicale ou celui de l'apprentissage.
+		D'autres domaines d'applications pourraient être le domaine du médical ou celui de l'apprentissage.
 	\subsection{Problématique}\label{sec:problematique}
 		Pour un projet aussi vaste qu'est le nôtre, plusieurs problématiques se posent.
 		Par exemple, nous pouvons nous intéresser aux moyens de détecter et de reconnaître les états émotionnels d'une personne.
-		Nous pourrions aussi nous intéresser aux problématiques liées à l'adaptaion du jeu pervasif.
+		Nous pourrions aussi nous intéresser aux problématiques liées à l'adaptation du jeu pervasif.
 		Les méthodes et les règles qu'il faudrait utiliser pour une "bonne" adaptation du jeu pervasif à son joueur sont à définir.\par
 		La problématique à laquelle nous avions tout d'abord tenté d'apporter une contribution était celle de la réalisation d'un modèle conceptuel pour représenter l'adaptation d'un jeu pervasif aux émotions d'un joueur.
-		Mais, au cours de notre travail, nous avons décidé de changer de point de vue et  d'aborder une autre problématique également importante pour l'aboutissement de notre projet. 
-		Dans ce rapport, nous allons traiter principalement la problématique de la gestion des données générées par les capteurs physiologiques. 
-		Pour atteindre notre objectif final, il est important de pouvoir utiliser les données des capteurs pour déterminer les états émotionnels afin que le jeu puisse s'adapter dynamiquement en fonction des caractéristiques déterminées en temps réel. 
-		% Cela pose une contrainte importante sur la gestion des données en temps-réel.
+		Mais, au cours de notre travail, nous avons décidé de changer de point de vue et d'aborder une autre problématique également importante pour l'aboutissement de notre projet. 
+		Ce changement de direction est expliqué dans la partie \ref{sec:difficultes}. 
+		Dans ce rapport, nous allons traiter principalement la problématique de la gestion des données générées par les capteurs physiologiques.
+		Pour atteindre notre objectif final, il est important de pouvoir utiliser les données des capteurs pour déterminer les états émotionnels afin que le jeu puisse s'adapter dynamiquement en fonction des caractéristiques déterminées en temps réel.
 		En effet, la réponse adaptée à l'état émotionnel courant du joueur doit être la plus immédiate possible afin de ne pas créer un sentiment de décalage entre le ressenti du joueur et l'adaptation du jeu.
 	\subsection{Définitions et sujets connexes}\label{sec:connexe}
 		Avant de développer les travaux que nous avons menés, il est important de faire une mise au point sur les termes que nous allons employer tout au long du rapport.\par
 		Ici, nous parlons d'état émotionnel et non d'émotion.
-		L'émotion est une réaction physiologique forte qui ne dure que quelques minutes.
-		Elle est la réponse à un événement, à un stimulus.
+		Selon le dictionnaire Larousse\footnote{\href{https://www.larousse.fr/dictionnaires/francais/émotion/28829}{https://www.larousse.fr/dictionnaires/francais/émotion/28829}}, l'émotion est une "réaction affective transitoire d'assez grande intensité, habituellement provoquée par une stimulation venue de l'environnement". 
+		Autrement dit, l'émotion est une réponse physiologique forte dûe à un événement ou à un stimulus, elle ne dure pas dans le temps.
 		L'ensemble des émotions est très restreint.
-		Il se composent, selon les définitions de quatre à huit émotions.
-		L'état émotionnel, quant à lui, est plus vaste. 
-		Il regroupe plusieurs notions en plus de l'émotion telles que le sentiment ou l'affect. 
-		L'état émotionnel est donc une définition "étendue" de l'émotion, ce qui nous permet de ne pas exclure des notions que nous pourrions considérer dans de futurs travaux.
-		Cela nous permet aussi de rester assez vastes sur les possibilité de reconnaissance de notre jeu.\par
-		Pour répondre à la problématique de la gestion de données en temps-réel provenant de capteurs physiologiques, nous avons besoin d'avantage de contexte sur des sujets tels que : les méthodes de détections et de reconnaissance des états émotionnels, la notion d'expérience utilisateur et d'autres types de jeux.
-		Tout au long du rapport, nous allons aborder ces sujets qui n'entre pas directemnt dans le cadre de la solution que nous apportons mais qui sont essentiels pour la compréhension du sujet de notre projet et de la contribution de notre solution.
+		Il se compose de six émotions primaires : Peur, joie, dégoût, tristesse, colère et surprise. 
+		L'état émotionnel, quant à lui, est plus vaste, plus long.
+		Selon \cite{gal_2019}, l'état émotionnel débute avec l'anticipation d'un événement et se termine quelques temps après la fin de celui-ci.
+		L'état émotionnel est donc une définition "étendue" de l'émotion.
+		Cela nous permet aussi de rester assez vastes sur les possibilités de reconnaissance de notre jeu.\par
+		Pour répondre à la problématique de la gestion de données en temps-réel provenant de capteurs physiologiques, nous avons besoin d'avantage de contexte sur des sujets tels que : les méthodes de détection et de reconnaissance des états émotionnels, la notion d'expérience utilisateur et d'autres types de jeux.
+		Tout au long du rapport, nous allons aborder ces sujets qui n'entrent pas directement dans le cadre de la solution que nous apportons mais qui sont essentiels pour la compréhension du sujet de notre projet et de la contribution de notre solution.
 
 \section{Etat de l'art}\label{sec:etatart}
-	Notre état de l'art s'intéresse aux différentes méthodes déjà existantes dans la littérature scientifique et technique permettant à différents types de jeux de s'adapter aux états émotionnel ainsi qu'à d'autres caractéristiques liées aux joueurs. 
+	Notre état de l'art s'intéresse aux différentes méthodes déjà existantes dans la littérature scientifique et technique permettant à différents types de jeux de s'adapter aux états émotionnels ainsi qu'à d'autres caractéristiques liées aux joueurs.
 	Dans cet état de l'art, nous proposons un cadre de comparaison que nous avons conçu.
 	Ce cadre permet de comparer des approches pour l'adaptation de jeux aux états émotionnels des joueurs. \par
-	Dans cette section, nous présentons notre cadre de comparaison dans un premeir temps. 
-	Et dans un second temps, nous détaillons les limites et les questionnements que ce cadre à mis en lumière.\par
-	L'état de l'art complet se trouve en Annexe \ref{ann:eda}.
-	\subsection{Cadre de comparaison}
-		Le cadre comparatif -pour l'adaptation dynamique de jeux pervasifs aux états émotionnels et à d'autres caractéristiques des joueurs- nous permet d'avoir une vue d'ensemble sur la façon dont l'adaptation est traité par les méthodes comparées.
-		Notre cadre s'appuie sur les critères suivants :
-		\begin{itemize}
-			\item Les méthodes pour la détection et pour la reconnaissance des états émotionnels
+	Dans cette section, nous présentons notre état de l'art dans un premier temps.
+	Dans un second temps, nous ferons une lecture synthétique de ce document en présentant notre cadre de comparaison et les limites et les questionnements que ce cadre à mis en lumière.
+	% L'état de l'art complet se trouve en Annexe \ref{ann:eda}.
+	\subsection{Rédaction d'un état de l'art}\label{sec:eda}
+		Dans cette partie, nous présentons l'état de l'art que nous avons rédigé pour notre projet.
+		Le but de cet état de l'art est de proposer un cadre de comparaison pour des approches traitant de l'adaptation dynamique de jeux pervasifs aux états émotionnels et à d'autres caractéristiques des joueurs.
+		Nous avons appliqué ce cadre à des approches que nous avons étudiées.
+		\includepdf[pages=-]{../include/eda.pdf}
+	\subsection{Lecture de l'état de l'art}
+		\subsubsection{Cadre de comparaison}
+			Le cadre comparatif $-$pour l'adaptation dynamique de jeux pervasifs aux états émotionnels et à d'autres caractéristiques des joueurs$-$ nous permet d'avoir une vue d'ensemble sur la façon dont l'adaptation est traité par les méthodes comparées.
+			Notre cadre s'appuie sur les critères suivants :
 			\begin{itemize}
-				\item Les capteurs utilisés
-				\item Les algorithmes utlisés pour la détection et/ou la reconnaissance  de l'état émotionnel
-			\end{itemize}
-			\item Les autres caractéristiques de l'utilisateur prises en compte par le jeu
-			\item Les méthodes d'adaptation d'un jeu au contexte de son utilisateur
-			\begin{itemize}
-				\item Méthodes pour l'adaptation du jeu selon l'état émotionnel du joueur
-				\item Méthodes pour l'adaptation du jeu selon d'autres caractéristiques du joueur
-			\end{itemize}
-		\end{itemize}\par
-		Le critère "méthodes pour la détection et pour la reconnaissance des états émotionnels" nous permet d'identifier d'une part les capteurs utilisés (s'ils existent).
-		Et d'autre part, les algorithmes utilisés pour la détection et la reconnaissance d'états émotionnels.
-		Comme nous visons à utiliser des capteurs pour notre projet, il est important pour nous de savoir si certains capteurs reviennent souvent dans la littérature et s'ils sont performants pour ce type d'application.
-		Nous visons aussi à utiliser des algorithmes d'apprentissage profond non-supervisés pour la reconnaissance d'états émotionnels (comme celui décrit dans \cite{gal_et_al._2020}), alors nous avons cherché à savoir s'il existait déjà des algorithmes similaires.\par
-		Le critère "autres caractéristiques de l'utilisateur prises en compte par le jeu" nous permet d'identifier s'il existe d'autres données que celles concernant l'état émotionnel pour une "bonne" adaptation d'un jeu. 
-		Ce critère permet d'élargir notre champ de recherche.\par
-		Le dernier critère "méthodes d'adaptation d'un jeu au contexte de son utilisateur" permet d'identifier les algorithmes pour l'adaptation dynamique et particularisée d'un jeu.
-		D'un côté nous explorons les algorithmes utilisant l'état émotionnel du joueur.
-		Et de l'autre, nous explorons les algorithmes utilisant d'autres caractéristiques du joueur.
-		Comme nous souhaitons que notre jeu soit particularisé à chaque joueur et que l'adaptation se fasse en temps-réel, nous cherchons des approches qui utilisent ce genre d'algorithmes.
-		Nous nous intéressons tout particulièrement aux approches qui présentent des algorithmes pour l'adaptation dynamique aux états émotionnels des joueurs.\par
-		Ce cadre peut être appliqué à des recherches scientifiques et à des jeux déjà existants sur le marché. 
-		Pour notre état de l'art, nous avons appliqué notre cadre à douze approches différentes. 
-		Ces approches concernent différents types de jeux (jeux sérieux, jeux-vidéo, jeux pervasifs,...).
-	\subsection{Application du cadre}
-		De cette comparaison, il en ressort plusieurs questions et limites.\par
-		Tout d'abord, nous remarquons que seulement quelques états émotionnels sont traités dans les approches que nous avons étudiées. 
-		Même si nous pouvons imaginer que certains états émotionnels ne seront jamais expérimentés au cours du jeu que nous souhaitons concevoir, il semble tout de même important de pouvoir prendre en compte le plus grand nombre d'états émotionnels possible.
-		Sans quoi, le jeu ne pourrait s'adapter correctement au joueur et impacter négativement son expérience de jeu et son niveau d'intérêt pour le jeu.
-		C'est pour cette raison que nous pensons qu'il est préférable d'utiliser un algorithme d'apprentissage profond non-supervisé pour la reconnaissance des états émotionnels. 
-		Ce genre d'algorithmes nous semble pouvoir reconnaître beaucoup plus d'états émotionnels que si nous avions nous-mêmes à les définir.\par
-		Dans notre cas, nous utilisons des capteurs physiologiques de contact, c'est-à-dire des capteurs "collés" au joueur, dans le but d'acquérir des données sur son état physiologique pour en déduire son état émotionnel courant via des algorithmes.
-		Dans les approches que nous avons relevées, certaines d'entre elles reconnaissent des états émotionnels en utilisants différents types d'algorithmes et des capteurs physiologiques. 
-		Mais contrairement à cela, d'autres utilisent des modèles pour "prédire" l'état émotionnel courant du joueur.
-		Ces méthodes "prédictives" peuvent être intéressantes car elles ne nécessitent pas de capteurs.
-		Le joueur n'a pas à acheter des capteurs, ni à les "coller" sur lui pour que le jeu puisse détecter son état émotionnel courant.
-		Il est donc "plus libre" dans ses mouvements.
-		Cependant, ce type de méthodes semble être moins précis car il se base sur le principe que tous les joueurs ressentiront exactement le même état émotionnel lorsqu'ils se retrouveront dans le même cas de figure. 
-		De plus, cela implique d'envisager absolument tous les états du jeu possibles, toutes les actions possibles du joueur et d'associer un état émotionnel por chacque intersection.
-		Ceci nous laisse croire que l'utilisation de capteurs physiologiques, même si leur utilisation est plus contraignante pour le joueur, est plus pertinente car plus proche de chacun puisque les capteurs génèrent des données propres à chaque joueur.
-		Nous pensons que deux états émotionnels distincts pourront être expérimentés par deux joueurs différents, même s'il s'agit de la même situation dans le jeu pour les deux joueurs.
-		De ce fait, il est nécessaire que le jeu s'adapte à chacun dynamiquement.\par
-		Notre cadre de comparaison révèle que d'autres caractéristiques que celle de l'état émotionnel peuvent être considérées pour augmenter la "connaissance" du jeu sur son joueur.
-		Ces caractéristiques peuvent être intéressantes à étudier à la fois pour mieux connaître les goûts et les préférences du joueur (qui sont souvent plus pérennes) mais aussi pour l'enrichissement de la connaissance du contexte de l'environnement globale. 
-		Ces caractéristiques peuvent aussi bien s'appuyer sur l'utilisation d'un questionnaire de préférences rempli par l'utilisateur lui-même que sur la présence de capteurs dans l'environnement. 
-		Cela constitue une piste qui pourrait être approfondie dans de prochains travaux.\par
-		Cet état de l'art nous a permis d'avoir une vision globale de ce qui existait déjà en matière d'adaptation de jeux aux états émotionnels des joueurs.
-		Il aura aussi été l'occasion de proposer un cadre de comparaison pour ce sujet. 
-		Grâce à cet état de l'art, j'ai pu comprendre quels sont les enjeux pour la réalisation de notre objectif.
+				\item Les méthodes pour la détection et pour la reconnaissance des états émotionnels
+				\begin{itemize}
+					\item Les capteurs utilisés
+					\item Les algorithmes utlisés pour la détection et/ou la reconnaissance  de l'état émotionnel
+				\end{itemize}
+				\item Les autres caractéristiques de l'utilisateur prises en compte par le jeu
+				\item Les méthodes d'adaptation d'un jeu au contexte de son utilisateur
+				\begin{itemize}
+					\item Méthodes pour l'adaptation du jeu selon l'état émotionnel du joueur
+					\item Méthodes pour l'adaptation du jeu selon d'autres caractéristiques du joueur
+				\end{itemize}
+			\end{itemize}\par
+			Le critère "méthodes pour la détection et pour la reconnaissance des états émotionnels" nous permet d'identifier d'une part les capteurs utilisés (s'ils existent).
+			Et d'autre part, les algorithmes utilisés pour la détection et la reconnaissance d'états émotionnels.
+			Comme nous visons à utiliser des capteurs pour notre projet, il est important pour nous de savoir si certains capteurs reviennent souvent dans la littérature et s'ils sont performants pour ce type d'application.
+			Nous visons aussi à utiliser des algorithmes d'apprentissage profond non-supervisés pour la reconnaissance d'états émotionnels (comme celui décrit dans \cite{gal_et_al._2020}), alors nous avons cherché à savoir s'il existait déjà des algorithmes similaires.\par
+			Le critère "autres caractéristiques de l'utilisateur prises en compte par le jeu" nous permet d'identifier s'il existe d'autres données que celles concernant l'état émotionnel pour une "bonne" adaptation d'un jeu.
+			Ce critère permet d'élargir notre champ de recherche.\par
+			Le dernier critère "méthodes d'adaptation d'un jeu au contexte de son utilisateur" permet d'identifier les algorithmes pour l'adaptation dynamique et particularisée d'un jeu.
+			D'un côté nous explorons les algorithmes utilisant l'état émotionnel du joueur.
+			Et de l'autre, nous explorons les algorithmes utilisant d'autres caractéristiques du joueur.
+			Comme nous souhaitons que notre jeu soit particularisé à chaque joueur et que l'adaptation se fasse en temps-réel, nous cherchons des approches qui utilisent ce genre d'algorithmes.
+			Nous nous intéressons tout particulièrement aux approches qui présentent des algorithmes pour l'adaptation dynamique aux états émotionnels des joueurs.\par
+			Ce cadre peut être appliqué à des recherches scientifiques et à des jeux déjà existants sur le marché.
+			Pour notre état de l'art, nous avons appliqué notre cadre à douze approches différentes.
+			Ces approches concernent différents types de jeux (jeux sérieux, jeux-vidéo, jeux pervasifs,...).
+		\subsubsection{Application du cadre}
+			De cette comparaison, il en ressort plusieurs questions et limites.\par
+			Tout d'abord, nous remarquons que seulement quelques états émotionnels sont traités dans les approches que nous avons étudiées.
+			Même si nous pouvons imaginer que certains états émotionnels ne seront jamais expérimentés au cours du jeu que nous souhaitons concevoir, il semble tout de même important de pouvoir prendre en compte le plus grand nombre d'états émotionnels possible.
+			Sans quoi, le jeu ne pourrait pas s'adapter correctement au joueur et impacter négativement son expérience de jeu et son niveau d'intérêt pour le jeu.
+			Notre idée n'est pas de détecter et de reconnaître tous les états émotionnels.
+			Nous souhaitons utiliser un algorithme d'apprentissage profond non-supervisé afin de trouver des motifs particuliers permettant de détecter un changement d'un état émotionnel vers un autre.
+			Avec cette information, nous serions en mesure de connaître l'état émotionnel courant du joueur.\par
+			Dans notre cas, nous utilisons des capteurs physiologiques de contact, c'est-à-dire des capteurs "collés" au joueur, dans le but d'acquérir des données sur son état physiologique pour en déduire son état émotionnel courant via des algorithmes.
+			Dans les approches que nous avons relevées, certaines d'entre elles reconnaissent des états émotionnels en utilisant différents types d'algorithmes et des capteurs physiologiques.
+			Mais contrairement à cela, d'autres utilisent des modèles pour "prédire" l'état émotionnel courant du joueur.
+			Ces méthodes "prédictives" peuvent être intéressantes car elles ne nécessitent pas de capteurs.
+			Le joueur n'a pas à acheter des capteurs, ni à les "coller" sur lui pour que le jeu puisse détecter son état émotionnel courant.
+			Il est donc "plus libre" dans ses mouvements.
+			Cependant, ce type de méthodes semble être moins précis car il se base sur le principe que tous les joueurs ressentiront exactement le même état émotionnel lorsqu'ils se retrouveront dans le même cas de figure.
+			De plus, cela implique d'envisager absolument tous les états du jeu possibles, toutes les actions possibles du joueur et d'associer un état émotionnel pour chaque intersection.
+			Ceci nous laisse croire que l'utilisation de capteurs physiologiques, même si leur utilisation est plus contraignante pour le joueur, est plus pertinente car plus proche de chacun puisque les capteurs génèrent des données propres à chaque joueur.
+			Nous pensons que deux états émotionnels distincts pourront être expérimentés par deux joueurs différents, même s'il s'agit de la même situation dans le jeu pour les deux joueurs.
+			De ce fait, il est nécessaire que le jeu s'adapte à chacun dynamiquement.\par
+			Notre cadre de comparaison révèle que d'autres caractéristiques que celle de l'état émotionnel peuvent être considérées pour augmenter la "connaissance" du jeu sur son joueur.
+			Ces caractéristiques peuvent être intéressantes à étudier à la fois pour mieux connaître les goûts et les préférences du joueur (qui sont souvent plus pérennes) mais aussi pour l'enrichissement de la connaissance du contexte de l'environnement globale.
+			Ces caractéristiques peuvent aussi bien s'appuyer sur l'utilisation d'un questionnaire de préférences rempli par l'utilisateur lui-même que sur la présence de capteurs dans l'environnement.
+			Cela constitue une piste qui pourrait être approfondie dans de prochains travaux.\par
+			Cet état de l'art nous a permis d'avoir une vision globale de ce qui existait déjà en matière d'adaptation de jeux aux états émotionnels des joueurs.
+			Il aura aussi été l'occasion de proposer un cadre de comparaison pour ce sujet.
+			Grâce à cet état de l'art, j'ai pu comprendre quels sont les enjeux pour la réalisation de notre objectif.
 
 \section{Expérience d'un escape game}\label{sec:escape}
 	Nous avons expérimenté sur nous-mêmes un escape game.
 	La salle que nous avons testée se trouve au Victory Escape Game\footnote{\href{http://www.victoryescapegame.fr/}{http://www.victoryescapegame.fr/}} situé au 37 rue des Gravilliers à Paris.
-	Cela a été l'occasion d'expérimenter ce genre de jeu très immersif.\par
+	Cela a été l'occasion d'expérimenter ce genre de jeu très immersif. 
 	Dans cette section, nous allons tout d'abord aborder la notion d'expérience utilisateur.
-	Puis nous ferons un retour sur cette expérience d'escape game et ce qu'elle a pu apporter pour le projet que nous menons.
+	Puis, nous ferons un retour sur cette expérience d'escape game et ce qu'elle a pu apporter pour le projet que nous menons.
 	\subsection{Expérience Utilisateur}\label{sec:UX}
 		L'expérience utilisateur (UX pour User eXperience) est un sujet de psychologie et de neurosciences en perpétuel développement.
-		Des méthodes plus efficaces pour donner la meilleure expérience utilisateur sont continuellement recherchées. 
+		Des méthodes plus efficaces pour donner la meilleure expérience utilisateur sont continuellement recherchées.
 		De plus, la connaissance et la compréhension du fonctionnement du cerveau humain est aussi un domaine où l'on fait sans cesse de nouvelles découvertes.
 		De ce fait, il n'existe pas de "définition universelle" de l'UX.
 		Je présente ici ma propre définition de l'expérience utilisateur.
@@ -282,7 +272,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		L’expérience utilisateur concerne toutes les réactions qu’un utilisateur peut avoir lors d’une interaction avec un service, un objet, un espace public, etc.
 		C’est aussi tout ce que l’utilisateur peut ressentir lors de cette interaction.
 		L’expérience utilisateur va donc plus loin que la simple notion d’ergonomie qui elle ne concerne que la « facilité d’utilisation » d’un produit.\par
-		L’UX commence par la perception sensorielle de l’utilisateur de ce qu’il lui est présenté. 
+		L’UX commence par la perception sensorielle de l’utilisateur de ce qu’il lui est présenté.
 		Cette perception est « analysée » par le cerveau et mémorisée.
 		Une réaction est ensuite faite (c'est une façon très simplifiée d'expliquer comment cela fonctionne).
 		Les concepteurs peuvent alors analyser ces réactions et améliorer leur conception.
@@ -308,49 +298,49 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Cela peut passer par exemple, par l’apprentissage du jeu via des tutoriels.
 	\subsection{Expérimentation d'un escape game}\label{sec:expescape}
 		L'escape game que nous avons expérimenté se présentait sous la forme d'une mission d'une heure.
-		Le but de cette mission était d'entrer dans un vaisseau désafecté pour emprunter un portail de téléportation.
+		Le but de cette mission était d'entrer dans un vaisseau désaffecté pour emprunter un portail de téléportation.
 		Celui-ci étant cassé, il fallait récupérer des indices dissimulés dans les pièces pour le redémarrer.\par
-		Tout d'abord, nous avons été sensibilisé à la mission qui nous attedait par le maître du jeu. 
-		Il s'agitssait d'une réunion d'une vingtaine de minutes pour nous expliquer d'une part les règles mais aussi notre objectif.
-		Cette sensibilisation est un premier contact indirect avec le jeu et me semble tout aussi importante que le jeu en lui même.
-		C'est une méthode pour nous motiver à joueur et à être performant dans notre jeu.
-		Un sentiment de compétition est aussi implicitement donné lorsque le maître du jeu nous a indiqué les meilleurs temps d'autres joueurs.\par
+		Tout d'abord, nous avons été sensibilisés à la mission qui nous attendait par le maître du jeu.
+		Il s'agissait d'une réunion d'une vingtaine de minutes pour nous expliquer d'une part les règles mais aussi notre objectif.
+		Cette sensibilisation est un premier contact indirect avec le jeu et me semble tout aussi importante que le jeu en lui-même.
+		C'est une méthode pour nous motiver à jouer et à être performant dans notre jeu.
+		Un sentiment de compétition a aussi été implicitement donné lorsque le maître du jeu nous a indiqué les meilleurs temps d'autres joueurs.\par
 		Le principe de l'escape game est de fouiller les pièces pour trouver des indices pour débloquer des mécanismes et rejoindre la sortie.
 		Les indices étaient de toutes sortes : écrits, lumineux, objets, boutons poussoirs, textiles, etc.
 		Il pouvait aussi se trouver de faux indices.
-		Les pièces ont été décorées, pour donner l'impression d'un vaisseau spacial.
-		Le but est de donner la sensation la plus forte possible au joueur qu'il se trouve dans une "véritable" station spaciale.\par
-		Pendant cette partie, si le maître du jeu -qui se trouvait dans une autre pièce et qui nous observait grâce à des caméras et des micros- pouvait nous donner des indices grâce à un écran.
-		Un message nous donnant un indice sur le mécanisme à débloqué appariassait accompagné d'un indicateur sonore.
-		Les messages que nous recevions par cet écran faisait penser qu'il s'agissait d'indications données par une intelligence artificelle.\par
-		Tous les objets et le décor des différentes pièces permettent de créer une ambiance et ploger immédiatement les joueurs dans l'univers où les créateurs du jeu essayent de les emmener.
-		Nous avons pu également relever quelques méthodes d'UX design comme l'utilisation d'objectifs à attiendre.
-		Par exemble, l'objectif principal est de sortir du vaisseau avant le temps imparti (une heure) et pour y parvenir, il faut réussir à ouvrir différentes portes pour accéder aux pièces suivantes.
-		L'utilisation d'un compte-à-rebours affiché en permanance à l'écran créait un sentiment de stress.
+		Les pièces ont été décorées, pour donner l'impression d'un vaisseau spatial.
+		Le but est de donner la sensation la plus forte possible au joueur qu'il se trouve dans un "véritable" vaisseau dans l'espace.\par
+		Pendant cette partie, le maître du jeu $-$qui se trouvait dans une autre pièce et qui nous observait grâce à des caméras et des micros$-$ pouvait nous donner des indices supplémentaires aux indices déjà présents dans la pièce via à un écran.
+		Un message nous donnant un indice sur le mécanisme à débloquer appariassait accompagné d'un indicateur sonore.
+		Les messages que nous recevions par cet écran faisaient penser qu'il s'agissait d'indications données par une intelligence artificielle.\par
+		Tous les objets et le décor des différentes pièces permettent de créer une ambiance et plonger immédiatement les joueurs dans l'univers où les créateurs du jeu essayent de les emmener.
+		Nous avons pu également relever quelques méthodes d'UX design comme l'utilisation d'objectifs à atteindre.
+		Par exemple, l'objectif principal est de sortir du vaisseau avant le temps imparti (une heure) et pour y parvenir, il faut réussir à ouvrir différentes portes pour accéder aux pièces suivantes.
+		L'utilisation d'un compte-à-rebours affiché en permanence à l'écran créait un sentiment de stress.
 		Chaque alerte sonore indiquant qu'un nouveau mécanisme avait été débloqué donné un sentiment de satisfaction.\par
-		Nous n'avons pas réussi à arrivé jusqu'au bout de notre "mission". Cinq minutes avant la fin du compte-à-rebours nous sommes arrivés à la dernière salle.
-		Nous nous attendions pas à cette dernière salle et avons été très surpris.
+		Nous n'avons pas réussi à arriver jusqu'au bout de notre "mission". Cinq minutes avant la fin du compte-à-rebours nous sommes arrivés à la dernière salle.
+		Nous ne nous attendions pas à cette dernière salle et avons été très surpris.
 		Cela a été un peu frustrant de ne pas pouvoir terminer cette session avant la fin du compte-à-rebours.
 	\subsection{Accessibilité d'un escape game}
-		Dans cettte partie, je vais aborder les limites de l'accessibilité aux déficients visuels de l'ecape game et généraliser aux jeux. 
+		Dans cette partie, je vais aborder les limites de l'accessibilité aux déficients visuels de l'escape game et généraliser aux jeux.
 		Il s'agit d'un témoignage et non d'une recherche à part entière.
 		Ce témoignage pourra nous donner une piste de réflexion pour notre propre jeu pervasif.\par
-		Etant personnellement déficiente viuelle, je vais vous rapporter mon expérience personnelle de l'escape game que nous avons expérimenté.\par
+		Etant personnellement déficiente visuelle, je vais vous rapporter mon expérience personnelle de l'escape game que nous avons expérimenté.\par
 		Pour atteindre l'objectif qui était de réparer portail de téléportation, il fallait rechercher dans différentes pièces des indices.
 		Le premier obstacle rencontré lors cette partie était celui du déchiffrage des indices.
-		En effet, beaucoup d'indices se base sur de l'écriture et sur d'autres mécanismes très visuels.
+		En effet, beaucoup d'indices se basenu sur de l'écriture et sur d'autres mécanismes très visuels.
 		Par exemple, nous avions trouvé un dossier contenant plusieurs pages écrites avec une taille de police standard (comme celle de ce rapport par exemple).
-		Cet indice m'était donc inacessible, je distinguais seulement quelques logos qui se trouvais dans ce dossier.
-		Un autre élément inacessible pour moi était une grande carte affiché dans une des pièce où il fallait retrouver des coordonnées et ajuster des boutons par rapport à ces coordonnées.
-		Ce type d'élément m'était complètement inacessible car il s'appuie uniquement sur la capacité du joueur à repérer des éléments visuels parmis un tas d'informations visuelles entremélées.
-		J'ai aussi rencontré des difficultés dû à la luminosité basse des pièces.
-		De plus, avec la situation sanitaire actuelle, nous étions obligé de porter des gants pour jouer puisqu'il fallait toucher et prendre beaucoup d'objets.
+		Cet indice m'était donc inaccessible, je distinguais seulement quelques logos qui se trouvaient dans ce dossier.
+		Un autre élément inaccessible pour moi était une grande carte affichée dans une des pièces où il fallait retrouver des coordonnées et ajuster des boutons par rapport à ces coordonnées.
+		Ce type d'élément m'était complètement inaccessible car il s'appuie uniquement sur la capacité du joueur à repérer des éléments visuels parmi un tas d'autres informations visuelles entremêlées.
+		J'ai aussi rencontré des difficultés dues à la luminosité basse des pièces.
+		De plus, avec la situation sanitaire actuelle, nous étions obligés de porter des gants pour jouer puisqu'il fallait toucher et prendre beaucoup d'objets.
 		Cependant, porter des gants empêche de sentir beaucoup de choses et m'a privé d'informations par le touché que d'autres ont par le visuel.\par
 		Toutes ces limites m'ont fait sortir du jeu et casser le rythme et l'intrigue.
 		De ce point de vue, je peux dire que mon expérience utilisateur à été moyenne.
-		J'ai été "déconnectée" de certains indices et j'ai dû laissé mes coéquipiés prendre le relai sur ce que ne je pouvais pas voir.
+		J'ai été "déconnectée" de certains indices et j'ai dû laissé mes coéquipiers prendre le relais sur ce que ne je pouvais pas voir.
 		Ce qui a probablement joué sur leur expérience utilisateur également.
-	\subsection{Bilan}
+	\subsection{Bilan}\label{sec:escapebilan}
 		Nous retenons plusieurs points de cette expérimentation.
 		Cet escape game nous a permis d'appliquer à nous-mêmes le ressenti de joueurs.
 		Cela nous a permis de rappeler ce qu'était l'expérience utilisateur et à quoi cela pouvait servir pour améliorer un jeu.
@@ -358,46 +348,62 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Le fait d'avoir ressenti différents états émotionnels et d'avoir été motivés durant toute la partie à jouer montre que l'UX design est important pour le joueur, pour son expérience de jeu et pour son amusement.\par
 		Nous avons pu constater que beaucoup de méthodes issues de l'UX Design étaient appliquées à l'escape game que nous avons expérimenté.
 		Comme la sensibilisation, le décor, la motivation, la coopération, les émotions, l'affichage de compte-à-rebours et d'indications.
-		Ce sont autant de méthodes qui ont été mise en place pour améliorer l'expérience du joueur. 
-		La salle que nous avons expérimentée a été testée et améliorée plusieurs fois avant d'être proposée au joueur. 
+		Ce sont autant de méthodes qui ont été mise en place pour améliorer l'expérience du joueur.
+		La salle que nous avons expérimentée a été testée et améliorée plusieurs fois avant d'être proposée aux joueurs.
 		De plus, elle est encore améliorée selon les retours qui sont fait par les joueurs si les créateurs jugent cela pertinent.
 		Cela est fait pour tendre à la meilleure UX possible pour cette salle.\par
 		Cette expérience d'escape game et mon expérience personnelle m'a fait comprendre l'importance de mener des expérimentation "en réel".
 		Bien souvent, les expériences sont menées en laboratoire.
-		Comme celles décritent dans l'état de l'art (Annexe \ref{ann:eda}) ou celles menées pour améliorer l'UX.
+		Comme celles décrites dans l'état de l'art (Section \ref{sec:eda}) ou celles menées pour améliorer l'UX.
 		Nous remarquons que bien souvent, ces expériences n'impliquent que des personnes n'ayant aucun problème de santé, dans une fourchette d'âge restreinte, etc.
 		Cette méthode d'expérimentation exclue certains joueurs et crée un décalage entre les testeurs du jeu et le public réel.
 		D'après toutes ces remarques, il me semble important d'ouvrir le groupe test au public le plus large possible.
 		Autrement dit, d'étendre les âges, les cultures, les capacités physiques, etc. le plus possible afin de permettre une plus grande inclusivité.
 
 \section{Modélisation conceptuelle}\label{sec:modelisation}
-	Dans cette partie, nous présentons un modèle conceptuel qui est en cours d'aboutissement. 
-	Le but de ce modèle conceptuel est de réprésenter chaque composant permettant la prise en compte des états émotionnels dans le jeu pervasif et de s'y adapter. 
-	Le modèle doit à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc. 
+	Dans cette partie, nous présentons un modèle conceptuel qui est en cours d'aboutissement.
+	Le but de ce modèle conceptuel est de représenter chaque composant permettant la prise en compte des états émotionnels dans le jeu pervasif et de s'y adapter.
+	Le modèle doit à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc.
 	Cette représentation est modélisée sous la forme d'une ontologie.
 	Pour cela, nous utilisons le format standard du diagramme de classes UML.
 	\subsection{Ontologie}\label{sec:ontologie}
-		Le diagramme de la Figure \ref{fig:modele} représente notre modélisation pour les différents éléments qui composent un jeu pervasif adaptable aux états émotionnels du joueur.
-		\begin{figure}[ht]
+		\begin{figure}[t]
 			\centering
 			\includegraphics[scale=0.5]{../include/ontologie_stage_cnam-v2-5.png}
 			\caption{Ontologie d'un jeu pervasif prenant en compte l'état émotionnel du joueur}
 			\label{fig:modele}
 		\end{figure}
+		Le diagramme de la Figure \ref{fig:modele} représente notre modélisation pour les différents éléments qui composent un jeu pervasif adaptable aux états émotionnels du joueur.
 		Pour chaque classe, il existe une description détaillée en Annexe \ref{ann:detailclasses}.\par
-		Dans ce modèle, on voit qu'il existe une relaion entre les classes \texttt{Utilisateur}, \texttt{Jeu} et \texttt{Etat Emotionnel} que j'aurais pu représenter par une relation ternaire. 
-		Cependadant, j'ai préféré décomposer cette relation en trois relations binaires dans un soucis de clareté. 
-		Une autre amélioration possible pour cette représentation est celle de la relation entre \texttt{Jeu} et \texttt{Modèle Utilisateur}. 
-		Avec du recul sur mon travail, je pense qu'il aurait été possible de soit fusionner les deux classes (puisqu'il s'agit d'une relation $1^* - 1$) soit de transformer la classe \texttt{Modèle Utilisateur} en une ou plusieurs autre(s) classe(s).\par
-		L'ontologie que je présente dans ce rapport à la Figure \ref{fig:modele} n'est donc pas le résultat définitif.
-		En effet, après plusieurs essais et plusieurs versions différentes de l'ontologie, nous avons décidé de changer de point de vue et de problématique.
+		Nous pouvons relever plusieurs défauts à ce modèle que nous pourrions améliorer.
+		Par exemple, il existe dans ce modèle une relation entre les classes \texttt{Utilisateur}, \texttt{Jeu} et \texttt{Etat Emotionnel} que j'aurais pu représenter par une relation ternaire.
+		Cependant, j'ai préféré décomposer cette relation en trois relations binaires dans un soucis de clarté.
+		Une amélioration possible pour cette représentation est celle de la relation entre \texttt{Jeu} et \texttt{Modèle Utilisateur}.
+		Avec du recul sur mon travail, je pense qu'il aurait été possible de soit fusionner les deux classes (puisqu'il s'agit d'une relation $1^* - 1$) soit de transformer la classe \texttt{Modèle Utilisateur} en une ou plusieurs autre(s) classe(s).
+		De la même manière, la classe \texttt{Signal} ne devrait pas figurer sur ce modèle.
+		Selon moi, il faudrait inclure la classe \texttt{Signal} dans la classe \texttt{Capteur}.
+		Bien d'autres améliorations sont envisageables pour ce modèle.
+	\subsection{Difficultés rencontrées}\label{sec:difficultes}
+		L'ontologie que je présente dans ce rapport à la Figure \ref{fig:modele} n'est pas le résultat définitif du modèle conceptuel que nous cherchons à élaborer.
+		Lors de l'élaboration de cette cette ontologie, plusieurs essais et plusieurs versions différentes ont été proposés.
+		Cependant, le modèle était toujours incohérent, il manquait de substance et présentait plusieurs niveaux d'abstraction qui ne devait pas figurer sur un même modèle. 
+		Cela peut s'expliquer de différentes manières. 
+		L'une des explications est que je me suis lancée trop rapidement, selon moi, dans la conception de cette ontologie.
+		Je pense que je ne maîtrisais pas encore assez bien le sujet, l'objectif et la problématique de notre projet.
+		De ce fait, j'ai eu tendance à mélanger les niveaux d'abstraction.
+		Une autre explication est qu'avec les différentes approches que je lisais parallèlement à la construction de cette ontologie, j'ai voulu retranscrire dans ce modèle tout ce que j'assimilais au fil de mes lectures.
+		Ce qui faisait que j'ajoutais à ce modèle des éléments superflus.
+		Une dernière explication est que je manquais de recul sur mon travail.
+		Dès que je terminais une version de l'ontologie et que celle-ci n'était pas correcte, je commençait une nouvelle version.
+		Je ne laissais pas de temps de repos entre chaque nouvel essai.\par
+		C'est pour toutes ces raisons que nous avons décidé de changer de point de vue et de problématique.
 		Nous avons décidé de revenir, si possible, plus tard à l'ontologie.
 	\subsection{Bilan}\label{sec:modelbilan}
 		Le bilan que je tire de cet exercice de modélisation est que malgré cet échec d'aboutir à une ontologie livrable, j'ai pu, d'une part, mieux comprendre la problématique liée au projet et à la conception de modèles.
 		Et d'autre part, j'ai pu me rendre compte de l'étendue des difficultés qu'il  était possible de rencontrer dans ce genre d'exercice.
-		Par exemple, lors de la conception de cette ontologie, je me suis retrouvée à mélanger plusieurs niveaux d'abstraction, ce qui la rendait peu compréhensible et invalide. 
-		Je me suis aussi rendu compte qu'il fallait beaucoup de patience et d'entraînement pour concevoir un tel modèle. 
-		Aujourd'hui, je comprends mieux les enjeux de tels modèles. 
+		Par exemple, lors de la conception de cette ontologie, je me suis retrouvée à mélanger plusieurs niveaux d'abstraction, ce qui la rendait peu compréhensible et invalide.
+		Je me suis aussi rendu compte qu'il fallait beaucoup de patience et d'entraînement pour concevoir un tel modèle.
+		Aujourd'hui, je comprends mieux les enjeux de tels modèles.
 		A l'avenir je pourrais réaliser des modèles de meilleure qualité grâce à cette expérience.\par
 		La réalisation de cette ontologie nous a permis de réorienter notre objectif de recherche.
 		Nous nous sommes dirigés vers l'implémentation d'une solution pour la gestion des données générées par les capteurs physiologiques.
@@ -409,26 +415,25 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	De plus, il s'agit de données en temps-réel qui doivent être traitées le plus rapidement possible pour reconnaître l'état émotionnel d'une personne. 
 	Ainsi, le jeu pourra s'adapter à son utilisateur avec un minimum de latence. 
 	Une trop grande latence pourrait engendrer un effet de décalage désagréable pour le joueur entre ce qu'il ressent et l'adaptation du jeu.\par
-	Dans cette section, nous présentons une solution pour la gestions de telles données. Pour construire cette solution, nous avons tout d'abord comparé deux technologies et nous nous sommes positionnés sur l'une d'entre elles.
+	Dans cette section, nous présentons une solution pour la gestion de telles données. Pour construire cette solution, nous avons tout d'abord comparé deux technologies et nous nous sommes positionnés sur l'une d'entre elles.
 	Puis, nous avons implémenté un prototype de cette solution.
 	Nous présentons son architecture globale.
-	Enfin, nous expliquons comment notre solution peut être intégrée aux travaux déjà menés pour notre projet.
+	Enfin, nous expliquons comment notre contribution peut être intégrée aux travaux déjà menés pour notre projet.
 	\subsection{Technologie utilisée}\label{sec:prototech}
 		Pour notre prototype, nous avons besoin d'ingérer le plus rapidement possible des données en temps-réel qui sont générées toutes les 30 à 60 millisecondes.
 		Il nous faut donc trouver une technologie capable de traiter efficacement ce genre de données pour les transmettre aux algorithmes de détection et de reconnaissance de l'état émotionnel.
 		Autrement dit, notre solution doit être capable de "faire le lien" entre les capteurs physiologiques et les algorithmes de détection et de reconnaissance d'états émotionnels.\par
-		Pour cela, nous avons comparer deux Middleware Orientés Messages et nous aen avons retenu un pour concevoir notre solution.
+		Pour cela, nous avons comparé deux Middleware Orientés Messages et nous en avons retenu un pour concevoir notre solution.
 		\subsubsection{Comparaison entre Apache Kafka et RabbitMQ}\label{sec:comparatif}
 			Notre choix s'est porté sur les Middleware Orientés Messages (MOM).
 			Ces middleware ont pour objectif de transmettre un message d'un utilisateur à un autre.\par
-			Nous avons sélectionné deux middlewares libres, simple d'utilisation et avec une communauté active.
+			Nous avons sélectionné deux middleware libres, simples d'utilisation et avec une communauté active.
 			Il s'agit d'Apache Kafka et de RabbitMQ.
-			Avant de commencer la synthèse comparative entre ces deux middlewares,  introduisons les points communs entre Apache Kafka et RabbitMQ :
+			Avant de commencer la synthèse comparative entre ces deux middleware,  introduisons les points communs entre Apache Kafka et RabbitMQ :
 			\begin{itemize}
-				\item Ce sont deux Middleware orienté message (MOM);
-				\item ils ont le même ordre de grandeur de messages consommables par seconde (un peu plus du côté Kafka);
-				\item Ils sont Open Source;
-				% \item Leur modèle d’intégration est du type \textit{Publish / Subscribe} (même si RabbitMQ fait un peu plus du \textit{point-to-point}).
+				\item Ce sont deux Middleware Orienté Message (MOM);
+				\item Ils ont le même ordre de grandeur de messages consommables par seconde (un peu plus du côté Kafka);
+				\item Ils sont Open Source.
 			\end{itemize}
 			Apache Kafka et RabbitMQ sont utilisables dans les domaines d'application suivants :
 			\begin{itemize}
@@ -439,7 +444,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\item Faire des actions compte bancaire à compte bancaire (i.e. des transactions).
 			\end{itemize}\par
 			Maintenant que nous connaissons les points communs entre les deux MOM, nous pouvons en faire une comparaison synthétique.\par
-			Dans ce comparatif, nous traitons des principales différences des deux middlewares dans le Tableau \ref{tab:comparatifinfos}, de leurs architectures dans le Tableau \ref{tab:comparatifarchi} et dans la Figure \ref{fig:comparatifarchi}, de leurs approches dans le Tableau \ref{tab:comparatifapp}, des caractéristiques des messages dans le Tableau \ref{tab:comparatifmess} et de la préférence d'utilisation de l'un ou de l'autre MOM selon le cas d'usage dans le Tableau \ref{tab:comparatifpref}.\par
+			Dans ce comparatif, nous traitons des principales différences des deux middleware dans le Tableau \ref{tab:comparatifinfos}, de leurs architectures dans le Tableau \ref{tab:comparatifarchi} et dans la Figure \ref{fig:comparatifarchi}, de leurs approches dans le Tableau \ref{tab:comparatifapp}, des caractéristiques des messages dans le Tableau \ref{tab:comparatifmess} et de la préférence d'utilisation de l'un ou de l'autre MOM selon le cas d'usage dans le Tableau \ref{tab:comparatifpref}.\par
 			\begin{table}[hp]
 				\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
 					\hline
@@ -471,12 +476,13 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\begin{subfigure}{0.6\textwidth}
 					\hspace*{-2cm}
 					\includegraphics[scale=0.5]{../include/RabbitMQ.PNG}
-					\caption{Schéma de l'architecture de RabbitMQ}
+					\caption{Schéma de l'architecture de RabbitMQ\footnote{\href{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.html}{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.html} (consulté le 28/08/20)}}
 					\label{fig:archirabbitmq}
 				\end{subfigure}
 				\begin{subfigure}{0.5\textwidth}
 					\includegraphics[scale=0.55]{../include/Kafka.PNG}
-					\caption{Schéma de l'architecture de Kafka}
+					\caption{Schéma de l'architecture de Kafka\footnote{\href{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka}{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka} (consulté le 28/08/20)}}
+					\label{fig:archikafka}
 				\end{subfigure}
 				\caption{Schémas des architectures}
 				\label{fig:comparatifarchi}
@@ -518,21 +524,18 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			%\newpage
 		\subsubsection{Positionnement}\label{sec:position}
 			Après mes recherches et la rédaction de la synthèse comparative, j'ai décidé d'utiliser Apache Kafka comme Middleware Orienté Message pour le prototypage de notre solution.\par
-			Apache Kafka m'a semblé être plus indiqué dans le traitement des données venant capteurs.
-			Ce middleware présente une structue pour les messages en log.
+			Apache Kafka m'a semblé être plus indiqué dans le traitement des données venant de capteurs.
+			Ce middleware présente une structure pour les messages en log.
 			Ce qui est plus intéressant pour notre cas qu'une structure FIFO (First In, First Out).
 			En effet, la structure FIFO nous "oblige" à récupérer et à consommer les messages rapidement dans la queue des messages, alors que le log nous laisse plus de temps et nous permet de relire le message plusieurs fois.
 			Ce qui correspond plus à ce que nous cherchons puisque nous n'allons pas consommer toutes les données pour détecter un état émotionnel, mais seulement à certains moments (lorsqu'un changement significatif sera détecté).
 			De plus, les données sont organisées dans des "topics". 
 			Il est donc possible de récupérer que certaines données en s'abonnant aux topics désirés.
-			Cela nous sera très utile pour de futurs travaux qui impliquerons d'autres capteurs que les capteurs physiologiques pour la reconnaissance des états émotionnels.
-			Par exemple, nous aurons besoin de capteurs de positions, de capteurs placés dans l'environnement du jeu, etc.
+			Cela nous sera très utile pour de futurs travaux qui impliqueront d'autres capteurs que les capteurs physiologiques pour la reconnaissance des états émotionnels.
+			Par exemple, nous aurons besoin de capteurs de position, de capteurs placés dans l'environnement du jeu, etc.
 	\subsection{Description du prototype}\label{sec:protodesc}
 		Dans cette partie, nous présentons le prototype de la solution que nous avons implémenté pour répondre aux besoins de gestion des données en temps-réel.
-		% Nous possédons déjà des capteurs physiologiques et les algorithmes pour la reconnaîssance d'états émotionnels existent déjà, ils proviennent de précédents travaux effectués au laboratoire.
-		Ici, nous cherchons à gérer au mieux les données en temps-réel en créant un minimun de latence entre la mesure faite par le capteur et la reconnaissance de l'état émotionnel.
-		%ans un premier temps, nous allons présenter le prototype et son architecture.
-		%t dans un second temps, nous montrerons comment nous intégrons le prototype aux travaux déjà menés pour ce projet.\par
+		Ici, nous cherchons à gérer au mieux les données en temps-réel en créant un minimum de latence entre la mesure faite par le capteur et la reconnaissance de l'état émotionnel.
 		\subsubsection{Architecture du prototype}\label{sec:protoarchi}
 			\begin{figure}
 				\centering
@@ -541,20 +544,18 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{fig:archiproto}
 			\end{figure}
 			La Figure \ref{fig:archiproto} montre l'architecture de notre prototype.
-			Pour le moement, nous utilisons un fichier dans lequel se trouve les données provenant de plusierus capteurs.
+			Pour le moment, nous utilisons un fichier dans lequel se trouve les données provenant de plusierus capteurs.
 			Ces données, que nous utilisons pour nos tests, ont été acquises lors d'une session de jeu vidéo à partir de capteurs physiologiques (les capteurs sont décrits dans la Section \ref{sec:capteurs}). 
-			Elles ont été enregistrées dans un fichier au format CSV (Comma Separator .\par
+			Elles ont été enregistrées dans un fichier au format CSV.\par
 			Les données sont lues puis envoyées au Producteur.
 			Le Producteur ajoute à chaque topic la ou les données qui correspondent.
-			Par exemple, les données qui corresponde au Rythme Cardiaque sont envoyés sur le topic "HR" (pour Heart Rate).\par
+			Par exemple, les données qui corresponde au Rythme Cardiaque sont envoyées sur le topic "HR" (pour Heart Rate).\par
 			Les données peuvent ensuite être consommées par un consommateur qui choisit le topic auquel il s'abonne.
 			Les données sont affichées dans un terminal par le Consommateur au fur et à mesure qu'elles sont produites.
 			Le Consommateur attend toujours de nouvelles données à consommer.
 		\subsubsection{Implémentation du prototype}
 			\begin{figure}[p]
 				\centering
-				%\vspace*{-2cm}
-				%\rotatebox{90}{\includegraphics[scale=0.45]{../include/Diagramme_prototype.png}}
 				\begin{subfigure}{0.5\textwidth}
 					\hspace*{-1cm}
 					\includegraphics[scale=0.65]{../include/archiProducer.PNG}
@@ -569,15 +570,15 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\caption{Architecture du prototype}
 				\label{fig:archiimp}
 			\end{figure}
-			La figure \ref{fig:archiimp} décrit les différents composants qui sont utilisés pour l'implémentation de notre prototype.\par
+			La Figure \ref{fig:archiimp} décrit les différents composants qui sont utilisés pour l'implémentation de notre prototype.\par
 			Le prototype est divisé en deux :
-			la partie Producteur (sur la Figure \ref{fig:archiProducer}) et la partie Consommateur (sur la Figure \ref{fig:archiConsumer}). 
+			la partie Producteur (sur la Figure \ref{fig:archiproducer}) et la partie Consommateur (sur la Figure \ref{fig:archiconsumer}). 
 			Il s'agit de deux projets \texttt{Maven} distincts qui génèrent chacun un JAR exectuable.\par
-			La partie Producteur lit les données des capteurs physiologiques contenues dans le fichier data\_file.csv. 
-			Ces données sont normalisées grâce à l'objet \texttt{Data} pour être utilisées par le producteur.
-			Le producteur lit chaque donnée et l'envoie sur un topic.
+			La partie Producteur lit les données des capteurs physiologiques contenues dans le fichier \texttt{data\_file.csv}. 
+			Ces données sont normalisées grâce à l'objet \texttt{Data} pour être utilisées par le Producteur.
+			Le Producteur lit chaque donnée et l'envoie sur un topic.
 			Il s'arrête lorsque toutes les données ont été envoyées.\par
-			La parite Consommateur "écoute" le topic qui lui est passé en argument et affiche chaque donnée de ce topic dans un terminal.\par
+			La partie Consommateur "écoute" le topic qui lui est passé en argument et affiche chaque donnée de ce topic dans un terminal.\par
 			Par exemple, la figure \ref{fig:exemple} montre une exécution du producteur (à gauche) et du consommateur (à droite) pour le topic "Vecteur".
 			\begin{figure}
 				\hspace*{-0.7cm}
@@ -588,14 +589,14 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Tout le code pour ce prototype se trouve sur le Github \href{https://github.com/laurelinemartin/stage/Prototype}{https://github.com/laurelinemartin/stage/Prototype}.
 	\subsection{Intégrer le prototype aux travaux déjà menés}\label{sec:travaux}
 		Des travaux antérieurs ont été menés pour le projet global.
-		Ces tavaux concernent en particulier la détection et la reoconnaissance d'états émotionnels à partir de capteurs physiologiques.
+		Ces tavaux concernent en particulier la détection et la reconnaissance d'états émotionnels à partir de capteurs physiologiques.
 		Cependant, les algorithmes utilisent des données préalablement acquises. 
 		Autrement dit, les mesures physiologiques sont faites expérimentalement et elles sont enregistrées dans un fichier Excel (au format CSV) dans un premier temps.
 		Et dans un second temps, les données sont analysées par les algorithmes qui ont été élaborés par des chercheurs du CEDRIC.
 		En particulier Viviane GAL dans sa thèse \cite{gal_2019}.
 		Il n'y a donc pas de notion de temps-réel dans ces travaux.
-		C'est pour palier à ce problème que nous avons mis au point la solution que nous vous présentons.\par
-		Nous présentons dans cette partie l'intégration de notre solutions aux travaux qui ont déjà été menés.
+		C'est pour palier à ce problème que nous avons mis au point la solution que nous présentons.\par
+		Nous présentons dans cette partie l'intégration de notre solution aux travaux qui ont déjà été menés.
 		Pour cela, nous allons tout d'abord introduire les capteurs physiologiques qui sont utilisés par les travaux précédents.
 		Cette introduction va nous permettre de trouver le connecteur adéquat pour ingérer les données des capteurs dans notre solution Kafka.
 		Nous ferons la comparaison de différents connecteurs et nous nous positionnerons sur l'un d'entre.
@@ -603,9 +604,10 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Enfin, nous ferons le bilan de ce qu'apporte notre prototype au projet.
 		\subsubsection{Capteurs physiologiques utilisés}\label{sec:capteurs}
 			Afin que notre prototype transmette les données provenant de capteurs aux algorithmes de reconnaissance des états émotionnels, nous devons nous adapter aux capteurs déjà utilisés par le laboratoire pour les expérimentations passées et futures.
-			Nous n'avons pas la possibilité de changer les capteurs, alors c'est à notre solution de s'y adpater.\par
+			Nous n'avons pas la possibilité de changer les capteurs, alors c'est à notre solution de s'y adapter.\par
 			Les capteurs physiologiques qui sont utilisés dans le projet sont des capteurs de chez TEA Ergo\footnote{\href{https://www.teaergo.com}{https://www.teaergo.com}}.
-			Ce sont les capteurs Captiv présentés dans la Figure \ref{fig:capteurstea}.
+			Ce sont les capteurs Captiv présentés dans la Figure \ref{fig:capteurstea} des images issues du site\newline 
+			\href{https://www.teaergo.com/fr/products/}{https://www.teaergo.com/fr/products/} que j'ai consulté le 28/09/20.
 			\begin{figure}
 				\begin{subfigure}{0.5\textwidth}
 					\centering
@@ -631,17 +633,10 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 					\caption{Capteur pour la mesure de la fréquence respiratoire}
 					\label{fig:rr}
 				\end{subfigure}
-				\caption{Les capteurs CAPTIV (TEA Ergo)}
+				\caption{Les capteurs CAPTIV}
 				\label{fig:capteurstea}
 			\end{figure}
-			Ceux que nous possédons permettent la mesure de la réponse électrodermale (Figure \ref{fig:gsr}), du rythme cardiaque (Figure \ref{fig:hr}), de la température à la surface de la peau (Figure \ref{fig:bt}) et de la fréquence respiratoir (Figure \ref{fig:rr}).\par
-			Nous possédons également un casque de chez NeuroSky\footnote{\href{http://neurosky.com}{http://neurosky.com}} qui permet la mesure de l'électroencéphalogramme (Figure \ref{fig:neurosky}).
-			\begin{figure}
-				\centering
-				\includegraphics[scale=0.5]{../include/neurosky.PNG}
-				\caption{Casque Neurosky}
-				\label{fig:neurosky}
-			\end{figure}
+			Ceux que nous possédons permettent la mesure de la réponse électrodermale (Figure \ref{fig:gsr}), du rythme cardiaque (Figure \ref{fig:hr}), de la température à la surface de la peau (Figure \ref{fig:bt}) et de la fréquence respiratoir (Figure \ref{fig:rr}).
 		\subsubsection{Connecteurs}
 			Pour utiliser notre prototype avec les travaux qui ont déjà été menés pour la recherche des états émotionnels, nous avons besoin d'utiliser un connecteur.
 			Ce connecteur va nous permettre de récupérer les données provenant des capteurs pour les formaliser.
@@ -663,13 +658,11 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			\begin{itemize}
 				\item Les connecteurs potentiels : Les connecteurs qui peuvent servir pour notre cas, c'est-à-dire qui peuvnet faire de l’ingestion de données en temps-réel;
 				\item Les connecteurs non-retenus : Les connecteurs jugés trop éloignés de notre cas d’usage pour des raisons diverses.
-				% Ils sont soit orienté sbases de données relationnelles, soit orientés fichiers systèmes, soit générateurs de données factices, etc.
 			\end{itemize}
-			Les Tableaux \ref{tab:potentiel} et \ref{tab:connecteursnon} listent ces 38 connecteurs avec une petite description.\par
+			Les Tableaux \ref{tab:potentiels} et \ref{tab:connecteursnon} listent ces 38 connecteurs avec une petite description.\par
 			\textbf{1. Les connecteurs potentiels}\par
 			Ces connecteurs vont permettre de récupérer des données en temps-réel. 
 			Comme nos capteurs diffusent en permanence, nous avons besoin d’un connecteur capable de transférer des données en temps-réel depuis les capteurs vers Kafka.
-			Le tableau \ref{tab:potentiels} répertorie ces connecteurs.\par
 			\begin{table}[h]
 				\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
 					\hline
@@ -679,11 +672,12 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\end{tabular}
 				\caption{Les connecteurs potentiels}
 				\label{tab:potentiels}
-			\end{table}\par
+			\end{table}
+			Le tableau \ref{tab:potentiels} répertorie ces connecteurs.\par
 			\textbf{2. Les connecteurs non-retenus}\par
 			Ces connecteurs peuvent être écartés de nos recherches. 
 			Ces plug-in sont soit trop spécifiques, soit orientés bases de données relationnelles, soit pour des fichiers systèmes, soit pour créer des données factices, etc.
-			Le tableau \ref{tab:connecteursnon} repertorie ces connecteurs.
+			Le tableau \ref{tab:connecteursnon} répertorie ces connecteurs.
 			\begin{longtable}{|p{7.5cm}|p{7.5cm}|}
 				\hline
 				\rowcolor{lightgray} Connecteur & Description\\\hline
@@ -727,11 +721,10 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{tab:connecteursnon}
 			\end{longtable}\par
 			\textbf{3. Positionnement}\par
-			Parmis les deux connecteurs que nous avons retenus, nous avons décidé d'utiliser le connecteur \texttt{Kafka Connect Shell}\footnote{\href{https://www.confluent.io/hub/thomaskwscott/kafka-connect-shell-source}{https://www.confluent.io/hub/thomaskwscott/kafka-connect-shell-source}}.
+			Parmi les deux connecteurs que nous avons retenus, nous avons décidé d'utiliser le connecteur \texttt{Kafka Connect Shell}\footnote{\href{https://www.confluent.io/hub/thomaskwscott/kafka-connect-shell-source}{https://www.confluent.io/hub/thomaskwscott/kafka-connect-shell-source}}.
 			Dans l'optique d'être plus rapide dans nos tests, ce connecteur nous semble être le meilleur choix.
 			Nous allons l'utiliser avec un algorithme déjà existant provenant de travaux antérieurs pour le projet qui affiche les données des capteurs dans un terminal.
-			Avec le connecteur Kafka Connect Shell, nous seront capable de lire les données affichées sur le terminal et de les transmettre au Producteur Kafka.
-			% enfin la pour l'instant il plante bien.
+			Avec le connecteur Kafka Connect Shell, nous serons capables de lire les données affichées sur le terminal et de les transmettre au Producteur Kafka.
 		\subsubsection{Schéma de l'intégration du prototypes aux travaux déjà menés}\label{sec:schematravaux}
 			\begin{figure}
 				\centering
@@ -756,30 +749,30 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Les données sont bien lues et renvoyées pour être analyses.
 
 \section{Conclusion}\label{sec:conclusion}
-	L'objectif principal de ce projet est de réaliser un jeu pervasif adaptable dynamiquement aux états émotionnels du joueur. 
-	Pour ce faire, nous utilisons des capteurs physiologiques de contatct qui génèrent des données analysées par des algorithmes pour la détection et la reconnaissance d'états émotionnels.
+	L'objectif principal de ce projet est de réaliser un jeu pervasif adaptable dynamiquement aux états émotionnels du joueur.
+	Pour ce faire, nous utilisons des capteurs physiologiques de contact qui génèrent des données analysées par des algorithmes pour la détection et la reconnaissance d'états émotionnels.
 	Une fois l'état émotionnel reconnu, le jeu peut alors proposer au joueur l'événement le plus adéquat pour garantir le meilleur divertissement possible aux joueurs.
-	Avec cet objectif en tête, nous avons cherché un moyen efficace de gérer les données fournies en continu par les capteurs.\par
-	Dans ce rapport, nous avons présenté plusieurs travaux qui ont été mené tout au long de ce stage. 
+	Avec cet objectif en tête, nous avons cherché une solution efficace de gérer les données fournies en continu par les capteurs.\par
+	Dans ce rapport, nous avons présenté plusieurs travaux qui ont été menés tout au long de ce stage.
 	Cette contribution a été, avant tout, l'occasion d'affiner les besoins pour la conception d'un jeu pervasif adaptable aux états émotionnels du joueur.
 	En premier lieu, nous avons conçu un cadre de comparaison pour l'adaptation dynamique de jeux à leurs utilisateurs que nous présentons dans notre état de l'art.
 	Puis, nous avons abordé la notion d'expérience utilisateur dans le domaine du jeu et l'expérimentation que nous avons mené lors d'un escape game.
-	Ensuite, nous avons présenté notre première tentative de solution sous la forme d'un modèle conceptuel pour représenter l'adaptation d'un jeu pervasif aux états émotionnel d'un joueur.
-	Enfin, nous avons présenté le prototype de notre solution pour la gestion des données provenant de capteurs physiologiques pour que ces données soient utilisées avec des algorithmes déjà existants. 
-	Cette dernière solution que nous avons détaillée dans ce rapport a été implémentée.
+	Ensuite, nous avons présenté notre première tentative de contribution sous la forme d'un modèle conceptuel pour représenter l'adaptation d'un jeu pervasif aux états émotionnels d'un joueur.
+	Enfin, nous avons présenté le prototype de notre solution pour la gestion des données provenant de capteurs physiologiques pour que ces données soient utilisées avec des algorithmes déjà existants.
+	Cette dernière contribution que nous avons détaillée dans ce rapport a été implémentée.
 	Elle permet de lire et d'envoyer en temps-réel (avec le minimum de latence possible) les données sur des topics.\par
 	Durant ce travail de près de six mois, j'ai beaucoup appris.
 	J'ai appris une certaine rigueur.
 	Une rigueur tout d'abord dans mes lectures.
-	Au fil des lectures que j'ai faites, j'ai noté de plus en plus de détails dans mes résumés pour éviter d'avoir à y revenir trop souvent. 
+	Au fil des lectures que j'ai faites, j'ai noté de plus en plus de détails dans mes résumés pour éviter d'avoir à y revenir trop souvent.
 	Une rigueur au niveau de la rédaction.
 	J'ai appris a être très attentive à la forme de mes rédactions.\par
-	Ce travail a été l'occasion d'affiner les contour du projet.
+	Ce travail a été l'occasion d'affiner les contours du projet.
 	Plusieurs perspectives sont a envisager.
 	Tout d'abord il faudrait mettre à l'épreuve notre prototype directement avec nos capteurs.
-	Si les tests avec les capteurs sont satisfaisants, alors il sera possible d'uiliser des algorithmes pour la détection et la reconnaissance d'états émotionnels en temps-réel.
+	Si les tests avec les capteurs sont satisfaisants, alors il sera possible d'utiliser des algorithmes pour la détection et la reconnaissance d'états émotionnels en temps-réel.
 	Il sera aussi envisageable de passer à l'étape de la conception d'algorithmes pour l'adaptation dynamique du jeu selon l'état émotionnel courant du joueur.
-	Il faudra par la suite développer d'autres aspects lié au jeu lui-même.
+	Il faudra par la suite développer d'autres aspects liés au jeu lui-même.
 	Comme par exemple la jouabilité ou le game design.
 	Un objectif de ce projet est d'utiliser ce jeu pour d'autres domaines d'applications que celui du divertissement.
 	On peut imaginer utiliser ce jeu pour enseigner des émotions par exemple.
@@ -787,9 +780,30 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 
 
 \newpage
-\renewcommand{\contentsname}{Annexes}\appendix
-\section{Adaptation d’un jeu pervasif particularisé basée sur l'état émotionnel et sur les caractéristiques du joueur – État de l’art}\label{ann:eda}
-	\includepdf[pages=-]{../include/eda.pdf}
+\bibliographystyle{abbrv}
+\bibliography{../include/biblio}
+
+\newpage
+\appendix
+\renewcommand{\appendixpagename}{Annexes}\appendixpage
+% \section{Adaptation d’un jeu pervasif particularisé basée sur l'état émotionnel et sur les caractéristiques du joueur – État de l’art}\label{ann:eda}
+%	\includepdf[pages=-]{../include/eda.pdf}
+
+\section{Présentation du laboratoire CEDRIC}\label{ann:cedric}
+	Avant de présenter le travail réalisé, nous allons faire une présentation du laboratoire CEDRIC.
+	Le laboratoire de Centre d'Etudes et De Recherche en Informatique et Communication (CEDRIC)\footnote{\href{http://cedric.cnam.fr/lab/accueil/labo/}{http://cedric.cnam.fr/lab/accueil/labo/}} au sein du Conservatoire National des Arts et Métiers (CNAM) de Paris\footnote{\href{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}} se situe au 2 rue Conte 75003 PARIS.\par
+	Le laboratoire CEDRIC est composé de huit équipes menant des recherches et des actions dans le domaine de l'informatique fondamentale et appliquée, ainsi que dans d'autres disciplines proches telles que les statistiques, électronique,....\par
+	Les équipes du laboratoire sont les suivantes :
+	\begin{itemize}
+		\item L'équipe Données complexes, apprentissage et représentations (Vertigo) : Extraire de l'information et construire des méthodes de gestion de données basées sur le contenu pour des données massives audios, images et vidéos;
+		\item L'équipe Interactivité pour Lire et Jouer (ILJ) : Questions autour de l'interaction Homme-Machine concernant des activités telles que le jeu et la lecteure. Cette équipe mèle plusieurs disciplines (l'informatiques, la psychologie, le design, les arts,...) afin de répondre aux études en cours qui concernent la modélisation de la difficulté dans les jeux, les méthodologies de game design inclusif, etc.;
+		\item L'équipe Ingénieries des Systèmes d'Information et de Décision (ISID) : Cette équipe s'est réunie autour de trois axes de recherche : les systèmes décisionnels, le web sémantique et la qualité des systèmes d'information. Son but est de concevoir des méthodes, des outils et des techniques	pour la conception et l'analyse de systèmes d'information et de décision dans tous les domaines;
+		\item L'équipe Traitement du signal et architectures électroniques (LAETITIA) : Concentrée sur trois axes de recherhe : le traitement du signal pour les télécommunications (recherches en lien avec les réseaux cellulaires (5G/6G) et en lien avec les problématiques de couches physique pour les réseaux faible puissance longue portée pour l'IoT), la sûreté de fonctionnement des sytèmes dynémiques (recherche en automatique) et l'implémentation temps-réel (mise en oeuvre des algorithmes proposés par l'équipe);
+		\item L'équipe Méthode Statistique de Data-Mining et Apprentissage (MSDMA) : Traitement de données et développement de modèles d'apprentissage statistiques dans le but d'extraire des informations pour prise de décision;
+		\item L'équipe Optimisation Combinatoire (OC) : Rassemblée autour de deux axes : la programmation mathématique et applications ainsi que les graphes et optimisation;
+		\item L'équipe Réseaux et Objets Connectés (ROC) : Porte sur l'analyse et l'exploitation des nouvelles architectures réseaux et des systèmes liés à la virtualisation, à la mobilité et au développement des objets connectés;
+		\item L'équipe Systèmes Sûrs (SYS) : Spécialisation, conception, vérification et évaluation des systèmes. Pour cela, Les recherches se font autour de trois axes : l'axe typage, sémantique et preuve, l'axe architecture logiciel, architecture systèmes et ligne de produit et l'axe vérification et évaluation de systèmes parallèles et asynchrones.
+	\end{itemize}
 
 \section{Description détaillée des classes de l'ontologie}\label{ann:detailclasses}
 	\includepdf[pages=-]{../include/descriptionClassesOntologie.pdf}
@@ -814,7 +828,6 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	\href{https://blog.ippon.fr/2018/03/27/comparatif-rabbitmq-kafka/}{https://blog.ippon.fr/2018/03/27/comparatif-rabbitmq-kafka/} \textit{[fr]}\medskip\newline
 	\href{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm}{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm} \textit{[en]}\medskip\newline
 	\href{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka}{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka} \textit{[en]}
-	%\includepdf[pages=-]{../include/comparatifKafkaVSRabbitMQ.pdf}	
 
 \section{Offre de stage}\label{app:annexe1}
 	\textbf{Elaboration du modèle conceptuel des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs}\par
@@ -825,6 +838,4 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	\textbf{Sujet :}\newline
 	Il s’agit dans ce stage d’élaborer un modèle conceptuel du jeu pervasif adaptable basé sur les émotions. Ce modèle, éventuellement réalisé sous forme d’une ontologie, doit couvrir toute la variété des facteurs qui impactent le jeu tels que le profil de l’utilisateur et ses données physiologiques exprimant son état émotionnel. Cette ontologie doit être construite de façon à ce qu’elle soit adaptée à la démarche situationnelle nécessaire pour la composition dynamique du jeu.
 
-\bibliographystyle{abbrv}
-\bibliography{../include/biblio}
 \end{document}
