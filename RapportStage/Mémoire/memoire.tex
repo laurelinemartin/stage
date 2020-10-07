@@ -14,13 +14,18 @@
 \geometry{hmargin=2.5cm,vmargin=3cm}
 \setlength{\parskip}{0.15cm}
 
-\title{Rapport de Stage\\ Master 2 Data Managment in a Digital World - DataScale\\ 
-Université Versailles Saint-Quentin - Paris Saclay}
+\title{\textbf{Rapport de Stag :\\ Gestion de données de capteurs physiologiques pour un jeu pervasif capable de s'adapter dynamiquement aux états émotionnels du joueur}}
 \author{Laureline MARTIN}
 \date{Mercredi 7 Octobre 2020}
 
 \begin{document}
 \maketitle
+\begin{center}
+	\Large{Master 2 Data Management in a Digital World - DataScale\\ 
+		Université Versailles Saint-Quentin - Paris Saclay\bigskip\\
+		Laboratoire CEDRIC\\ 
+		Conservatoire National des Arts et Métiers de Paris}
+\end{center}
 \vfill
 \begin{center}
 	\includegraphics[scale=0.25]{../include/uvsq.png}
@@ -114,15 +119,15 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Il favorise les rencontres dans l'espace physique.
 	Il permet de découvrir de nouveaux endroits, de nouvelles choses et de s'enrichir culturellement.
 	Cependant, le jeu omniprésent ne met pas réellement le joueur au centre de jeu.\par
-	Le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à mettre le joueur et ces émotions au centre du jeu.
+	Le projet "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" vise à mettre le joueur et ses émotions au centre du jeu.
 	Ce seront les émotions du joueur qui influenceront le jeu et ses événements.
 	Pour pouvoir détecter et reconnaître les états émotionnels du joueur afin que le jeu s'y adapte et propose l'événement le plus adéquat, de multiples capteurs physiologiques peuvent être utilisés.
 	Ces capteurs génèrent beaucoup de données qui doivent être stockées et traitées.
 	Ces données permettront à des algorithmes de reconnaître les états émotionnels des joueurs tout au long du jeu.\par
 	Le but de ce travail a été de dresser le contour d'un jeu pervasif adaptable aux états émotionnels du joueur et d'en affiner la conceptualisation.
 	Dans ce rapport, nous nous sommes intéressés, d'une part, à l'adaptation de jeux selon le contexte émotionnel et d'autre part, à la gestion de données générées par des capteurs physiologiques.\par
-	Dans un premier temps, nous décrirons dans la Section \ref{sec:projet}, notre projet, ses objectifs et la problématique scientifique que nous traiterons, notre travail et à travers ce rapport.
-	Nous décrirons, dans la Section \ref{sec:etatart}, le cadre de comparaison que nous avons mis au point pour l'adaptation dynamiques de jeux à leurs joueurs pour notre état de l'art. 
+	Tout d'abord, nous décrirons dans la Section \ref{sec:projet}, notre projet, ses objectifs et la problématique scientifique que nous traiterons dans notre travail et à travers ce rapport.
+	Nous présenterons, dans la Section \ref{sec:etatart}, l'état de l'art que nous avons rédigé et plus particulièrement le cadre de comparaison que nous avons mis au point pour l'adaptation dynamique de jeux à leurs joueurs. 
 	Nous aborderons dans la Section \ref{sec:escape} la notion d'expérience utilisateur et l'expérience que nous avons menée lors d'un escape game.
 	Dans la Section \ref{sec:modelisation}, nous présenterons une ontologie, en cours de construction, d'un jeu pervasif prenant en compte l'état émotionnel du joueur et le bilan que nous tirons de cet exercice.
 	Enfin, nous expliquerons dans la Section \ref{sec:prototypage} une solution que nous avons conçue pour la gestion de données en temps-réel provenant de capteurs physiologiques.
@@ -196,17 +201,27 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	\subsection{Rédaction d'un état de l'art}\label{sec:eda}
 		Dans cette partie, nous présentons l'état de l'art que nous avons rédigé pour notre projet.
 		Le but de cet état de l'art est de proposer un cadre de comparaison pour des approches traitant de l'adaptation dynamique de jeux pervasifs aux états émotionnels et à d'autres caractéristiques des joueurs.
-		Nous avons appliqué ce cadre à des approches que nous avons étudiées.
-		\includepdf[pages=-]{../include/eda.pdf}
+		Nous avons appliqué ce cadre à des approches que nous avons étudiées.\par
+		Nous présentons le document qui résulte de cet état de l'art de la page 10 à la page 25.
+		%\includepdf[pages=-]{../include/eda.pdf}
+		\makeatletter
+		\includepdf[pages=-,picturecommand={%
+		            \setlength{\@tempdimb}{.5\paperwidth}%
+		            \setlength{\@tempdimc}{2cm}%
+		            \setlength{\unitlength}{1pt}%
+		            \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
+		        \makebox (0,0){\thepage}}%
+		}]{../include/eda.pdf}
+		\makeatother
 	\subsection{Lecture de l'état de l'art}
 		\subsubsection{Cadre de comparaison}
-			Le cadre comparatif $-$pour l'adaptation dynamique de jeux pervasifs aux états émotionnels et à d'autres caractéristiques des joueurs$-$ nous permet d'avoir une vue d'ensemble sur la façon dont l'adaptation est traité par les méthodes comparées.
+			Le cadre comparatif $-$pour l'adaptation dynamique de jeux pervasifs aux états émotionnels et à d'autres caractéristiques des joueurs$-$ nous permet d'avoir une vue d'ensemble sur la façon dont l'adaptation est traitée par les méthodes comparées.
 			Notre cadre s'appuie sur les critères suivants :
 			\begin{itemize}
 				\item Les méthodes pour la détection et pour la reconnaissance des états émotionnels
 				\begin{itemize}
 					\item Les capteurs utilisés
-					\item Les algorithmes utlisés pour la détection et/ou la reconnaissance  de l'état émotionnel
+					\item Les algorithmes utlisés pour la détection et/ou la reconnaissance de l'état émotionnel
 				\end{itemize}
 				\item Les autres caractéristiques de l'utilisateur prises en compte par le jeu
 				\item Les méthodes d'adaptation d'un jeu au contexte de son utilisateur
@@ -233,11 +248,11 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			De cette comparaison, il en ressort plusieurs questions et limites.\par
 			Tout d'abord, nous remarquons que seulement quelques états émotionnels sont traités dans les approches que nous avons étudiées.
 			Même si nous pouvons imaginer que certains états émotionnels ne seront jamais expérimentés au cours du jeu que nous souhaitons concevoir, il semble tout de même important de pouvoir prendre en compte le plus grand nombre d'états émotionnels possible.
-			Sans quoi, le jeu ne pourrait pas s'adapter correctement au joueur et impacter négativement son expérience de jeu et son niveau d'intérêt pour le jeu.
+			Sans quoi, le jeu ne pourrait pas s'adapter correctement au joueur et impacter négativement son expérience et son niveau d'intérêt pour le jeu.
 			Notre idée n'est pas de détecter et de reconnaître tous les états émotionnels.
 			Nous souhaitons utiliser un algorithme d'apprentissage profond non-supervisé afin de trouver des motifs particuliers permettant de détecter un changement d'un état émotionnel vers un autre.
 			Avec cette information, nous serions en mesure de connaître l'état émotionnel courant du joueur.\par
-			Dans notre cas, nous utilisons des capteurs physiologiques de contact, c'est-à-dire des capteurs "collés" au joueur, dans le but d'acquérir des données sur son état physiologique pour en déduire son état émotionnel courant via des algorithmes.
+			Dans notre cas, nous utilisons des capteurs physiologiques de contact, c'est-à-dire des capteurs "collés" au joueur, dans le but d'acquérir des données sur son état physiologique courant pour en déduire son état émotionnel courant via des algorithmes.
 			Dans les approches que nous avons relevées, certaines d'entre elles reconnaissent des états émotionnels en utilisant différents types d'algorithmes et des capteurs physiologiques.
 			Mais contrairement à cela, d'autres utilisent des modèles pour "prédire" l'état émotionnel courant du joueur.
 			Ces méthodes "prédictives" peuvent être intéressantes car elles ne nécessitent pas de capteurs.
@@ -250,18 +265,19 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			De ce fait, il est nécessaire que le jeu s'adapte à chacun dynamiquement.\par
 			Notre cadre de comparaison révèle que d'autres caractéristiques que celle de l'état émotionnel peuvent être considérées pour augmenter la "connaissance" du jeu sur son joueur.
 			Ces caractéristiques peuvent être intéressantes à étudier à la fois pour mieux connaître les goûts et les préférences du joueur (qui sont souvent plus pérennes) mais aussi pour l'enrichissement de la connaissance du contexte de l'environnement globale.
-			Ces caractéristiques peuvent aussi bien s'appuyer sur l'utilisation d'un questionnaire de préférences rempli par l'utilisateur lui-même que sur la présence de capteurs dans l'environnement.
+			Ces caractéristiques peuvent aussi bien s'appuyer sur l'utilisation d'un questionnaire de préférences rempli par l'utilisateur lui-même, que sur la présence de capteurs dans l'environnement.
 			Cela constitue une piste qui pourrait être approfondie dans de prochains travaux.\par
-			Cet état de l'art nous a permis d'avoir une vision globale de ce qui existait déjà en matière d'adaptation de jeux aux états émotionnels des joueurs.
-			Il aura aussi été l'occasion de proposer un cadre de comparaison pour ce sujet.
+			Cet état de l'art nous a permis d'avoir une vision globale de ce qui existait déjà en matière d'adaptation de jeux aux états émotionnels des joueurs. 
+			Il nous a permis d'affiner les contours pour la conceptualisation d'un jeu pervasif capable de s'adapter dynamiqument aux états émotionnels de son joueur et de trouver de nouvelles pistes de réflexions. 
+			Il a aussi été l'occasion de proposer un cadre de comparaison pour ce sujet.
 			Grâce à cet état de l'art, j'ai pu comprendre quels sont les enjeux pour la réalisation de notre objectif.
 
 \section{Expérience d'un escape game}\label{sec:escape}
 	Nous avons expérimenté sur nous-mêmes un escape game.
 	La salle que nous avons testée se trouve au Victory Escape Game\footnote{\href{http://www.victoryescapegame.fr/}{http://www.victoryescapegame.fr/}} situé au 37 rue des Gravilliers à Paris.
 	Cela a été l'occasion d'expérimenter ce genre de jeu très immersif. 
-	Dans cette section, nous allons tout d'abord aborder la notion d'expérience utilisateur.
-	Puis, nous ferons un retour sur cette expérience d'escape game et ce qu'elle a pu apporter pour le projet que nous menons.
+	Dans cette section, nous abordons tout d'abord la notion d'expérience utilisateur.
+	Puis, nous faisons un retour sur cette expérience d'escape game et ce qu'elle a pu apporter pour le projet que nous menons.
 	\subsection{Expérience Utilisateur}\label{sec:UX}
 		L'expérience utilisateur (UX pour User eXperience) est un sujet de psychologie et de neurosciences en perpétuel développement.
 		Des méthodes plus efficaces pour donner la meilleure expérience utilisateur sont continuellement recherchées.
@@ -271,7 +287,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Pour construire cette définition, j'ai étudié différentes ressources qui se trouvent en Annexe \ref{ann:ux}.\par
 		L’expérience utilisateur concerne toutes les réactions qu’un utilisateur peut avoir lors d’une interaction avec un service, un objet, un espace public, etc.
 		C’est aussi tout ce que l’utilisateur peut ressentir lors de cette interaction.
-		L’expérience utilisateur va donc plus loin que la simple notion d’ergonomie qui elle ne concerne que la « facilité d’utilisation » d’un produit.\par
+		La notion d’expérience utilisateur va donc plus loin que la simple notion d’ergonomie qui elle ne concerne que la « facilité d’utilisation » d’un produit.\par
 		L’UX commence par la perception sensorielle de l’utilisateur de ce qu’il lui est présenté.
 		Cette perception est « analysée » par le cerveau et mémorisée.
 		Une réaction est ensuite faite (c'est une façon très simplifiée d'expliquer comment cela fonctionne).
@@ -358,7 +374,9 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Nous remarquons que bien souvent, ces expériences n'impliquent que des personnes n'ayant aucun problème de santé, dans une fourchette d'âge restreinte, etc.
 		Cette méthode d'expérimentation exclue certains joueurs et crée un décalage entre les testeurs du jeu et le public réel.
 		D'après toutes ces remarques, il me semble important d'ouvrir le groupe test au public le plus large possible.
-		Autrement dit, d'étendre les âges, les cultures, les capacités physiques, etc. le plus possible afin de permettre une plus grande inclusivité.
+		Autrement dit, d'étendre les âges, les cultures, les capacités physiques, etc. le plus possible afin de permettre une plus grande inclusivité.\par
+		Nous pouvons envisager de réitérer ce genre d'expérimentations pour approfondir les sujets de l'expérience utilisateur dans les jeux immersifs et des états émotionnels ressentis lors d'une partie d'escape game.
+		Nous pouvons aussi imaginer utiliser nos capteurs lors de prochaines parties et d'en analyser les données pour essayer de déterminer des changements d'états émotionnels significatifs qui correspondraient à des événements lors de la parite (indice découvert, porte débloquée,...).
 
 \section{Modélisation conceptuelle}\label{sec:modelisation}
 	Dans cette partie, nous présentons un modèle conceptuel qui est en cours d'aboutissement.
@@ -788,7 +806,6 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 \renewcommand{\appendixpagename}{Annexes}\appendixpage
 % \section{Adaptation d’un jeu pervasif particularisé basée sur l'état émotionnel et sur les caractéristiques du joueur – État de l’art}\label{ann:eda}
 %	\includepdf[pages=-]{../include/eda.pdf}
-
 \section{Présentation du laboratoire CEDRIC}\label{ann:cedric}
 	Avant de présenter le travail réalisé, nous allons faire une présentation du laboratoire CEDRIC.
 	Le laboratoire de Centre d'Etudes et De Recherche en Informatique et Communication (CEDRIC)\footnote{\href{http://cedric.cnam.fr/lab/accueil/labo/}{http://cedric.cnam.fr/lab/accueil/labo/}} au sein du Conservatoire National des Arts et Métiers (CNAM) de Paris\footnote{\href{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}} se situe au 2 rue Conte 75003 PARIS.\par
@@ -805,9 +822,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		\item L'équipe Systèmes Sûrs (SYS) : Spécialisation, conception, vérification et évaluation des systèmes. Pour cela, Les recherches se font autour de trois axes : l'axe typage, sémantique et preuve, l'axe architecture logiciel, architecture systèmes et ligne de produit et l'axe vérification et évaluation de systèmes parallèles et asynchrones.
 	\end{itemize}
 
-\section{Description détaillée des classes de l'ontologie}\label{ann:detailclasses}
-	\includepdf[pages=-]{../include/descriptionClassesOntologie.pdf}
-
+\newpage
 \section{Ressources pour définir la notion d'expérience utilisateur}\label{ann:ux}
 	\textbf{Sitographie :}\newline
 	% \href{https://fr.wikipedia.org/wiki/experience_utilisateur#definitions}{https://fr.wikipedia.org/wiki/experience_utilisateur#Definitions}\newline
@@ -821,6 +836,11 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	\textbf{Bibliographie :}\newline
 	Olga Vl. Bitkina, Hyun K. Kim, Jaehyun Park \textit{Usability and user experience of medical devices: An overview of thecurrent state, analysis methodologies, and future challenges} International Journal of Industrial Ergonomics 76, 2020.
 
+\newpage
+\section{Description détaillée des classes de l'ontologie}\label{ann:detailclasses}
+	\includepdf[pages=-]{../include/descriptionClassesOntologie.pdf}
+
+\newpage
 \section{Sitographie pour la construction de la synthèse comparative entre Kafka et RabbitMQ}\label{ann:kafkarabbitmq}
 	\hspace*{-0.5cm}\href{https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-
 	case}{https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-
@@ -829,6 +849,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	\href{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm}{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm} \textit{[en]}\medskip\newline
 	\href{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka}{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka} \textit{[en]}
 
+\newpage
 \section{Offre de stage}\label{app:annexe1}
 	\textbf{Elaboration du modèle conceptuel des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs}\par
 	\medskip
