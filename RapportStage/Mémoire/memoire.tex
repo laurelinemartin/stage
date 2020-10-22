@@ -14,7 +14,7 @@
 \geometry{hmargin=2.5cm,vmargin=3cm}
 \setlength{\parskip}{0.15cm}
 
-\title{\textbf{Rapport de Stag :\\ Gestion de données de capteurs physiologiques pour un jeu pervasif capable de s'adapter dynamiquement aux états émotionnels du joueur}}
+\title{\textbf{Rapport de Stage :\\ Gestion de données de capteurs physiologiques pour un jeu pervasif capable de s'adapter dynamiquement aux états émotionnels du joueur}}
 \author{Laureline MARTIN}
 \date{Mercredi 7 Octobre 2020}
 
@@ -132,6 +132,9 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Dans la Section \ref{sec:modelisation}, nous présenterons une ontologie, en cours de construction, d'un jeu pervasif prenant en compte l'état émotionnel du joueur et le bilan que nous tirons de cet exercice.
 	Enfin, nous expliquerons dans la Section \ref{sec:prototypage} une solution que nous avons conçue pour la gestion de données en temps-réel provenant de capteurs physiologiques.
 
+
+
+
 \section{Cadre du projet}\label{sec:projet}
 	Le projet exploratoire intitulé "Conception et développement des jeux pervasifs adaptables avec la prise en compte des états émotionnels des joueurs" a éé initié par Mme Viviane GAL (équipe ILJ, voir Annexe \ref{ann:cedric}), M. Eric GRESSIER-SOUDAN (équipe ROC) et Mme Elena KORNYSHOVA (équipe ISID).
 	Ce projet vise à élaborer un jeu pervasif capable de s'adapter dynamiquement selon le contexte du joueur et de son environnement au cours du jeu.\par
@@ -198,22 +201,22 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Dans cette section, nous présentons notre état de l'art dans un premier temps.
 	Dans un second temps, nous ferons une lecture synthétique de ce document en présentant notre cadre de comparaison et les limites et les questionnements que ce cadre à mis en lumière.
 	% L'état de l'art complet se trouve en Annexe \ref{ann:eda}.
-	\subsection{Rédaction d'un état de l'art}\label{sec:eda}
-		Dans cette partie, nous présentons l'état de l'art que nous avons rédigé pour notre projet.
-		Le but de cet état de l'art est de proposer un cadre de comparaison pour des approches traitant de l'adaptation dynamique de jeux pervasifs aux états émotionnels et à d'autres caractéristiques des joueurs.
-		Nous avons appliqué ce cadre à des approches que nous avons étudiées.\par
-		Nous présentons le document qui résulte de cet état de l'art de la page 10 à la page 25.
+	%\subsection{Rédaction d'un état de l'art}\label{sec:eda}
+	%	Dans cette partie, nous présentons l'état de l'art que nous avons rédigé pour notre projet.
+	%	Le but de cet état de l'art est de proposer un cadre de comparaison pour des approches traitant de l'adaptation dynamique de jeux pervasifs aux états émotionnels et à d'autres caractéristiques des joueurs.
+	%	Nous avons appliqué ce cadre à des approches que nous avons étudiées.\par
+	%	Nous présentons le document qui résulte de cet état de l'art de la page 10 à la page 25.
 		%\includepdf[pages=-]{../include/eda.pdf}
-		\makeatletter
-		\includepdf[pages=-,picturecommand={%
-		            \setlength{\@tempdimb}{.5\paperwidth}%
-		            \setlength{\@tempdimc}{2cm}%
-		            \setlength{\unitlength}{1pt}%
-		            \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
-		        \makebox (0,0){\thepage}}%
-		}]{../include/eda.pdf}
-		\makeatother
-	\subsection{Lecture de l'état de l'art}
+		%\makeatletter
+		%\includepdf[pages=-,picturecommand={%
+		%           \setlength{\@tempdimb}{.5\paperwidth}%
+		%           \setlength{\@tempdimc}{2cm}%
+		%           \setlength{\unitlength}{1pt}%
+		%           \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
+		%       \makebox (0,0){\thepage}}%
+		%}]{../include/eda.pdf}
+		%\makeatother
+	%\subsection{Lecture de l'état de l'art}
 		\subsubsection{Cadre de comparaison}
 			Le cadre comparatif $-$pour l'adaptation dynamique de jeux pervasifs aux états émotionnels et à d'autres caractéristiques des joueurs$-$ nous permet d'avoir une vue d'ensemble sur la façon dont l'adaptation est traitée par les méthodes comparées.
 			Notre cadre s'appuie sur les critères suivants :
@@ -370,11 +373,22 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Cela est fait pour tendre à la meilleure UX possible pour cette salle.\par
 		Cette expérience d'escape game et mon expérience personnelle m'a fait comprendre l'importance de mener des expérimentation "en réel".
 		Bien souvent, les expériences sont menées en laboratoire.
-		Comme celles décrites dans l'état de l'art (Section \ref{sec:eda}) ou celles menées pour améliorer l'UX.
+		Comme celles décrites dans les références présentées dans l'état de l'art à la Section \ref{sec:eda} ou celles menées pour améliorer l'UX.
 		Nous remarquons que bien souvent, ces expériences n'impliquent que des personnes n'ayant aucun problème de santé, dans une fourchette d'âge restreinte, etc.
 		Cette méthode d'expérimentation exclue certains joueurs et crée un décalage entre les testeurs du jeu et le public réel.
 		D'après toutes ces remarques, il me semble important d'ouvrir le groupe test au public le plus large possible.
 		Autrement dit, d'étendre les âges, les cultures, les capacités physiques, etc. le plus possible afin de permettre une plus grande inclusivité.\par
+		Mon expérience personnelle par rapport à cet escape game montre plusieurs limites d'accessibilité pour ce type de jeu.
+		D'après cette expérience, je pense qu'il faut rendre d'avantage les jeux accessibles à tous les publics.
+		Pour cela, une idée serait de rentre les jeux plus adaptables et personnalisables.
+		Dans le jeu pervasif, les défis pour une meilleure accessibilité du jeu sont multiples.
+		On peut par exemple penser à l'interface utilsateur qui doit être accessibles au personnes daltoniennes ou déficientes visuelles, ou aux sons émis par le jeu ou par l'environnement qui doivent être traduit pour les personnens mal-entendantes.
+		Bien sûr, beaucoup d'autres exemples sont existent.
+		Il faut donc que le jeu puisse connaître les difficultés du joueur pour s'y adapter.
+		Cependant, on peut imaginer que rendre le jeu "trop" adaptable pourrait dégrader l'expérience du joueur.
+		Si le jeu s'adapte mal au joueur, son expérience pourrait être moins bonne.
+		Ou bien, si l'adaptatino du jeu supprime certains aspect ou certaines 
+		Il faudrait donc chercher un bon équilibre entre adaptabilité, jouabilité et expérience utilisateur.\par
 		Nous pouvons envisager de réitérer ce genre d'expérimentations pour approfondir les sujets de l'expérience utilisateur dans les jeux immersifs et des états émotionnels ressentis lors d'une partie d'escape game.
 		Nous pouvons aussi imaginer utiliser nos capteurs lors de prochaines parties et d'en analyser les données pour essayer de déterminer des changements d'états émotionnels significatifs qui correspondraient à des événements lors de la parite (indice découvert, porte débloquée,...).
 
@@ -463,7 +477,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			\end{itemize}\par
 			Maintenant que nous connaissons les points communs entre les deux MOM, nous pouvons en faire une comparaison synthétique.\par
 			Dans ce comparatif, nous traitons des principales différences des deux middleware dans le Tableau \ref{tab:comparatifinfos}, de leurs architectures dans le Tableau \ref{tab:comparatifarchi} et dans la Figure \ref{fig:comparatifarchi}, de leurs approches dans le Tableau \ref{tab:comparatifapp}, des caractéristiques des messages dans le Tableau \ref{tab:comparatifmess} et de la préférence d'utilisation de l'un ou de l'autre MOM selon le cas d'usage dans le Tableau \ref{tab:comparatifpref}.\par
-			\begin{table}[hp]
+			\begin{table}
 				\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
 					\hline
 					\rowcolor{lightgray} RabbitMQ & Kafka\\\hline
@@ -477,7 +491,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{tab:comparatifinfos}
 			\end{table}
 			\medskip
-			\begin{table}[hp]
+			\begin{table}
 				\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
 					\hline
 					\rowcolor{lightgray} & RabbitMQ & Kafka\\\hline
@@ -490,7 +504,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{tab:comparatifarchi}
 			\end{table}
 			\medskip
-			\begin{figure}[hp]
+			\begin{figure}
 				\begin{subfigure}{0.6\textwidth}
 					\hspace*{-2cm}
 					\includegraphics[scale=0.5]{../include/RabbitMQ.PNG}
@@ -506,7 +520,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{fig:comparatifarchi}
 			\end{figure}
 			\medskip
-			\begin{table}[hp]
+			\begin{table}
 				\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
 				\hline
 				\rowcolor{lightgray} RabbitMQ & Kafka\\\hline
@@ -517,7 +531,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{tab:comparatifapp}
 			\end{table}
 			\medskip
-			\begin{table}[hp]
+			\begin{table}
 				\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
 					\hline
 					\rowcolor{lightgray} & RabbitMQ & Kafka\\\hline
@@ -529,7 +543,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{tab:comparatifmess}
 			\end{table}
 			\medskip
-			\begin{table}[hp]
+			\begin{table}
 				\begin{tabular}{|p{7.5cm}|p{7.5cm}|}
 				\hline
 				\rowcolor{lightgray} RabbitMQ & Kafka\\\hline
@@ -768,7 +782,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 
 \section{Conclusion}\label{sec:conclusion}
 	L'objectif principal de ce projet est de réaliser un jeu pervasif adaptable dynamiquement aux états émotionnels du joueur.
-	Pour ce faire, nous utilisons des capteurs physiologiques de contact qui génèrent des données analysées par des algorithmes pour la détection et la reconnaissance d'états émotionnels.
+	Pour ce faire, nous souhaitons utiliser des capteurs physiologiques de contact qui génèrent des données analysées par des algorithmes pour la détection et la reconnaissance d'états émotionnels.
 	Une fois l'état émotionnel reconnu, le jeu peut alors proposer au joueur l'événement le plus adéquat pour garantir le meilleur divertissement possible aux joueurs.
 	Avec cet objectif en tête, nous avons cherché une solution efficace de gérer les données fournies en continu par les capteurs.\par
 	Dans ce rapport, nous avons présenté plusieurs travaux qui ont été menés tout au long de ce stage.
@@ -779,12 +793,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Enfin, nous avons présenté le prototype de notre solution pour la gestion des données provenant de capteurs physiologiques pour que ces données soient utilisées avec des algorithmes déjà existants.
 	Cette dernière contribution que nous avons détaillée dans ce rapport a été implémentée.
 	Elle permet de lire et d'envoyer en temps-réel (avec le minimum de latence possible) les données sur des topics.\par
-	Durant ce travail de près de six mois, j'ai beaucoup appris.
-	J'ai appris une certaine rigueur.
-	Une rigueur tout d'abord dans mes lectures.
-	Au fil des lectures que j'ai faites, j'ai noté de plus en plus de détails dans mes résumés pour éviter d'avoir à y revenir trop souvent.
-	Une rigueur au niveau de la rédaction.
-	J'ai appris a être très attentive à la forme de mes rédactions.\par
+	% Plus d'une fois j'ai eu envie de me jeter par la fenêtre. Clairement les pire 8 mois de toute ma vie. Et pourtant j'en ai vu des choses. Je veux crever très clairement. A chaque fois que je regarde ce rapport, j'ai envie de pleurer. Je fais un vrai blocage sur ce travail. Juste laissez moi tranquille en fait. Je ne sais même pas ce qu'on me demande là, juste j'applique bêtement.
 	Ce travail a été l'occasion d'affiner les contours du projet.
 	Plusieurs perspectives sont a envisager.
 	Tout d'abord il faudrait mettre à l'épreuve notre prototype directement avec nos capteurs.

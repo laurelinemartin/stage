@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: memoire.aux
+The style file: abbrv.bst
+Database file #1: ../include/biblio.bib
+Warning--empty journal in astic_2013
+Warning--empty journal in carofiglio_et_al._2019
+Warning--empty journal in gal_2019
+Warning--empty booktitle in nalepa_et_al._2017
+Warning--empty journal in noor_et_al._2009
+You've used 11 entries,
+            2118 wiz_defined-function locations,
+            560 strings with 6131 characters,
+and the built_in function-call counts, 4208 in all, are:
+= -- 424
+> -- 181
+< -- 9
++ -- 73
+- -- 60
+* -- 281
+:= -- 665
+add.period$ -- 36
+call.type$ -- 11
+change.case$ -- 63
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 185
+empty$ -- 314
+format.name$ -- 60
+if$ -- 914
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 11
+newline$ -- 58
+num.names$ -- 22
+pop$ -- 81
+preamble$ -- 1
+purify$ -- 52
+quote$ -- 0
+skip$ -- 139
+stack$ -- 0
+substring$ -- 241
+swap$ -- 60
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 5
+while$ -- 45
+width$ -- 13
+write$ -- 124
+(There were 5 warnings)

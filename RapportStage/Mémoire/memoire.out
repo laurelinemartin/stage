@@ -1,0 +1,38 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Etat de l'art}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Cadre de comparaison}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Application du cadre}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Cadre du projet}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Motivations et objectif du projet}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Probl\351matique}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{D\351finitions et sujets connexes}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Etat de l'art}{}% 9
+\BOOKMARK [2][-]{subsubsection.4.0.1}{Cadre de comparaison}{section.4}% 10
+\BOOKMARK [3][-]{subsubsection.4.0.2}{Application du cadre}{subsubsection.4.0.1}% 11
+\BOOKMARK [1][-]{section.5}{Exp\351rience d'un escape game}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Exp\351rience Utilisateur}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.2}{Exp\351rimentation d'un escape game}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.3}{Accessibilit\351 d'un escape game}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.4}{Bilan}{section.5}% 16
+\BOOKMARK [1][-]{section.6}{Mod\351lisation conceptuelle}{}% 17
+\BOOKMARK [2][-]{subsection.6.1}{Ontologie}{section.6}% 18
+\BOOKMARK [2][-]{subsection.6.2}{Difficult\351s rencontr\351es}{section.6}% 19
+\BOOKMARK [2][-]{subsection.6.3}{Bilan}{section.6}% 20
+\BOOKMARK [1][-]{section.7}{Prototypage}{}% 21
+\BOOKMARK [2][-]{subsection.7.1}{Technologie utilis\351e}{section.7}% 22
+\BOOKMARK [3][-]{subsubsection.7.1.1}{Comparaison entre Apache Kafka et RabbitMQ}{subsection.7.1}% 23
+\BOOKMARK [3][-]{subsubsection.7.1.2}{Positionnement}{subsection.7.1}% 24
+\BOOKMARK [2][-]{subsection.7.2}{Description du prototype}{section.7}% 25
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Architecture du prototype}{subsection.7.2}% 26
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Impl\351mentation du prototype}{subsection.7.2}% 27
+\BOOKMARK [2][-]{subsection.7.3}{Int\351grer le prototype aux travaux d\351j\340 men\351s}{section.7}% 28
+\BOOKMARK [3][-]{subsubsection.7.3.1}{Capteurs physiologiques utilis\351s}{subsection.7.3}% 29
+\BOOKMARK [3][-]{subsubsection.7.3.2}{Connecteurs}{subsection.7.3}% 30
+\BOOKMARK [3][-]{subsubsection.7.3.3}{Sch\351ma de l'int\351gration du prototypes aux travaux d\351j\340 men\351s}{subsection.7.3}% 31
+\BOOKMARK [2][-]{subsection.7.4}{Validation}{section.7}% 32
+\BOOKMARK [1][-]{section.8}{Conclusion}{}% 33
+\BOOKMARK [1][-]{appendix.A}{Pr\351sentation du laboratoire CEDRIC}{}% 34
+\BOOKMARK [1][-]{appendix.B}{Ressources pour d\351finir la notion d'exp\351rience utilisateur}{}% 35
+\BOOKMARK [1][-]{appendix.C}{Description d\351taill\351e des classes de l'ontologie}{}% 36
+\BOOKMARK [1][-]{appendix.D}{Sitographie pour la construction de la synth\350se comparative entre Kafka et RabbitMQ}{}% 37
+\BOOKMARK [1][-]{appendix.E}{Offre de stage}{}% 38

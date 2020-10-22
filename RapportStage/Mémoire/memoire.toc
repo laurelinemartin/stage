@@ -1,0 +1,39 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{6}{section.1}
+\contentsline {section}{\numberline {2}Etat de l'art}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}Cadre de comparaison}{7}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Application du cadre}{8}{subsection.2.2}
+\contentsline {section}{\numberline {3}Cadre du projet}{13}{section.3}
+\contentsline {subsection}{\numberline {3.1}Motivations et objectif du projet}{13}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Probl\IeC {\'e}matique}{14}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}D\IeC {\'e}finitions et sujets connexes}{14}{subsection.3.3}
+\contentsline {section}{\numberline {4}Etat de l'art}{15}{section.4}
+\contentsline {subsubsection}{\numberline {4.0.1}Cadre de comparaison}{15}{subsubsection.4.0.1}
+\contentsline {subsubsection}{\numberline {4.0.2}Application du cadre}{16}{subsubsection.4.0.2}
+\contentsline {section}{\numberline {5}Exp\IeC {\'e}rience d'un escape game}{17}{section.5}
+\contentsline {subsection}{\numberline {5.1}Exp\IeC {\'e}rience Utilisateur}{17}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Exp\IeC {\'e}rimentation d'un escape game}{18}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Accessibilit\IeC {\'e} d'un escape game}{19}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Bilan}{19}{subsection.5.4}
+\contentsline {section}{\numberline {6}Mod\IeC {\'e}lisation conceptuelle}{20}{section.6}
+\contentsline {subsection}{\numberline {6.1}Ontologie}{20}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Difficult\IeC {\'e}s rencontr\IeC {\'e}es}{21}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Bilan}{22}{subsection.6.3}
+\contentsline {section}{\numberline {7}Prototypage}{22}{section.7}
+\contentsline {subsection}{\numberline {7.1}Technologie utilis\IeC {\'e}e}{22}{subsection.7.1}
+\contentsline {subsubsection}{\numberline {7.1.1}Comparaison entre Apache Kafka et RabbitMQ}{23}{subsubsection.7.1.1}
+\contentsline {subsubsection}{\numberline {7.1.2}Positionnement}{26}{subsubsection.7.1.2}
+\contentsline {subsection}{\numberline {7.2}Description du prototype}{26}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Architecture du prototype}{26}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}Impl\IeC {\'e}mentation du prototype}{26}{subsubsection.7.2.2}
+\contentsline {subsection}{\numberline {7.3}Int\IeC {\'e}grer le prototype aux travaux d\IeC {\'e}j\IeC {\`a} men\IeC {\'e}s}{29}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {7.3.1}Capteurs physiologiques utilis\IeC {\'e}s}{30}{subsubsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.2}Connecteurs}{30}{subsubsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.3}Sch\IeC {\'e}ma de l'int\IeC {\'e}gration du prototypes aux travaux d\IeC {\'e}j\IeC {\`a} men\IeC {\'e}s}{33}{subsubsection.7.3.3}
+\contentsline {subsection}{\numberline {7.4}Validation}{33}{subsection.7.4}
+\contentsline {section}{\numberline {8}Conclusion}{35}{section.8}
+\contentsline {section}{\numberline {A}Pr\IeC {\'e}sentation du laboratoire CEDRIC}{37}{appendix.A}
+\contentsline {section}{\numberline {B}Ressources pour d\IeC {\'e}finir la notion d'exp\IeC {\'e}rience utilisateur}{39}{appendix.B}
+\contentsline {section}{\numberline {C}Description d\IeC {\'e}taill\IeC {\'e}e des classes de l'ontologie}{40}{appendix.C}
+\contentsline {section}{\numberline {D}Sitographie pour la construction de la synth\IeC {\`e}se comparative entre Kafka et RabbitMQ}{44}{appendix.D}
+\contentsline {section}{\numberline {E}Offre de stage}{45}{appendix.E}

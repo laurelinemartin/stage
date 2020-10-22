@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+
+\bibitem{calvo_et_al._2015}
+R.~Calvo, S.~D'Mello, J.~Gratch, A.~Kappas, G.~N. Yannakakis, and A.~Paiva.
+\newblock Emotion in {Games}.
+\newblock In R.~Calvo, S.~D'Mello, J.~Gratch, and A.~Kappas, editors, {\em The
+  {Oxford} {Handbook} of {Affective} {Computing}}. Oxford University Press,
+  Jan. 2015.
+
+\bibitem{carofiglio_et_al._2019}
+V.~Carofiglio, B.~D. Carolis, and F.~D’Errico.
+\newblock A {BCI}-based {Assessment} of a {Player}’s {State} of {Mind} for
+  {Game} {Adaptation}.
+\newblock page~6, 2019.
+
+\bibitem{gal_2019}
+V.~Gal.
+\newblock Vers une nouvelle {Interaction} {Homme} {Environnement} dans les jeux
+  vidéo et pervasifs: rétroaction biologique et états émotionnels:
+  apprentissage profond non supervisé au service de l'affectique.
+\newblock page 357, Oct. 2019.
+
+\bibitem{gal_et_al._2020}
+V.~Gal, S.~Banerjee, and D.~V. Rad.
+\newblock Identifying emotion pattern from physiological sensors through
+  unsupervised {EMDeep} model.
+\newblock {\em Journal of Intelligent \& Fuzzy Systems}, pages 1--19, Mar.
+  2020.
+
+\bibitem{gizycka_et_al._2018}
+B.~Giżycka and G.~J. Nalepa.
+\newblock Emotion in {Models} {Meets} {Emotion} in {Design}: {Building} {True}
+  {Affective} {Games}.
+\newblock In {\em 2018 {IEEE} {Games}, {Entertainment}, {Media} {Conference}
+  ({GEM})}, pages 1--5, Galway, Aug. 2018. IEEE.
+
+\bibitem{maier_et_al._2019}
+M.~Maier, D.~Elsner, C.~Marouane, M.~Zehnle, and C.~Fuchs.
+\newblock {DeepFlow}: {Detecting} {Optimal} {User} {Experience} {From}
+  {Physiological} {Data} {Using} {Deep} {Neural} {Networks}.
+\newblock In {\em Proceedings of the {Twenty}-{Eighth} {International} {Joint}
+  {Conference} on {Artificial} {Intelligence}}, pages 1415--1421, Macao, China,
+  Aug. 2019. International Joint Conferences on Artificial Intelligence
+  Organization.
+
+\bibitem{Mostefai_et_al._2019}
+B.~Mostefai, A.~Balla, and P.~Trigano.
+\newblock A generic and efficient emotion-driven approach toward personalized
+  assessment and adaptation in serious games.
+\newblock {\em Cognitive Systems Research}, 56:82--106, Aug. 2019.
+
+\bibitem{nalepa_et_al._2017}
+G.~J. Nalepa, B.~Giżycka, K.~Kutt, and J.~K. Argasiński.
+\newblock Affective {Design} {Patterns} in {Computer} {Games}. {Scrollrunner}
+  {Case} {Study}.
+\newblock pages 345--352, Sept. 2017.
+
+\bibitem{noor_et_al._2009}
+S.~Noor and K.~Martinez.
+\newblock Using {Social} {Data} as {Context} for {Making} {Recommendations}:
+  {An} {Ontology} based {Approach}.
+\newblock page~8, 2009.
+
+\bibitem{shu_et_al._2018}
+L.~Shu, J.~Xie, M.~Yang, Z.~Li, Z.~Li, D.~Liao, X.~Xu, and X.~Yang.
+\newblock A {Review} of {Emotion} {Recognition} {Using} {Physiological}
+  {Signals}.
+\newblock {\em Sensors}, 18(7):2074, June 2018.
+
+\bibitem{yang_et_al._2018}
+W.~Yang, M.~Rifqi, C.~Marsala, and A.~Pinna.
+\newblock Physiological-{Based} {Emotion} {Detection} and {Recognition} in a
+  {Video} {Game} {Context}.
+\newblock In {\em 2018 {International} {Joint} {Conference} on {Neural}
+  {Networks} ({IJCNN})}, pages 1--8, Rio de Janeiro, July 2018. IEEE.
+
+\bibitem{yannakakis_et_al._2009}
+G.~Yannakakis and J.~Hallam.
+\newblock Real-{Time} {Game} {Adaptation} for {Optimizing} {Player}
+  {Satisfaction}.
+\newblock {\em IEEE Transactions on Computational Intelligence and AI in
+  Games}, 1(2):121--133, June 2009.
+
+\end{thebibliography}
