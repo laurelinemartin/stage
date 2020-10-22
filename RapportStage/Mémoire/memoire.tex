@@ -441,16 +441,17 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Nous nous sommes dirigés vers l'implémentation d'une solution pour la gestion des données générées par les capteurs physiologiques.
 
 \section{Prototypage}\label{sec:prototypage}
-	Pour la détection et la reconnaissance de l'état émotionnel, nous utilisons des capteurs physiologiques de contacts.
+	Pour la détection et la reconnaissance de l'état émotionnel dans le jeu pervasif que nous souhaitons réaliser, des  capteurs physiologiques de contacts sont utilisés.
 	Ces capteurs prennent des mesures en continu pour différentes métriques physiologiques telles que la température du corps, le rythme cardiaque, la réponse électrodermale ou encore la fréquence respiratoire.
 	Ces capteurs génèrent beaucoup de données.
-	De plus, il s'agit de données en temps-réel qui doivent être traitées le plus rapidement possible pour reconnaître l'état émotionnel d'une personne. 
+	De plus, il s'agit de données en temps-réel qui doivent être traitées le plus rapidement possible pour reconnaître l'état émotionnel courant d'une personne. 
 	Ainsi, le jeu pourra s'adapter à son utilisateur avec un minimum de latence. 
 	Une trop grande latence pourrait engendrer un effet de décalage désagréable pour le joueur entre ce qu'il ressent et l'adaptation du jeu.\par
-	Dans cette section, nous présentons une solution pour la gestion de telles données. Pour construire cette solution, nous avons tout d'abord comparé deux technologies et nous nous sommes positionnés sur l'une d'entre elles.
+	Dans cette section, nous présentons une solution pour la gestion de telles données. 
+	Pour construire cette solution, nous avons tout d'abord comparé deux technologies et nous nous sommes positionnés sur l'une d'entre elles.
 	Puis, nous avons implémenté un prototype de cette solution.
 	Nous présentons son architecture globale.
-	Enfin, nous expliquons comment notre contribution peut être intégrée aux travaux déjà menés pour notre projet.
+	Enfin, nous expliquons comment cette contribution peut être intégrée aux travaux déjà menés pour notre projet.
 	\subsection{Technologie utilisée}\label{sec:prototech}
 		Pour notre prototype, nous avons besoin d'ingérer le plus rapidement possible des données en temps-réel qui sont générées toutes les 30 à 60 millisecondes.
 		Il nous faut donc trouver une technologie capable de traiter efficacement ce genre de données pour les transmettre aux algorithmes de détection et de reconnaissance de l'état émotionnel.
@@ -553,21 +554,33 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{tab:comparatifpref}
 			\end{table}
 			La sitographie sur laquelle je me suis appuyée pour la construction de cette synthèse comparative se trouve en Annexe \ref{ann:kafkarabbitmq}.
-			%\newpage
 		\subsubsection{Positionnement}\label{sec:position}
 			Après mes recherches et la rédaction de la synthèse comparative, j'ai décidé d'utiliser Apache Kafka comme Middleware Orienté Message pour le prototypage de notre solution.\par
 			Apache Kafka m'a semblé être plus indiqué dans le traitement des données venant de capteurs.
 			Ce middleware présente une structure pour les messages en log.
 			Ce qui est plus intéressant pour notre cas qu'une structure FIFO (First In, First Out).
-			En effet, la structure FIFO nous "oblige" à récupérer et à consommer les messages rapidement dans la queue des messages, alors que le log nous laisse plus de temps et nous permet de relire le message plusieurs fois.
-			Ce qui correspond plus à ce que nous cherchons puisque nous n'allons pas consommer toutes les données pour détecter un état émotionnel, mais seulement à certains moments (lorsqu'un changement significatif sera détecté).
+			En effet, la structure FIFO nous "oblige" à récupérer et à consommer les messages rapidement dans la queue des messages.
+			Tandis qu'une structure en log nous laisse plus de temps et nous permet de relire le message plusieurs fois.
+			Ce qui correspond plus à ce que nous cherchons puisque nous n'allons pas consommer toutes les données pour reconnaître un état émotionnel, mais seulement à certains moments (lorsqu'un changement significatif sera détecté). 
 			De plus, les données sont organisées dans des "topics". 
 			Il est donc possible de récupérer que certaines données en s'abonnant aux topics désirés.
+			Autrement dit, en utilisant des topics pour organiser et dissocier les données provenant de différents capteurs, il est possible de ne recupérer que les données provenant de capteurs voulus.
 			Cela nous sera très utile pour de futurs travaux qui impliqueront d'autres capteurs que les capteurs physiologiques pour la reconnaissance des états émotionnels.
 			Par exemple, nous aurons besoin de capteurs de position, de capteurs placés dans l'environnement du jeu, etc.
+			Comme nous souhaitons utiliser différents capteurs pour la détection et la reconnaissance des états émotionnels, les données générés par ces capteurs pourraient être hétérogènes. 
+			Apache Kafka propose une API appelé ConnectAPI, qui permet de récupérer des données provenant de sources externes pour les formaliser au format Kafka.
+			Cet outil pourra nous servir à homogénéiser les données.
 	\subsection{Description du prototype}\label{sec:protodesc}
-		Dans cette partie, nous présentons le prototype de la solution que nous avons implémenté pour répondre aux besoins de gestion des données en temps-réel.
-		Ici, nous cherchons à gérer au mieux les données en temps-réel en créant un minimum de latence entre la mesure faite par le capteur et la reconnaissance de l'état émotionnel.
+		Dans cette partie, nous présentons le prototype de la solution que j'ai implémentée pour répondre aux besoins de gestion des données en temps-réel.
+		Ici, nous cherchons à gérer au mieux les données en temps-réel en créant un minimum de latence entre la mesure faite par le(s) capteur(s) et la reconnaissance de l'état émotionnel.
+		Pour cela, j'ai mis au point une solution qui récupère des données provenant de capteurs physiologiques et qui les distribue sur des topics afin que ces données puissent être consommées par les algorithmes de détection et de reconnaissance d'états émotionnels.\par
+		Pour ce prototype, j'ai utilisé un fichier au format CSV contenant plus de 11 000 entrées. 
+		Ces entrées concernent des mesures faites lors d'une expérience avec les capteurs décrits dans la Section \ref{sec:capteurs}.
+		Cinq métriques ont été captées : le temps (date et heure de l'acquisition), la fréquence cardiaque, la réponse électrodermale, la température à la surface de la peau et le rythme cardiaque.
+		Ces entrées sont séparées chacune d'environ 30ms (milisecondes).
+		Lors de l'utilisation du Producteur, l'envoie des données dans les topics se fait toutes les 30ms.
+		Ce fichier à permis d'éprouver notre protoype.
+		A terme, nous souhaitons utiliser uniquement les capteurs comme sources de données en temps-réel et non un fichier contenant des données provenant de capteurs.
 		\subsubsection{Architecture du prototype}\label{sec:protoarchi}
 			\begin{figure}
 				\centering
@@ -575,14 +588,14 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\caption{Schéma synthétique de l'architecture du prototype}
 				\label{fig:archiproto}
 			\end{figure}
-			La Figure \ref{fig:archiproto} montre l'architecture de notre prototype.
+			La Figure \ref{fig:archiproto} montre l'architecture de notre prototype.\par
 			Pour le moment, nous utilisons un fichier dans lequel se trouve les données provenant de plusierus capteurs.
 			Ces données, que nous utilisons pour nos tests, ont été acquises lors d'une session de jeu vidéo à partir de capteurs physiologiques (les capteurs sont décrits dans la Section \ref{sec:capteurs}). 
 			Elles ont été enregistrées dans un fichier au format CSV.\par
 			Les données sont lues puis envoyées au Producteur.
 			Le Producteur ajoute à chaque topic la ou les données qui correspondent.
-			Par exemple, les données qui corresponde au Rythme Cardiaque sont envoyées sur le topic "HR" (pour Heart Rate).\par
-			Les données peuvent ensuite être consommées par un consommateur qui choisit le topic auquel il s'abonne.
+			Par exemple, les données qui correspondent au Rythme Cardiaque sont envoyées sur le topic "HR" (pour Heart Rate).\par
+			Les données peuvent ensuite être consommées par un Consommateur qui choisit le topic auquel il s'abonne.
 			Les données sont affichées dans un terminal par le Consommateur au fur et à mesure qu'elles sont produites.
 			Le Consommateur attend toujours de nouvelles données à consommer.
 		\subsubsection{Implémentation du prototype}
@@ -606,29 +619,31 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Le prototype est divisé en deux :
 			la partie Producteur (sur la Figure \ref{fig:archiproducer}) et la partie Consommateur (sur la Figure \ref{fig:archiconsumer}). 
 			Il s'agit de deux projets \texttt{Maven} distincts qui génèrent chacun un JAR exectuable.\par
-			La partie Producteur lit les données des capteurs physiologiques contenues dans le fichier \texttt{data\_file.csv}. 
+			La partie Producteur contient un lecteur de fichiers qui permet de lire les données des capteurs physiologiques contenues dans le fichier \texttt{data\_file.csv}. 
 			Ces données sont normalisées grâce à l'objet \texttt{Data} pour être utilisées par le Producteur.
 			Le Producteur lit chaque donnée et l'envoie sur un topic.
 			Il s'arrête lorsque toutes les données ont été envoyées.\par
 			La partie Consommateur "écoute" le topic qui lui est passé en argument et affiche chaque donnée de ce topic dans un terminal.\par
-			Par exemple, la figure \ref{fig:exemple} montre une exécution du producteur (à gauche) et du consommateur (à droite) pour le topic "Vecteur".
 			\begin{figure}
 				\hspace*{-0.7cm}
 				\includegraphics[scale=0.5]{../include/producteurConsommateur.PNG}
 				\caption{Exemple d'exécution}
 				\label{fig:exemple}
-			\end{figure}\par
+			\end{figure}
+			Par exemple, la figure \ref{fig:exemple} montre une exécution du Producteur (à gauche) et du Consommateur (à droite) pour le topic "Vecteur".
+			Ce topic permet d'obtenir la valeur des métriques "fréqence cardique, réponse électrodermale, température de la peau, rythme cardiaque" qui sont dans le champ \texttt{value}.
+			Chaque log à pour clé le temps (date et heure d'acquisition).\par
 			Tout le code pour ce prototype se trouve sur le Github \href{https://github.com/laurelinemartin/stage/Prototype}{https://github.com/laurelinemartin/stage/Prototype}.
 	\subsection{Intégrer le prototype aux travaux déjà menés}\label{sec:travaux}
 		Des travaux antérieurs ont été menés pour le projet global.
 		Ces tavaux concernent en particulier la détection et la reconnaissance d'états émotionnels à partir de capteurs physiologiques.
 		Cependant, les algorithmes utilisent des données préalablement acquises. 
-		Autrement dit, les mesures physiologiques sont faites expérimentalement et elles sont enregistrées dans un fichier Excel (au format CSV) dans un premier temps.
+		Autrement dit, les mesures physiologiques sont faites expérimentalement en laboratoire et elles sont enregistrées dans un fichier Excel (au format CSV) dans un premier temps.
 		Et dans un second temps, les données sont analysées par les algorithmes qui ont été élaborés par des chercheurs du CEDRIC.
 		En particulier Viviane GAL dans sa thèse \cite{gal_2019}.
 		Il n'y a donc pas de notion de temps-réel dans ces travaux.
-		C'est pour palier à ce problème que nous avons mis au point la solution que nous présentons.\par
-		Nous présentons dans cette partie l'intégration de notre solution aux travaux qui ont déjà été menés.
+		C'est pour palier à ce problème que j'ai mis au point la solution que je présente ici.\par
+		Nous présentons dans cette partie l'intégration de cette solution aux travaux qui ont déjà été menés.
 		Pour cela, nous allons tout d'abord introduire les capteurs physiologiques qui sont utilisés par les travaux précédents.
 		Cette introduction va nous permettre de trouver le connecteur adéquat pour ingérer les données des capteurs dans notre solution Kafka.
 		Nous ferons la comparaison de différents connecteurs et nous nous positionnerons sur l'un d'entre.
@@ -669,17 +684,25 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{fig:capteurstea}
 			\end{figure}
 			Ceux que nous possédons permettent la mesure de la réponse électrodermale (Figure \ref{fig:gsr}), du rythme cardiaque (Figure \ref{fig:hr}), de la température à la surface de la peau (Figure \ref{fig:bt}) et de la fréquence respiratoir (Figure \ref{fig:rr}).
-		\subsubsection{Connecteurs}
-			Pour utiliser notre prototype avec les travaux qui ont déjà été menés pour la recherche des états émotionnels, nous avons besoin d'utiliser un connecteur.
-			Ce connecteur va nous permettre de récupérer les données provenant des capteurs pour les formaliser.
-			Ainsi elles pourront être utilisées dans Kafka.\par
+		\subsubsection{Connecteurs}\label{sec:connecteurs}
+			Pour utiliser le prototype avec les travaux qui ont déjà été menés pour la recherche des états émotionnels, nous devons pouvoir utiliser des capteurs physiologiques comme sources de données.
+			Pour cela, nous avons besoin d'utiliser un connecteur source.
+			Ce connecteur permettra de faire le lien entre les capteurs physiologiques et le Producteur.
+			Nous allons utiliser ConnectAPI proposé par Kafka pour faire ce "pont".
+			Un connecteur nous permet de récupérer les données provenant des structures externes à Kafka pour les formaliser pour le Producteur.
+			Ainsi, les données provenant de différentes sources pourront être utilisées dans Kafka.
+			Utiliser un connecteur nous permet d'homogénéiser les données.
+			En effet, les données proviennent de différentes sources, elles peuvnet donc être hétérogènes. 
+			Les connecteurs permettent de formaliser ces données en un seul format compréhensible par le Producteur.
+			De plus, utiliser un connecteur nous permet d'ajouter simplement un nouveau capteur (ou d'en supprimer un).
+			Cela nous sera très utile pour de futurs travaux où nous ajouterons d'autres capteurs (capteurs dans l'environnement, par exemple des capteurs de présence).\par
 			Une multitude de connecteurs existent déjà. 
 			Il s'agit de connecteurs implémentés par Confluent (la plate-forme de Kafka) ou par la communauté.
-			Sur le Confluent Hub\footnote{\href{https://www.confluent.io/hub/kafka-connectors-33}{https://www.confluent.io/hub/kafka-connectors-33}}, nous avons pu rechercher le connecteur qui convenait le mieux pour notre cas.
+			Sur le Confluent Hub\footnote{\href{https://www.confluent.io/hub/kafka-connectors-33}{https://www.confluent.io/hub/kafka-connectors-33}}, j'ai pu rechercher le connecteur qui convenait le mieux pour notre cas.
 			Sur ce hub, 165 connecteurs sont répertoriés.
 			Certains connecteurs permettent de récupérer des données sources provenant de structures extenes à Kafka, d'autres permettent d'évacuer les données vers des structures externes et d'autres permettent de transformer les données.
 			Certains connecteurs permettent même de faire deux ou trois de ces types d'actions. 
-			Dans le cadre de notre projet, nous nous sommes intéressés ici aux connecteurs sources.
+			Dans le cadre de notre projet, je me suis intéressée ici aux connecteurs sources.
 			Nous allons vous présenter les différents connecteurs sources que nous avons pu répertoriés.\par
 			Pour notre recherche, nous avons appliqués les filtres suivants : \newline
 			\texttt{Plugin type $=$ "Source" \& License $=$ "Free"}.\newline
@@ -753,7 +776,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{tab:connecteursnon}
 			\end{longtable}\par
 			\textbf{3. Positionnement}\par
-			Parmi les deux connecteurs que nous avons retenus, nous avons décidé d'utiliser le connecteur \texttt{Kafka Connect Shell}\footnote{\href{https://www.confluent.io/hub/thomaskwscott/kafka-connect-shell-source}{https://www.confluent.io/hub/thomaskwscott/kafka-connect-shell-source}}.
+			Parmi les deux connecteurs que j'ai retenus, nous avons décidé d'utiliser le connecteur \texttt{Kafka Connect Shell}\footnote{\href{https://www.confluent.io/hub/thomaskwscott/kafka-connect-shell-source}{https://www.confluent.io/hub/thomaskwscott/kafka-connect-shell-source}}.
 			Dans l'optique d'être plus rapide dans nos tests, ce connecteur nous semble être le meilleur choix.
 			Nous allons l'utiliser avec un algorithme déjà existant provenant de travaux antérieurs pour le projet qui affiche les données des capteurs dans un terminal.
 			Avec le connecteur Kafka Connect Shell, nous serons capables de lire les données affichées sur le terminal et de les transmettre au Producteur Kafka.
@@ -771,19 +794,25 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Les topics sont ensuite consommés par les algorithmes de reconnaissance de l'état émotionnel.
 	\subsection{Validation}\label{sec:validation}
 		L'objectif que nous avions pour ce prototype était de pouvoir récupérer des données provenant de capteurs et de les envoyer vers les algorithmes de détection et de reconnaissance d'états émotionnels.\par
-		Dans ce rapport, nous proposons une solutiion que nous avons implémentée.
-		Elle est actuellement testée avec un fichier au format CSV contenant les données de quatre capteurs physiologiques : la fréquence respiratoire, la réponse électrodermale, la température corporelle et la fréquence cardiaque. 
-		Chaque ligne de ce fichier est envoyée dans les topics avec 30 millisecondes (ms) d'écart.
+		Dans ce rapport, je propose une solutiion que j'ai implémentée.
+		Cette solution est actuellement testée avec un fichier au format CSV contenant les données de quatre capteurs physiologiques : la fréquence respiratoire, la réponse électrodermale, la température corporelle et la fréquence cardiaque. 
+		Chaque ligne de ce fichier est envoyée dans les topics avec 30ms d'écart.
 		Ces 30 ms correspondent au temps moyen d'acquisition entre deux données.
 		Cela nous donne une impression de temps-réel. 
 		Les données sont ensuite lues par un consommateur qui les affiche au fur et à mesure dans un terminal.\par
-		Du point de vue de l'objectif que nous avions fixé pour ce prototype, nous pouvons dire que cette implémentation correspond à ce que nous voulions réaliser.
-		Les données sont bien lues et renvoyées pour être analyses.
+		Nous avons présenter un connecteur permettant d'éliminer à terme le fichier de données acquisent préalablement dans le but de travailler directement avec des données de capteurs physiologiques.
+		Nous avons aussi présentés comment le prototype pouvait être intégrés aux travaux déjà réalisés au laboratoire CEDRIC.\par
+		L'objectif de ce prototype est d'ingérer et de distribuer les données temps-réel provenant de capteurs.
+		Du point de vue de cet objectif, nous pouvons dire que cette implémentation correspond à ce que nous voulions réaliser.
+		Les données sont lues et puis renvoyées dans différents topics pour être analyses.
+		Pouvoir séparer les données de différentes métriques nous permet de les analysées séparément ou ensemble selon les besoins.
+		De plus, cela nous permettra dans de futurs travaux de séparer les données physiologiques d'autres données de capteurs pour le jeu.\par
 
 \section{Conclusion}\label{sec:conclusion}
-	L'objectif principal de ce projet est de réaliser un jeu pervasif adaptable dynamiquement aux états émotionnels du joueur.
-	Pour ce faire, nous souhaitons utiliser des capteurs physiologiques de contact qui génèrent des données analysées par des algorithmes pour la détection et la reconnaissance d'états émotionnels.
-	Une fois l'état émotionnel reconnu, le jeu peut alors proposer au joueur l'événement le plus adéquat pour garantir le meilleur divertissement possible aux joueurs.
+	L'objectif principal de ce projet est de réaliser un jeu pervasif adaptable dynamiquement aux joueur en tenant compte de leurs états émotionnels.
+	Pour la détection et la reconnaissance d'états émotionnels, nous souhaitons utiliser des capteurs physiologiques.
+	Ces capteurs génèrent des données qui sont analysées par des algorithmes pour détecter et reconnaître les états émotionnels des joueurs au cours du jeu.
+	Une fois l'état émotionnel reconnu, le jeu peut alors proposer au joueur l'événement le plus adapté pour garantir le meilleur divertissement possible aux joueurs.
 	Avec cet objectif en tête, nous avons cherché une solution efficace de gérer les données fournies en continu par les capteurs.\par
 	Dans ce rapport, nous avons présenté plusieurs travaux qui ont été menés tout au long de ce stage.
 	Cette contribution a été, avant tout, l'occasion d'affiner les besoins pour la conception d'un jeu pervasif adaptable aux états émotionnels du joueur.
@@ -809,12 +838,35 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 \newpage
 \bibliographystyle{abbrv}
 \bibliography{../include/biblio}
+\medskip
+
+\hspace*{-1cm}
+\Large{\textbf{Sitographie :}}\newline
+\href{https://www.usabilis.com/definition-ux-experience-utilisateur-user-experience/}{https://www.usabilis.com/definition-ux-experience-utilisateur-user-experience/}\newline
+\href{https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-
+case}{https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-
+case} \textit{[en]} \medskip\newline
+\href{https://blog.ippon.fr/2018/03/27/comparatif-rabbitmq-kafka/}{https://blog.ippon.fr/2018/03/27/comparatif-rabbitmq-kafka/} \textit{[fr]}\medskip\newline
+\href{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm}{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm} \textit{[en]}\medskip\newline
+\href{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka}{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka} \textit{[en]}\newline
+
+\hspace*{-1cm}
+\Large{\textbf{Videographie :}}\newline
+	"L'expérience utilisateur dans la création de jeux vidéo (C. Hodent)"\newline
+	"Démarches et méthodes pour la conception de l'expérience utilisateur - LuxI/O 2018"\newline
+	"How Games Move Us: Emotion by Design | Katherin Isbister | TEDxHarkerSchool"\newline
+	"Of Brains and Interfaces - Celia Hodent - Netexplo  Forum 2018 - UNESCO"
+	Sur \href{http://youtube.fr}{htpp://youtube.fr}\par
 
 \newpage
 \appendix
 \renewcommand{\appendixpagename}{Annexes}\appendixpage
 % \section{Adaptation d’un jeu pervasif particularisé basée sur l'état émotionnel et sur les caractéristiques du joueur – État de l’art}\label{ann:eda}
 %	\includepdf[pages=-]{../include/eda.pdf}
+
+\section{Description des capteurs}
+	
+
 \section{Présentation du laboratoire CEDRIC}\label{ann:cedric}
 	Avant de présenter le travail réalisé, nous allons faire une présentation du laboratoire CEDRIC.
 	Le laboratoire de Centre d'Etudes et De Recherche en Informatique et Communication (CEDRIC)\footnote{\href{http://cedric.cnam.fr/lab/accueil/labo/}{http://cedric.cnam.fr/lab/accueil/labo/}} au sein du Conservatoire National des Arts et Métiers (CNAM) de Paris\footnote{\href{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}{http://www.cnam.fr/portail/accueil-conservatoire-national-des-arts-et-metiers-821166.kjsp}} se situe au 2 rue Conte 75003 PARIS.\par
@@ -845,9 +897,9 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	\textbf{Bibliographie :}\newline
 	Olga Vl. Bitkina, Hyun K. Kim, Jaehyun Park \textit{Usability and user experience of medical devices: An overview of thecurrent state, analysis methodologies, and future challenges} International Journal of Industrial Ergonomics 76, 2020.
 
-\newpage
-\section{Description détaillée des classes de l'ontologie}\label{ann:detailclasses}
-	\includepdf[pages=-]{../include/descriptionClassesOntologie.pdf}
+% \newpage
+% \section{Description détaillée des classes de l'ontologie}\label{ann:detailclasses}
+%	\includepdf[pages=-]{../include/descriptionClassesOntologie.pdf}
 
 \newpage
 \section{Sitographie pour la construction de la synthèse comparative entre Kafka et RabbitMQ}\label{ann:kafkarabbitmq}
