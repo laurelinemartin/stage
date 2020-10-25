@@ -123,9 +123,9 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Ce seront les émotions du joueur qui influenceront le jeu et ses événements.
 	Pour pouvoir détecter et reconnaître les états émotionnels du joueur afin que le jeu s'y adapte et propose l'événement le plus adéquat, de multiples capteurs physiologiques peuvent être utilisés.
 	Ces capteurs génèrent beaucoup de données qui doivent être stockées et traitées.
-	Ces données permettront à des algorithmes de reconnaître les états émotionnels des joueurs tout au long du jeu.\par
+	Ces données permettront à des algorithmes de reconnaître des états émotionnels des joueurs tout au long du jeu.\par
 	Le but de ce travail a été de dresser le contour d'un jeu pervasif adaptable aux états émotionnels du joueur et d'en affiner la conceptualisation.
-	Dans ce rapport, nous nous sommes intéressés, d'une part, à l'adaptation de jeux selon le contexte émotionnel et d'autre part, à la gestion de données générées par des capteurs physiologiques.\par
+	Dans ce rapport, nous nous sommes principalement intéressés, d'une part, à l'adaptation de jeux selon le contexte émotionnel et d'autre part, à la gestion de données générées par des capteurs physiologiques.\par
 	Tout d'abord, nous décrirons dans la Section \ref{sec:projet}, notre projet, ses objectifs et la problématique scientifique que nous traiterons dans notre travail et à travers ce rapport.
 	Nous présenterons, dans la Section \ref{sec:etatart}, l'état de l'art que nous avons rédigé et plus particulièrement le cadre de comparaison que nous avons mis au point pour l'adaptation dynamique de jeux à leurs joueurs. 
 	Nous aborderons dans la Section \ref{sec:escape} la notion d'expérience utilisateur et l'expérience que nous avons menée lors d'un escape game.
@@ -323,8 +323,11 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Cet état de l'art nous a permis d'avoir une vision globale de ce qui existait déjà en matière d'adaptation de jeux aux états émotionnels des joueurs. 
 		Il nous a permis d'affiner les contours pour la conceptualisation d'un jeu pervasif capable de s'adapter dynamiqument aux états émotionnels de son joueur et de trouver de nouvelles pistes de réflexions. 
 		Il a aussi été l'occasion de proposer un cadre de comparaison pour ce sujet.
-		Grâce à cet état de l'art, j'ai pu comprendre quels sont les enjeux pour la réalisation de notre objectif.
-
+		Grâce à cet état de l'art, j'ai pu comprendre quels sont les enjeux pour la réalisation de notre objectif.\par
+		Tout au long de ce rapport, nous allons traiter différents sujets liés à des critères issus de notre cadre de comparaison.
+		Nous nous intéresserons aux capteurs et plus particulièrment à la gestion de ces capteurs et de leurs données.
+		Nous verrons quels sont composants essentiels pour la gestion de données issues de ces capteurs qui sont mise en jeu dans notre projet.
+		Et nous verrons comment nous pouvons les ingérer en temps-réel pour une bonne adaptation du jeu à son utilisateur.
 
 %\section{Etat de l'art}\label{sec:etatart}
 %	Notre état de l'art s'intéresse aux différentes méthodes déjà existantes dans la littérature scientifique et technique permettant à différents types de jeux de s'adapter aux états émotionnels ainsi qu'à d'autres caractéristiques liées aux joueurs.
@@ -593,7 +596,15 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Ces capteurs génèrent beaucoup de données.
 	De plus, il s'agit de données en temps-réel qui doivent être traitées le plus rapidement possible pour reconnaître l'état émotionnel courant d'une personne. 
 	Ainsi, le jeu pourra s'adapter à son utilisateur avec un minimum de latence. 
-	Une trop grande latence pourrait engendrer un effet de décalage désagréable pour le joueur entre ce qu'il ressent et l'adaptation du jeu.\par
+	Une trop grande latence pourrait engendrer un effet de décalage désagréable pour le joueur entre ce qu'il ressent et l'adaptation du jeu.
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.8]{../include/explication-prototype.jpg}
+		\caption{Inclusion du prototype dans le projet}
+		\label{syntprototype}
+	\end{figure}
+	La Figure \ref{fig:syntprototype} résume cela.
+	Notre contribution s'inscrit (en rouge sur la Figure \ref{fig:syntprototype}) dans la gestion des données provenant de capteurs physiologiques qui sont utilisés par des méthodes de détection et de reconnaissance d'états émotionnels. \par
 	Dans cette section, nous présentons une solution pour la gestion de telles données. 
 	Pour construire cette solution, nous avons tout d'abord comparé deux technologies et nous nous sommes positionnés sur l'une d'entre elles.
 	Puis, nous avons implémenté un prototype de cette solution.
@@ -701,6 +712,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{tab:comparatifpref}
 			\end{table}
 			%La sitographie sur laquelle je me suis appuyée pour la construction de cette synthèse comparative se trouve en Annexe \ref{ann:kafkarabbitmq}.
+		\newpage
 		\subsubsection{Positionnement}\label{sec:position}
 			Après mes recherches et la rédaction de la synthèse comparative, j'ai décidé d'utiliser Apache Kafka comme Middleware Orienté Message pour le prototypage de notre solution.\par
 			Apache Kafka m'a semblé être plus indiqué dans le traitement des données venant de capteurs.

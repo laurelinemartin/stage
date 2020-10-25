@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.5.10)  22 OCT 2020 18:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.5.10)  25 OCT 2020 19:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -473,12 +473,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 23.
-<../include/uvsq.png, id=144, 481.8pt x 271.0125pt>
+<../include/uvsq.png, id=160, 481.8pt x 271.0125pt>
 File: ../include/uvsq.png Graphic file (type png)
 <use ../include/uvsq.png>
 Package pdftex.def Info: ../include/uvsq.png  used on input line 31.
 (pdftex.def)             Requested size: 120.44969pt x 67.75294pt.
-<../include/logo-cedric.PNG, id=146, 613.54219pt x 57.96657pt>
+<../include/logo-cedric.PNG, id=162, 613.54219pt x 57.96657pt>
 File: ../include/logo-cedric.PNG Graphic file (type png)
 <use ../include/logo-cedric.PNG>
 Package pdftex.def Info: ../include/logo-cedric.PNG  used on input line 32.
@@ -502,316 +502,1411 @@ nclude/logo-cedric.PNG>] [2] [3] (./memoire.toc [4])
 \tf@toc=\write4
 \openout4 = `memoire.toc'.
 
- [5] [6]
-<../include/motivation.jpg, id=228, 576.65437pt x 172.39406pt>
+ [5]
+
+LaTeX Warning: Reference `sec:etatart' on page 6 undefined on input line 130.
+
+[6]
+<../include/motivation.jpg, id=248, 576.65437pt x 172.39406pt>
 File: ../include/motivation.jpg Graphic file (type jpg)
 <use ../include/motivation.jpg>
-Package pdftex.def Info: ../include/motivation.jpg  used on input line 151.
+Package pdftex.def Info: ../include/motivation.jpg  used on input line 148.
 (pdftex.def)             Requested size: 432.48972pt x 129.29521pt.
- [7 <../include/motivation.jpg>] [8]
+ [7 <../include/motivation.jpg>] [8] [9] [10]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(14.22636pt, 507.92345pt, 92.14519pt)
+* v-part:(T,H,B)=(28.45274pt, 671.11987pt, 95.39737pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=507.92345pt
+* \textheight=671.11987pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-80.81725pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 220.
 
-[9] [10] [11] [12]
+Overfull \hbox (6.18242pt too wide) in paragraph at lines 243--243
+[]|\T1/cmr/m/n/10.95 Réf(s)| 
+ []
 
-LaTeX Warning: Reference `sec:eda' on page 13 undefined on input line 376.
 
-[13]
-<../include/ontologie_stage_cnam-v2-5.png, id=279, 926.46124pt x 601.24625pt>
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\T1/cmr/m/n/10.95 État(s) émo-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\T1/cmr/m/n/10.95 tion-nel(s) à
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 243--243
+\T1/cmr/m/n/10.95 dé-tec-ter et à
+ []
+
+
+Underfull \hbox (badness 4353) in paragraph at lines 243--243
+[]|\T1/cmr/m/n/10.95 Méthode de re-
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 243--243
+\T1/cmr/m/n/10.95 con-nais-sance des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\T1/cmr/m/n/10.95 Autres ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\T1/cmr/m/n/10.95 rac-té-ris-tiques
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\T1/cmr/m/n/10.95 du joueur
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\T1/cmr/m/n/10.95 Méthode
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\T1/cmr/m/n/10.95 d'adap-ta-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\T1/cmr/m/n/10.95 pour l'état
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[]|\T1/cmr/m/n/10.95 Méthode
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\T1/cmr/m/n/10.95 d'adap-ta-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--243
+\T1/cmr/m/n/10.95 pour d'autres
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+[]|\T1/cmr/m/n/10.95 Domaine
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+\T1/cmr/m/n/10.95 d'ap-pli-
+ []
+
+
+Overfull \hbox (81.06418pt too wide) in alignment at lines 239--244
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+[]|\T1/cmr/m/n/10.95 Emotiv
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+\T1/cmr/m/n/10.95 EPOC+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+\T1/cmr/m/n/10.95 (pas-sive
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+[]|\T1/cmr/m/n/10.95 Plusieurs mé-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+\T1/cmr/m/n/10.95 thodes de ma-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+\T1/cmr/m/n/10.95 chine lear-ning.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+\T1/cmr/m/n/10.95 Meilleure mé-
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 246--246
+\T1/cmr/m/n/10.95 thode : Ran-dom
+ []
+
+
+Underfull \hbox (badness 4479) in paragraph at lines 246--246
+\T1/cmr/m/n/10.95 Fo-rest (pré-ci-sion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+[]|\T1/cmr/m/n/10.95 Jeu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+\T1/cmr/m/n/10.95 vi-déo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+\T1/cmr/m/n/10.95 (aven-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+\T1/cmr/m/n/10.95 ture
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
+\T1/cmr/m/n/10.95 hor-ri-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
+[]|\T1/cmr/m/n/10.95 CAPTIV
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
+\T1/cmr/m/n/10.95 (de chez
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
+\T1/cmr/m/n/10.95 TEA),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
+\T1/cmr/m/n/10.95 Neu-rosky
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
+\T1/cmr/m/n/10.95 Brain-wave
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
+\T1/cmr/m/n/10.95 Head-set
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
+\T1/cmr/m/n/10.95 (pour
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 248--248
+\T1/cmr/m/n/10.95 SKT, HR
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
+[]|\T1/cmr/m/n/10.95 Des han-ge-
+ []
+
+
+Underfull \hbox (badness 6220) in paragraph at lines 248--248
+\T1/cmr/m/n/10.95 ments d'états
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
+[]|\T1/cmr/m/n/10.95 Carte d'or-
+ []
+
+
+Underfull \hbox (badness 2512) in paragraph at lines 248--248
+\T1/cmr/m/n/10.95 ga-ni-sa-tion de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
+\T1/cmr/m/n/10.95 Ko-ho-nen +
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+\T1/cmr/m/n/10.95 va-sif et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+[]|\T1/cmr/m/n/10.95 BiTalino
+ []
+
+
+Overfull \hbox (5.04526pt too wide) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 (r)evolution
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 kit (re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 tenu) ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 Em-pa-tica
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 E4 ; Mi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 cro-soft
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 Band 2 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 E-Health ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 (Pour
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 GSR et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+[]|\T1/cmr/m/n/10.95 Relaxé /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 Neutre /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 Stressé (sur
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+[]|\T1/cmr/m/n/10.95 Auto-évaluation
+ []
+
+
+Underfull \hbox (badness 4543) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 des joueurs du-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 rant la phase
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+[]|\T1/cmr/m/n/10.95 La ver-sion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 adap-ta-tive du
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 jeu uti-lise des
+ []
+
+
+Underfull \hbox (badness 4647) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 "af-fec-tive pat-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 terns" comme
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 "l'Im-mer-sion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 Emo-tion-nel",
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 des en-ne-mis
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 et des obs-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
+\T1/cmr/m/n/10.95 in-for-ma-tions
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+[]|\T1/cmr/m/n/10.95 Jeu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+\T1/cmr/m/n/10.95 vi-déo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+\T1/cmr/m/n/10.95 (scroll-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--252
+[]|\T1/cmr/m/n/10.95 Empatica
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--252
+\T1/cmr/m/n/10.95 E4 (pour
+ []
+
+
+Underfull \hbox (badness 3240) in paragraph at lines 252--252
+\T1/cmr/m/n/10.95 GSR, HR
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--252
+[]|\T1/cmr/m/n/10.95 Réseau de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--252
+\T1/cmr/m/n/10.95 neu-ronnes à
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--252
+\T1/cmr/m/n/10.95 convo-lu-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+[]|\T1/cmr/m/n/10.95 Jeu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+\T1/cmr/m/n/10.95 vi-déo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+\T1/cmr/m/n/10.95 (Té-tris
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+\T1/cmr/m/n/10.95 sur té-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+\T1/cmr/m/n/10.95 lé-phone
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+\T1/cmr/m/n/10.95 por-
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 254--254
+[]|\T1/cmr/m/n/10.95 Style de jeu du
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+[]|\T1/cmr/m/n/10.95 Ensemble
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 évé-ne-ments,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 les ac-tions,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 les ob-jec-tifs,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 les sta-tuts
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 des ob-jec-tifs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 + Fonc-tions
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 pour la car-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 to-gra-phie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 de chaque
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 ten-dances
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 d'ac-tion pour
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 chaque état
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 émo-tion-nel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 (et fonc-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 in-verse), la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 car-to-gra-phie
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 d'ac-tion pour
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 chaque état
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 émo-tion-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 nel et pour
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+[]|\T1/cmr/m/n/10.95 Chaînes de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 Mar-kov et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
+\T1/cmr/m/n/10.95 ma-trices de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+[]|\T1/cmr/m/n/10.95 Jeux
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+\T1/cmr/m/n/10.95 sé-rieux
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+\T1/cmr/m/n/10.95 (ap-pren-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+[]|\T1/cmr/m/n/10.95 Utilisation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 de l'API
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 Goo-gle-So-cial-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 Gra-phAPI
+ []
+
+
+Underfull \hbox (badness 4024) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 pour iden-ti-fier
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 l'uti-li-sa-teur
+ []
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 et dé-fi-nir son
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 open-sources
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 osnt uti-li-sés
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 pour ex-traire
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 dif-fé-rents ré-
+ []
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 seaux so-ciaux.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 Word-Net et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 uti-li-sés pour
+ []
+
+
+Underfull \hbox (badness 2343) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 le fil-trage des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 don-nées. Et
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 les bases de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 connais-sances
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 pé-dia sont
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 ca-té-go-ri-ser
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 les don-nées
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 et ré-cu-pé-rer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 les don-nées
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 concer-nant la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 culture avec
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 une base de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 connais-sance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+\T1/cmr/m/n/10.95 spé-ci-fique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+[]|\T1/cmr/m/n/10.95 Jeux
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+\T1/cmr/m/n/10.95 sé-rieux
+ []
+
+
+Overfull \hbox (7.90442pt too wide) in paragraph at lines 258--258
+[]|\T1/cmr/m/n/10.95 BioNomadix
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 Wir-less
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 Sen-sors
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 MP150
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 (GSR,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 ECG,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 EMG,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 RR) +
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 cap-teurs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 de mou-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 ve-ment
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 + ca-méra
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 (en-re-gistre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 le vi-sage
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 ment des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 zy-go-ma-
+ []
+
+
+Underfull \hbox (badness 4132) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 de la par-tie +
+ []
+
+
+Overfull \hbox (5.17685pt too wide) in paragraph at lines 258--258
+[]|\T1/cmr/m/n/10.95 Reconnaissance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 neu-rones
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 à convo-lu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 tion (CNN)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 + Don-nées
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 an-no-tées
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 base de don-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 nées (DAG
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 da-ta-base
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 erag.lip6.fr,
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 base de don-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+\T1/cmr/m/n/10.95 nées des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
+[]|\T1/cmr/m/n/10.95 Jeu vi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+[]|\T1/cmr/m/n/10.95 Capteurs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 de pres-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+[]|\T1/cmr/m/n/10.95 Moyenne du
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 la va-riance de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 la pres-sion sur
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 la case et le
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 nombre d'in-ter-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 ac-tions avec la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+[]|\T1/cmr/m/n/10.95 "Amusement"
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 re-cal-culé 3
+ []
+
+
+Underfull \hbox (badness 1320) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 fois au cours
+ []
+
+
+Underfull \hbox (badness 3364) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 t=45s, t=60s
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+[]|\T1/cmr/m/n/10.95 Des règles
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 pré-dé-fi-nies
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 per-mettent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 l'aug-men-ta-tion
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 du nombre de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 cases jouables
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 ou de la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 ra-pi-dité d'ap-
+ []
+
+
+Underfull \hbox (badness 4467) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 pa-ri-tion / de
+ []
+
+
+Underfull \hbox (badness 1320) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 dis-pa-ri-tion des
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 points lu-mi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 neux sur la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 plate-forme
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--260
+\T1/cmr/m/n/10.95 d'amu-se-ment
+ []
+
+
+Overfull \hbox (0.71976pt too wide) in paragraph at lines 260--261
+[]|\T1/cmr/m/n/10.95 Playware
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
+\T1/cmr/m/n/10.95 ("Bugs-
+ []
+
+
+Overfull \hbox (5.22829pt too wide) in paragraph at lines 260--261
+\T1/cmr/m/n/10.95 smasher")| 
+ []
+
+
+Overfull \hbox (81.06418pt too wide) in alignment at lines 244--264
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 264
+ []
+
+[11
+
+] [12] [13] [14]
+
+LaTeX Warning: Reference `app:annexe2' on page 15 undefined on input line 270.
+
+[15
+
+]
+
+LaTeX Warning: Reference `ann:capteurseda' on page 16 undefined on input line 3
+09.
+
+[16]
+
+LaTeX Warning: Citation `yannakakis_et_al._2013' on page 17 undefined on input 
+line 321.
+
+[17] [18] [19] [20]
+<../include/ontologie_stage_cnam-v2-5.png, id=380, 926.46124pt x 601.24625pt>
 File: ../include/ontologie_stage_cnam-v2-5.png Graphic file (type png)
 <use ../include/ontologie_stage_cnam-v2-5.png>
 Package pdftex.def Info: ../include/ontologie_stage_cnam-v2-5.png  used on inpu
-t line 404.
+t line 540.
 (pdftex.def)             Requested size: 463.22948pt x 300.62238pt.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 550.
 
-
-LaTeX Warning: Reference `ann:detailclasses' on page 14 undefined on input line
- 409.
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 411.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [14] [15 <../include/ontologie_stage_cnam-v2-5.png>] [16]
-Underfull \hbox (badness 1688) in paragraph at lines 499--499
+)
+
+LaTeX Warning: Citation `calvo_et_al._2015' on page 21 undefined on input line 
+561.
+
+
+LaTeX Warning: Citation `shu_et_al._2018' on page 21 undefined on input line 56
+3.
+
+[21] [22 <../include/ontologie_stage_cnam-v2-5.png>]
+<../include/explication-prototype.jpg, id=397, 381.67593pt x 149.05687pt>
+File: ../include/explication-prototype.jpg Graphic file (type jpg)
+<use ../include/explication-prototype.jpg>
+Package pdftex.def Info: ../include/explication-prototype.jpg  used on input li
+ne 602.
+(pdftex.def)             Requested size: 305.34116pt x 119.24565pt.
+
+
+LaTeX Warning: Reference `fig:syntprototype' on page 23 undefined on input line
+ 606.
+
+
+LaTeX Warning: Reference `fig:syntprototype' on page 23 undefined on input line
+ 607.
+
+[23 <../include/explication-prototype.jpg>]
+Underfull \hbox (badness 1688) in paragraph at lines 657--657
 \T1/cmr/m/n/10.95 équiv.), logs. Clus-ter de ser-vers,
  []
 
-<../include/RabbitMQ.PNG, id=306, 631.60968pt x 434.37282pt>
+<../include/RabbitMQ.PNG, id=409, 631.60968pt x 434.37282pt>
 File: ../include/RabbitMQ.PNG Graphic file (type png)
 <use ../include/RabbitMQ.PNG>
-Package pdftex.def Info: ../include/RabbitMQ.PNG  used on input line 511.
+Package pdftex.def Info: ../include/RabbitMQ.PNG  used on input line 669.
 (pdftex.def)             Requested size: 315.80406pt x 217.18587pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 512.
+(Font)              <7> on input line 670.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 512.
+(Font)              <5> on input line 670.
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--512
+Underfull \hbox (badness 10000) in paragraph at lines 670--670
 [][][]\T1/cmr/m/n/9 .[][][]https://www.cloudamqp.com/blog/2015-05-18-part1-rabb
 itmq-
  []
 
-<../include/Kafka.PNG, id=310, 435.87843pt x 462.22687pt>
+<../include/Kafka.PNG, id=413, 435.87843pt x 462.22687pt>
 File: ../include/Kafka.PNG Graphic file (type png)
 <use ../include/Kafka.PNG>
-Package pdftex.def Info: ../include/Kafka.PNG  used on input line 516.
+Package pdftex.def Info: ../include/Kafka.PNG  used on input line 674.
 (pdftex.def)             Requested size: 239.73387pt x 254.22556pt.
 
-Overfull \hbox (3.71826pt too wide) in paragraph at lines 516--517
+Overfull \hbox (3.71826pt too wide) in paragraph at lines 674--675
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--517
+Underfull \hbox (badness 10000) in paragraph at lines 675--675
 [][][]\T1/cmr/m/n/9 .[][][]https://openclassrooms.com/fr/courses/4451251-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--517
+Underfull \hbox (badness 10000) in paragraph at lines 675--675
 \T1/cmr/m/n/9 gerez-des-flux-de-donnees-temps-reel/4451521-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--517
+Underfull \hbox (badness 10000) in paragraph at lines 675--675
 \T1/cmr/m/n/9 metamorphosez-vos-applications-temps-reel-avec-kafka[]
  []
 
 
-Overfull \hbox (49.62761pt too wide) in paragraph at lines 509--520
+Overfull \hbox (49.62761pt too wide) in paragraph at lines 667--678
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 539--539
+Underfull \hbox (badness 10000) in paragraph at lines 697--697
 []|\T1/cmr/m/n/10.95 Maintien de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--540
+Underfull \hbox (badness 10000) in paragraph at lines 698--698
 []|\T1/cmr/m/n/10.95 Jusqu'à que le mes-sage soit
  []
 
 
-Underfull \hbox (badness 2932) in paragraph at lines 540--540
+Underfull \hbox (badness 2932) in paragraph at lines 698--698
 \T1/cmr/m/n/10.95 consommé et l'ac-cusé de ré-cep-
  []
 
-[17] [18] [19 <../include/RabbitMQ.PNG> <../include/Kafka.PNG>]
-<../include/schema-synt-prototype.jpg, id=345, 749.80125pt x 283.81032pt>
+[24] [25] [26 <../include/RabbitMQ.PNG> <../include/Kafka.PNG>] [27]
+<../include/schema-synt-prototype.jpg, id=452, 749.80125pt x 283.81032pt>
 File: ../include/schema-synt-prototype.jpg Graphic file (type jpg)
 <use ../include/schema-synt-prototype.jpg>
 Package pdftex.def Info: ../include/schema-synt-prototype.jpg  used on input li
-ne 587.
+ne 746.
 (pdftex.def)             Requested size: 599.84181pt x 227.04855pt.
- [20] [21 <../include/schema-synt-prototype.jpg>]
-<../include/archiProducer.PNG, id=357, 539.76656pt x 361.35pt>
+<../include/archiProducer.PNG, id=455, 539.76656pt x 361.35pt>
 File: ../include/archiProducer.PNG Graphic file (type png)
 <use ../include/archiProducer.PNG>
-Package pdftex.def Info: ../include/archiProducer.PNG  used on input line 606.
+Package pdftex.def Info: ../include/archiProducer.PNG  used on input line 765.
 (pdftex.def)             Requested size: 350.8441pt x 234.87471pt.
 
-Overfull \hbox (88.79736pt too wide) in paragraph at lines 605--607
+Overfull \hbox (88.79736pt too wide) in paragraph at lines 764--766
 []|  [] 
  []
 
-<../include/archiConsumer.PNG, id=358, 322.95656pt x 225.84375pt>
+<../include/archiConsumer.PNG, id=456, 322.95656pt x 225.84375pt>
 File: ../include/archiConsumer.PNG Graphic file (type png)
 <use ../include/archiConsumer.PNG>
-Package pdftex.def Info: ../include/archiConsumer.PNG  used on input line 611.
+Package pdftex.def Info: ../include/archiConsumer.PNG  used on input line 770.
 (pdftex.def)             Requested size: 258.36559pt x 180.67523pt.
 
-Overfull \hbox (22.34998pt too wide) in paragraph at lines 611--612
+Overfull \hbox (22.34998pt too wide) in paragraph at lines 770--771
 [][] 
  []
 
-<../include/producteurConsommateur.PNG, id=362, 1028.34187pt x 548.0475pt>
+<../include/producteurConsommateur.PNG, id=460, 1028.34187pt x 548.0475pt>
 File: ../include/producteurConsommateur.PNG Graphic file (type png)
 <use ../include/producteurConsommateur.PNG>
 Package pdftex.def Info: ../include/producteurConsommateur.PNG  used on input l
-ine 629.
+ine 788.
 (pdftex.def)             Requested size: 514.16968pt x 274.02307pt.
 
-Overfull \hbox (24.64322pt too wide) in paragraph at lines 628--630
+Overfull \hbox (24.64322pt too wide) in paragraph at lines 787--789
 []|  [] 
  []
 
-
-Overfull \hbox (52.37447pt too wide) in paragraph at lines 636--637
-[]\T1/cmr/m/n/10.95 Tout le code pour ce pro-to-type se trouve sur le Gi-thub [
-]https://github.com/laurelinemartin/stage/Prototype[]. 
- []
-
-[22] [23 <../include/archiProducer.PNG> <../include/archiConsumer.PNG>]
-<../include/TEAgsr.PNG, id=382, 222.07968pt x 137.01187pt>
+[28] [29 <../include/schema-synt-prototype.jpg>] [30 <../include/archiProducer.
+PNG> <../include/archiConsumer.PNG>] [31 <../include/producteurConsommateur.PNG
+>]
+<../include/TEAgsr.PNG, id=491, 222.07968pt x 137.01187pt>
 File: ../include/TEAgsr.PNG Graphic file (type png)
 <use ../include/TEAgsr.PNG>
-Package pdftex.def Info: ../include/TEAgsr.PNG  used on input line 661.
+Package pdftex.def Info: ../include/TEAgsr.PNG  used on input line 820.
 (pdftex.def)             Requested size: 111.03957pt x 68.50577pt.
-<../include/TEAhr.PNG, id=383, 232.61906pt x 83.5622pt>
+<../include/TEAhr.PNG, id=492, 232.61906pt x 83.5622pt>
 File: ../include/TEAhr.PNG Graphic file (type png)
 <use ../include/TEAhr.PNG>
-Package pdftex.def Info: ../include/TEAhr.PNG  used on input line 667.
+Package pdftex.def Info: ../include/TEAhr.PNG  used on input line 826.
 (pdftex.def)             Requested size: 116.30923pt x 41.78099pt.
-<../include/TEAbt.PNG, id=384, 216.81pt x 135.50626pt>
+<../include/TEAbt.PNG, id=493, 216.81pt x 135.50626pt>
 File: ../include/TEAbt.PNG Graphic file (type png)
 <use ../include/TEAbt.PNG>
-Package pdftex.def Info: ../include/TEAbt.PNG  used on input line 673.
+Package pdftex.def Info: ../include/TEAbt.PNG  used on input line 832.
 (pdftex.def)             Requested size: 108.40472pt x 67.75294pt.
-<../include/TEArr.PNG, id=385, 234.1247pt x 76.78688pt>
+<../include/TEArr.PNG, id=494, 234.1247pt x 76.78688pt>
 File: ../include/TEArr.PNG Graphic file (type png)
 <use ../include/TEArr.PNG>
-Package pdftex.def Info: ../include/TEArr.PNG  used on input line 679.
+Package pdftex.def Info: ../include/TEArr.PNG  used on input line 838.
 (pdftex.def)             Requested size: 117.06206pt x 38.39334pt.
 
-Overfull \hbox (2.4216pt too wide) in paragraph at lines 659--683
+Overfull \hbox (2.4216pt too wide) in paragraph at lines 818--842
 []$[]$ $[]$ 
  []
 
 
-Overfull \hbox (2.4216pt too wide) in paragraph at lines 659--683
+Overfull \hbox (2.4216pt too wide) in paragraph at lines 818--842
 []$ $[]$ 
  []
 
-[24 <../include/producteurConsommateur.PNG>] [25 <../include/TEAgsr.PNG> <../in
-clude/TEAhr.PNG> <../include/TEAbt.PNG> <../include/TEArr.PNG>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 725.
+[32 <../include/TEAgsr.PNG> <../include/TEAhr.PNG> <../include/TEAbt.PNG> <../i
+nclude/TEArr.PNG>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 884.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 725.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 884.
 
-Underfull \hbox (badness 1968) in paragraph at lines 740--740
+Underfull \hbox (badness 1968) in paragraph at lines 899--899
 []|\T1/cmr/m/n/10.95 Pour les bases de don-nées re-la-tion-nelles
  []
 
 
-Underfull \hbox (badness 1210) in paragraph at lines 743--743
+Underfull \hbox (badness 1210) in paragraph at lines 902--902
 []|\T1/cmr/m/n/10.95 Surveillance et en-re-gis-tre-ment des chang-
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 773--773
+Underfull \hbox (badness 1303) in paragraph at lines 932--932
 []|\T1/cmr/m/n/10.95 Enregistrements de work-flow BPMN vers
  []
 
-[26] [27]
-<../include/schema-global.jpg, id=425, 849.1725pt x 253.69781pt>
+[33] [34]
+<../include/schema-global.jpg, id=529, 849.1725pt x 253.69781pt>
 File: ../include/schema-global.jpg Graphic file (type jpg)
 <use ../include/schema-global.jpg>
-Package pdftex.def Info: ../include/schema-global.jpg  used on input line 787.
+Package pdftex.def Info: ../include/schema-global.jpg  used on input line 946.
 (pdftex.def)             Requested size: 636.8778pt x 190.27289pt.
 
 
-LaTeX Warning: Float too large for page by 7.77159pt on input line 790.
+LaTeX Warning: Float too large for page by 7.77159pt on input line 949.
 
-[28] [29 <../include/schema-global.jpg>] [30] (./memoire.bbl)
-Overfull \hbox (0.41765pt too wide) in paragraph at lines 842--851
+[35] [36 <../include/schema-global.jpg>] [37] [38] (./memoire.bbl)
+Overfull \hbox (0.41765pt too wide) in paragraph at lines 1027--1036
 []\T1/cmr/m/n/14.4 https://www.usabilis.com/definition-ux-experience-utilisateu
 r-user-experience/[] 
  []
 
 
-Overfull \hbox (17.1183pt too wide) in paragraph at lines 842--851
+Overfull \hbox (17.1183pt too wide) in paragraph at lines 1027--1036
 []\T1/cmr/m/n/14.4 https://www.upsolver.com/blog/kafka-versus-rabbitmq-architec
 ture-performance-
  []
 
 
-Overfull \hbox (23.45218pt too wide) in paragraph at lines 842--851
+Overfull \hbox (23.45218pt too wide) in paragraph at lines 1027--1036
 []\T1/cmr/m/n/14.4 https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for
 -beginners-what-
  []
 
 
-Overfull \hbox (18.63605pt too wide) in paragraph at lines 842--851
+Overfull \hbox (18.63605pt too wide) in paragraph at lines 1027--1036
 []\T1/cmr/m/n/14.4 https://openclassrooms.com/fr/courses/4451251-gerez-des-flux
 -de-donnees-temps-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 842--851
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1036
 
  []
 
-[31] [32]
+[39] [40]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 871.
+(Font)              <14.4> on input line 1056.
 
-Overfull \hbox (0.67798pt too wide) in paragraph at lines 878--879
+Overfull \hbox (0.67798pt too wide) in paragraph at lines 1063--1064
 []\T1/cmr/m/n/14.4 L'équipe Trai-te-ment du si-gnal et ar-chi-tec-tures élec-tr
 o-niques (LAE-TI-TIA) :
  []
 
-[33]
-Overfull \hbox (7.17252pt too wide) in paragraph at lines 879--880
+[41]
+Overfull \hbox (7.17252pt too wide) in paragraph at lines 1064--1065
 []\T1/cmr/m/n/14.4 L'équipe Mé-thode Sta-tis-tique de Data-Mining et Ap-pren-ti
 s-sage (MSDMA) :
  []
 
 
-Overfull \hbox (2.17429pt too wide) in paragraph at lines 880--881
+Overfull \hbox (2.17429pt too wide) in paragraph at lines 1065--1066
 \T1/cmr/m/n/14.4 axes : la pro-gram-ma-tion ma-thé-ma-tique et ap-pli-ca-tions 
 ainsi que les graphes
  []
 
-[34]
-Overfull \hbox (0.41765pt too wide) in paragraph at lines 887--889
+[42]
+Overfull \hbox (0.41765pt too wide) in paragraph at lines 1072--1074
 []\T1/cmr/m/n/14.4 https://www.usabilis.com/definition-ux-experience-utilisateu
 r-user-experience/[] 
  []
 
-[35]
-Overfull \hbox (0.33911pt too wide) in paragraph at lines 904--904
+[43]
+Overfull \hbox (0.33911pt too wide) in paragraph at lines 1089--1089
 []\T1/cmr/bx/n/14.4 Sitographie pour la construc-tion de la syn-thèse com-pa-ra
 -tive entre
  []
 
 
-Overfull \hbox (19.89194pt too wide) in paragraph at lines 905--911
+Overfull \hbox (19.89194pt too wide) in paragraph at lines 1090--1096
 []| []\T1/cmr/m/n/14.4 https://www.upsolver.com/blog/kafka-versus-rabbitmq-arch
 itecture-performance-
  []
 
 
-Overfull \hbox (23.45218pt too wide) in paragraph at lines 905--911
+Overfull \hbox (23.45218pt too wide) in paragraph at lines 1090--1096
 []\T1/cmr/m/n/14.4 https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for
 -beginners-what-
  []
 
 
-Overfull \hbox (18.63605pt too wide) in paragraph at lines 905--911
+Overfull \hbox (18.63605pt too wide) in paragraph at lines 1090--1096
 []\T1/cmr/m/n/14.4 https://openclassrooms.com/fr/courses/4451251-gerez-des-flux
 -de-donnees-temps-
  []
 
-[36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 922.
- [37]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 922.
+[44]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1107.
+ [45]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1107.
  (./memoire.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 922.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 922.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1107.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1107.
+
 Package rerunfilecheck Info: File `memoire.out' has not changed.
-(rerunfilecheck)             Checksum: 45FCE2739C00CB1D8E34C1FF54BB98C8;2620.
+(rerunfilecheck)             Checksum: 6EF4466A65B17C8B8975125B2AE034B2;3099.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 922.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1107.
  ) 
 Here is how much of TeX's memory you used:
- 9866 strings out of 494459
- 148365 string characters out of 6174603
- 274750 words of memory out of 5000000
- 13286 multiletter control sequences out of 15000+600000
+ 9899 strings out of 494459
+ 148916 string characters out of 6174603
+ 289433 words of memory out of 5000000
+ 13304 multiletter control sequences out of 15000+600000
  22734 words of font info for 49 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 42i,18n,49p,999b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,18n,49p,999b,618s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/user/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600p
 k> </home/user/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600p
 k> </home/user/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600p
@@ -830,12 +1925,11 @@ k> </home/user/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600p
 k> </home/user/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600p
 k> </home/user/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600p
 k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on memoire.pdf (37 pages, 1187493 bytes).
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on memoire.pdf (45 pages, 1228682 bytes).
 PDF statistics:
- 1209 PDF objects out of 1440 (max. 8388607)
- 523 compressed objects within 6 object streams
- 110 named destinations out of 1000 (max. 500000)
- 356 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1316 PDF objects out of 1440 (max. 8388607)
+ 613 compressed objects within 7 object streams
+ 124 named destinations out of 1000 (max. 500000)
+ 393 words of extra memory for PDF output out of 10000 (max. 10000000)
 
