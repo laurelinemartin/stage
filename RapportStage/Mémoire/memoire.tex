@@ -127,7 +127,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 	Le but de ce travail a été de dresser le contour d'un jeu pervasif adaptable aux états émotionnels du joueur et d'en affiner la conceptualisation.
 	Dans ce rapport, nous nous sommes principalement intéressés, d'une part, à l'adaptation de jeux selon le contexte émotionnel et d'autre part, à la gestion de données générées par des capteurs physiologiques.\par
 	Tout d'abord, nous décrirons dans la Section \ref{sec:projet}, notre projet, ses objectifs et la problématique scientifique que nous traiterons dans notre travail et à travers ce rapport.
-	Nous présenterons, dans la Section \ref{sec:etatart}, l'état de l'art que nous avons rédigé et plus particulièrement le cadre de comparaison que nous avons mis au point pour l'adaptation dynamique de jeux à leurs joueurs. 
+	Nous présenterons, dans la Section \ref{sec:eda}, l'état de l'art que nous avons rédigé et plus particulièrement le cadre de comparaison que nous avons mis au point pour l'adaptation dynamique de jeux à leurs joueurs. 
 	Nous aborderons dans la Section \ref{sec:escape} la notion d'expérience utilisateur et l'expérience que nous avons menée lors d'un escape game.
 	Dans la Section \ref{sec:modelisation}, nous présenterons une ontologie, en cours de construction, d'un jeu pervasif prenant en compte l'état émotionnel du joueur et le bilan que nous tirons de cet exercice.
 	Enfin, nous expliquerons dans la Section \ref{sec:prototypage} une solution que nous avons conçue pour la gestion de données en temps-réel provenant de capteurs physiologiques.
@@ -192,9 +192,9 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Tout au long du rapport, nous allons aborder ces sujets qui n'entrent pas directement dans le cadre de la solution que nous apportons mais qui sont essentiels pour la compréhension du sujet de notre projet et de la contribution de notre solution.
 
 \section{Etat de l'art}\label{sec:eda}
-	Avant d'apporter une contribution à notre projet, et plus particulièrement à la problématique de l'ingestion de données en temps-réel provenant de capteurs, nous devons nous intéresser à ce qu'il existe dans la littérature scientifique et technique actuelle. 
+	Avant d'apporter une contribution à notre projet, et plus particulièrement à la problématique de l'ingestion de données en temps-réel provenant de capteurs, nous devons nous intéresser à ce qui existe dans la littérature scientifique et technique actuelle. 
 	Pour cela, nous nous sommes intéressés aux approches permettant l'adaptation de jeux aux états émotionnels et à d'autres caractéristiques des joueurs.
-	Pour comparer et évaluer ces approches, nous avons élaboré notre propre cadre de comparison.
+	Pour comparer et évaluer ces approches, nous avons élaboré notre propre cadre de comparaison.
 	Ce cadre nous permet de distinguer différents points clés qui vont nous permettre d'apporter une réponse à notre problématique et qui vont nous aider à la réalisation de notre projet.\par
 	Dans cette section, nous présentons dans un premier temps le cadre de comparaison que nous avons mis au point.
 	Et dans un second temps, nous appliquons ce cadre à plusieurs approches que nous avons relevées afin de faire ressortir des méthodes qui pourront nous être utiles pour apporter une contribution pour ce projet.
@@ -208,7 +208,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			\item Les méthodes pour la détection et pour la reconnaissance des états émotionnels
 			\begin{itemize}
 				\item Les capteurs utilisés
-				\item Les algorithmes utlisés pour la détection et/ou la reconnaissance de l'état émotionnel
+				\item Les algorithmes utilisés pour la détection et/ou la reconnaissance de l'état émotionnel
 			\end{itemize}
 			\item Les autres caractéristiques de l'utilisateur prises en compte par le jeu
 			\item Les méthodes d'adaptation d'un jeu au contexte de son utilisateur
@@ -220,7 +220,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Le critère "méthodes pour la détection et pour la reconnaissance des états émotionnels" nous permet d'identifier d'une part les capteurs utilisés (s'ils existent).
 		Et d'autre part, les algorithmes utilisés pour la détection et la reconnaissance d'états émotionnels.
 		Comme nous visons à utiliser des capteurs pour notre projet, il est important pour nous de savoir si certains capteurs reviennent souvent dans la littérature et s'ils sont performants pour ce type d'application.
-		Nous visons aussi à utiliser des algorithmes d'apprentissage profond non-supervisés pour la reconnaissance d'états émotionnels (comme celui décrit dans \cite{gal_et_al._2020}), alors nous avons cherché à savoir s'il existait déjà des algorithmes similaires.\par
+		Nous visons aussi à utiliser des algorithmes d'apprentissages profonds non-supervisés pour la reconnaissance d'états émotionnels (comme celui décrit dans \cite{gal_et_al._2020}), alors nous avons cherché à savoir s'il existait déjà des algorithmes similaires.\par
 		Le critère "autres caractéristiques de l'utilisateur prises en compte par le jeu" nous permet d'identifier s'il existe d'autres données que celles concernant l'état émotionnel pour une "bonne" adaptation d'un jeu.
 		Ce critère permet d'élargir notre champ de recherche.\par
 		Le dernier critère "méthodes d'adaptation d'un jeu au contexte de son utilisateur" permet d'identifier les algorithmes pour l'adaptation dynamique et particularisée d'un jeu.
@@ -245,19 +245,19 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
        		\hline
        		\cite{carofiglio_et_al._2019} & Emotiv EPOC+ (passive BCI) pour EEG & Ennuie / Flow / Stress & Plusieurs méthodes de machine learning. Meilleure méthode : Random Forest (précision = 78\%) & - & - & - & Jeu vidéo (aventure horrifique)\\
        		\hline
-       		\cite{gal_2019,gal_et_al._2020} & CAPTIV (de chez TEA), Neurosky Brainwave Headset (pour GSR, RR, SKT, HR et EEG) & Des hangements d'états émotionnels & - & Carte d'organisation de Kohonen + EMDeep & - & - & Jeu pervasif et jeu vidéo\\
+       		\cite{gal_2019,gal_et_al._2020} & CAPTIV (de chez TEA), Neurosky Brainwave Headset (pour GSR, RR, SKT, HR et EEG) & Des hangements d'états émotionnels & Carte d'organisation de Kohonen + EMDeep & - & - & - & Jeu pervasif et jeu vidéo\\
         	\hline
         	\cite{gizycka_et_al._2018,nalepa_et_al._2017} & BiTalino (r)evolution kit (retenu);   Empatica E4;   Microsoft Band 2;   E-Health; (Pour GSR et HR) & Relaxé / Neutre / Stressé (sur une échelle de 1 à 7 avec 1 = Relaxé, 4 = Neutre et 7 = Stressé) & Auto-évaluation des joueurs durant la phase d'échantillonnage & - & La version adaptative du jeu utilise des "affective patterns" comme "l'Immersion Emotionnel", des ennemis et des obstacles et « des informations imparfaites" & - & Jeu vidéo (scrollrunner)\\
         	\hline
-        	\cite{maier_et_al._2019} & Empatica E4 (pour GSR, HR et HRV) & Ennuie / Flow / Stress & - & Réseau de neuronnes à convolution (CNN) & - & - & Jeu vidéo (Tétris sur téléphone portable)\\
+        	\cite{maier_et_al._2019} & Empatica E4 (pour GSR, HR et HRV) & Ennuie / Flow / Stress & Réseau de neuronnes à convolution (CNN) & - & - & - & Jeu vidéo (Tétris sur téléphone portable)\\
         	\hline
-        	\cite{Mostefai_et_al._2019} & - & Colère / Ennui / Peur / Frustration / Joie & Style de jeu du joueur & Ensemble défini pour les événements, les actions, les objectifs, les statuts des objectifs + Fonctions pour la cartographie de chaque tendances d'action pour chaque état émotionnel (et fonction inverse), la cartographie de la tendance d'action pour chaque état émotionnel et pour chaque statut d'objectif & - & Chaînes de Markov et matrices de transition & Jeux sérieux (apprentissage)\\
+        	\cite{Mostefai_et_al._2019} & - & Colère / Ennui / Peur / Frustration / Joie & Ensemble défini pour les événements, les actions, les objectifs, les statuts des objectifs + Fonctions pour la cartographie de chaque tendances d'action pour chaque état émotionnel (et fonction inverse), la cartographie de la tendance d'action pour chaque état émotionnel et pour chaque statut d'objectif & Style de jeu du joueur & Envoi d'un événement approprié à l'état émotionnel reconnu. L'adaptation se fait de manière ponctuelle, lorsqu'il y a plus d'états émotionnels négatifs expérimentés par le joueur que d'états émotionnels positifs. Utilisation de chaînes de Markov et matrices de transitions pour amener le joueur d'un état émotionnel à un autre (via un ou plusieurs événements dans le jeu) & Des éléments autres que l'état émotionnel sont pris en compte pour l'adaptation & Jeux sérieux (apprentissage)\\
         	\hline
-        	\cite{noor_et_al._2009} & - & - & Préférence en en culture & - & - & Utilisation de l'API GoogleSocialGraphAPI pour identifier l'utilisateur et définir son profil. Plusieurs APIs et scripts open-sources osnt utilisés  pour extraire des données des différents réseaux sociaux. WordNet et Wikipedia sont utilisés pour le filtrage des données. Et les bases de connaissances YAGO et DBpédia sont employées pour catégoriser les données et récupérer les données concernant la culture avec une base de connaissance spécifique (CRM) & Jeux sérieux (culture)\\
+        	\cite{noor_et_al._2009} & - & - & Préférences culturelles & - & - & Utilisation de l'API GoogleSocialGraphAPI pour identifier l'utilisateur et définir son profil. Plusieurs APIs et scripts open-sources osnt utilisés  pour extraire des données des différents réseaux sociaux. WordNet et Wikipedia sont utilisés pour le filtrage des données. Et les bases de connaissances YAGO et DBpédia sont employées pour catégoriser les données et récupérer les données concernant la culture avec une base de connaissance spécifique (CRM) & Jeux sérieux (culture)\\
         	\hline
-        	\cite{yang_et_al._2018} & BioNomadix Wirless Sensors MP150 (GSR, ECG, EMG, RR) + capteurs de mouvement sur 3 axes + caméra (enregistre le visage du joueur) + capteurs de mouvement des zygomatiques & Colère / Ennui / Peur / Frustration / Joie & Niveau du joueur pour ce jeu + Niveau de difficulté de la partie + Score final & Reconnaissance via réseau de neurones à convolution (CNN) + Données annotées ajoutées à une base de données (DAG database erag.lip6.fr, base de données des auteurs) & - & - & Jeu vidéo (Fifa 2016)\\
+        	\cite{yang_et_al._2018} & BioNomadix Wirless Sensors MP150 (GSR, ECG, EMG, RR) + capteurs de mouvement sur 3 axes + caméra (enregistre le visage du joueur) + capteurs de mouvement des zygomatiques & Colère / Ennui / Peur / Frustration / Joie & Reconnaissance via réseau de neurones à convolution (CNN) + Données annotées ajoutées à une base de données (DAG database erag.lip6.fr, base de données des auteurs) & Niveau du joueur pour ce jeu + Niveau de difficulté de la partie + Score final & - & - & Jeu vidéo (Fifa 2016)\\
         	\hline
-        	\cite{yannakakis_et_al._2009} & Capteurs de pression & Amusement & Moyenne du temps de réponse, la variance de la pression sur la case et le nombre d'interactions avec la plate-forme & "Amusement" recalculé 3 fois au cours de la partie (à t=45s, t=60s et t=75s) & - & Des règles prédéfinies permettent l'augmentation / la diminution du nombre de cases jouables ou de la rapidité d'apparition / de disparition des points lumineux sur la plate-forme selon le niveau d'amusement détecté & Playware ("Bugs-smasher")\\
+        	\cite{yannakakis_et_al._2009} & Capteurs de pression & Amusement & Moyenne du temps de réponse, la variance de la pression sur la case et le nombre d'interactions avec la plate-forme. L'"amusement" est recalculé 3 fois au cours de la partie (à t=45s, t=60s et t=75s) & - & Des règles prédéfinies permettent l'augmentation / la diminution du nombre de cases jouables ou de la rapidité d'apparition / de disparition des points lumineux sur la plate-forme selon le niveau d'amusement détecté & - & Playware ("Bugs-smasher")\\
         	\hline
 		\caption{Application du cadre de comparaison}
         \label{tab:comparatif}
@@ -265,12 +265,16 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
         \restoregeometry
 		\subsubsection{Méthodes pour la détection et la reconnaissance des états émotionnels}\label{sec:etatemotionnel}
 			\textbf{1. Utilisation de capteurs :}\par
-            La majorité des approches que nous avons étudiée et qui abordent le domaine de la détection et/ou de la reconnaissance des états émotionnels, utilisent des capteurs de contact (voir Annexe \ref{app:annexe1}). 
-            \cite{maier_et_al._2019,nalepa_et_al._2017,gizycka_et_al._2018} utilisent le bracelet Empatica E4 (GSR, HR et HRV pour \cite{maier_et_al._2019} et HR et GSR pour \cite{nalepa_et_al._2017,gizycka_et_al._2018}). 
-            Cependant, dans cette dernière approche, plusieurs capteurs ont été testés (BITalino (r)evolution kit, E-Health et Microsoft Band 2, Annexe \ref{app:annexe2}) et le choix des auteurs semble d'avantage se porter sur BITalino (r)evolution kit. 
-            Dans \cite{yang_et_al._2018}, des capteurs de contact BioNomadix wireless sensors MP150 - Biopac (GSR, ECG et RR) sont utilisés. 
-            \cite{gal_2019,gal_et_al._2020} utilisent des capteurs de contact de chez TEA (GSR, RR et SkT) mais également un casque pour la lecture d'ondes cérébrales (EEG) Mindwave Mobile. 
-            Dans \cite{carofiglio_et_al._2019} un dispositif similaire est utilisé : EPOC+ (Emotiv).\par 
+            La majorité des approches que nous avons étudiée et qui abordent le domaine de la détection et/ou de la reconnaissance des états émotionnels, utilisent des capteurs physiologiques (une description de ces capteurs est faite en Annexe \ref{ann:capteurs}).\par
+            \cite{maier_et_al._2019,nalepa_et_al._2017,gizycka_et_al._2018} utilisent le bracelet Empatica E4.
+            \cite{maier_et_al._2019} l'utilise pour les métriques GSR, HR et HRV et \cite{nalepa_et_al._2017,gizycka_et_al._2018}) pour HR et GSR. 
+            Cependant, dans cette dernière approche, d'autres capteurs ont été testés et comparés pour les mêmes métriques. Il s'agit de BITalino (r)evolution kit, E-Health et Microsoft Band 2. 
+            Ces capteurs sont assez similaires car ils se portent tous au poignet et transmettent des données via Bluetooth.
+            Donc il est possible de les comparer.
+            Le choix des auteurs semble se porter sur BITalino (r)evolution kit car ses capteurs leurs paraissent plus précis.\par
+            Dans \cite{yang_et_al._2018}, des capteurs de contact BioNomadix wireless sensors MP150 - Biopac pour des mesures de GSR, ECG et RR sont utilisés.\par
+            \cite{gal_2019,gal_et_al._2020} mesurent GSR, RR et SkT en utilisant des capteurs de contact de chez TEA mais également un casque pour la lecture d'ondes cérébrales (EEG) Mindwave Mobile de chez Neurosky.\par
+            Dans \cite{carofiglio_et_al._2019} un dispositif BCI similaire est utilisé : EPOC+ (Emotiv).\par 
             \vspace*{0.6cm}
         	\textbf{2. Détection et reconnaissance de l'état émotionnel :}\par
             Les approches visent à détecter et à reconnaître des états émotionnels. Pour \cite{nalepa_et_al._2017,gizycka_et_al._2018}, le but est de reconnaître les états de relaxation / neutre / stress en utilisant des questionnaires remplis par les participants et grâce à des estampilles pour chaque événement émotionnel. 
@@ -306,7 +310,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Avec cette information, nous serions en mesure de connaître l'état émotionnel courant du joueur.\par
 		Dans le cadre de notre projet, nous souhaitons utiliser des capteurs physiologiques de contact, c'est-à-dire des capteurs "collés" au joueur.
 		Ces capteurs nous permettront d'acquérir des données sur l'état physiologique courant du joueur pour en déduire son état émotionnel courant via des algorithmes.
-		Dans les approches que nous avons relevées, certaines d'entre elles reconnaissent des états émotionnels en utilisant différents types d'algorithmes et des capteurs physiologiques (voir Annexe \ref{ann:capteurseda}).
+		Dans les approches que nous avons relevées, certaines d'entre elles reconnaissent des états émotionnels en utilisant différents types d'algorithmes et des capteurs physiologiques (comme \cite{carofiglio_et_al._2019,gal_2019,gal_et_al._2020,gizycka_et_al._2018,maier_et_al._2019,nalepa_et_al._2017,yang_et_al._2018,yannakakis_et_al._2009}).
 		Mais contrairement à cela, d'autres approches (par exemple \cite{Mostefai_et_al._2019}) utilisent des modèles pour "prédire" l'état émotionnel courant du joueur.
 		Ces méthodes "prédictives" peuvent être intéressantes car elles ne nécessitent pas de capteurs.
 		Le joueur n'a pas à acheter des capteurs, ni à les "coller" sur lui pour que le jeu puisse détecter son état émotionnel courant.
@@ -421,8 +425,8 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Des méthodes plus efficaces pour donner la meilleure expérience utilisateur sont continuellement recherchées.
 		De plus, la connaissance et la compréhension du fonctionnement du cerveau humain est aussi un domaine où l'on fait sans cesse de nouvelles découvertes.
 		De ce fait, il n'existe pas de "définition universelle" de l'UX.
-		Je présente ici ma propre définition de l'expérience utilisateur.
-		Pour construire cette définition, j'ai étudié différentes ressources qui se trouvent en Annexe \ref{ann:ux}.\par
+		Je présente ici ma propre définition de l'expérience utilisateur.\par
+		%Pour construire cette définition, j'ai étudié différentes ressources qui se trouvent en Annexe \ref{ann:ux}.\par
 		L’expérience utilisateur concerne toutes les réactions qu’un utilisateur peut avoir lors d’une interaction avec un service, un objet, un espace public, etc.
 		C’est aussi tout ce que l’utilisateur peut ressentir lors de cette interaction.
 		La notion d’expérience utilisateur va donc plus loin que la simple notion d’ergonomie qui elle ne concerne que la « facilité d’utilisation » d’un produit.\par
@@ -601,7 +605,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		\centering
 		\includegraphics[scale=0.8]{../include/explication-prototype.jpg}
 		\caption{Inclusion du prototype dans le projet}
-		\label{syntprototype}
+		\label{fig:syntprototype}
 	\end{figure}
 	La Figure \ref{fig:syntprototype} résume cela.
 	Notre contribution s'inscrit (en rouge sur la Figure \ref{fig:syntprototype}) dans la gestion des données provenant de capteurs physiologiques qui sont utilisés par des méthodes de détection et de reconnaissance d'états émotionnels. \par
@@ -1066,58 +1070,65 @@ case} \textit{[en]} \medskip\newline
 
 \newpage
 \section{Description des capteurs}\label{ann:capteurs}
-	\begin{table}[h]
-		\begin{tabular}{|p{5cm}|p{10cm}|}
+	\begin{longtable}{|p{5cm}|p{10cm}|}
 		\hline
-		Empatica E4 : & Bracelet au poignet avec les capteurs pour la réponse galvanique de la peau (GSR) et la température à la surface corps.
-		Le bracelet permet de récolter des données via câble USB (mémoire interne du bracelet de 36 heures) ou via Bluetooth.\newline
-		\href{https://www.empatica.com/research/e4/}{https://www.empatica.com/research/e4/}\\\hline
-		Microsoft Band 2 :& Bracelet au poignet avec capteurs pour la fréquence cardiaque (arrêt du support de Microsoft).
+		Empatica E4 : & Bracelet à porter au poignet avec les capteurs pour la réponse galvanique de la peau (GSR) et la température à la surface corps.
+		Le bracelet permet de récolter des données via câble USB (mémoire interne du bracelet de 36 heures) ou via Bluetooth.
+		\newline \href{https://www.empatica.com/research/e4/}{https://www.empatica.com/research/e4/}\\\hline
+		Microsoft Band 2 :& Bracelet au poignet avec capteurs pour la fréquence cardiaque et la réponse galvanique de la peau (arrêt du support de Microsoft).
 		\newline \href{https://www.microsoft.com/en-us/band}{https://www.microsoft.com/en-us/band}\\\hline
-		BiTalino (r)evolution kit :&
-		\newline \href{http://bitalino.com/en/}{http://bitalino.com/en/}\\\hline
-		E-Health :& \newline \href{http://www.my-signals.com}{http://www.my-signals.com}\\\hline
-		Emotiv EPOC+ :& Casque passive BCI (Interface Cerveau-Machine) permettant la mesure d'électroencéphalogramme.
+		BiTalino (r)evolution kit :& Ensemble de capteurs connectés sur un bracelet.
+		Ici sont utilisés les capteurs pour la mesure du rythme cardiaque et la mesure de la réponse galvanique de la peau (une multitude d'autres capteurs sont disponibles pour ce kit). 
+		Les données peuvent être collectées via bluetooth sur un smartphone ou sur un ordinateur en utilisant une application fournie par BITalino.
+		\newline \href{https://plux.info/kits/33-bitalino-revolution-board-bt-810121001.html}{https://plux.info/kits/33-bitalino-revolution-board-bt-810121001.html}\\\hline
+		E-Health :& Ensemble de capteurs qui se connectent à un bracelet porté au poignet.
+		Dans les références, les capteurs qui sont utilisés permettent de faire des mesures pour la réponse galvanique de la peau et pour le rythme cardiaque. 
+		Les données peuvent être transmises du bracelet vers un smartphone (ou un ordinateur) via Bluetooth et une application.
+		\newline \href{http://www.my-signals.com}{http://www.my-signals.com}\\\hline
+		Emotiv EPOC+ :& Casque passive BCI (Interface Cerveau-Ordinateur) permettant la mesure d'électroencéphalogramme.
+		Le casque peut se connecter sans fil à un ordinateur pour transmettre les données.
 		\newline \href{https://www.emotiv.com/epoc/}{https://www.emotiv.com/epoc/}\\\hline
-		BioNomadix wireless sensors MP150 :& Bracelet au poignet
+		BioNomadix wireless sensors MP150 :& Bracelet au poignet sur lequel sont connectés un ou plusieurs capteurs.
+		La méthode qui utilise ce dispositif, utilise des capteurs pour les métriques d'activité électrodermale, de fréquence respiratoire, de rythme cardique, d'électromyogramme et d'accelération (3 axes). 
+		Les données peuvent être récupérées via un logiciel sur un ordinateur fourni par BIOPAC.
 		\newline \href{https://www.biopac.com/product-category/research/bionomadix-wireless-physiology/}{https://www.biopac.com/product-category/research/\newline bionomadix-wireless-physiology/}\\\hline
 		CAPTIV (TEA) :& Capteurs à placer à différents endroits.
-		Dans les références sont utilisés les capteurs pour mesurer la température à la surface de la peau, le rythme cardique, la fréquence respiratoire et la réponse galvanique de la peau.
+		Dans les références, les capteurs utilisés permettent la mesurer la température à la surface de la peau, le rythme cardique, la fréquence respiratoire et la réponse galvanique de la peau.
 		Capteurs sur batteries
 		\newline \href{https://www.teaergo.com/products/?appcat=&prodtype=sensor-solutions&brandcat=teaergo}{https://www.teaergo.com/products/?appcat=\newline \&prodtype=sensor-solutions\&brandcat=teaergo}\\\hline
-        Neurosky brainwave headset :& Casque pour mesure de l'électroencéphalogramme
+        Neurosky brainwave headset :& Casque pour mesure de l'électroencéphalogramme.
+        Les données sont transmises via Bluetooth à une application sur ordinateur ou smartphone.
         \newline \href{https://store.neurosky.com}{https://store.neurosky.com}\\
 		\hline
-		\end{tabular}
 		\label{tab:capteurs}
-	\end{table}
+	\end{longtable}
 
-\newpage
-\section{Ressources pour définir la notion d'expérience utilisateur}\label{ann:ux}
-	\textbf{Sitographie :}\newline
+%\newpage
+%\section{Ressources pour définir la notion d'expérience utilisateur}\label{ann:ux}
+%	\textbf{Sitographie :}\newline
 	% \href{https://fr.wikipedia.org/wiki/experience_utilisateur#definitions}{https://fr.wikipedia.org/wiki/experience_utilisateur#Definitions}\newline
-	\href{https://www.usabilis.com/definition-ux-experience-utilisateur-user-experience/}{https://www.usabilis.com/definition-ux-experience-utilisateur-user-experience/}\par
-	\textbf{Videographie :}\newline
-	"L'expérience utilisateur dans la création de jeux vidéo (C. Hodent)"\newline
-	"Démarches et méthodes pour la conception de l'expérience utilisateur - LuxI/O 2018"\newline
-	"How Games Move Us: Emotion by Design | Katherin Isbister | TEDxHarkerSchool"\newline
-	"Of Brains and Interfaces - Celia Hodent - Netexplo  Forum 2018 - UNESCO"
-	Sur \href{http://youtube.fr}{htpp://youtube.fr}\par
-	\textbf{Bibliographie :}\newline
-	Olga Vl. Bitkina, Hyun K. Kim, Jaehyun Park \textit{Usability and user experience of medical devices: An overview of thecurrent state, analysis methodologies, and future challenges} International Journal of Industrial Ergonomics 76, 2020.
+%	\href{https://www.usabilis.com/definition-ux-experience-utilisateur-user-experience/}{https://www.usabilis.com/definition-ux-experience-utilisateur-user-experience/}\par
+%	\textbf{Videographie :}\newline
+%	"L'expérience utilisateur dans la création de jeux vidéo (C. Hodent)"\newline
+%	"Démarches et méthodes pour la conception de l'expérience utilisateur - LuxI/O 2018"\newline
+%	"How Games Move Us: Emotion by Design | Katherin Isbister | TEDxHarkerSchool"\newline
+%	"Of Brains and Interfaces - Celia Hodent - Netexplo  Forum 2018 - UNESCO"
+%	Sur \href{http://youtube.fr}{htpp://youtube.fr}\par
+%	\textbf{Bibliographie :}\newline
+%	Olga Vl. Bitkina, Hyun K. Kim, Jaehyun Park \textit{Usability and user experience of medical devices: An overview of thecurrent state, analysis methodologies, and future challenges} International Journal of Industrial Ergonomics 76, 2020.
 
 % \newpage
 % \section{Description détaillée des classes de l'ontologie}\label{ann:detailclasses}
 %	\includepdf[pages=-]{../include/descriptionClassesOntologie.pdf}
 
-\newpage
-\section{Sitographie pour la construction de la synthèse comparative entre Kafka et RabbitMQ}\label{ann:kafkarabbitmq}
-	\hspace*{-0.5cm}\href{https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-
-	case}{https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-
-	case} \textit{[en]} \medskip\newline
-	\href{https://blog.ippon.fr/2018/03/27/comparatif-rabbitmq-kafka/}{https://blog.ippon.fr/2018/03/27/comparatif-rabbitmq-kafka/} \textit{[fr]}\medskip\newline
-	\href{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm}{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm} \textit{[en]}\medskip\newline
-	\href{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka}{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka} \textit{[en]}
+%\newpage
+%\section{Sitographie pour la construction de la synthèse comparative entre Kafka et RabbitMQ}\label{ann:kafkarabbitmq}
+%	\hspace*{-0.5cm}\href{https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-
+%	case}{https://www.upsolver.com/blog/kafka-versus-rabbitmq-architecture-performance-use-
+%	case} \textit{[en]} \medskip\newline
+%	\href{https://blog.ippon.fr/2018/03/27/comparatif-rabbitmq-kafka/}{https://blog.ippon.fr/2018/03/27/comparatif-rabbitmq-kafka/} \textit{[fr]}\medskip\newline
+%	\href{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm}{https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.htm} \textit{[en]}\medskip\newline
+%	\href{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka}{https://openclassrooms.com/fr/courses/4451251-gerez-des-flux-de-donnees-temps-reel/4451521-metamorphosez-vos-applications-temps-reel-avec-kafka} \textit{[en]}
 
 \newpage
 \section{Offre de stage}\label{app:annexe1}
