@@ -64,8 +64,8 @@ L'objectif global de ce projet est de proposer un jeu pervasif où le joueur et 
 Pour cela, des capteurs physiologiques sont utilisés pour détecter et reconnaître les états émotionnels du joueur. Ainsi que, des capteurs placés dans l'environnement pour connaître le contexte global. 
 Ces capteurs génèrent beaucoup de données qu'il faut traiter en temps-réel pour une adaptation dynamique du jeu.
 Dans ce rapport, nous proposons une solution pouvant ingérer les données provenant de capteurs physiologiques en temps-réel.
-Ensuite, cette solution envoie ces données à des algorithmes déjà existant qui permettent de déduire des états émotionnels.
-Un état de l'art ainsi qu'une première version d'une ontologie afin de répondre à cet objectif ont été proposées et se trouvent dans ce rapport.
+Ensuite, cette solution envoie ces données à des algorithmes déjà existants qui permettent de déduire des états émotionnels.
+Un état de l'art ainsi qu'une première version d'une ontologie afin de répondre à cet objectif ont été proposés et se trouvent dans ce rapport.
 \vfill
 \begin{center}
 	\textbf{Abstract :}
@@ -93,7 +93,7 @@ Ces réunions duraient entre une demie heure et une heure.
 Ces sessions vidéos étaient l'occasion de faire le point sur l'avancement de mon travail et sur les tâches des jours à venir.
 Cependant, la barrière de l'écran a créé un réel manque de spontanéité lors de nos échanges.
 Pour ma part, je pense que les visio-conférences n'ont pas suffit pour échanger tout au long de cette période de télétravail. 
-Peut-être qu'une autre forme de communication, comme une messagerie instantanée, ajoutée à celle des réunions sur Teams, aurait pu réduire se manque de spontanéité.\par
+Peut-être qu'une autre forme de communication, comme une messagerie instantanée, ajoutée à celle des réunions sur Teams, aurait pu réduire ce manque de spontanéité.\par
 A l'issue de ce stage, je pense que les réunions en présentiel restent la meilleure manière de communiquer et de partager autour d'un projet.
 
 \newpage
@@ -152,7 +152,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Un joueur qui jouera à notre jeu aura une ou des réaction(s) physiologique(s) qui traduiront un état émotionnel détecté et reconnu par nos algorithmes \cite{gal_2019,gal_et_al._2020}.
 		Cet état émotionnel courant sera indiqué à nos algorithmes d'adaptations qui recevront aussi des indications sur l'état courant de l'environnement et sur les actions que fait le joueur dans le jeu.
 		Les algorithmes d'adaptation indiqueront au moteur de jeu l'événement le plus approprié à proposer au joueur.
-		Et le jeu affichera cet événement sur l'interface utilisateur, ce qui enclenchera de nouvelles réactions physiologique, etc.\par
+		Et le jeu affichera cet événement sur l'interface utilisateur, ce qui enclenchera de nouvelles réactions physiologiques, etc.\par
 		La réponse adaptée du jeu à l'état émotionnel de son joueur devra se faire sous la forme d'événements dans le jeu.
 		Les événements particularisés par rapport à l'état émotionnel du joueur devront soit :
 		\begin{itemize}
@@ -188,7 +188,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Selon \cite{gal_2019}, l'état émotionnel débute avec l'anticipation d'un événement et se termine quelques temps après la fin de celui-ci.
 		L'état émotionnel est donc une définition "étendue" de l'émotion.
 		Cela nous permet aussi de rester assez vastes sur les possibilités de reconnaissance de notre jeu.\par
-		Pour répondre à la problématique de la gestion de données en temps-réel provenant de capteurs physiologiques, nous avons besoin d'avantage de contexte sur des sujets tels que : les méthodes de détection et de reconnaissance des états émotionnels, la notion d'expérience utilisateur et d'autres types de jeux.
+		Pour répondre à la problématique de la gestion de données en temps-réel provenant de capteurs physiologiques, nous avons besoin de davantage de contexte sur des sujets tels que : les méthodes de détection et de reconnaissance des états émotionnels, la notion d'expérience utilisateur et d'autres types de jeux.
 		Tout au long du rapport, nous allons aborder ces sujets qui n'entrent pas directement dans le cadre de la solution que nous apportons mais qui sont essentiels pour la compréhension du sujet de notre projet et de la contribution de notre solution.
 
 \section{Etat de l'art}\label{sec:eda}
@@ -245,13 +245,13 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
        		\hline
        		\cite{carofiglio_et_al._2019} & Emotiv EPOC+ (passive BCI) pour EEG & Ennuie / Flow / Stress & Plusieurs méthodes de machine learning. Meilleure méthode : Random Forest (précision = 78\%) & - & - & - & Jeu vidéo (aventure horrifique)\\
        		\hline
-       		\cite{gal_2019,gal_et_al._2020} & CAPTIV (de chez TEA), Neurosky Brainwave Headset (pour GSR, RR, SKT, HR et EEG) & Des hangements d'états émotionnels & - & Carte d'organisation de Kohonen + EMDeep & - & - & Jeu pervasif et jeu vidéo\\
+       		\cite{gal_2019,gal_et_al._2020} & CAPTIV (de chez TEA), Neurosky Brainwave Headset (pour GSR, RR, SKT, HR et EEG) & Des changements d'états émotionnels & - & Carte d'organisation de Kohonen + EMDeep & - & - & Jeu pervasif et jeu vidéo\\
         	\hline
         	\cite{gizycka_et_al._2018,nalepa_et_al._2017} & BiTalino (r)evolution kit (retenu);   Empatica E4;   Microsoft Band 2;   E-Health; (Pour GSR et HR) & Relaxé / Neutre / Stressé (sur une échelle de 1 à 7 avec 1 = Relaxé, 4 = Neutre et 7 = Stressé) & Auto-évaluation des joueurs durant la phase d'échantillonnage & - & La version adaptative du jeu utilise des "affective patterns" comme "l'Immersion Emotionnel", des ennemis et des obstacles et « des informations imparfaites" & - & Jeu vidéo (scrollrunner)\\
         	\hline
         	\cite{maier_et_al._2019} & Empatica E4 (pour GSR, HR et HRV) & Ennuie / Flow / Stress & - & Réseau de neuronnes à convolution (CNN) & - & - & Jeu vidéo (Tétris sur téléphone portable)\\
         	\hline
-        	\cite{Mostefai_et_al._2019} & - & Colère / Ennui / Peur / Frustration / Joie & Style de jeu du joueur & Ensemble défini pour les événements, les actions, les objectifs, les statuts des objectifs + Fonctions pour la cartographie de chaque tendances d'action pour chaque état émotionnel (et fonction inverse), la cartographie de la tendance d'action pour chaque état émotionnel et pour chaque statut d'objectif & - & Chaînes de Markov et matrices de transition & Jeux sérieux (apprentissage)\\
+        	\cite{Mostefai_et_al._2019} & - & Colère / Ennui / Peur / Frustration / Joie & Style de jeu du joueur & Ensemble défini pour les événements, les actions, les objectifs, les statuts des objectifs + Fonctions pour la cartographie de chaque tendance d'action pour chaque état émotionnel (et fonction inverse), la cartographie de la tendance d'action pour chaque état émotionnel et pour chaque statut d'objectif & - & Chaînes de Markov et matrices de transition & Jeux sérieux (apprentissage)\\
         	\hline
         	\cite{noor_et_al._2009} & - & - & Préférence en en culture & - & - & Utilisation de l'API GoogleSocialGraphAPI pour identifier l'utilisateur et définir son profil. Plusieurs APIs et scripts open-sources osnt utilisés  pour extraire des données des différents réseaux sociaux. WordNet et Wikipedia sont utilisés pour le filtrage des données. Et les bases de connaissances YAGO et DBpédia sont employées pour catégoriser les données et récupérer les données concernant la culture avec une base de connaissance spécifique (CRM) & Jeux sérieux (culture)\\
         	\hline
@@ -267,7 +267,10 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			\textbf{1. Utilisation de capteurs :}\par
             La majorité des approches que nous avons étudiée et qui abordent le domaine de la détection et/ou de la reconnaissance des états émotionnels, utilisent des capteurs de contact (voir Annexe \ref{app:annexe1}). 
             \cite{maier_et_al._2019,nalepa_et_al._2017,gizycka_et_al._2018} utilisent le bracelet Empatica E4 (GSR, HR et HRV pour \cite{maier_et_al._2019} et HR et GSR pour \cite{nalepa_et_al._2017,gizycka_et_al._2018}). 
-            Cependant, dans cette dernière approche, plusieurs capteurs ont été testés (BITalino (r)evolution kit, E-Health et Microsoft Band 2, Annexe \ref{app:annexe2}) et le choix des auteurs semble d'avantage se porter sur BITalino (r)evolution kit. 
+            Cependant, dans cette dernière approche, plusieurs capteurs ont été testés : BITalino (r)evolution kit, E-Health et Microsoft Band 2 (voir Annexe \ref{app:annexe2}). 
+            Ces capteurs sont assez similaires car ils se portent tous au poignet et transmettent des données via Bluetooth. 
+            Donc, il est possible de les comparer.
+            Pour cette approche, le choix des auteurs semble d'avantage se porter sur BITalino (r)evolution kit car ces capteurs leurs paraissent plus précis. 
             Dans \cite{yang_et_al._2018}, des capteurs de contact BioNomadix wireless sensors MP150 - Biopac (GSR, ECG et RR) sont utilisés. 
             \cite{gal_2019,gal_et_al._2020} utilisent des capteurs de contact de chez TEA (GSR, RR et SkT) mais également un casque pour la lecture d'ondes cérébrales (EEG) Mindwave Mobile. 
             Dans \cite{carofiglio_et_al._2019} un dispositif similaire est utilisé : EPOC+ (Emotiv).\par 
@@ -278,7 +281,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
             L'approche décrite dans \cite{maier_et_al._2019} vise également à reconnaître les états d'ennui, de flow et de stress en utilisant un réseau de neurones à convolution (CNN). 
             Les auteurs de \cite{yang_et_al._2018} ont également utilisé une architecture CNN pour reconnaître les états émotionnels d'ennui, de colère, de peur, de frustration et de joie. 
             \cite{gal_2019,gal_et_al._2020} proposent une méthode d'apprentissage profond et non-supervisé appelé EMDeep dans le but de reconnaître les états émotionnels ressentis par l'utilisateur.\par
-            \cite{Mostefai_et_al._2019} n'utilisent pas de capteur. La reconnaissance des états émotionnels d'intérêt, de plaisir, d'inquiétude, de peur, de surprise de colère et de frustration, se fait grâce à plusieurs ensembles et plusieurs fonctions prédéfinis. Ces ensembles de valeurs et ces fonctions vont permettre de savoir à chaque instant quelle émotion est ressentie par le joueur.
+            \cite{Mostefai_et_al._2019} utilisent aucun capteur. La reconnaissance des états émotionnels d'intérêt, de plaisir, d'inquiétude, de peur, de surprise de colère et de frustration, se fait grâce à plusieurs ensembles et plusieurs fonctions prédéfinis. Ces ensembles de valeurs et ces fonctions vont permettre de savoir à chaque instant quelle émotion est ressentie par le joueur.
 	    \subsubsection{Autres caractéristiques liées à l'utilisateur} \label{sec:caractéristiques}
 	        D’autres facteurs que l’état émotionnel du joueur doivent être pris en compte pour avoir un modèle utilisateur plus complet.\par
 	        Par exemple, dans l'approche \cite{noor_et_al._2009} des données de préférences de l’utilisateur en matière de culture qui ont été récupérées sur différents réseaux sociaux (Facebook, Flickr, etc.) sont utilisées.\par
@@ -296,11 +299,11 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
         	\textbf{2. Adaptation du jeu en utilisant d'autres caractéristiques du joueur :}\par
         	\cite{yannakakis_et_al._2009} propose qu’un jeu de playware s’adapte en composant avec les données de temps de réponse, du nombre d’interaction et de la pression sur les cases par le joueur. Selon ces données, le jeu peut augmenter ou diminuer la zone de curiosité ou la rapidité\par
             Les auteurs de \cite{nalepa_et_al._2017} présentent une version « affective » de leur jeu vidéo. Dans cette version il y est inclus les patrons affectifs d’ « Immersion Émotionnelle », d’ « ennemis et d’obstacles » et d’ « informations imparfaites ».
-	\subsection{Interprêtation de la comparaison}
+	\subsection{Interprétation de la comparaison}
         De cette comparaison, il en ressort plusieurs questions et limites.\par
 		Tout d'abord, nous remarquons que seulement quelques états émotionnels sont traités dans les approches que nous avons étudiées.
 		Même si nous pouvons imaginer que certains états émotionnels ne seront jamais expérimentés au cours du jeu que nous souhaitons concevoir, il semble tout de même important de pouvoir prendre en compte le plus grand nombre d'états émotionnels possible.
-		Sans quoi, le jeu ne pourrait pas s'adapter correctement au joueur et impacter négativement son expérience et son niveau d'intérêt pour le jeu.
+		Sans quoi, le jeu pourrait mal s'adapter à l'état émotionnel courant du joueur, ce qui pourrait impacter son expérience et son niveau d'intérêt pour le jeu.
 		Notre idée n'est pas de détecter et de reconnaître tous les états émotionnels.
 		Nous souhaitons utiliser un algorithme d'apprentissage profond non-supervisé afin de trouver des motifs particuliers permettant de détecter un changement d'un état émotionnel vers un autre.
 		Avec cette information, nous serions en mesure de connaître l'état émotionnel courant du joueur.\par
@@ -318,15 +321,15 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		De ce fait, il est nécessaire que le jeu s'adapte à chacun dynamiquement.\par
 		Notre cadre de comparaison révèle que d'autres caractéristiques que celle de l'état émotionnel peuvent être considérées pour augmenter la "connaissance" du jeu sur son joueur.
 		Ces caractéristiques peuvent être intéressantes à étudier à la fois pour mieux connaître les goûts et les préférences du joueur (qui sont souvent plus pérennes) mais aussi pour l'enrichissement de la connaissance du contexte de l'environnement globale.
-		Ces caractéristiques peuvent aussi bien s'appuyer sur l'utilisation d'un questionnaire de préférences rempli par l'utilisateur lui-même (comme dans \cite{carofiglio_et_al._2019, maier_et_al._2019}, que sur la présence de capteurs dans l'environnement (exemple avec le playware dans \cite{yannakakis_et_al._2013}).
+		Ces caractéristiques peuvent aussi bien s'appuyer sur l'utilisation d'un questionnaire de préférences rempli par l'utilisateur lui-même (comme dans \cite{carofiglio_et_al._2019, maier_et_al._2019}, que sur la présence de capteurs dans l'environnement (exemple avec le playware dans \cite{yannakakis_et_al._2009}).
 		Cela constitue une piste qui pourrait être approfondie dans de prochains travaux.\par
 		Cet état de l'art nous a permis d'avoir une vision globale de ce qui existait déjà en matière d'adaptation de jeux aux états émotionnels des joueurs. 
-		Il nous a permis d'affiner les contours pour la conceptualisation d'un jeu pervasif capable de s'adapter dynamiqument aux états émotionnels de son joueur et de trouver de nouvelles pistes de réflexions. 
+		Il nous a permis d'affiner les contours pour la conceptualisation d'un jeu pervasif capable de s'adapter dynamiqument aux états émotionnels de son joueur et de trouver de nouvelles pistes de réflexion. 
 		Il a aussi été l'occasion de proposer un cadre de comparaison pour ce sujet.
 		Grâce à cet état de l'art, j'ai pu comprendre quels sont les enjeux pour la réalisation de notre objectif.\par
 		Tout au long de ce rapport, nous allons traiter différents sujets liés à des critères issus de notre cadre de comparaison.
-		Nous nous intéresserons aux capteurs et plus particulièrment à la gestion de ces capteurs et de leurs données.
-		Nous verrons quels sont composants essentiels pour la gestion de données issues de ces capteurs qui sont mise en jeu dans notre projet.
+		Nous nous intéresserons aux capteurs et plus particulièrement à la gestion de ces capteurs et de leurs données.
+		Nous verrons quels sont les composants essentiels pour la gestion de données issues de ces capteurs qui sont mise en jeu dans notre projet.
 		Et nous verrons comment nous pouvons les ingérer en temps-réel pour une bonne adaptation du jeu à son utilisateur.
 
 %\section{Etat de l'art}\label{sec:etatart}
@@ -471,7 +474,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Nous avons pu également relever quelques méthodes d'UX design comme l'utilisation d'objectifs à atteindre.
 		Par exemple, l'objectif principal est de sortir du vaisseau avant le temps imparti (une heure) et pour y parvenir, il faut réussir à ouvrir différentes portes pour accéder aux pièces suivantes.
 		L'utilisation d'un compte-à-rebours affiché en permanence à l'écran créait un sentiment de stress.
-		Chaque alerte sonore indiquant qu'un nouveau mécanisme avait été débloqué donné un sentiment de satisfaction.\par
+		Chaque alerte sonore indiquant qu'un nouveau mécanisme avait été débloqué donnait un sentiment de satisfaction.\par
 		Nous n'avons pas réussi à arriver jusqu'au bout de notre "mission". Cinq minutes avant la fin du compte-à-rebours nous sommes arrivés à la dernière salle.
 		Nous ne nous attendions pas à cette dernière salle et avons été très surpris.
 		Cela a été un peu frustrant de ne pas pouvoir terminer cette session avant la fin du compte-à-rebours.
@@ -482,7 +485,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Etant personnellement déficiente visuelle, je vais vous rapporter mon expérience personnelle de l'escape game que nous avons expérimenté.\par
 		Pour atteindre l'objectif qui était de réparer portail de téléportation, il fallait rechercher dans différentes pièces des indices.
 		Le premier obstacle rencontré lors cette partie était celui du déchiffrage des indices.
-		En effet, beaucoup d'indices se basenu sur de l'écriture et sur d'autres mécanismes très visuels.
+		En effet, beaucoup d'indices se basent sur de l'écriture et sur d'autres mécanismes très visuels.
 		Par exemple, nous avions trouvé un dossier contenant plusieurs pages écrites avec une taille de police standard (comme celle de ce rapport par exemple).
 		Cet indice m'était donc inaccessible, je distinguais seulement quelques logos qui se trouvaient dans ce dossier.
 		Un autre élément inaccessible pour moi était une grande carte affichée dans une des pièces où il fallait retrouver des coordonnées et ajuster des boutons par rapport à ces coordonnées.
@@ -502,7 +505,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Le fait d'avoir ressenti différents états émotionnels et d'avoir été motivés durant toute la partie à jouer montre que l'UX design est important pour le joueur, pour son expérience de jeu et pour son amusement.\par
 		Nous avons pu constater que beaucoup de méthodes issues de l'UX Design étaient appliquées à l'escape game que nous avons expérimenté.
 		Comme la sensibilisation, le décor, la motivation, la coopération, les émotions, l'affichage de compte-à-rebours et d'indications.
-		Ce sont autant de méthodes qui ont été mise en place pour améliorer l'expérience du joueur.
+		Ce sont autant de méthodes qui ont été mises en place pour améliorer l'expérience du joueur.
 		La salle que nous avons expérimentée a été testée et améliorée plusieurs fois avant d'être proposée aux joueurs.
 		De plus, elle est encore améliorée selon les retours qui sont fait par les joueurs si les créateurs jugent cela pertinent.
 		Cela est fait pour tendre à la meilleure UX possible pour cette salle.\par
@@ -517,28 +520,28 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		D'après cette expérience, je pense qu'il faut rendre d'avantage les jeux accessibles à tous les publics.
 		Pour cela, une idée serait de rentre les jeux plus adaptables et personnalisables.
 		Dans le jeu pervasif, les défis pour une meilleure accessibilité du jeu sont multiples.
-		On peut par exemple penser à l'interface utilsateur qui doit être accessibles au personnes daltoniennes ou déficientes visuelles, ou aux sons émis par le jeu ou par l'environnement qui doivent être traduit pour les personnens mal-entendantes.
-		Bien sûr, beaucoup d'autres exemples sont existent.
+		On peut par exemple penser à l'interface utilisateur qui doit être accessible aux personnes daltoniennes ou déficientes visuelles, ou aux sons émis par le jeu ou par l'environnement qui doivent être traduit pour les personnens mal-entendantes.
+		Bien sûr, beaucoup d'autres exemples existent.
 		Il faut donc que le jeu puisse connaître les difficultés du joueur pour s'y adapter.
 		Cependant, on peut imaginer que rendre le jeu "trop" adaptable pourrait dégrader l'expérience du joueur.
 		Si le jeu s'adapte mal au joueur, son expérience pourrait être moins bonne.
-		Ou bien, si l'adaptatino du jeu supprime certains aspect ou certaines 
+		Ou bien, si l'adaptation du jeu supprime certains aspects, certains mécanismes de jeu ou autres, l'expérience du joueur pourrait aussi être moins bonne. 
 		Il faudrait donc chercher un bon équilibre entre adaptabilité, jouabilité et expérience utilisateur.\par
 		Nous pouvons envisager de réitérer ce genre d'expérimentations pour approfondir les sujets de l'expérience utilisateur dans les jeux immersifs et des états émotionnels ressentis lors d'une partie d'escape game.
-		Nous pouvons aussi imaginer utiliser nos capteurs lors de prochaines parties et d'en analyser les données pour essayer de déterminer des changements d'états émotionnels significatifs qui correspondraient à des événements lors de la parite (indice découvert, porte débloquée,...).
+		Nous pouvons aussi imaginer utiliser nos capteurs lors de prochaines parties et d'en analyser les données pour essayer de déterminer des changements d'états émotionnels significatifs qui correspondraient à des événements lors de la partie (indice découvert, porte débloquée,...).
 
 \section{Modélisation conceptuelle}\label{sec:modelisation}
-	Dans cette partie, nous présentons un modèle conceptuel qui est en cours d'aboutissement.
+	Dans cette partie, nous présentons un modèle conceptuel qui est en cours d'élaboration.
 	Le but de ce modèle conceptuel est de représenter chaque composant permettant la prise en compte des états émotionnels dans le jeu pervasif et de s'y adapter.
 	Le modèle doit à la fois représenter le joueur, le jeu, les états émotionnels, les capteurs mais aussi des composants plus abstraits comme les réactions physiologiques du joueur, la reconnaissance des états émotionnels, l'adaptation dynamique du jeu, etc.
-	Dans ce modèle, nous nous sommes intéressé en particulier à l'utilisation de capteurs pour le jeu et avons traité les composants permettant cela.
+	Dans ce modèle, nous nous sommes intéressés en particulier à l'utilisation de capteurs pour le jeu et avons traité les composants permettant cela.
 	Cette représentation est modélisée sous la forme d'une ontologie.
 	Pour cela, nous utilisons le format standard du diagramme de classes UML.
 	\subsection{Ontologie}\label{sec:ontologie}
 		\begin{figure}[t]
 			\centering
 			\includegraphics[scale=0.5]{../include/ontologie_stage_cnam-v2-5.png}
-			\caption{Ontologie d'un jeu pervasif prenant en compte l'état émotionnel du joueur}
+			\caption{Proposition d'ontologie d'un jeu pervasif prenant en compte l'état émotionnel du joueur}
 			\label{fig:modele}
 		\end{figure}
 		Le diagramme de la Figure \ref{fig:modele} représente notre contribution pour une modélisation pour le projet.
@@ -549,26 +552,26 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		\begin{itemize}
 			\item La classe \texttt{Jeu} englobe tout ce qui concerne le jeu pervasif que nous souhaitons concevoir;
 			\item La classe \texttt{Utilisateur} représente le joueur;
-			\item La classe \texttt{Etat Emotionnel} représente l'état émotionnel du joueur. Cet état sera déduit par des élgorithmes comme ceux présentés dans \cite{gal_2019, gal_et_al._2020};
+			\item La classe \texttt{Etat Emotionnel} représente l'état émotionnel du joueur. Cet état sera déduit par des algorithmes comme ceux présentés dans \cite{gal_2019, gal_et_al._2020};
 			\item La classe \texttt{Réaction Physique} représente les réactions physiques de l'utilisateur;
 			\item La classe \texttt{Réaction Physiologique} représente les réactions physiologiques de l'utilisateur;
-			\item La classe \texttt{Capteur} représente les capteurs utilisés le jeu pour acquérir des métriques physiques et/ou physiologiques d'un utilisateur;
-			\item La classe \texttt{Elements Externes} représente tous les éléments de l'environnement du jeu;=.
+			\item La classe \texttt{Capteur} représente les capteurs utilisés dans le jeu pour acquérir des métriques physiques et/ou physiologiques d'un utilisateur;
+			\item La classe \texttt{Elements Externes} représente tous les éléments de l'environnement du jeu.
 		\end{itemize}\par
 		Une relation ternaire existe entre \texttt{Jeu}, \texttt{Etat Emotionel} et \texttt{Utilisateur}.
 		Cette relation est dûe au lien très fort qu'il existe entre ces trois classes.
 		En effet, le jeu entraine un état émotionnel qui est expérimenté par l'utilisateur lorsqu'il joue à ce jeu.
 		Cette notion est notamment expliquée dans \cite{calvo_et_al._2015}.
 		La classe \texttt{Capteur} a une relation avec \texttt{Utilisateur} car c'est l'utilisateur qui porte le ou les capteurs.
-		Ce ou ces capteurs permettent d'acquérir des métriques sur une (ou plusieurs) réaction physique ou physiologique (réciproquement représentés par les classes \texttt{Réaction Physique} et/ou \texttt{Réaction Physiologique}) de l'utilisateur  (détaillés dans \cite{shu_et_al._2018}).
-		Ces métriques sont utilisés par le jeu pour en déduir l'état émotionnel courant du joueur (voir la Section \ref{sec:eda}).
+		Ce ou ces capteurs permettent d'acquérir des métriques sur une (ou plusieurs) réaction(s) physique(s) ou physiologique(s) (réciproquement représentés par les classes \texttt{Réaction Physique} et/ou \texttt{Réaction Physiologique}) de l'utilisateur  (détaillés dans \cite{shu_et_al._2018}).
+		Ces métriques sont utilisées par le jeu pour en déduir l'état émotionnel courant du joueur (voir la Section \ref{sec:eda}).
 		La classe \texttt{Elements Externes} représente tous les éléments liés à l'environnement qui seront pris en compte par le jeu.
 		Cette classe permet simplement de rappeler que d'autres éléments que l'état émotionnel seront à considérés dans de futurs travaux.
-		Cependant, nous ne détaillons pas ce composant ici car notre contribution vise à répondre à la problématique liée aux données générées par les capters physiologiques.
+		Cependant, nous ne détaillons pas ce composant ici car notre contribution vise à répondre à la problématique liée aux données générées par les capteurs physiologiques.
 	\subsection{Difficultés rencontrées}\label{sec:difficultes}
 		L'ontologie que je présente dans ce rapport à la Figure \ref{fig:modele} n'est pas le résultat définitif du modèle conceptuel que nous cherchons à élaborer.
 		Lors de l'élaboration de cette cette ontologie, plusieurs essais et plusieurs versions différentes ont été proposés.
-		Cependant, le modèle était toujours incohérent, il manquait de substance et présentait plusieurs niveaux d'abstraction qui ne devait pas figurer sur un même modèle. 
+		Cependant, le modèle était toujours incohérent, il manquait de substance et présentait plusieurs niveaux d'abstraction qui ne devaient pas figurer sur un même modèle. 
 		Cela peut s'expliquer de différentes manières. 
 		L'une des explications est que je me suis lancée trop rapidement, selon moi, dans la conception de cette ontologie.
 		Je pense que je ne maîtrisais pas encore assez bien le sujet, l'objectif et la problématique de notre projet.
@@ -576,7 +579,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Une autre explication est qu'avec les différentes approches que je lisais parallèlement à la construction de cette ontologie, j'ai voulu retranscrire dans ce modèle tout ce que j'assimilais au fil de mes lectures.
 		Ce qui faisait que j'ajoutais à ce modèle des éléments superflus.
 		Une dernière explication est que je manquais de recul sur mon travail.
-		Dès que je terminais une version de l'ontologie et que celle-ci n'était pas correcte, je commençait une nouvelle version.
+		Dès que je terminais une version de l'ontologie et que celle-ci n'était pas correcte, je commençais une nouvelle version.
 		Je ne laissais pas de temps de repos entre chaque nouvel essai.\par
 		C'est pour toutes ces raisons que nous avons décidé de changer de point de vue et de problématique.
 		Nous avons décidé de revenir, si possible, plus tard à l'ontologie.
@@ -695,7 +698,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 					\hline
 					\rowcolor{lightgray} & RabbitMQ & Kafka\\\hline
 					Maintien de l'ordre & Dans une même chaîne (TCP multiplexé) & Dans une même partition\\\hline
-					Temps de vie & Jusqu’à que le message soit consommé et l'accusé de réception du consommateur reçu & Délai paramétré (ou si saturation atteinte)\\\hline
+					Temps de vie & Jusqu’à ce que le message soit consommé et l'accusé de réception du consommateur reçu & Délai paramétré (ou si saturation atteinte)\\\hline
 					Priorités & Possibilité de définir un degré de priorité des messages & Pas de priorité des messages \\\hline
 				\end{tabular}
 				\caption{Structure des messages}
@@ -722,12 +725,12 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Tandis qu'une structure en log nous laisse plus de temps et nous permet de relire le message plusieurs fois.
 			Ce qui correspond plus à ce que nous cherchons puisque nous n'allons pas consommer toutes les données pour reconnaître un état émotionnel, mais seulement à certains moments (lorsqu'un changement significatif sera détecté). 
 			De plus, les données sont organisées dans des "topics". 
-			Il est donc possible de récupérer que certaines données en s'abonnant aux topics désirés.
+			Il est donc possible de ne récupérer que certaines données en s'abonnant aux topics désirés.
 			Autrement dit, en utilisant des topics pour organiser et dissocier les données provenant de différents capteurs, il est possible de ne recupérer que les données provenant de capteurs voulus.
 			Cela nous sera très utile pour de futurs travaux qui impliqueront d'autres capteurs que les capteurs physiologiques pour la reconnaissance des états émotionnels.
 			Par exemple, nous aurons besoin de capteurs de position, de capteurs placés dans l'environnement du jeu, etc.
 			Comme nous souhaitons utiliser différents capteurs pour la détection et la reconnaissance des états émotionnels, les données générés par ces capteurs pourraient être hétérogènes. 
-			Apache Kafka propose une API appelé ConnectAPI, qui permet de récupérer des données provenant de sources externes pour les formaliser au format Kafka.
+			Apache Kafka propose une API appelée ConnectAPI, qui permet de récupérer des données provenant de sources externes pour les formaliser au format Kafka.
 			Cet outil pourra nous servir à homogénéiser les données.
 	\subsection{Description du prototype}\label{sec:protodesc}
 		Dans cette partie, nous présentons le prototype de la solution que j'ai implémentée pour répondre aux besoins de gestion des données en temps-réel.
@@ -737,7 +740,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Ces entrées concernent des mesures faites lors d'une expérience avec les capteurs décrits dans la Section \ref{sec:capteurs}.
 		Cinq métriques ont été captées : le temps (date et heure de l'acquisition), la fréquence cardiaque, la réponse électrodermale, la température à la surface de la peau et le rythme cardiaque.
 		Ces entrées sont séparées chacune d'environ 30ms (milisecondes).
-		Lors de l'utilisation du Producteur, l'envoie des données dans les topics se fait toutes les 30ms.
+		Lors de l'utilisation du Producteur, l'envoi des données dans les topics se fait toutes les 30ms.
 		Ce fichier à permis d'éprouver notre protoype.
 		A terme, nous souhaitons utiliser uniquement les capteurs comme sources de données en temps-réel et non un fichier contenant des données provenant de capteurs.
 		\subsubsection{Architecture du prototype}\label{sec:protoarchi}
@@ -748,7 +751,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\label{fig:archiproto}
 			\end{figure}
 			La Figure \ref{fig:archiproto} montre l'architecture de notre prototype.\par
-			Pour le moment, nous utilisons un fichier dans lequel se trouve les données provenant de plusierus capteurs.
+			Pour le moment, nous utilisons un fichier dans lequel se trouve les données provenant de plusieurs capteurs.
 			Ces données, que nous utilisons pour nos tests, ont été acquises lors d'une session de jeu vidéo à partir de capteurs physiologiques (les capteurs sont décrits dans la Section \ref{sec:capteurs}). 
 			Elles ont été enregistrées dans un fichier au format CSV.\par
 			Les données sont lues puis envoyées au Producteur.
@@ -777,7 +780,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			La Figure \ref{fig:archiimp} décrit les différents composants qui sont utilisés pour l'implémentation de notre prototype.\par
 			Le prototype est divisé en deux :
 			la partie Producteur (sur la Figure \ref{fig:archiproducer}) et la partie Consommateur (sur la Figure \ref{fig:archiconsumer}). 
-			Il s'agit de deux projets \texttt{Maven} distincts qui génèrent chacun un JAR exectuable.\par
+			Il s'agit de deux projets \texttt{Maven} distincts qui génèrent chacun un JAR executable.\par
 			La partie Producteur contient un lecteur de fichiers qui permet de lire les données des capteurs physiologiques contenues dans le fichier \texttt{data\_file.csv}. 
 			Ces données sont normalisées grâce à l'objet \texttt{Data} pour être utilisées par le Producteur.
 			Le Producteur lit chaque donnée et l'envoie sur un topic.
@@ -791,7 +794,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			\end{figure}
 			Par exemple, la figure \ref{fig:exemple} montre une exécution du Producteur (à gauche) et du Consommateur (à droite) pour le topic "Vecteur".
 			Ce topic permet d'obtenir la valeur des métriques "fréqence cardique, réponse électrodermale, température de la peau, rythme cardiaque" qui sont dans le champ \texttt{value}.
-			Chaque log à pour clé le temps (date et heure d'acquisition).\par
+			Chaque log a pour clé le temps (date et heure d'acquisition).\par
 			Tout le code pour ce prototype se trouve sur le Github :\newline \href{https://github.com/laurelinemartin/stage/Prototype}{https://github.com/laurelinemartin/stage/Prototype}.
 	\subsection{Intégrer le prototype aux travaux déjà menés}\label{sec:travaux}
 		Des travaux antérieurs ont été menés pour le projet global.
@@ -805,7 +808,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 		Nous présentons dans cette partie l'intégration de cette solution aux travaux qui ont déjà été menés.
 		Pour cela, nous allons tout d'abord introduire les capteurs physiologiques qui sont utilisés par les travaux précédents.
 		Cette introduction va nous permettre de trouver le connecteur adéquat pour ingérer les données des capteurs dans notre solution Kafka.
-		Nous ferons la comparaison de différents connecteurs et nous nous positionnerons sur l'un d'entre.
+		Nous ferons la comparaison de différents connecteurs et nous nous positionnerons sur l'un d'entre eux.
 		Puis, nous présenterons l'architecture de l'intégration de notre solution au projet.
 		Enfin, nous ferons le bilan de ce qu'apporte notre prototype au projet.
 		\subsubsection{Capteurs physiologiques utilisés}\label{sec:capteurs}
@@ -842,7 +845,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				\caption{Les capteurs CAPTIV}
 				\label{fig:capteurstea}
 			\end{figure}
-			Ceux que nous possédons permettent la mesure de la réponse électrodermale (Figure \ref{fig:gsr}), du rythme cardiaque (Figure \ref{fig:hr}), de la température à la surface de la peau (Figure \ref{fig:bt}) et de la fréquence respiratoir (Figure \ref{fig:rr}).
+			Ceux que nous possédons permettent la mesure de la réponse électrodermale (Figure \ref{fig:gsr}), du rythme cardiaque (Figure \ref{fig:hr}), de la température à la surface de la peau (Figure \ref{fig:bt}) et de la fréquence respiratoire (Figure \ref{fig:rr}).
 		\subsubsection{Connecteurs}\label{sec:connecteurs}
 			Pour utiliser le prototype avec les travaux qui ont déjà été menés pour la recherche des états émotionnels, nous devons pouvoir utiliser des capteurs physiologiques comme sources de données.
 			Pour cela, nous avons besoin d'utiliser un connecteur source.
@@ -851,7 +854,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Un connecteur nous permet de récupérer les données provenant des structures externes à Kafka pour les formaliser pour le Producteur.
 			Ainsi, les données provenant de différentes sources pourront être utilisées dans Kafka.
 			Utiliser un connecteur nous permet d'homogénéiser les données.
-			En effet, les données proviennent de différentes sources, elles peuvnet donc être hétérogènes. 
+			En effet, les données proviennent de différentes sources, elles peuvent donc être hétérogènes. 
 			Les connecteurs permettent de formaliser ces données en un seul format compréhensible par le Producteur.
 			De plus, utiliser un connecteur nous permet d'ajouter simplement un nouveau capteur (ou d'en supprimer un).
 			Cela nous sera très utile pour de futurs travaux où nous ajouterons d'autres capteurs (capteurs dans l'environnement, par exemple des capteurs de présence).\par
@@ -859,10 +862,10 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Il s'agit de connecteurs implémentés par Confluent (la plate-forme de Kafka) ou par la communauté.
 			Sur le Confluent Hub\footnote{\href{https://www.confluent.io/hub/kafka-connectors-33}{https://www.confluent.io/hub/kafka-connectors-33}}, j'ai pu rechercher le connecteur qui convenait le mieux pour notre cas.
 			Sur ce hub, 165 connecteurs sont répertoriés.
-			Certains connecteurs permettent de récupérer des données sources provenant de structures extenes à Kafka, d'autres permettent d'évacuer les données vers des structures externes et d'autres permettent de transformer les données.
+			Certains connecteurs permettent de récupérer des données sources provenant de structures externes à Kafka, d'autres permettent d'évacuer les données vers des structures externes et d'autres permettent de transformer les données.
 			Certains connecteurs permettent même de faire deux ou trois de ces types d'actions. 
 			Dans le cadre de notre projet, je me suis intéressée ici aux connecteurs sources.
-			Nous allons vous présenter les différents connecteurs sources que nous avons pu répertoriés.\par
+			Nous allons vous présenter les différents connecteurs sources que nous avons pu répertorier.\par
 			Pour notre recherche, nous avons appliqués les filtres suivants : \newline
 			\texttt{Plugin type $=$ "Source" \& License $=$ "Free"}.\newline
 			Comme indiqué plus haut, nous recherchons un connecteur source.
@@ -870,7 +873,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			La recherche nous a donné 38 connecteurs.
 			Nous avons trié ces connecteurs en deux sous-parties :
 			\begin{itemize}
-				\item Les connecteurs potentiels : Les connecteurs qui peuvent servir pour notre cas, c'est-à-dire qui peuvnet faire de l’ingestion de données en temps-réel;
+				\item Les connecteurs potentiels : Les connecteurs qui peuvent servir pour notre cas, c'est-à-dire qui peuvent faire de l’ingestion de données en temps-réel;
 				\item Les connecteurs non-retenus : Les connecteurs jugés trop éloignés de notre cas d’usage pour des raisons diverses.
 			\end{itemize}
 			Les Tableaux \ref{tab:potentiels} et \ref{tab:connecteursnon} listent ces 38 connecteurs avec une petite description.\par
@@ -902,18 +905,18 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				Debezium PosgreSQL CDC Connector & Surveillance et enregistrement des changments pour les bases de données PostgreSQL\\\hline
 				Debezium SQL server CDC Connector & Surveillance et enregistrement des changements pour des serveurs SQL\\\hline
 				MongoDB Connector for Apache Kafka & Récupérer des données depuis une base de données MongoDB.\\\hline
-				Debezium MongoDB CDC Connector & Surveillance des ensemble de réplicas MongoBD\\\hline
+				Debezium MongoDB CDC Connector & Surveillance des ensembles de réplicas MongoBD\\\hline
 				Kafka Connect Spooldir & Pour des fichiers délimités de fichiers systèmes\\\hline
 				Couchbase DB Connector & Transférer des données depuis et vers Couchbase server\\\hline
 				Kafka Connect Crux & Transférer des données depuis et vers les nœuds Crux\\\hline
 				Kafka Connect Venafi & Se connecter à Venafi Platform via HTTP et récupérer des événements logs depuis Kafka. Filtrage, transformation, traitement possible.\\\hline
-				Kinetica DB Connector & Pour Kinetica, base de données distribuée en mémoire accélérée par GPU. Ingèrer, analyser et visualiser en même temps\\\hline
+				Kinetica DB Connector & Pour Kinetica, base de données distribuée en mémoire accélérée par GPU. Ingérer, analyser et visualiser en même temps\\\hline
 				SAP Hana Connector & Pour les systèmes SAP\\\hline
-				Databricks Connector for Apache Kafka & Se connecter à une base de données Databricks et d'envoyer les données vers Kafka.\\\hline
-				Levy Xenon Connector & Pour fort I/O et bigData\\\hline
+				Databricks Connector for Apache Kafka & Se connecter à une base de données Databricks et envoyer les données vers Kafka.\\\hline
+				Levy Xenon Connector & Pour fortes entrées/sorties de données et Big Data\\\hline
 				CockroachDB Change Data Capture & Fonctionnalité de capture de changement de ligne dans la BD\\\hline
 				Hazelcast Jet Kafka Connector & Offre un producer et un consumer pour transférer des données entre Kafka et Hazelcast\\\hline
-				StreamSets Data Collector & Simplifier la construction, l’éxecution et les opérations pour les flots de données\\\hline
+				StreamSets Data Collector & Simplifier la construction, l’execution et les opérations pour les flots de données\\\hline
 				Kafka Connect IRC & Connecteur source pour IRC\\\hline
 				Kafka Connect HTTP & Pour les APIs JSON/http\\\hline
 				Kafka Connect Sound & Lire des données de microphone et envoyer des données pour sortie audio\\\hline
@@ -922,7 +925,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				Kafka Connect Common Transfomations & Transformation de données de fichiers.\\\hline
 				Kafka connect-pulsar & Permet de répliquer des données de Apache Pulsar vers Apache Kafka\\\hline
 				Kafka Connect Maxmind Transformation & Pour ajouter des données GeoIP aux données Kafka\\\hline
-				Kafka Connect Twitter & Flux de données Twiitter vers Kafka\\\hline
+				Kafka Connect Twitter & Flux de données Twitter vers Kafka\\\hline
 				Kafka Connect Email & POM parent pour les projets Kafka Connect\\\hline
 				Kafka Connect Simulator & Générer des données de test\\\hline
 				Kafka Connect RSS Source & Récupérer des données de flux RSS et Atom\\\hline
@@ -930,7 +933,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 				Voluble & Générateur de données factices\\\hline
 				Apache Connect IoT Hub & Pour Azur IoT Hub\\\hline
 				Kafka Connect Zeebe	& Enregistrements de workflow BPMN vers kafka\\\hline
-				Kafka Connect File Pulse & Parse, transfomer et charger les données  depuis un fichier système local vers Kafka\\\hline
+				Kafka Connect File Pulse & Parse, transformer et charger les données  depuis un fichier système local vers Kafka\\\hline
 				\caption{Les connecteurs non-retenus}
 				\label{tab:connecteursnon}
 			\end{longtable}\par
@@ -939,7 +942,7 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Dans l'optique d'être plus rapide dans nos tests, ce connecteur nous semble être le meilleur choix.
 			Nous allons l'utiliser avec un algorithme déjà existant provenant de travaux antérieurs pour le projet qui affiche les données des capteurs dans un terminal.
 			Avec le connecteur Kafka Connect Shell, nous serons capables de lire les données affichées sur le terminal et de les transmettre au Producteur Kafka.
-		\subsubsection{Schéma de l'intégration du prototypes aux travaux déjà menés}\label{sec:schematravaux}
+		\subsubsection{Schéma de l'intégration du prototype aux travaux déjà menés}\label{sec:schematravaux}
 			\begin{figure}
 				\centering
 				\vspace*{-1cm}
@@ -953,18 +956,18 @@ A l'issue de ce stage, je pense que les réunions en présentiel restent la meil
 			Les topics sont ensuite consommés par les algorithmes de reconnaissance de l'état émotionnel.
 	\subsection{Validation}\label{sec:validation}
 		L'objectif que nous avions pour ce prototype était de pouvoir récupérer des données provenant de capteurs et de les envoyer vers les algorithmes de détection et de reconnaissance d'états émotionnels.\par
-		Dans ce rapport, je propose une solutiion que j'ai implémentée.
+		Dans ce rapport, je propose une solution que j'ai implémentée.
 		Cette solution est actuellement testée avec un fichier au format CSV contenant les données de quatre capteurs physiologiques : la fréquence respiratoire, la réponse électrodermale, la température corporelle et la fréquence cardiaque. 
 		Chaque ligne de ce fichier est envoyée dans les topics avec 30ms d'écart.
 		Ces 30 ms correspondent au temps moyen d'acquisition entre deux données.
 		Cela nous donne une impression de temps-réel. 
 		Les données sont ensuite lues par un consommateur qui les affiche au fur et à mesure dans un terminal.\par
-		Nous avons présenter un connecteur permettant d'éliminer à terme le fichier de données acquisent préalablement dans le but de travailler directement avec des données de capteurs physiologiques.
+		Nous avons présenté un connecteur permettant d'éliminer à terme le fichier de données acquises préalablement dans le but de travailler directement avec des données de capteurs physiologiques.
 		Nous avons aussi présentés comment le prototype pouvait être intégrés aux travaux déjà réalisés au laboratoire CEDRIC.\par
 		L'objectif de ce prototype est d'ingérer et de distribuer les données temps-réel provenant de capteurs.
 		Du point de vue de cet objectif, nous pouvons dire que cette implémentation correspond à ce que nous voulions réaliser.
 		Les données sont lues et puis renvoyées dans différents topics pour être analyses.
-		Pouvoir séparer les données de différentes métriques nous permet de les analysées séparément ou ensemble selon les besoins.
+		Pouvoir séparer les données de différentes métriques nous permet de les analyser séparément ou ensemble selon les besoins.
 		De plus, cela nous permettra dans de futurs travaux de séparer les données physiologiques d'autres données de capteurs pour le jeu.\par
 
 \section{Conclusion}\label{sec:conclusion}
@@ -1057,7 +1060,7 @@ case} \textit{[en]} \medskip\newline
 		\item L'équipe Données complexes, apprentissage et représentations (Vertigo) : Extraire de l'information et construire des méthodes de gestion de données basées sur le contenu pour des données massives audios, images et vidéos;
 		\item L'équipe Interactivité pour Lire et Jouer (ILJ) : Questions autour de l'interaction Homme-Machine concernant des activités telles que le jeu et la lecteure. Cette équipe mèle plusieurs disciplines (l'informatiques, la psychologie, le design, les arts,...) afin de répondre aux études en cours qui concernent la modélisation de la difficulté dans les jeux, les méthodologies de game design inclusif, etc.;
 		\item L'équipe Ingénieries des Systèmes d'Information et de Décision (ISID) : Cette équipe s'est réunie autour de trois axes de recherche : les systèmes décisionnels, le web sémantique et la qualité des systèmes d'information. Son but est de concevoir des méthodes, des outils et des techniques	pour la conception et l'analyse de systèmes d'information et de décision dans tous les domaines;
-		\item L'équipe Traitement du signal et architectures électroniques (LAETITIA) : Concentrée sur trois axes de recherhe : le traitement du signal pour les télécommunications (recherches en lien avec les réseaux cellulaires (5G/6G) et en lien avec les problématiques de couches physique pour les réseaux faible puissance longue portée pour l'IoT), la sûreté de fonctionnement des sytèmes dynémiques (recherche en automatique) et l'implémentation temps-réel (mise en oeuvre des algorithmes proposés par l'équipe);
+		\item L'équipe Traitement du signal et architectures électroniques (LAETITIA) : Concentrée sur trois axes de recherhe : le traitement du signal pour les télécommunications (recherches en lien avec les réseaux cellulaires (5G/6G) et en lien avec les problématiques de couches physique pour les réseaux faible puissance longue portée pour l'IoT), la sûreté de fonctionnement des sytèmes dynamiques (recherche en automatique) et l'implémentation temps-réel (mise en oeuvre des algorithmes proposés par l'équipe);
 		\item L'équipe Méthode Statistique de Data-Mining et Apprentissage (MSDMA) : Traitement de données et développement de modèles d'apprentissage statistiques dans le but d'extraire des informations pour prise de décision;
 		\item L'équipe Optimisation Combinatoire (OC) : Rassemblée autour de deux axes : la programmation mathématique et applications ainsi que les graphes et optimisation;
 		\item L'équipe Réseaux et Objets Connectés (ROC) : Porte sur l'analyse et l'exploitation des nouvelles architectures réseaux et des systèmes liés à la virtualisation, à la mobilité et au développement des objets connectés;
