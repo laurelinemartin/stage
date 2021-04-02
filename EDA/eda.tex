@@ -1,0 +1,373 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} 
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{supertabular}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{appendix}
+\usepackage{array,multirow,makecell}
+\usepackage{longtable}
+\setcellgapes{1pt}
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+\definecolor{light-gray}{HTML}{E5E4E2}
+\definecolor{light-cyan}{HTML}{E0FFFF}
+
+
+\setlongtables 
+
+\geometry{hmargin=1.5cm,vmargin=3.5cm}
+
+\title{Adaptation d’un jeu pervasif particularisé basée sur l'état émotionnel et sur les caractéristiques du joueur – État de l’art}
+\author{Laureline Martin}
+\date{\today}
+
+\begin{document}
+\maketitle
+\vspace*{8cm}
+\begin{center}
+    \textbf{Résumé :}
+\end{center}
+\hspace{0.4cm} 
+Les jeux pervasifs sont en plein essor ces dernières années. 
+Sa capacité à mêler le virtuel au réel, rendant ce type de jeu immersif, intrigue beaucoup les joueurs.\par
+Notre projet est de concevoir un jeu pervasif prenant en compte les émotions et les caractéristiques du joueur ainsi que son environnement.\par
+Dans ce rapport, nous faisons l'état de l'art de méthodes permettant l'adaptation d'un jeu personnalisé à son utilisateur en fonction de son état émotionnel et de ses goûts.
+\bigskip
+\begin{center}
+    \textbf{Abstract :}
+\end{center}
+\hspace{0.4cm} 
+For a few years, pervasive games are rising.
+The particularity of pervasive game to mix the virtual side and the real side make it more immersive and interest people.\par
+Our project is to develop a pervasive game considering emotions, player's data and environment.\par
+This report is about state of art of personalized game adaptation's methods to deal with player's emotions and likes.
+
+\newpage
+\begin{center}
+    \textbf{Acronymes}\label{app:annexe2}\medskip \\
+    \begin{tabular}{|l|l|l|}
+        \hline 
+        Sigle & Anglais & Français\\
+        \hline
+        HR & Heart rate & Fréquence cardiaque \\
+        EEG & Electroencephalogram & Électroencéphalogramme\\
+        SKT & Skin temperature & Température corporelle\\
+        ECG & Electrocardiogram & Électrocardiogramme\\
+        RR & Respiration rate & Fréquence respiratoire\\
+        BP & Body posture & Posture corporelle\\
+        GSR & Galvanic Skin Conductance & Conductivité de la peau\\
+        HRV & Heart Rate variability & Variabilité de la fréquence cardiaque\\
+        EMG & Electromyogram & Electromyogramme\\
+        EOG & Electrooculogram & Electrooculogramme\\
+        FE & Facial expression & Expression faciale\\
+        PPG & Photoplethysmography & Photoplethysmographie\\
+        BCI & Brain computer interface & Interface neuronale directe\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\newpage
+\renewcommand{\contentsname}{Table des matières}\tableofcontents
+
+\newpage
+\section{Introduction}
+    Le jeu pervasif est un genre de jeu très immersif, visant à mêler le virtuel et le réel. 
+    Il repousse les frontières traditionnelles du jeu en tenant compte d’évènements extérieurs et d’actions dans le monde physique pour agir sur le monde virtuel et inversement. 
+    Le jeu pervasif élargit l’espace de jeu à l’ensemble du monde réel. 
+    Il rend flou la distinction entre joueurs et spectateurs. 
+    Afin de proposer à un joueur de jeux pervasifs un contenu encore plus immersif et de maintenir son attention sur le jeu plus longtemps, notre idée est de permettre au jeu de s’adapter continûment au joueur. 
+    Pour cela, il faudrait construire un modèle utilisateur personnalisé. 
+    Ce modèle prendrait en compte des informations à la fois sur les caractéristiques du joueur telles que son nom, son âge, etc. et à la fois sur l’affecte du joueur, autrement dit, des informations sur ses goûts, mais également sur son état émotionnel courant.
+    Toujours dans l'esprit d'augmenter l'immersion du joueur, il faudrait que le jeu puisse s'adapter au joueur.
+    Cette adaptation devrait se faire en temps réel afin d'être au plus proche des envies et des besoins du joueur à chaque instant.\par
+    Nous avons recherché dans la littérature scientifique actuelle des algorithmes, des architectures, des techniques permettant la construction d'un jeu pervasif capable de prendre en compte les états émotionnels du joueur.
+    Dans ce rapport, nous nous sommes concentrés sur trois axes.
+    Le premier axe porte sur la détection et la reconnaissance des états émotionnels.
+    En effet, il s'agit d'une partie complexe qui nécessite un matériel particulier, comme par exemple des capteurs physiologiques.
+    Elle nécessite aussi des algorithmes et des architectures spécifiques pour garantir la meilleure précision possible.
+    Le deuxième axe porte sur les caractéristiques du joueur qu'il est nécessaire de prendre en compte.
+    Le troisième axe porte sur l'adaptation d'un jeu à son joueur.
+    L'un des points clé du jeu pervasif que nous souhaitons élaborer est l'adaptation dynamique et contextuelle.
+    Pour cela, il nous faut une méthode capable de prendre compte un état émotionnel et d'autres paramètres pour proposer au joueur l'événemet adéquat.\par
+    Nous allons tout d'abord évoquer dans la section \ref{sec:motivations} les motivations qui nous ont conduit à rédiger cet état de l'art. 
+    Dans la section \ref{sec:choixapproches} nous allons expliquer le choix de nos références.
+    Nous allons synthétiser chacune des approches dans la section \ref{sec:descriptionapp}.
+    Dans la section \ref{sec:choixcadre}, nous présenterons le cadre de comparaison que nous avons élaboré et dans la section \ref{sec:comparaisonapp} nous appliquerons notre cadre de comparaison aux approches. 
+    Dans la section \ref{sec:etatemotionnel} par le critère de la détection et de la reconnaissance de l'état émotionnel d'un joueur. 
+    Dans la section \ref{sec:caractéristiques} par le critère des caractéristiques, autres que l'état émotionnel, utilisées pour construire le modèle utilisateur. 
+    Dans la section \ref{sect:adaptation} par le critère de l'adaptation du jeu à son utilisateur. 
+    Enfin nous discuterons des limites et des questions qui découlent de l'analyse des approches via notre cadre de comparaison dans la section \ref{sec:questions}.
+
+\section{Motivations}\label{sec:motivations}
+    Notre objectif final est de proposer un jeu pervasif dont l'adaptation serait dynamique et contextuelle à son joueur. 
+    Pour cela, nous voulons d'une part un modèle utilisateur personnalisé et dynamique pour chaque joueur et d'autre part une méthode d'adaptation du jeu en temps réel. L'adaptation en temps réel permettra au jeu d'être au plus proche du contexte lié au joueur et à son environnement (Figure \ref{fig:objectif}).\par
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.43]{include/motivations.PNG}
+        \caption{Objectif}
+        \label{fig:objectif}
+    \end{figure}
+    Ce rapport présenter et applique le cadre de comparaison que nous avons élaboré dans le but de faire l'état de l'art des approches existantes dans la littérature scientifique actuelle concernant le jeu pervasif adaptable aux états émotionnels.
+
+\section{Choix des approches}\label{sec:choixapproches}
+    Nous avons retenu plusieurs références portant chacune sur une approche et des méthodes différentes. Cela nous permettra d'avoir une vue d'ensemble des méthodes possibles pour obtenir un modèle utilisateur personnalisé ainsi qu'une méthode d'adaptation du jeu pervasif à son utilisateur.\par
+    Plusieurs références n'ont pas été retenues dans cet état de l'art. Les références \cite{alhudar_2019,astic_2013,dzedzickis_et_al._2020,kanjo_et_al._2015,saganowski_et_al._2020,schrader_et_al._2017,shu_et_al._2018}. 
+    En effet, nous avons jugé ces références trop éloignées de notre sujet. 
+    Cependant elles s'avèrent bénéfiques pour la compréhension des notions que nous aborderons tout au long de ce rapport.\par
+    Les références que nous avons étudiées et utilisées pour cet état de l’art concernent des domaines d’application plus larges que le jeu pervasif. 
+    En effet, il existe actuellement très peu d’éléments, à notre connaissance, pour constituer un modèle utilisateur personnalisé dans le domaine du jeu pervasif. 
+    Alors, nous avons agrandi notre recherche, en plus du domaine des Jeux Pervasifs, au domaine des Jeux Sérieux (Serious Games), des Jeux-vidéo et des Jeux de Plate-forme Physique (playware).\par
+    Les Jeux Sérieux, tels que  \cite{berthelon_2013,Mostefai_et_al._2019,noor_et_al._2009}, sont des jeux ludiques et interactifs permettant l’apprentissage, l’enseignement, la communication, etc. via des dispositifs numériques. Les Jeux-Vidéo \cite{carofiglio_et_al._2019,gal_et_al._2020,gizycka_et_al._2018,maier_et_al._2019,nalepa_et_al._2017} sont destinés au divertissement en utilisant des outils numériques (ordinateur, console de jeux-vidéo, smart phone, etc.). Les Jeux sur Plate-forme Physique (playware) \cite{yannakakis_et_al._2009} sont, pour notre cas, définis comme des jeux sur une plate-forme électronique disposée au sol où le joueur interagit en se déplaçant sur les cases qui la compose. Au moment où ce rapport est rédigé et à notre connaissance, une seule référence concerne le jeu pervasif, il s’agit de la référence \cite{gal_2019}.
+
+\section{Description des approches}\label{sec:descriptionapp}
+    Dans cette section, nous allons faire la description et la synthèse de chaque approche décrite par les documents que nous avons retenu. Les approches sont présentées dans l'ordre chronologique. 
+    \subsection{Using Social Data as Context for Making Recommandations: An Ontology based Approach}
+        L'article \cite{noor_et_al._2009} présente une architecture pour l'utilisation de données de préférences d’un utilisateur en matière de culture. Ces données sont récupérées sur différents réseaux sociaux tels que Facebook, Flickr, etc.\footnote{Cet article ayant été publié en 2009, l’algorithme présenté ne correspond pas au RGPD mis en application depuis 2018.} \par
+        Pour l'identification d'une personne, l'API \texttt{Google Social Graph API} est utilisée afin de retrouver une personne au travers de différents réseaux sociaux. 
+        Il est utilisé, entre autres, la méthode \texttt{otherme} de \texttt{Google Social Graph API} pour trouver des identifiants associés pour une personne. 
+        La collecte des données se fait par tags. 
+        Des API publiques et des scripts open-source sont utilisés pour l’extraction des données qui sont taguées sur les sites des réseaux sociaux (del.icio.us, Flickr, Facebook, Last.fm).\par
+        Plusieurs filtrages sont appliqués sur les données collectées.
+        Un filtrage syntaxique à l'aide de WordNet, un filtrage des synonymes grâce à Wikipedia et un filtrage des données taguées afin de retenir uniquement les données concernant les préférences culturelles d'une personne.\par
+        Enfin, les données sont catégorisées selon des catégories déjà existantes de bases de connaissances (telles que YAGO et DBpedia). 
+        Une connexion est ensuite faite afin de lier cette base de connaissance à une base de connaissance spécifique au patrimoine culturel (CRM).
+    \subsection{Real-Time Game Adaptation for Optimizing Player Satisfaction}
+        Les auteurs de \cite{yannakakis_et_al._2009} présentent une méthode pour qu'un playware s'adapte au joueur pour rendre le jeu plus amusant. 
+        Pour cela, la méthode prend en considération différents paramètres : la moyenne du temps de réponse ($E(r_t)$), la variance de la pression sur les cases ($\sigma^2 (p)$) et le nombre de fois où le joueur interagit avec l'environnement ($N_I$). 
+        Selon ces paramètres, le jeu peut augmenter ou diminuer la « zone de curiosité », autrement dit, la surface jouable, et/ou la rapidité, c’est-â-dire la vitesse d’apparition/disparition de points lumineux sur les cases. 
+        Pour une partie de 90 secondes, le calcul pour que le jeu s'adapte au joueur est répétée trois fois. A la 45$^e$ seconde, à la 60$^e$ seconde et à la 75$^e$ seconde.\par
+        Les auteurs ont comparé la version statique (pas d'adaptation) et la version adaptative de ce jeu en demandant aux joueurs d'indiquer la partie qu'ils avaient préféré sans révéler quelle partie était statique et quelle partie était adaptative. 
+        Les résultats montrent que 60\% et 76\% des participants ont respectivement trouvé meilleure, trouvé meilleure ou aussi bien la version adaptative par rapport à la version statique.
+        
+    % \subsection{Berthelon 2013}
+    
+    \subsection{Affective Design Patterns in Computer Games. Scrollrunner Case Study et Emotion in Models Meets Emotion in Design: Building True Affective Games}
+        Dans l’étude de cas sur un jeu vidéo de type scrollrunner présenté dans \cite{nalepa_et_al._2017} puis utilisé dans \cite{gizycka_et_al._2018}, la reconnaissance de l’état émotionnel se fait via différents capteurs de contacts (voir Annexe \ref{app:annexe1}).\par
+        Préalablement, des mesures ont permis d’établir un échantillonnage pour reconnaître les états émotionnels de relaxation/stress des joueurs. Les joueurs ont évalué leur état en se basant sur une échelle de 1 à 7, telle que 1 = relaxé, 4 = neutre et 7 = stressé. 
+        Cette phase d’échantillonnage consiste en la présentation de brefs stimuli visuels au joueur. 
+        Le joueur doit dans une seconde phase jouer à un jeu vidéo de type scrollrunner, toujours équipé de capteurs. 
+        Dans une troisième phase, le joueur est exposé à un hurlement strident après 50 secondes de vidéo d’images neutres. 
+        Les données récoltées par les capteurs sont stockées dans le but de pouvoir les traiter et les analyser afin de constituer un « affective design pattern ». 
+        L’ensemble des technologies utilisées (voir Annexe \ref{app:annexe1} - Les capteurs), des expérimentations menées, des résultats ainsi que des futurs travaux de recherches sont explicités dans \cite{nalepa_et_al._2019}.
+        Cet article indique que cinq séries de tests ont étés menées.
+        La première série impliquait uniquement la première phase afin de tester le matériel.
+        La deuxième série
+    \subsection{A BCI-based Assessment of a Player’s State of Mind for Game Adaptation}
+        Les auteurs de \cite{carofiglio_et_al._2019} ont utilisé un dispositif BCI (Brain Computer Interface) passif voir Annexe \ref{app:annexe1} (casque avec électrodes pour EEG) pour tester différentes méthodes de classification pour reconnaître les états émotionnels d’ennui, d’engagement du joueur (aussi appelé flow) et de stress lors d’une partie de jeu vidéo d’aventure horrifique. Ils se sont appuyés sur différentes métriques telles que la moyenne, la valeur minimum, la valeur maximum, la variance, etc. 
+        Ces métriques ont été prises à partir de données enregistrées expérimentalement avec le dispositif BCI. Trois niveaux du même jeu ont été créés pour ces tests. 
+        Un niveau d'ennui, où le jeu est simplement réduit au but principal, toute ambiance et tous les PNJ (Personnage Non Joueur) ont été retirés. 
+        Un niveau d'engagement, où une ambiance est créée, trois PNJ sont insérés, l'histoire du personnage est narrée. Le niveau est fait pour être faisable par les joueurs. 
+        Et un niveau de stress, où la difficulté est accrue, la visibilité est réduite, les sons de l'environnement sont augmentés et les sons de retours sont diminués. La durée de vie du joueur diminue plus rapidement et cinq PNJ sont insérés.\par
+        Après ces expérimentations en laboratoire, il en ressort que la méthode de Random Forest semble meilleure avec une précision de 78%.
+    \subsection{Vers une nouvelle Interaction Homme Environnement dans les jeux vidéo et pervasifs: rétroaction biologique et états émotionnels: apprentissage profond non supervisé au service de l'affectique. Et Identifying emotion pattern from physiological sensors through unsupervised EMDeep model}
+        \cite{gal_2019} présente deux méthodes pour la reconnaissance des émotions en utilisant des cartes d’organisation de Kohonen ainsi que du machine learning/deep learning non-supervisé. Cette dernière méthode est explicitée dans \cite{gal_et_al._2020}. 
+        Il s’agit d’un algorithme hybride d’Espérance Maximisation (EM) et de Support Vector Regression (SVR).
+        Cet algorithme est appelé EMDeep. 
+        C'est un algorithme de d'apprentissage profond non-supervisé qui vise à reconnaître tous les états émotionnels possibles à l’aide de capteurs de contacts (voir Annexe \ref{app:annexe1}).
+    \subsection{DeepFlow: Detecting Optimal User Experience From Physiological Data Using Deep Neural Networks}
+        \cite{maier_et_al._2019} présente une méthode basée sur une architecture de réseau de neurones à convolution (CNN) pour reconnaître les états émotionnels d’ennui, de d'engagement (flow) et de stress sur un jeu mobile de Tetris. 
+        Ce jeu a été modifié par les auteurs pour obtenir trois niveaux : facile, moyen et difficile. Chaque niveau peut apparaître aléatoirement. 
+        Les joueurs ont joué au Tetris en portant un bracelet muni de capteurs de contact sur la main non-joueuse (voir Annexe \ref{app:annexe1}).\par
+        Les données de chaque session ont été enregistrées et labellisées selon le niveau joué. Une fois l'ensemble des  données traité, il est séparé en deux pour la phase d’entraînement et la phase d’évaluation. 
+        Trois classifications one-vs-all (ennui/autre état émotionnel, flow/autre état émotionnel, stress/autre état émotionnel) et une classification pour distinguer les trois états émotionnels simultanément sont évaluées. Les résultats montrent une précision par validation croisée (leave-one-session-out) pour chaque classification comme décrit dans le tableau \ref{tab:maieretal2019}.
+        \begin{table}
+            \centering
+            \begin{tabular}{l|l}
+                \hline 
+                Ennuie / autre état émotionnel & 65.04\% \\ \hline
+                Flow / autre état émotionnel & 70.37\% \\ \hline
+                Stress / autre état émotionnel & 66.09\% \\ \hline
+                Ennui / Flow / Stress & 52.59\% \\
+                \hline
+            \end{tabular}
+            \caption{Précision pour chaque classification par validation croisée leave-one-session-out}
+            \label{tab:maieretal2019}
+        \end{table}
+        Dans le cas de la classification Stress / autre état émotionnel, on note une meilleure précision par validation croisée leave-one-subject-out de 71.17\%.
+    \subsection{A generic and efficient emotion-driven approach toward personalized assessment and adaptation in serious games}
+        Dans \cite{Mostefai_et_al._2019}, les auteurs présentent deux approches pour la reconnaissance d'états émotionnels d'un utilisateur et pour l'adaptation d'un jeu sérieux à son utilisateur.\par
+        La reconnaissance des états émotionnels est faite par un algorithme utilisant plusieurs ensembles et fonctions prédéfinis. Ces ensembles concernent les états émotionnels, les évènements dans le jeu, les actions du joueur, les objectifs (et sous-objectifs) à atteindre et les statuts des objectifs. 
+        Et ces fonctions font la cartographie de toutes les tendances d'actions pour chaque état émotionnel (et fonction inverse), la cartographie de la tendance d'action du joueur pour chaque état émotionnel et pour chaque statut d'objectif.\par
+        L'adaptation à l'utilisateur se fait via un second algorithme. 
+        Cet algorithme prend en compte le nombre de fois où le joueur à expérimenté un état émotionnel positif et le nombre de fois où il a expérimenté un état émotionnel négatif. 
+        Si ce nombre d'états émotionnels négatifs ressenti par le joueur est supérieur au nombre d'états émotionnels positifs ressenti, un événement à suivre et un état émotionnel positif sont sélectionnés en utilisant une matrice de transition de Markov pour atteindre cet état émotionnel via cet événement. 
+        Si cette chaîne n'existe pas, alors un nouvel état émotionnel positif et un nouvel événement sont sélectionnés. Si la chaîne existe, alors l'adaptation peut se faire.\par
+        Les auteurs montrent également une variante de ces deux algorithmes en incluant la notion de style de jeu du joueur et de type de personnalité afin d'obtenir une évaluation et une adaptation encore plus personnalisée.\par
+        Une expérience a été conduite pour tester ces algorithmes. Deux versions du jeu <sérieux : affectif (avec les algorithmes de reconnaissance de l'état émotionnel et d'adaptation) et non-affectif ont été créés. Les résultats montrent notamment un score accumulé, un nombre d'états émotionnels positifs accumulés plus élevés et un nombre d'états émotionnels négatifs accumulés moins important pour la variante affective du jeu.
+    \subsection{Physiological-Based Emotion Detection and Recognition in a Video Game Context}
+        \cite{yang_et_al._2018} utilise une méthode CNN (réseau de neurones à convolution) avec des données annotées provenant d’une base de données créée par les auteurs. Plusieurs capteurs de contacts (voir Annexe \ref{app:annexe1}) mais également une caméra pour enregistrer les expressions faciales (FE), un accéléromètre (ACC) et un enregistrement de l’écran de jeu et d’autres méta-informations comme le score final, le niveau du joueur et le niveau de difficulté du jeu ont été utilisés pour créer cette base de données.\par
+        Il s’agit de plusieurs enregistrements de joueurs jouant à un jeu vidéo de football. 
+        Les données sont annotées par auto-évaluation des joueurs pour chaque mi-temps jouée (une estampille pour chaque temps fort dans le jeu est associée à une émotion/pas d’émotion). 
+        Les auteurs utilisent ensuite ces données pour détecter la présence d’un état émotionnel et pour le reconnaître. 
+        Les états à reconnaître sont  la colère, l’ennui, la peur, la frustration et la joie. 
+        Après traitement des données (segmentation, utilisation de fonctions d’extraction, normalisation, validation croisée, fonction de sélection et classification), la classification par SVM linéaire donne les meilleures précisions en moyenne.\par
+        Les auteurs montrent également qu’il est plus facile de détecter des états émotionnels de forte excitation. 
+        Ils montrent que pour la reconnaissance de chacun des états émotionnel cité ci-dessus, une fenêtre de 10 secondes semble être la plus adéquate en moyenne. Pour chaque état émotionnel évaluée on obtient une précision rapportée dans le tableau  \ref{tab:yangetal2018}
+        \begin{table}
+            \centering
+            \begin{tabular}{l|l}
+                \hline
+                État émotionnel & Précision \\ \hline
+                colère & 0.700 \\ \hline
+                ennui & 0.671\\ \hline
+                peur & 0.623\\ \hline
+                frustration & 0.663\\ \hline
+                joie & 0.631\\ \hline
+            \end{tabular}
+            \caption{Précision pour chaque état émotionnel}
+            \label{tab:yangetal2018}
+        \end{table}
+
+\section{Présentation du cadre de comparaison}
+\label{sec:choixcadre}
+    Pour comparer les approches, nous avons mis au point un cadre de comparaison dédié à l'adaptation des jeux pervasifs à leur utilisateur en utilisant des caractéristiques physiologique et de préférences.\par
+    Pour le premier critère de comparaison (Section \ref{sec:etatemotionnel}), sont comparées les différentes approches présentant une méthode pour la détection et/ou pour la reconnaissance de l'état émotionnel. 
+    Ce critère nous permet d'avoir une vue globale des différents capteurs qui peuvent être utilisés dans la détection ainsi que les différentes méthodes et algorithmes qui peuvent être employés pour la reconnaissance de l'état émotionnel.\par
+    Le deuxième critère de comparaison (Section \ref{sec:caractéristiques}) concerne les autres caractéristiques de l'utilisateur qui sont utilisés dans les approches. Ce critère nous permet de comparer les données (autres que l'état émotionnel)  du joueur utilisées pour construire un modèle utilisateur.\par
+    Le dernier critère (Section \ref{sect:adaptation}) est celui de l'adaptation du jeu à l'état émotionnel et/ou à d'autres caractéristiques de l'utilisateur. Ce troisième critère nous permet de comparer les approches qui présentent une adaptation du jeu à son utilisateur selon leur méthode d'adaptation.
+
+\section{Comparaison des approches par critères}\label{sec:comparaisonapp}
+    Dans cette partie, nous allons comparer les approches selon différents critères essentiels pour l'adaptation dynamique et contextuelle d'un jeu pervasif à son utilisateur (présentés dans la Section \ref{sec:choixcadre}). \par
+    %% Nous avons défini trois critères : le critère de la détection et de la reconnaissance des états émotionnels nous permet de comparer les différentes approches de détection et de reconnaissance des états émotionnels. Le critère concernant les autres caractéristiques de l'utilisateur nous permet de comparer les différentes caractéristiques autre que l'état émotionnel que les ressources utilisent dans leurs approches. Le critère de l'adaptation du jeu à l'utilisateur nous permet de comparer les approches sur la ou les adaptation(s) qu'elles proposent.
+    Le tableau \ref{tab:comparatif} donne une vision globale des approches selon les critères de comparaison choisis. Ces critères sont examinés de plus près dans les sections \ref{sec:etatemotionnel}, \ref{sec:caractéristiques} et \ref{sect:adaptation}.
+    \begin{center}
+    \begin{longtable}{| p{0.8cm} | p{2cm} | p{2.5cm} | p{2.8cm} | p{3cm} | p{3.2cm} | p{1.5cm} |}
+        \hline
+        Réf(s) & Capteur(s) & États émotionnels à détecter et à reconnaître & Autres caractéristiques du joueur utilisées &  Méthode de reconnaissance des états émotionnels &  Méthode d'adaptation & Domaine d'application\\
+        \endhead
+        \hline
+        \cite{carofiglio_et_al._2019} & Emotiv EPOC+ (passive BCI) pour EEG & Ennuie / Flow / Stress & - & Plusieurs méthodes de machine learning. Meilleure méthode : Random Forest (précision = 78\%) & - & Jeu vidéo (aventure horrifique)\\
+        \hline
+        \cite{gal_2019,gal_et_al._2020} & CAPTIV (de chez TEA), Neurosky Brainwave Headset (pour GSR, RR, SKT, HR et EEG) & Tous les états émotionnels possibles & - & Carte d'organisation de Kohonen + EMDeep & - & Jeu pervasif et jeu vidéo\\
+        \hline
+        \cite{gizycka_et_al._2018,nalepa_et_al._2017} & BiTalino (r)evolution kit (retenu);   Empatica E4;   Microsoft Band 2;   E-Health; (Pour GSR et HR) & Relaxé / Neutre / Stressé (sur une échelle de 1 à 7 avec 1 = Relaxé, 4 = Neutre et 7 = Stressé) & - & Auto-évaluation des joueurs durant la phase d'échantillonnage & La version adaptative du jeu utilise des "affective patterns" comme "l'Immersion Emotionnel", des ennemis et des obstacles et « des informations imparfaites" & Jeu vidéo (scrollrunner)\\
+        \hline
+        \cite{maier_et_al._2019} & Empatica E4 (pour GSR, HR et HRV) & Ennuie / Flow / Stress & - & CNN & - & Jeu vidéo (Tétris sur téléphone portable)\\
+        \hline
+        \cite{Mostefai_et_al._2019} & - & Colère / Ennui / Peur / Frustration / Joie & Style de jeu du joueur & Ensemble défini pour les événements, les actions, les objectifs, les statuts des objectifs + Fonctions pour la cartographie de chaque tendances d'action pour chaque état émotionnel (et fonction inverse), la cartographie de la tendance d'action pour chaque état émotionnel et pour chaque statut d'objectif & Chaînes de Markov et matrices de transition & Jeux sérieux (apprentissage)\\
+        \hline
+        \cite{noor_et_al._2009} & - & - & Préférence en en culture & - & Utilisation de l'API GoogleSocialGraphAPI pour identifier l'utilisateur et définir son profil. Plusieurs APIs et scripts open-sources osnt utilisés  pour extraire des données des différents réseaux sociaux. WordNet et Wikipedia sont utilisés pour le filtrage des données. Et les bases de connaissances YAGO et DBpédia sont employées pour catégoriser les données et récupérer les données concernant la culture avec une base de connaissance spécifique (CRM) & Jeux sérieux (culture)\\
+        \hline
+        \cite{yang_et_al._2018} & BioNomadix Wirless Sensors MP150 (GSR, ECG, EMG, RR) + capteurs de mouvement sur 3 axes + caméra (enregistre le visage du joueur) + capteurs de mouvement des zygomatiques & Colère / Ennui / Peur / Frustration / Joie & Niveau du joueur pour ce jeu + Niveau de difficulté de la partie + Score final & Reconnaissance via réseau de neurones à convolution (CNN) + Données annotées ajoutées à une base de données (DAG database erag.lip6.fr, base de données des auteurs) & - & Jeu vidéo (Fifa 2016)\\
+        \hline
+        \cite{yannakakis_et_al._2009} & Capteurs de pression & Amusement & Moyenne du temps de réponse, la variance de la pression sur la case et le nombre d'interactions avec la plate-forme & "Amusement" recalculé 3 fois au cours de la partie (à t=45s, t=60s et t=75s) & Des règles prédéfinies permettent l'augmentation / la diminution du nombre de cases jouables ou de la rapidité d'apparition / de disparition des points lumineux sur la plate-forme selon le niveau d'amusement détecté & Playware ("Bugs-smasher")\\
+        \hline
+        \caption{Tableau de comparaison des approches}
+        \label{tab:comparatif}
+    \end{longtable}\end{center}
+    \medskip
+    \subsection{Méthodes de détection et de reconnaissance de l'état émotionnel}
+    \label{sec:etatemotionnel}
+        La prise en compte de l'état émotionnel dans le modèle utilisateur que nous souhaitons construire nous semble primordiale. 
+        % En effet, l'état émotionnel est une donnée qui peut donner beaucoup de renseignements sur un joueur, comme par exemple son niveau d'attention par rapport au jeu ou bien son amusement. 
+        En effet, la connaissance de l'état émotionnel courant du joueur permet d'augmenter considérablement l'aspect particularisé du jeu de part son aspect personnel et intervenant à des événements différents et à des intensités différentes d'une personne à l'autre. 
+        De plus, considérer l'état émotionnel courant du joueur pour s'adapter à lui pourra grandement influer sur son intérêt et sur son engagement pour le jeu.\par
+        La détection d'une part et la reconnaissance d'autre part de l'état émotionnel sont des tâches très ardues et il n'existe pas de méthode unique pour ces tâches. Nous allons explorer les différentes méthodes proposées dans les approches que nous avons retenues.
+        \subsubsection{Utilisation de capteurs}
+            La majorité des approches que nous avons étudiée et qui abordent le domaine de la détection et/ou de la reconnaissance des états émotionnels, utilisent des capteurs de contact (voir Annexe \ref{app:annexe1}). 
+            \cite{maier_et_al._2019,nalepa_et_al._2017,gizycka_et_al._2018} utilisent le bracelet Empatica E4 (GSR, HR et HRV pour \cite{maier_et_al._2019} et HR et GSR pour \cite{nalepa_et_al._2017,gizycka_et_al._2018}). 
+            Cependant, dans cette dernière approche, plusieurs capteurs ont été testés (BITalino (r)evolution kit, E-Health et Microsoft Band 2, Annexe \ref{app:annexe2}) et le choix des auteurs semble d'avantage se porter sur BITalino (r)evolution kit. 
+            Dans \cite{yang_et_al._2018}, des capteurs de contact BioNomadix wireless sensors MP150 - Biopac (GSR, ECG et RR) sont utilisés. 
+            \cite{gal_2019,gal_et_al._2020} utilisent des capteurs de contact de chez TEA (GSR, RR et SkT) mais également un casque pour la lecture d'ondes cérébrales (EEG) Mindwave Mobile. 
+            Dans \cite{carofiglio_et_al._2019} un dispositif similaire est utilisé : EPOC+ (Emotiv).\par 
+        \subsubsection{Détection et reconnaissance de l'état émotionnel}
+            Les approches visent à détecter et à reconnaître des états émotionnels. Pour \cite{nalepa_et_al._2017,gizycka_et_al._2018}, le but est de reconnaître les états de relaxation / neutre / stress en utilisant des questionnaires remplis par les participants et grâce à des estampilles pour chaque événement émotionnel. 
+            Dans \cite{carofiglio_et_al._2019}, le but est de reconnaître grâce à différentes méthodes de machine learning les états d'ennui, d'engagement (flow) et de stress. 
+            L'approche décrite dans \cite{maier_et_al._2019} vise également à reconnaître les états d'ennui, de flow et de stress en utilisant un réseau de neurones à convolution (CNN). 
+            Les auteurs de \cite{yang_et_al._2018} ont également utilisé une architecture CNN pour reconnaître les états émotionnels d'ennui, de colère, de peur, de frustration et de joie. 
+            \cite{gal_2019,gal_et_al._2020} proposent une méthode d'apprentissage profond et non-supervisé appelé EMDeep dans le but de reconnaître les états émotionnels ressentis par l'utilisateur.\par
+            \cite{Mostefai_et_al._2019} n'utilisent pas de capteur. La reconnaissance des états émotionnels d'intérêt, de plaisir, d'inquiétude, de peur, de surprise de colère et de frustration, se fait grâce à plusieurs ensembles et plusieurs fonctions prédéfinis. Ces ensembles de valeurs et ces fonctions vont permettre de savoir à chaque instant quelle émotion est ressentie par le joueur.
+    \subsection{Autres caractéristiques liées à l'utilisateur}
+    \label{sec:caractéristiques}
+        D’autres facteurs que l’état émotionnel du joueur doivent être pris en compte pour avoir un modèle utilisateur plus complet.\par
+        Par exemple, dans l'approche \cite{noor_et_al._2009} des données de préférences de l’utilisateur en matière de culture qui ont été récupérées sur différents réseaux sociaux (Facebook, Flickr, etc.) sont utilisées.\par
+        Dans l’article \cite{yannakakis_et_al._2009}, le temps de réponse, la pression sur les cases, le nombre d’interactions avec la plate-forme physique du jeu sont autant de facteurs pris en compte pour permettre au jeu d'évaluer le niveau de divertissement.\par
+        Comme le montre \cite{Mostefai_et_al._2019}, le style de jeu du joueur peut être un élément de personnalisation. 
+        Ces styles de jeux sont des catégories déjà définies et le joueur est donc associé à l'une de ces catégories.\par
+        On peut aussi relever d’autres facteurs comme l’âge ou le genre de la personne. \cite{carofiglio_et_al._2019} montre qu'il existe une différence significative entre les hommes et les femmes lorsqu’ils jouent à un jeu vidéo en se basant sur les données enregistrées lors de sessions à un jeu vidéo d’aventure horrifique. 
+        Ainsi les femmes semblent être plus sensibles au contexte du jeu et plus attentives aux conditions de la partie. 
+        Leur engagement dans une partie semble plus important lorsque le niveau est très stressant et il semble plus minime lorsque le niveau est ennuyeux, contrairement aux hommes qui présentent un niveau d’engagement similaire  pour tous les types de niveaux (ennui, flow et stress).
+    \subsection{L'adaptation d'un jeu à l'état émotionnel et à d'autres caractéristiques d'un joueur}
+    \label{sect:adaptation}
+        Une autre partie primordiale de notre objectif final est celle de l'adaptation du jeu pervasif à son utilisateur. Cette adaptation doit pouvoir se faire en utilisant les données fournies par le modèle utilisateur. Ces données concernent directement le joueur (nom, âge, sexe, etc.), ses préférences (ce qu'il aime ou non) et son état émotionnel.\par
+        Dans le but de mieux comprendre comment est gérée l'adaptation d'un jeu à son utilisateur, nous avons analyse les méthodes selon ce critère. Ce critère à été découpé en deux. D'une part, nous avons analysé l'adaptation d'un jeu selon l'état émotionnel du joueur et d'autre part, l'adaptation d'un jeu selon d'autres caractéristiques du joueur.
+        \subsubsection{Adaptation du jeu en utilisant l'état émotionnel du joueur}
+            Dans \cite{Mostefai_et_al._2019}, si le nombre d’états émotionnels positifs est inférieur au nombre d’états émotionnels négatifs expérimentés par le joueur, alors le jeu proposera au joueur un événement qui induit un état émotionnel positif. 
+            L’idée est de ne pas proposer constamment des évènements induisant un état émotionnel positif mais uniquement lorsque cela semble nécessaire pour maintenir l’engagement du joueur plus longtemps.
+        \subsubsection{Adaptation du jeu en utilisant d'autres caractéristiques du joueur}
+           \cite{yannakakis_et_al._2009} propose qu’un jeu de playware s’adapte en composant avec les données de temps de réponse, du nombre d’interaction et de la pression sur les cases par le joueur. Selon ces données, le jeu peut augmenter ou diminuer la zone de curiosité ou la rapidité\par
+            Les auteurs de \cite{nalepa_et_al._2017} présentent une version « affective » de leur jeu vidéo. Dans cette version il y est inclus les patrons affectifs d’ « Immersion Émotionnelle », d’ « ennemis et d’obstacles » et d’ « informations imparfaites ».\par
+
+\section{Questions ouvertes}\label{sec:questions}
+    A la lecture de ces différentes approches et selon nos critères, plusieurs limites et interrogations apparaissent.\par
+    Tout d’abord, le domaine de recherche a dû être agrandi à d’autres types de jeux (jeux sérieux, jeux-vidéo, jeux sur plate-forme physique) car comme expliqué dans la Section \ref{sec:choixapproches}, il n’existe pour le moment, et à notre connaissance, que très peu de publications abordant le sujet d’une construction d’un modèle utilisateur dans le cadre du jeu pervasif. 
+    En élargissant à d’autres domaines d’application, nous avons pu retenir des méthodes pour pouvoir adapter un jeu à un utilisateur. 
+    Cependant le cas du jeu pervasif étant particulier, certaines méthodes peuvent différer et d'autres manquer.\par
+    Lorsque nous avons cherché à examiner les méthodes pour construire ce modèle utilisateur, une part qui nous semblait importante était la prise en compte de l’état émotionnel courant du joueur dans le but que le jeu s’y adapte le plus instantanément possible. 
+    En parcourant les différentes ressources documentaires, nous nous  apercevons que la plupart d’entre elles proposent des méthodes pour ne reconnaître uniquement certains états émotionnels et non tous les états émotionnels qui peuvent être expérimentés par une personne.
+    Cette version simplifiée de l’ensemble des états émotionnels chez l’humain peut amener le jeu à ne pas détecter certains états, et potentiellement, à mal s’adapter aux besoins du joueur. 
+    Bien que nous puissions imaginer que pour certains jeux, des états émotionnels particuliers ne seront, a priori, jamais ressentis, il faut se demander lors de la construction de méthodes pour la détection et la reconnaissance de l’état émotionnel courant du joueur quels sont les états émotionnels que le jeu pervasif est assuré de provoquer. 
+    Ou à l’inverse, quels sont les états émotionnels qui ne surviendront jamais au cours de la partie.\par
+    Au-delà de la prise en compte de l’état émotionnel, les données qui caractérisent un joueur, telles que l’âge, le sexe, la condition physique, etc. sont aussi à définir. 
+    Ici aussi, on remarque que plusieurs problèmes se posent. Tout d’abord, dans l’ensemble des ressources présentées, les participants aux différentes expérimentations semblent assez jeunes (entre 8 ans et 40 ans).
+    Il n’existe donc pas de données sur les méthodes concernant les personnes plus âgées. 
+    De même, il est explicitement indiqué pour la plupart des expérimentations que les personnes ayant participé étaient en « bonne santé ». 
+    Par exemple, \cite{yannakakis_et_al._2009} indique que les enfants qui ont participé aux tests ont un IMC (Indice de Masse Corporelle) entre 18.5 et 25. 
+    D’autres données comme le sexe biologique de la personne semblent influer sur la manière de jouer et donc l’adaptation peut être différente comme le montre \cite{carofiglio_et_al._2019}. D’autres éléments de la personnalité, du style de jeu peuvent aussi être considérés pour une meilleure adaptation comme montré dans \cite{Mostefai_et_al._2019}. 
+    Dans le cas du jeu pervasif, qui brouille les lignes entre virtuel et réel, on peut imaginer que d’autres facteurs doivent être examinés pour un modèle complet et détaillé.\par
+    Une autre limite importante que nous pouvons remarquer dans l’ensemble des ressources est l’utilisation d’un seul jeu pour les expérimentations. 
+    Cependant, utiliser un seul jeu ne semble pas assez concluant pour être sûr que les méthodes employées soient valides. Par exemple, \cite{carofiglio_et_al._2019} rapporte que les états de flow et de stress peuvent se « confondre » dans le cas d’un jeu d’aventure horrifique.
+    
+\section{Conclusion}
+    Notre objectif principal est d'élaborer un jeu pervasif capable de s'adapter dynamiquement et de manière contextuelle au joueur et à son environnement.\par
+    Dans ce rapport, nous nous sommes intéressés à des méthodes déjà existantes pouvant nous aider à aller dans cette direction.
+    Nous avons appuyé nos recherches sur trois points : la détection et la reconnaissance de l'état émotionnel, les caractéristiques du joueur et l'adaptation du jeu.\par
+    Dans un premier temps, nous avons décrit les approches une à une.
+    Et dans un second temps, nous avons appliqué à ces approches un cadre de comparaison que nous avons conçu.
+    Ce cadre de comparaison s'appuie sur les critères issus des trois points donnés ci-dessus.\par
+    L'analyse comparative des ces approches a mis en lumière plusieurs limites et a soulevé plusieurs questions.\par
+    Au vu de cette analyse, un futur travail sera de concevoir une méthode permettant de répondre aux particularités du jeu pervasifs. En effet, nous avons pu constater rapidement que très peu de références portaient sur les états émotionnels dans les jeux pervasifs.\par
+    Une autre piste de futur travail serait d'élaborer un jeu pervasif prenant en compte les états émotionnels tout en restant assez générique dans sa conception. 
+    En effet, on peut imaginer appliquer notre jeu à d'autres domaines comme l'enseignement ou la médecine. 
+    Par exemple, \cite{grossard_et_al._2017} présente une méthode pour enseigner les émotions à des enfants atteints d'autisme en passant par le jeu.
+
+\newpage
+\appendix
+\renewcommand{\appendixpagename}{Annexes}\appendixpage
+\section{Annexe 1 - Les capteurs}\label{app:annexe1}
+    [Nalepa et al. 2017; Giżycka et al. 2018] utilisent:
+    \begin{itemize}
+        \item Empatica E4 : \href{https://www.empatica.com/research/e4/}{https://www.empatica.com/research/e4/}
+        \item Microsoft Band 2 : \href{https://www.microsoft.com/en-us/band}{https://www.microsoft.com/en-us/band}
+        \item BiTalino (r)evolution kit : \href{http://bitalino.com/en/}{http://bitalino.com/en/}
+        \item E-Health : \href{http://www.my-signals.com}{http://www.my-signals.com}
+    \end{itemize}
+    [Carofiglio et al. 2019] utilisent :
+    \begin{itemize}
+        \item Emotiv EPOC+ : \href{https://www.emotiv.com/epoc/}{https://www.emotiv.com/epoc/}
+    \end{itemize}
+    [Maier et al. 2019] utilisent :
+    \begin{itemize}
+        \item Empatica E4 : \href{https://www.empatica.com/research/e4/}{https://www.empatica.com/research/e4/}
+    \end{itemize}
+    [Yang et al. 2019] utilisent :
+    \begin{itemize}
+        \item BioNomadix wireless sensors MP150 : \href{https://www.biopac.com/product-category/research/bionomadix-wireless-physiology/}{https://www.biopac.com/product-category/research/\newline bionomadix-wireless-physiology/}
+    \end{itemize} 
+    [Gal 2019; Gal et al. 2020] utilisent : 
+    \begin{itemize}
+        \item Capteurs CAPTIV (TEA) \href{https://www.teaergo.com/products/?appcat=&prodtype=sensor-solutions&brandcat=teaergo}{https://www.teaergo.com/products/?appcat=\&prodtype=sensor-\newline solutions\&brandcat=teaergo}
+        \item Neurosky brainwave headset : \href{https://store.neurosky.com}{https://store.neurosky.com}
+    \end{itemize}
+
+\medskip
+\bibliographystyle{abbrv}
+\bibliography{include/MaBiblio}
+\end{document}

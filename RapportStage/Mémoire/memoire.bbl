@@ -3,20 +3,30 @@
 \bibitem{astic_2013}
 I.~Astic.
 \newblock Jeu et société, jeu en société : le cas du jeu pervasif.
-\newblock page~25, Oct. 2013.
+\newblock Rapport de recherches, Conservatoire National Des Arts et Métiers,
+  Paris, Oct. 2013.
+
+\bibitem{calvo_et_al._2015}
+R.~Calvo, S.~D'Mello, J.~Gratch, A.~Kappas, G.~N. Yannakakis, and A.~Paiva.
+\newblock Emotion in {Games}.
+\newblock In R.~Calvo, S.~D'Mello, J.~Gratch, and A.~Kappas, editors, {\em The
+  {Oxford} {Handbook} of {Affective} {Computing}}. Oxford University Press,
+  Jan. 2015.
 
 \bibitem{carofiglio_et_al._2019}
 V.~Carofiglio, B.~D. Carolis, and F.~D’Errico.
 \newblock A {BCI}-based {Assessment} of a {Player}’s {State} of {Mind} for
   {Game} {Adaptation}.
-\newblock page~6, 2019.
+\newblock In M.~De~Marsico, D.~Gadia, L.~A. Ripamonti, D.~Maggiorini, and
+  I.~Mariani, editors, {\em {GHItaly19}: 3rd {Workshop} on {Games}-{Human}
+  {Interaction}}, volume 2480, page~6, Padova, Italy, 2019.
 
 \bibitem{gal_2019}
 V.~Gal.
-\newblock Vers une nouvelle {Interaction} {Homme} {Environnement} dans les jeux
-  vidéo et pervasifs: rétroaction biologique et états émotionnels:
-  apprentissage profond non supervisé au service de l'affectique.
-\newblock page 357, Oct. 2019.
+\newblock {\em Vers une nouvelle {Interaction} {Homme} {Environnement} dans les
+  jeux vidéo et pervasifs: rétroaction biologique et états émotionnels:
+  apprentissage profond non supervisé au service de l'affectique}.
+\newblock PhD thesis, Conservatoirenationaldesartsetmetiers-CNAM, Oct. 2019.
 
 \bibitem{gal_et_al._2020}
 V.~Gal, S.~Banerjee, and D.~V. Rad.
@@ -51,13 +61,22 @@ B.~Mostefai, A.~Balla, and P.~Trigano.
 G.~J. Nalepa, B.~Giżycka, K.~Kutt, and J.~K. Argasiński.
 \newblock Affective {Design} {Patterns} in {Computer} {Games}. {Scrollrunner}
   {Case} {Study}.
-\newblock pages 345--352, Sept. 2017.
+\newblock In {\em Computer {Science} and {Information} {Systems}}, volume~13,
+  pages 345--352, Sept. 2017.
 
 \bibitem{noor_et_al._2009}
 S.~Noor and K.~Martinez.
 \newblock Using {Social} {Data} as {Context} for {Making} {Recommendations}:
   {An} {Ontology} based {Approach}.
-\newblock page~8, 2009.
+\newblock In {\em Proceedings of the 1st {Workshop} on {Context}, {Information}
+  and {Ontologies} ({CIAO} 2009): {June} 1st, 2009, {Heraklion}, {Greece}},
+  2009.
+
+\bibitem{shu_et_al._2018}
+L.~Shu, J.~Xie, M.~Yang, Z.~Li, Z.~Li, D.~Liao, X.~Xu, and X.~Yang.
+\newblock A {Review} of {Emotion} {Recognition} {Using} {Physiological}
+  {Signals}.
+\newblock {\em Sensors}, 18(7):2074, June 2018.
 
 \bibitem{yang_et_al._2018}
 W.~Yang, M.~Rifqi, C.~Marsala, and A.~Pinna.
